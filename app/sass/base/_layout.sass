@@ -1,0 +1,62 @@
+body
+    font-family: 'Mulish', sans-serif
+    font-weight: 600
+    font-size: 14px
+    color: $black
+    scroll-behavior: smooth
+    background-color: $white
+    overflow-x: hidden
+.wrapper
+    position: relative
+    display: flex
+    flex-direction: column
+    min-height: 100%
+.header
+    position: sticky
+    top: 0
+.main
+    flex: 1 0 auto
+.footer
+    flex: 1 0 auto
+section
+    position: relative
+    margin-top: 40px
+.container
+    max-width: 1320px
+    margin: 0 auto
+    padding: 0 60px
+    @media screen and (max-width: 768px)
+        padding: 0 20px
+    @media screen and (max-width: 540px)
+        padding: 0 16px
+
+
+.clearfix::before,
+.clearfix::after 
+    display: table
+    line-height: 0
+    content: ''
+    clear: both
+
+[class*="separator-"]
+    display: flex
+    align-items: center
+    gap: 12px
+.separator-left::before
+    content: ''
+    width: 4px
+    height: 4px
+    background-color: $dark-gray
+    border-radius: 5px
+.separator-right::after
+    content: ''
+    width: 4px
+    height: 4px
+    background-color: $dark-gray
+    border-radius: 5px
+
+.overflow-hidden
+    overflow: hidden
+
+.display-none
+    display: none

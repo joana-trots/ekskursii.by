@@ -1,0 +1,22 @@
+.intro
+    &__description
+        max-width: 352px
+        margin-top: 18px
+        font-size: 16px
+        span
+            font-weight: 700
+    &__cta
+        display: flex
+        gap: 12px
+        flex-wrap: wrap
+        margin-top: 24px
+    &__btn--primary
+        @extend .cta-primary
+    &__btn--secondary
+        @extend .cta-secondary
+        display: flex
+        align-items: center
+        gap: 8px
+        &::before
+            @extend %button-icon
+            background-image: $icon_calendar

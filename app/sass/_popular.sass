@@ -1,0 +1,30 @@
+ul.popular__tags-group
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    margin-top: 20px
+    gap: 8px
+    @media screen and (max-width: 430px)
+        gap: 6px
+.popular__tags-group--tag-link
+    display: block
+    padding: 8px 12px
+    font-size: 16px
+    background: $light-gray
+    border: 1px solid $light-gray
+    border-radius: 24px
+    &:not(.more-btn):hover
+        background: $accent-yellow
+        color: $black
+    @media screen and (max-width: 414px)
+        padding: 8px 10px
+        font-size: 14px
+.popular__tags-group--tag.more-btn
+    @extend .more-btn
+.popular__tags-group--tag.more-btn ~ .popular__tags-group--tag
+    display: none
+.popular__tags-group--tag.more-btn:has([type="checkbox"]:checked)
+    display: none
+    & ~ .popular__tags-group--tag
+        display: block
+   

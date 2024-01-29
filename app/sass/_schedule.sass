@@ -1,0 +1,386 @@
+$tab-count: 3
+
+.schedule__wrapper-cards
+    display: flex
+    flex-direction: column
+    gap: 24px
+.schedule__options
+    display: flex
+    justify-content: space-between
+    margin-top: 30px
+.schedule__options-item-wp
+    display: flex
+    gap: 16px
+.schedule__options-item
+    @extend .btn
+    @extend .cta-secondary
+    gap: 4px
+    height: 100%
+    border: 0
+    &:hover
+        border: 0
+        box-shadow: $shadow-gray
+    &:not(.schedule__options-item--filters):not(.schedule__options-item--currency)
+        width: 40px
+        height: 40px
+        padding: 0
+    &::before
+        @extend %button-icon-20
+    &--display::before
+        background-image: $icon_cards
+    &--sort::before
+        background-image: $icon_sort
+    
+.schedule__options-item--filters
+    padding: 10px
+    &::before
+        @extend %button-icon
+        background-image: $icon_filters
+
+.schedule__options-item--currency
+    font-size: 14px
+    font-weight: 600
+    &::before
+        display: none
+
+.schedule__tabs
+    margin-top: 20px
+    label.panel-label
+        user-select: none
+        display: block
+        width: 100%
+        color: $dark-gray
+        border-radius: 24px
+        padding: 11px
+        cursor: pointer
+        transition: all 0.6s
+        font-size: 14px
+        font-weight: 700
+        &:hover
+            color: $black
+    .panels
+        padding: 20px 0 30px
+    .panels-wrapper
+        margin: 0 auto
+        width: 100%
+    .panel__content
+        box-sizing: border-box
+        max-height: 0
+        opacity: 0
+        transition: opacity 0.6s
+        @extend .clearfix
+    .panel-radios
+        display: none
+    .tabs-list
+        @extend %flex-center
+        background: $light-gray
+        border-radius: 30px
+        li
+            flex: 1
+            text-align: center
+            text-transform: lowercase
+    .h2
+        text-align: center
+@mixin active-label
+    background-color: $accent-yellow
+    color: $black
+    
+@mixin active-tab-li-style
+    pointer-events: none
+    cursor: default
+    
+    label.panel-label
+        @include active-label
+
+// active menu li style
+@mixin active-menu-li-style
+    max-height: $menu-item-height
+    opacity: 1
+    label.panel-label
+        @include active-label
+        @include active-menu-label
+ 
+// active panel style
+@mixin active-panel-style
+    .panel__content
+        max-height: initial
+        opacity: 1
+
+// panel toggling
+@for $i from 1 through $tab-count
+    #panel-#{$i}-ctrl:checked ~ .panels .panel-#{$i}
+        @include active-panel-style
+    #panel-#{$i}-ctrl:checked ~ .tabs-list #li-for-panel-#{$i}
+        @include active-tab-li-style
+
+
+.schedule__display
+    .schedule__card-item
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 12px
+        width: 100%
+        padding: 0 16px 20px
+        box-shadow: $shadow-gray
+        background: $white
+        border-radius: 24px
+    .card-item__image
+        position: relative
+        height: 166px
+        width: calc(100% + 16px * 2)
+        left: -16px
+        clip-path: border-box
+        img,
+        .card-item__image--overlay
+            position: absolute
+            width: 100%
+            top: 0
+            left: 0
+            height: 100%
+            object-fit: cover
+            border-top-left-radius: 24px
+            border-top-right-radius: 24px
+            z-index: 0
+            clip-path: border-box
+    .card-item__image--overlay::after
+        content: ''
+        position: absolute
+        width: 193px
+        height: 193px
+        background: #000
+        filter: blur(50px)
+        bottom: -75px
+        right: -50px
+    .schedule__card-item--header
+        display: flex
+        flex-direction: column
+        gap: 12px
+    .card-item__title
+        .h4
+            display: inline-block
+            border-bottom: 1px solid transparent
+            &:hover
+                border-color: $black
+    .card-item__seats
+        display: none
+    .card-item__info,
+    .card-item__additional-info
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        gap: 12px
+        & p
+            display: flex
+            align-items: center
+            gap: 4px
+    .card-item__info
+        :not(.card-item__info--duration) p::before 
+            @extend %button-icon
+        @media screen and (max-width: 540px)
+            font-size: 3.3vw
+    .card-item__info--date p::before
+        background-image: $icon_calendar-date
+    .card-item__info--time p::before
+        background-image: $icon_time
+    .card-item__info--duration p::before
+        content: '~'
+        width: auto
+    .card-item__additional-info--pickup-point p::before
+        background-image: $icon_pin
+    .card-item__additional-info--seats p::before
+        background-image: $icon_people-group
+    @media screen and (max-width: 412px)
+        .card-item__additional-info--pickup-point
+            order: 1
+        .card-item__additional-info--seats
+            order: 2
+        .card-item__additional-info--kids-price
+            order: 3        
+    .card-item__dropdown-btn,
+    .card-item__price
+        position: absolute
+    .card-item__dropdown-btn
+        top: 118px
+        padding: 0
+        height: 32px
+        width: 32px
+        &::before
+            @extend %button-icon
+            height: 8px
+            width: 16px
+            background-image: $icon_arrow_black
+            @extend %arrow-rotate-back
+        [type="checkbox"]
+            position: absolute
+            cursor: pointer
+            width: 100%
+            height: 100%
+            z-index: 1
+            opacity: 0
+        &:has([type="checkbox"]:checked) ~ .card-item__dropdown-info
+            margin-top: 0
+            max-height: 0
+            margin-bottom: 0
+            opacity: 0
+            transform: translate(0, 50%)
+            transition: all 0.25s ease-in-out
+        &:has([type="checkbox"]:checked)::before
+            @extend %arrow-rotate-default
+            
+    .card-item__dropdown-info
+        display: flex
+        flex-direction: column
+        gap: 12px
+        max-height: 800px
+        margin-bottom: 12px
+        animation: flipdown 0.5s ease both
+        
+    .card-item__additional-info 
+        p
+            @media screen and (max-width: 540px)
+                font-size: 13px
+        :not(.card-item__additional-info--kids-price) p::before
+            @extend %button-icon
+            height: 16px
+            width: 16px
+        span
+            font-weight: 800
+        a
+            text-decoration: underline
+    .card-item__more-dates-btn
+        &::before
+            @extend %button-icon
+            margin-right: 6px
+            background-image: $icon_search
+    .card-item__discount
+        display: flex
+        align-items: flex-start
+        gap: 8px
+        padding: 12px 16px
+        border-radius: 10px
+        border: 1px solid $accent-yellow
+        background: #FFFBEE
+        @media screen and (max-width: 540px)
+            font-size: 13px
+        &::before
+            @extend %button-icon
+            width: 26px
+            height: 26px
+            background-image: $icon_gift
+    .card-item__price
+        right: 16px
+        top: 94px
+        p
+            display: flex
+            flex-direction: column
+            text-align: right
+            font-size: 30px
+            font-weight: 700
+            color: $accent-yellow
+        span
+            font-size: 14px
+            font-weight: 400
+            color: $white
+    .card-item__description,
+    .card-item__description--text
+        display: flex
+        flex-direction: column
+        gap: 8px
+        @media screen and (max-width: 540px)
+            font-size: 13px
+    .card-item__description--title
+        font-weight: 800
+    .card-item__buttons
+        display: flex
+        gap: 12px
+    .card-item__description-btn::after
+        @extend %button-icon
+        margin-left: 4px
+        background-image: $icon_arrow-right
+    .card-item__feedback-btn::before
+        @extend %button-icon
+        margin-right: 4px
+        background-image: $icon_comments
+    .card-item__cta
+        @extend .cta-primary
+        margin-top: -4px
+        text-transform: uppercase
+        font-weight: 600
+        letter-spacing: 1.92px
+        box-shadow: none
+        &::before
+            content: 'Забронировать'
+.schedule .more-btn
+    margin: auto
+
+
+
+
+.schedule__options-item--display-table
+    &::before
+        background-image: $icon_table
+.schedule__display--table
+    .card-item__image,
+    .card-item__dropdown-btn,
+    .card-item__info--duration,
+    .separator-right::after,
+    .separator-left::before,
+    .card-item__dropdown-info
+        display: none
+    .schedule__card-item
+        flex-direction: row
+        padding: 0
+        gap: 10px
+        box-shadow: none
+        border-radius: 0
+    .card-item__price
+        position: relative
+        top: 0
+        left: 0
+        right: 0
+        flex: 1
+        p
+            display: block
+            text-align: left
+            font-size: 14px
+            font-weight: 700
+            color: $black
+        span
+            display: none
+    .card-item__cta
+        width: 36px
+        height: 36px
+        &::before
+            height: 24px
+            content: $icon_arrow-right
+    .schedule__card-item--header
+        flex-direction: row
+        gap: 10px
+        min-width: 232px
+    .card-item__title
+        a
+            text-decoration: underline
+        .h4
+            font-size: 14px
+            font-weight: 500
+    .card-item__info
+        display: block
+        font-size: 14px
+        order: 1
+        p::before
+            display: none !important
+    .card-item__info--date
+        font-weight: 700
+        span
+            display: none
+    .card-item__info--time
+        font-weight: 500
+    .card-item__seats
+        display: block
+        margin-top: 12px
+        color: $dark-gray
+    .card-item__info2
+        max-width: 146px
+        order: 2
+        flex: 1 0 0

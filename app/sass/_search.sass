@@ -1,0 +1,134 @@
+.main-search
+    min-height: 30px
+    .container
+        margin: 16px
+        padding-top: 16px
+        padding-bottom: 16px
+        background: $light-gray
+        border-radius: 10px
+.main-search__inner
+    position: relative
+    padding: 0
+    margin: 0
+    display: flex
+    flex-direction: column
+    animation: flipdown 0.5s ease both
+    animation-delay: 0.5s
+    .h2
+        display: flex
+        align-items: center
+        width: auto
+        float: left
+        font-weight: 400
+        &::before
+            @extend %button-icon-20
+            display: inline-block
+            width: 30px
+            height: 30px
+            margin-right: 6px
+            background-image: $icon_search
+            // position: relative
+            // top: 3px
+            // 
+            // 
+            // content: $icon_search
+.main-search__dropdown-arrow
+    position: absolute
+    right: 0
+    top: 4px
+    display: flex
+    align-items: flex-end
+    gap: 8px
+    justify-content: flex-end
+    color: $dark-gray
+    &::before
+        content: 'свернуть'
+    &::after
+        @extend %button-icon
+        position: relative
+        width: 10px
+        height: 6px
+        background-image: $icon_arrow_gray
+        transform: rotate(180deg) translateY(5px)
+        transition: all 0.25s ease-in-out
+input.main-search__dropdown-btn
+    position: absolute
+    cursor: pointer
+    width: 100%
+    height: 30px
+    z-index: 1
+    opacity: 0
+    &:checked
+        &~.search-form
+            margin-top: 0
+            max-height: 0
+            opacity: 0
+            transform: translate(0, 50%)   
+        &~.main-search__dropdown-arrow
+            &::before
+                content: 'раскрыть'
+            &::after
+                transform: rotate(360deg) translateY(-3px)
+.main-search__title
+    display: flex
+    justify-content: space-between
+    align-items: center
+    p
+        color: $dark-gray
+.search-form
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 20px
+    max-height: 600px
+    margin-top: 30px
+    transition: all 0.25s ease-in-out
+    opacity: 1
+    transform: translate(0, 0)  
+    z-index: 3
+    overflow: hidden
+.search-form__form-field--label
+    display: block
+    opacity: 0
+    visibility: hidden
+    height: 0
+.search-form__form-field--input
+    position: relative
+    display: flex
+    align-items: center
+    gap: 8px
+    width: 100%
+    padding: 14px 18px
+    border: 1px solid $dark-gray
+    color: $black
+    background-color: $white
+    border-radius: 30px
+    &:has(select)
+        padding: 13px 18px
+    &::before
+        @extend %button-icon-20
+    &:has([name="place"])::before
+        background-image: $icon_pin
+    &:has([name="date"])::before
+        background-image: $icon_calendar
+    &:has([name="types"])::before
+        background-image: $icon_filters
+.search-form__form-field:has(.search-form__form-field--date)
+    display: flex
+    gap: 10px
+.search-form__form-field--date
+    width: 100% 
+.search-form__submit-btn
+    @extend .cta-primary
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    margin-top: 4px
+    font-size: 16px
+    box-shadow: none
+    transition: all 0.3s
+    &::before
+        @extend %button-icon-20
+        margin-right: 4px
+        background-image: $icon_search
