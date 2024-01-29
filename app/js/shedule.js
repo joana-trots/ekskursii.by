@@ -182,7 +182,6 @@ const createCards = (data) => {
         dropdownBtn.className ='card-item__dropdown-btn btn cta-secondary';
         const checkBtn = document.createElement('input');
         checkBtn.type = 'checkbox';
-        checkBtn.id = 'card-item__dropdown-btn-1';
         checkBtn.checked = true;
         dropdownBtn.append(checkBtn);
 

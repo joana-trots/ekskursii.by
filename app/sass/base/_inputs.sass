@@ -39,7 +39,6 @@
         right: 0
         padding-top: 20px
         border-radius: 8px
-        // clip-path: border-box
         background-color: $white
         box-shadow: 0px 5px 12px -8px rgba(47, 47, 47, 0.24)
         z-index: 1
@@ -64,3 +63,10 @@
     .select-items
         width: max-content
         text-transform: lowercase
+ @media screen and (max-width: 540px)
+   .lang-item .custom-select
+        width: 52px
+        font-size: 12px
+    .lang-item .select-selected::after
+        width: 16px
+        height: 16px
