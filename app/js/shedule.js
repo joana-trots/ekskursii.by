@@ -289,3 +289,9 @@ const createCards = (data) => {
 panel_1.append(...createCards(cardData).cardsToday);
 panel_2.append(errorMessage);
 panel_3.append(...createCards(cardData).cardsNextWeek);
+
+
+
+
+
+

@@ -63,10 +63,12 @@
     .select-items
         width: max-content
         text-transform: lowercase
- @media screen and (max-width: 540px)
-   .lang-item .custom-select
+@media screen and (max-width: 540px)
+    .lang-item.custom-select
         width: 52px
+    .lang-item .select-selected
         font-size: 12px
-    .lang-item .select-selected::after
-        width: 16px
-        height: 16px
+        &::after
+            right: 0
+            width: 16px
+            height: 16px

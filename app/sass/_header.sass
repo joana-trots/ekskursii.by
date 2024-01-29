@@ -15,7 +15,7 @@
     max-width: 145px
     width: 100%
     height: auto
-    margin-right: 20px
+    margin-right: 10px
     img
         height: 40px
         width: 100%
@@ -29,6 +29,8 @@
         gap: 16px
         a
             flex: 1 0 0
+    @media screen and (max-width: 540px)
+        gap: 10px
 .menu__primary-list
     display: flex
     align-items: center
@@ -130,8 +132,10 @@ $menuItems: 12
     justify-content: center
     align-items: flex-end
     gap: 7px
+    min-width: 40px
     width: 40px
     height: 40px
+    margin-left: 10px
     z-index: 2
     cursor: pointer
     span
