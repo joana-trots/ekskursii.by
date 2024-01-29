@@ -351,9 +351,13 @@ $tab-count: 3
     .card-item__cta
         width: 36px
         height: 36px
+        padding: 0
         &::before
+            @extend %button-icon
+            content: ''
+            width: 24px
             height: 24px
-            content: $icon_arrow-right
+            background-image: $icon_arrow-right
     .schedule__card-item--header
         flex-direction: row
         gap: 10px
