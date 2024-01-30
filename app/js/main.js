@@ -1,9 +1,3 @@
-// //импорт dayjs из 'dayjs' // ES 2015
-
-// dayjs().format();
-// console.log(dayjs().format('DD.MM.YYYY'));
-
-
 /* SCHEDULE TOGGLE CARDS\TABLE */
 
 (function(){

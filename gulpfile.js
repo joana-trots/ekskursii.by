@@ -14,6 +14,7 @@ const svgSprite = require('gulp-svg-sprite');
 
 const include = require('gulp-include');
 
+
 function pages() {
     return src('app/pages/*.html')
     .pipe(include({
@@ -69,6 +70,11 @@ function scripts() {
         'node_modules/flatpickr/dist/flatpickr.min.js',
         'node_modules/flatpickr/dist/l10n/ru.js',
         'node_modules/flatpickr/dist/l10n/be.js',
+
+        'node_modules/dayjs/plugin/isToday.js',
+        'node_modules/dayjs/plugin/isTomorrow.js',
+        'node_modules/dayjs/plugin/isBetween.js',
+        'node_modules/dayjs/plugin/utc.js',
         
         'app/js/*.js',
         '!app/js/main.min.js'

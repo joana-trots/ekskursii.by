@@ -1,3 +1,8 @@
+dayjs.extend(window.dayjs_plugin_isToday);
+dayjs.extend(window.dayjs_plugin_isTomorrow);
+dayjs.extend(window.dayjs_plugin_isBetween);
+dayjs.extend(window.dayjs_plugin_utc);
+
 const panel_1 = document.querySelector('.panel-1 .schedule__wrapper-cards');
 const panel_2 = document.querySelector('.panel-2 .schedule__wrapper-cards');
 const panel_3 = document.querySelector('.panel-3 .schedule__wrapper-cards');
@@ -8,7 +13,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '26.01.2024',
+        date: '2024-01-30',
 
         weekday: '(вс)',
         start: '10:00',
@@ -34,7 +39,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '27.01.2024',
+        date: '2024-01-22',
         
         weekday: '(вс)',
         start: '10:00',
@@ -88,7 +93,12 @@ errorMessage.className = 'h2';
 errorMessage.textContent = ' Упс! Нет запланированных экскурсий';
 
 const createCards = (data) => {
-    const cards = [];
+
+    const groupedByDateCards = {
+        cardsToday: [],
+        cardsTomorrow: [],
+        cardsNextWeek: [],
+    };
 
     data.forEach(item => {
 
@@ -274,24 +284,18 @@ const createCards = (data) => {
        
         cardItem.append(divImg, divHeader, divPrice, dropdownBtn, dropdownInfo, bookBtn);
 
-        cards.push(cardItem);
+        // cards.push(cardItem);
+        const date = item.date;
+        groupedByDateCards.cardsToday.push(...(dayjs(date).isToday() ? [cardItem] : []));
+        groupedByDateCards.cardsTomorrow.push(...(dayjs(date).isTomorrow() ? [cardItem] : []));
+        groupedByDateCards.cardsNextWeek.push(...(dayjs(date).isBetween(dayjs(), dayjs().add(7, 'day'), 'day', '[]') ? [cardItem] : []));
     });
 
-
-    const cardsToday = [...cards];
-    const cardsTomorrow = [...cards];
-    const cardsNextWeek = [...cards];
-
-
-    return { cards, cardsToday, cardsTomorrow, cardsNextWeek };
+    return groupedByDateCards;
 };
 
-panel_1.append(...createCards(cardData).cardsToday);
-panel_2.append(errorMessage);
-panel_3.append(...createCards(cardData).cardsNextWeek);
+const createdCards = createCards(cardData);
 
-
-
-
-
-
+panel_1.append(...(createdCards.cardsNextWeek.length ? createdCards.cardsNextWeek : [errorMessage]));
+panel_2.append(...(createdCards.cardsToday.length ? createdCards.cardsToday : [errorMessage]));
+panel_3.append(...(createdCards.cardsTomorrow.length ? createdCards.cardsTomorrow : [errorMessage]));
