@@ -26,21 +26,20 @@ function pages() {
 
 function images() { 
     return src(['app/images/src/*.*', '!app/images/src/*.svg'])
-    .pipe(newer('app/images/dist'))
+    .pipe(newer('app/images'))
 
-    .pipe(avif({ quality : 70 }))
+    .pipe(avif({ quality : 65 }))
 
     .pipe(src(['app/images/src/*.*']))
-    .pipe(newer('app/images/dist'))
+    .pipe(newer('app/images'))
     .pipe(webp())
 
     .pipe(src('app/images/src/*.*'))
-    .pipe(newer('app/images/dist'))
+    .pipe(newer('app/images'))
     .pipe(imagemin())
 
-    .pipe(dest('app/images/dist'))
+    .pipe(dest('app/images'))
 }
-
 function sprite() {
     return src('app/images/src/**/*.svg')
     .pipe(svgSprite({
@@ -51,9 +50,8 @@ function sprite() {
             }
         }
     }))
-    .pipe(dest('app/images/dist'))
+    .pipe(dest('app/images'))
 }
-
 function styles() {
     return src('app/sass/styles.sass')
         .pipe(autoprefixer({ 
@@ -70,7 +68,7 @@ function scripts() {
         'node_modules/flatpickr/dist/flatpickr.min.js',
         'node_modules/flatpickr/dist/l10n/ru.js',
         'node_modules/flatpickr/dist/l10n/be.js',
-
+        'node_modules/dayjs/dayjs.min.js',
         'node_modules/dayjs/plugin/isToday.js',
         'node_modules/dayjs/plugin/isTomorrow.js',
         'node_modules/dayjs/plugin/isBetween.js',
@@ -96,20 +94,18 @@ function watching() {
     watch(['app/components/*', 'app/pages/*'], pages)
     watch(['app/**/*.html']).on('change', browserSync.reload)
 }
-
 function building() {
     return src([
         'app/css/styles.min.css',
-        'app/images/dist/*.webp',
-        '!app/images/dist/*.svg',
-        'app/images/dist/sprite.svg',
-        '!app/images/dist/stack',
+        'app/images/*.webp',
+        '!app/images/*.svg',
+        'app/images/sprite.svg',
+        '!app/images/stack',
         'app/js/main.min.js',
         'app/**/*.html'
     ], {base: 'app'} )
     .pipe(dest('dist'))
 }
-
 function cleanDist() {
     return src('dist')
     .pipe(clean())

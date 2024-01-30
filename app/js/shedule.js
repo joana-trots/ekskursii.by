@@ -9,7 +9,7 @@ const panel_3 = document.querySelector('.panel-3 .schedule__wrapper-cards');
 
 const cardData = [
     {
-        src: 'images/dist/01.webp',
+        src: 'images/01.webp',
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
@@ -35,7 +35,7 @@ const cardData = [
         feedbackLink: '#'
     },
     {
-        src: 'images/dist/01.webp',
+        src: 'images/01.webp',
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
@@ -61,7 +61,7 @@ const cardData = [
         feedbackLink: '#'
     },
     {
-        src: 'images/dist/01.webp',
+        src: 'images/01.webp',
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
