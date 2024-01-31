@@ -18,7 +18,9 @@ const include = require('gulp-include');
 function pages() {
     return src('app/pages/*.html')
     .pipe(include({
-        includePaths: 'app/components'
+        includePaths: [
+            'app/components/**'
+        ]
     }))
     .pipe(dest('app'))
     .pipe(browserSync.stream())
