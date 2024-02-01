@@ -13,7 +13,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-01-30',
+        date: '2024-02-06',
 
         weekday: '(вс)',
         start: '10:00',
@@ -39,7 +39,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-01-22',
+        date: '2024-02-02',
         
         weekday: '(вс)',
         start: '10:00',
@@ -63,9 +63,9 @@ const cardData = [
     {
         src: 'images/01.webp',
         seats: 'нет мест',
-        title: 'БЕЛАЗ - Бренд Беларуси',
+        title: 'БЕЛАЗ - Бревамвнд Беларуси',
 
-        date: '22.01.2024',
+        date: '2024-02-01',
         
         weekday: '(вс)',
         start: '10:00',
@@ -286,16 +286,18 @@ const createCards = (data) => {
 
         // cards.push(cardItem);
         const date = item.date;
-        groupedByDateCards.cardsToday.push(...(dayjs(date).isToday() ? [cardItem] : []));
-        groupedByDateCards.cardsTomorrow.push(...(dayjs(date).isTomorrow() ? [cardItem] : []));
-        groupedByDateCards.cardsNextWeek.push(...(dayjs(date).isBetween(dayjs(), dayjs().add(7, 'day'), 'day', '[]') ? [cardItem] : []));
+        groupedByDateCards.cardsToday.push(...(dayjs(date).isToday() ? [cardItem.cloneNode(true)] : []));
+        groupedByDateCards.cardsTomorrow.push(...(dayjs(date).isTomorrow() ? [cardItem.cloneNode(true)] : []));
+        groupedByDateCards.cardsNextWeek.push(...(dayjs(date).isBetween(dayjs(), dayjs().add(7, 'day'), 'day', '[]') ? [cardItem.cloneNode(true)] : []));
     });
 
     return groupedByDateCards;
 };
 
+cardData.sort((a, b) => dayjs(a.date) - dayjs(b.date));
+
 const createdCards = createCards(cardData);
 
-panel_1.append(...(createdCards.cardsNextWeek.length ? createdCards.cardsNextWeek : [errorMessage]));
-panel_2.append(...(createdCards.cardsToday.length ? createdCards.cardsToday : [errorMessage]));
-panel_3.append(...(createdCards.cardsTomorrow.length ? createdCards.cardsTomorrow : [errorMessage]));
+panel_1.append(...(createdCards.cardsNextWeek.length ? createdCards.cardsNextWeek : [errorMessage.cloneNode(true)]));
+panel_2.append(...(createdCards.cardsToday.length ? createdCards.cardsToday : [errorMessage.cloneNode(true)]));
+panel_3.append(...(createdCards.cardsTomorrow.length ? createdCards.cardsTomorrow : [errorMessage.cloneNode(true)]));
