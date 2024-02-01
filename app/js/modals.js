@@ -1,19 +1,31 @@
-var modal  = document.getElementById('contacts-modal'),
-    btn    = document.getElementById('phone-item'),
-    mclose = document.querySelectorAll('.close-btn');
-btn.onclick = function() {
-  modal.style.display = "flex";
-  document.body.classList.toggle('overflow-hidden');
-}
-mclose.forEach((item) => {
+var  modal          = document.querySelectorAll('.modal'),
+     contactsModal  = document.querySelector('.contacts-modal'),
+     filtersModal   = document.querySelector('.filters-modal'),
+     modalOpenBtn   = document.querySelectorAll('.modal-open'),
+     modalClose     = document.querySelectorAll('.modal-close');
+     
+modalOpenBtn.forEach((item) => {
   item.onclick = function() {
-    modal.style.display = "none";
+    if (item.classList.contains('phone-item')) {
+      contactsModal.style.display = "flex";
+    }
+    if (item.classList.contains('schedule__options-item--filters')) {
+      filtersModal.style.display = "flex";
+    }
+    document.body.classList.toggle('overflow-hidden');
+  }
+})
+modalClose.forEach((item) => {
+  item.onclick = function() {
+    modal.forEach((item => {item.style.display = "none";}));
     document.body.classList.toggle('overflow-hidden');
   }
 })
 window.onclick = function(event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-    document.body.classList.toggle('overflow-hidden');
-  }
+  modal.forEach((item => {
+    if (event.target === item) {
+      item.style.display = "none";
+    }
+  }));
+  document.body.classList.toggle('overflow-hidden');
 }
