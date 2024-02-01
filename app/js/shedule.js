@@ -3,6 +3,7 @@ dayjs.extend(window.dayjs_plugin_isTomorrow);
 dayjs.extend(window.dayjs_plugin_isBetween);
 dayjs.extend(window.dayjs_plugin_utc);
 
+
 const panel_1 = document.querySelector('.panel-1 .schedule__wrapper-cards');
 const panel_2 = document.querySelector('.panel-2 .schedule__wrapper-cards');
 const panel_3 = document.querySelector('.panel-3 .schedule__wrapper-cards');
@@ -15,15 +16,14 @@ const cardData = [
 
         date: '2024-02-06',
 
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
         symbol_rub: ' ₽',
         symbol_byn: ' BYN',
         price_euro: '47',
-        price_ru: '47',
-        price_byn: '47',
+        price_ru: '4700',
+        price_byn: '150',
         price_kids_euro: '39',
         price_kids_ru: '39',
         price_kids_byn: '39',
@@ -41,15 +41,14 @@ const cardData = [
 
         date: '2024-02-02',
         
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
         symbol_rub: ' ₽',
         symbol_byn: ' BYN',
-        price_euro: '47',
-        price_ru: '47',
-        price_byn: '47',
+        pprice_euro: '47',
+        price_ru: '4700',
+        price_byn: '150',
         price_kids_euro: '39',
         price_kids_ru: '39',
         price_kids_byn: '39',
@@ -67,7 +66,6 @@ const cardData = [
 
         date: '2024-02-02',
         
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -93,7 +91,6 @@ const cardData = [
 
         date: '2024-02-05',
 
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -119,7 +116,6 @@ const cardData = [
 
         date: '2024-02-04',
         
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -145,7 +141,6 @@ const cardData = [
 
         date: '2024-02-03',
         
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -171,7 +166,6 @@ const cardData = [
 
         date: '2024-02-05',
 
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -197,7 +191,6 @@ const cardData = [
 
         date: '2024-02-03',
         
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -223,7 +216,6 @@ const cardData = [
 
         date: '2024-02-07',
         
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -249,7 +241,6 @@ const cardData = [
 
         date: '2024-02-06',
 
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -275,7 +266,6 @@ const cardData = [
 
         date: '2024-02-02',
         
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -301,7 +291,6 @@ const cardData = [
 
         date: '2024-02-08',
         
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -327,7 +316,6 @@ const cardData = [
 
         date: '2024-02-08',
         
-        weekday: '(вс)',
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -410,9 +398,9 @@ const createCards = (data) => {
         const divDate = document.createElement('div');
         divDate.className ='card-item__info--date';
         const parDate = document.createElement('p');
-        parDate.textContent = item.date;
+        parDate.textContent = dayjs(item.date).format('DD.MM.YYYY');
         const spanDate = document.createElement('span');
-        spanDate.textContent = item.weekday;
+        spanDate.textContent = '(' + dayjs(item.date).locale('ru').format('dd') + ')';
 
         parDate.append(spanDate);
         divDate.append(parDate);
