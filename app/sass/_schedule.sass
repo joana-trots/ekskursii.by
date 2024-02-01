@@ -44,6 +44,7 @@ $tab-count: 3
         display: none
 
 .schedule__tabs
+    position: relative
     margin-top: 20px
     label.panel-label
         user-select: none
@@ -177,7 +178,7 @@ $tab-count: 3
     .card-item__info
         :not(.card-item__info--duration) p::before 
             @extend %button-icon
-        @media screen and (max-width: 540px)
+        @media screen and (max-width: 540px) and (min-width: 400px)
             font-size: 3.3vw
     .card-item__info--date p::before
         background-image: $icon_calendar-date
@@ -268,6 +269,8 @@ $tab-count: 3
             width: 26px
             height: 26px
             background-image: $icon_gift
+        p
+            flex: 1 0 0
     .card-item__price
         right: 16px
         top: 94px
@@ -388,3 +391,35 @@ $tab-count: 3
         max-width: 146px
         order: 2
         flex: 1 0 0
+
+/* display first 3 cards, then 3 more cards 
+    display first 6 rows in table, then 6 more */
+.schedule__display:not(.schedule__display--table)
+    .schedule__card-item
+        &:nth-child(n+4)
+            display: none
+.schedule__tabs:has(.schedule__display:not(.schedule__display--table)):has(.more-btn [type="checkbox"]:checked) 
+    .schedule__card-item
+        &:nth-child(n+4):nth-child(-n+6)
+            display: flex
+    .more-btn
+        display: none
+    .all-btn
+        position: sticky
+        bottom: 40px
+        box-shadow: $shadow-gray-strong
+
+.schedule__display--table
+    .schedule__card-item
+        &:nth-child(n+7)
+            display: none
+.schedule__tabs:has(.schedule__display--table):has(.more-btn [type="checkbox"]:checked)
+    .schedule__card-item
+        &:nth-child(n+7):nth-child(-n+12)
+            display: flex
+    .more-btn
+        display: none
+    .all-btn
+        position: sticky
+        bottom: 40px
+        box-shadow: $shadow-gray-strong
