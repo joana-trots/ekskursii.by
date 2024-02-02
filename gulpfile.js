@@ -76,6 +76,7 @@ function scripts() {
         'node_modules/dayjs/plugin/isBetween.js',
         'node_modules/dayjs/plugin/utc.js',
         'node_modules/dayjs/locale/ru.js',
+        'node_modules/dayjs/locale/be.js',
         
         'app/js/*.js',
         '!app/js/main.min.js'

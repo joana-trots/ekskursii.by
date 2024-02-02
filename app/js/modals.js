@@ -25,7 +25,7 @@ window.onclick = function(event) {
   modal.forEach((item => {
     if (event.target === item) {
       item.style.display = "none";
+      document.body.classList.toggle('overflow-hidden');
     }
   }));
-  document.body.classList.toggle('overflow-hidden');
 }

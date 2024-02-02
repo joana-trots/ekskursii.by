@@ -3,7 +3,6 @@ dayjs.extend(window.dayjs_plugin_isTomorrow);
 dayjs.extend(window.dayjs_plugin_isBetween);
 dayjs.extend(window.dayjs_plugin_utc);
 
-
 const panel_1 = document.querySelector('.panel-1 .schedule__wrapper-cards');
 const panel_2 = document.querySelector('.panel-2 .schedule__wrapper-cards');
 const panel_3 = document.querySelector('.panel-3 .schedule__wrapper-cards');
@@ -400,7 +399,13 @@ const createCards = (data) => {
         const parDate = document.createElement('p');
         parDate.textContent = dayjs(item.date).format('DD.MM.YYYY');
         const spanDate = document.createElement('span');
+        /* ru */
         spanDate.textContent = '(' + dayjs(item.date).locale('ru').format('dd') + ')';
+        
+        /* be */
+        // spanDate.textContent = '(' + dayjs(item.date).locale('be').format('dd') + ')'; 
+        /* en */
+        // spanDate.textContent = '(' + dayjs(item.date).format('dd') + ')';
 
         parDate.append(spanDate);
         divDate.append(parDate);
