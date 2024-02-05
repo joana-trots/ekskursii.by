@@ -32,6 +32,7 @@ for ( var i = 0; i < elms.length; i++ ) {
     type: 'loop',
     perPage: 1,
     arrows: false,
+    padding: 24,
     // autoplay: true,
     interval: 5000,
     pauseOnHover: true,
