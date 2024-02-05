@@ -17,6 +17,7 @@ $tab-count: 3
     gap: 4px
     height: 100%
     border: 0
+    z-index: 2
     &:hover
         border: 0
         box-shadow: $shadow-gray
@@ -46,6 +47,7 @@ $tab-count: 3
 .schedule__tabs
     position: relative
     margin-top: 20px
+    z-index: 1
     label.panel-label
         user-select: none
         display: block
@@ -392,8 +394,7 @@ $tab-count: 3
         order: 2
         flex: 1 0 0
 
-/* display first 3 cards, then 3 more cards 
-    display first 6 rows in table, then 6 more */
+/* display first 3 cards, then 3 more cards */
 .schedule__display:not(.schedule__display--table)
     .schedule__card-item
         &:nth-child(n+4)
@@ -402,13 +403,8 @@ $tab-count: 3
     .schedule__card-item
         &:nth-child(n+4):nth-child(-n+6)
             display: flex
-    .more-btn
-        display: none
-    .all-btn
-        position: sticky
-        bottom: 40px
-        box-shadow: $shadow-gray-strong
 
+/* display first 6 rows in table, then 6 more */
 .schedule__display--table
     .schedule__card-item
         &:nth-child(n+7)
@@ -417,9 +413,10 @@ $tab-count: 3
     .schedule__card-item
         &:nth-child(n+7):nth-child(-n+12)
             display: flex
+
+.schedule__tabs:has(.more-btn [type="checkbox"]:checked)
     .more-btn
         display: none
     .all-btn
         position: sticky
         bottom: 40px
-        box-shadow: $shadow-gray-strong

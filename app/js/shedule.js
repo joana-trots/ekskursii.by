@@ -445,7 +445,9 @@ const createCards = (data) => {
         dropdownBtn.className ='card-item__dropdown-btn btn cta-secondary';
         const checkBtn = document.createElement('input');
         checkBtn.type = 'checkbox';
+        checkBtn.name = 'dropdown-btn';
         checkBtn.checked = true;
+        checkBtn.readOnly = true;
         dropdownBtn.append(checkBtn);
 
         /* DROPDOWN INFO */
@@ -537,7 +539,6 @@ const createCards = (data) => {
        
         cardItem.append(divImg, divHeader, divPrice, dropdownBtn, dropdownInfo, bookBtn);
 
-        // cards.push(cardItem);
         const date = item.date;
         groupedByDateCards.cardsToday.push(...(dayjs(date).isToday() ? [cardItem.cloneNode(true)] : []));
         groupedByDateCards.cardsTomorrow.push(...(dayjs(date).isTomorrow() ? [cardItem.cloneNode(true)] : []));
