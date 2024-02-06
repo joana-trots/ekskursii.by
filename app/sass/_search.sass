@@ -3,7 +3,7 @@
     .container
         margin: 16px
         padding-top: 16px
-        padding-bottom: 16px
+        padding-bottom: 20px
         background: $light-gray
         border-radius: 10px
 .main-search__inner
@@ -27,11 +27,6 @@
             height: 30px
             margin-right: 6px
             background-image: $icon_search
-            // position: relative
-            // top: 3px
-            // 
-            // 
-            // content: $icon_search
 .main-search__dropdown-arrow
     position: absolute
     right: 0
@@ -113,6 +108,12 @@ input.main-search__dropdown-btn
         background-image: $icon_calendar
     &:has([name="types"])::before
         background-image: $icon_filters
+    input, select
+        position: absolute
+        height: 100%
+        background: transparent
+        padding-left: 28px
+        width: calc(100% - 28px)
 .search-form__form-field:has(.search-form__form-field--date)
     display: flex
     gap: 10px

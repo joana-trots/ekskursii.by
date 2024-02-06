@@ -32,11 +32,8 @@ for ( var i = 0; i < elms.length; i++ ) {
     type: 'loop',
     perPage: 1,
     arrows: false,
-    padding: 24,
-    // autoplay: true,
-    interval: 5000,
-    pauseOnHover: true,
-    gap: 20,
+    padding: { left: 30, right: 30 },
+    gap: 15,
     mediaQuery: 'min',
     breakpoints: {
       541: {

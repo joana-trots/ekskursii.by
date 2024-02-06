@@ -149,22 +149,16 @@ $tab-count: 3
     .card-item__image--overlay::after
         content: ''
         position: absolute
-        width: 193px
-        height: 193px
+        width: 160px
+        height: 160px
         background: #000
-        filter: blur(50px)
-        bottom: -75px
-        right: -50px
+        filter: blur(48px)
+        bottom: -48px
+        right: 0
     .schedule__card-item--header
         display: flex
         flex-direction: column
         gap: 12px
-    .card-item__title
-        .h4
-            display: inline-block
-            border-bottom: 1px solid transparent
-            &:hover
-                border-color: $black
     .card-item__seats
         display: none
     .card-item__info,
@@ -249,8 +243,6 @@ $tab-count: 3
             width: 16px
         span
             font-weight: 800
-        a
-            text-decoration: underline
     .card-item__more-dates-btn
         &::before
             @extend %button-icon
@@ -397,6 +389,11 @@ $tab-count: 3
 /* display first 3 cards, then 3 more cards */
 .schedule__display:not(.schedule__display--table)
     .schedule__card-item
+        .card-item__title .h4
+            display: inline-block
+            border-bottom: 1px solid transparent
+            &:hover
+                border-color: $black
         &:nth-child(n+4)
             display: none
 .schedule__tabs:has(.schedule__display:not(.schedule__display--table)):has(.more-btn [type="checkbox"]:checked) 
@@ -420,3 +417,4 @@ $tab-count: 3
     .all-btn
         position: sticky
         bottom: 40px
+        margin-top: 0
