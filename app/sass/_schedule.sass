@@ -1,4 +1,4 @@
-$tab-count: 3
+$tab-count: 10
 
 .schedule__wrapper-cards
     display: flex
@@ -44,7 +44,8 @@ $tab-count: 3
     &::before
         display: none
 
-.schedule__tabs
+.schedule__tabs,
+.booking__tabs
     position: relative
     margin-top: 20px
     z-index: 1
@@ -84,6 +85,7 @@ $tab-count: 3
             text-transform: lowercase
     .h2
         text-align: center
+
 @mixin active-label
     background-color: $accent-yellow
     color: $black
@@ -91,7 +93,6 @@ $tab-count: 3
 @mixin active-tab-li-style
     pointer-events: none
     cursor: default
-    
     label.panel-label
         @include active-label
 
@@ -291,10 +292,6 @@ $tab-count: 3
     .card-item__buttons
         display: flex
         gap: 12px
-    .card-item__description-btn::after
-        @extend %button-icon
-        margin-left: 4px
-        background-image: $icon_arrow-right
     .card-item__feedback-btn::before
         @extend %button-icon
         margin-right: 4px
@@ -310,8 +307,6 @@ $tab-count: 3
             content: 'Забронировать'
 .schedule .more-btn
     margin: auto
-
-
 
 
 .schedule__options-item--display-table

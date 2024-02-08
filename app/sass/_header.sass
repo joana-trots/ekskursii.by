@@ -12,13 +12,17 @@
     box-shadow: $shadow-gray
     z-index: 2
 .header__logo
-    max-width: 145px
     width: 100%
     height: auto
     margin-right: 10px
+    max-width: 145px
+    @media screen and (max-width: 1200px)
+        max-width: 100%
+        flex: 1 0 0
     img
         height: 40px
         width: 100%
+        max-width: 145px
         object-fit: cover
 .menu__primary
     display: flex
@@ -35,6 +39,8 @@
     display: flex
     align-items: center
     gap: 16px
+    @media screen and (max-width: 540px)
+        flex: 0
 .menu__primary-list--item
     cursor: pointer
     .menu__primary-list--link:not(#lang-item):not(#currency-item)
@@ -138,6 +144,8 @@ $menuItems: 12
     margin-left: 10px
     z-index: 2
     cursor: pointer
+    @media screen and (max-width: 540px)
+        flex: 0 0 40px
     span
         position: relative
         width: 100%

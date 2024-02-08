@@ -1,16 +1,16 @@
 /* SCHEDULE TOGGLE CARDS\TABLE */
 
-(function(){
-  var scheduleDisplay = document.querySelectorAll('.schedule__display'),
-      scheduleButton  = document.querySelector('.schedule__options-item--display');
 
-  scheduleButton.onclick = function() {
-  scheduleDisplay.forEach((item) => {
-    item.classList.toggle('schedule__display--table');
-  })
-  scheduleButton.classList.toggle('schedule__options-item--display-table');
+var scheduleDisplay = document.querySelectorAll('.schedule__display'),
+    scheduleButton  = document.querySelectorAll('.schedule__options-item--display');
+scheduleButton.forEach((btn) => {
+  btn.onclick = function() {
+    scheduleDisplay.forEach((item) => {
+      item.classList.toggle('schedule__display--table');
+    })
+    btn.classList.toggle('schedule__options-item--display-table');
   }
-}());
+})
 
 
 /* flatpickr (DATEPICKER in the MAIN SEARCH) */

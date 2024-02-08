@@ -1,22 +1,32 @@
-.intro
-    &__description
-        max-width: 352px
-        margin-top: 18px
-        font-size: 16px
-        span
-            font-weight: 700
-    &__cta
-        display: flex
-        gap: 12px
-        flex-wrap: wrap
-        margin-top: 24px
-    &__btn--primary
-        @extend .cta-primary
-    &__btn--secondary
-        @extend .cta-secondary
-        display: flex
-        align-items: center
-        gap: 8px
-        &::before
-            @extend %button-icon
-            background-image: $icon_calendar
+.intro__inner
+    display: flex
+    flex-direction: column
+    .h1, .h6
+        order: 1
+    *:not(.h1, .h6)
+        order: 2
+    h1.h2
+        margin-top: 12px
+.intro__description
+    max-width: 352px
+    margin-top: 18px
+    font-size: 16px
+    span
+        font-weight: 700
+        @media screen and (max-width: 540px)
+            font-size: 1.1em
+.intro__cta
+    display: flex
+    gap: 12px
+    flex-wrap: wrap
+    margin-top: 24px
+.intro__btn--primary
+    @extend .cta-primary
+.intro__btn--secondary
+    @extend .cta-secondary
+    display: flex
+    align-items: center
+    gap: 8px
+    &::before
+        @extend %button-icon
+        background-image: $icon_calendar

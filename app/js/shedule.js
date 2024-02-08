@@ -455,12 +455,10 @@ const createCards = (data) => {
         const dropdownInfo = document.createElement('div');
         dropdownInfo.className ='card-item__dropdown-info';
         
-        const moreDates = document.createElement('div');
+        const moreDates = document.createElement('a');
         moreDates.className ='card-item__more-dates-btn simple-btn btn';
-        const moreDatesLink = document.createElement('a');
-        moreDatesLink.href = '#';
-        moreDatesLink.textContent = 'Другие даты';
-        moreDates.append(moreDatesLink);
+        moreDates.href = '#';
+        moreDates.textContent = 'Другие даты';
 
         const discount = document.createElement('div');
         discount.className ='card-item__discount';
@@ -510,20 +508,16 @@ const createCards = (data) => {
 
         const cardButtons = document.createElement('div');
         cardButtons.className ='card-item__buttons';
-
-        const descriptionBtn = document.createElement('div');
-        descriptionBtn.className ='card-item__description-btn simple-btn btn';
-        const descriptionBtnLink = document.createElement('a');
-        descriptionBtnLink.textContent = 'Описание экскурсии';
-        descriptionBtnLink.href = item.aboutLink;
-        descriptionBtn.append(descriptionBtnLink);
-
-        const feedbackBtn = document.createElement('div');
+        
+        const descriptionBtn = document.createElement('a');
+        descriptionBtn.className ='card-item__description-btn simple-btn-arrow btn';
+        descriptionBtn.textContent = 'Описание экскурсии';
+        descriptionBtn.href = item.aboutLink;
+        
+        const feedbackBtn = document.createElement('a');
         feedbackBtn.className ='card-item__feedback-btn simple-btn btn';
-        const feedbacBtnLink = document.createElement('a');
-        feedbacBtnLink.textContent = 'Отзывы';
-        feedbacBtnLink.href = item.feedbackLink;
-        feedbackBtn.append(feedbacBtnLink);
+        feedbackBtn.textContent = 'Отзывы';
+        feedbackBtn.href = item.feedbackLink;
 
         cardButtons.append(descriptionBtn, feedbackBtn);
 
@@ -552,6 +546,8 @@ cardData.sort((a, b) => dayjs(a.date) - dayjs(b.date));
 
 const createdCards = createCards(cardData);
 
-panel_1.append(...(createdCards.cardsNextWeek.length ? createdCards.cardsNextWeek : [errorMessage.cloneNode(true)]));
-panel_2.append(...(createdCards.cardsToday.length ? createdCards.cardsToday : [errorMessage.cloneNode(true)]));
-panel_3.append(...(createdCards.cardsTomorrow.length ? createdCards.cardsTomorrow : [errorMessage.cloneNode(true)]));
+if (panel_1 && panel_2 && panel_3) {
+    panel_1.append(...(createdCards.cardsNextWeek.length ? createdCards.cardsNextWeek : [errorMessage.cloneNode(true)]));
+    panel_2.append(...(createdCards.cardsToday.length ? createdCards.cardsToday : [errorMessage.cloneNode(true)]));
+    panel_3.append(...(createdCards.cardsTomorrow.length ? createdCards.cardsTomorrow : [errorMessage.cloneNode(true)]));
+} 

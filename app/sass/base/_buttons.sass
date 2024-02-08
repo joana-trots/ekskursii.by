@@ -80,6 +80,12 @@ button,
         border-color: $additional-gray
         background-color: $light-gray
 
+.simple-btn-arrow
+    @extend .simple-btn
+    &::after
+        @extend %button-icon
+        margin-left: 4px
+        background-image: $icon_arrow-right
 .simple-secondary-btn
     @extend .simple-btn
     padding: 0
@@ -94,7 +100,6 @@ button,
         @extend %button-icon
         margin-left: 2px
         background-image: $icon_arrow-right
-
 
 .all-btn
     @extend .cta-primary

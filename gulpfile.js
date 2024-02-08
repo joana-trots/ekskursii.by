@@ -19,7 +19,7 @@ function pages() {
     return src('app/pages/*.html')
     .pipe(include({
         includePaths: [
-            'app/components/**'
+            'app/pages/components/**'
         ]
     }))
     .pipe(dest('app'))
