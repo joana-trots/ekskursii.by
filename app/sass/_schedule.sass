@@ -63,7 +63,7 @@ $tab-count: 10
         &:hover
             color: $black
     .panels
-        padding: 20px 0 30px
+        padding: 30px 0
     .panels-wrapper
         margin: 0 auto
         width: 100%
@@ -118,193 +118,196 @@ $tab-count: 10
         @include active-tab-li-style
 
 
-.schedule__display
-    .schedule__card-item
-        position: relative
-        display: flex
-        flex-direction: column
-        gap: 12px
-        width: 100%
-        padding: 0 16px 20px
-        box-shadow: $shadow-gray
-        background: $white
-        border-radius: 24px
-    .card-item__image
-        position: relative
-        height: 166px
-        width: calc(100% + 16px * 2)
-        left: -16px
-        clip-path: border-box
-        img,
-        .card-item__image--overlay
-            position: absolute
-            width: 100%
-            top: 0
-            left: 0
-            height: 100%
-            object-fit: cover
-            border-top-left-radius: 24px
-            border-top-right-radius: 24px
-            z-index: 0
-            clip-path: border-box
-    .card-item__image--overlay::after
-        content: ''
+
+.schedule__card-item
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 12px
+    width: 100%
+    padding: 0 16px 20px
+    box-shadow: $shadow-gray
+    background: $white
+    border-radius: 24px
+.card-item__image
+    position: relative
+    height: 166px
+    width: calc(100% + 16px * 2)
+    left: -16px
+    clip-path: border-box
+    img,
+    .card-item__image--overlay
         position: absolute
-        width: 160px
-        height: 160px
-        background: #000
-        filter: blur(48px)
-        bottom: -48px
-        right: 0
-    .schedule__card-item--header
-        display: flex
-        flex-direction: column
-        gap: 12px
-    .card-item__seats
-        display: none
-    .card-item__info,
-    .card-item__additional-info
+        width: 100%
+        top: 0
+        left: 0
+        height: 100%
+        object-fit: cover
+        border-top-left-radius: 24px
+        border-top-right-radius: 24px
+        z-index: 0
+        clip-path: border-box
+.card-item__image--overlay::after
+    content: ''
+    position: absolute
+    width: 160px
+    height: 160px
+    background: #000
+    filter: blur(48px)
+    bottom: -48px
+    right: 0
+.schedule__card-item--header
+    display: flex
+    flex-direction: column
+    gap: 12px
+.card-item__seats
+    display: none
+.card-item__info,
+.card-item__additional-info
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    gap: 12px
+    & p
         display: flex
         align-items: center
-        flex-wrap: wrap
-        gap: 12px
-        & p
-            display: flex
-            align-items: center
-            gap: 4px
-    .card-item__info
-        :not(.card-item__info--duration) p::before 
-            @extend %button-icon
-        @media screen and (max-width: 540px) and (min-width: 400px)
-            font-size: 3.3vw
-    .card-item__info--date p::before
-        background-image: $icon_calendar-date
-    .card-item__info--time p::before
-        background-image: $icon_time
-    .card-item__info--duration p::before
-        content: '~'
-        width: auto
-    .card-item__additional-info--pickup-point p::before
-        background-image: $icon_pin
-    .card-item__additional-info--seats p::before
-        background-image: $icon_people-group
-    @media screen and (max-width: 412px)
-        .card-item__additional-info--pickup-point
-            order: 1
-        .card-item__additional-info--seats
-            order: 2
-        .card-item__additional-info--kids-price
-            order: 3        
-    .card-item__dropdown-btn,
-    .card-item__price
-        position: absolute
-    .card-item__dropdown-btn
-        top: 118px
-        padding: 0
-        height: 32px
-        width: 32px
-        &::before
-            @extend %button-icon
-            height: 8px
-            width: 16px
-            background-image: $icon_arrow_black
-            @extend %arrow-rotate-back
-        [type="checkbox"]
-            position: absolute
-            cursor: pointer
-            width: 100%
-            height: 100%
-            z-index: 1
-            opacity: 0
-        &:has([type="checkbox"]:checked) ~ .card-item__dropdown-info
-            margin-top: 0
-            max-height: 0
-            margin-bottom: 0
-            opacity: 0
-            transform: translate(0, 50%)
-            transition: all 0.25s ease-in-out
-        &:has([type="checkbox"]:checked)::before
-            @extend %arrow-rotate-default
-            
-    .card-item__dropdown-info
-        display: flex
-        flex-direction: column
-        gap: 12px
-        max-height: 800px
-        margin-bottom: 12px
-        animation: flipdown 0.5s ease both
-        
-    .card-item__additional-info 
-        p
-            @media screen and (max-width: 540px)
-                font-size: 13px
-        :not(.card-item__additional-info--kids-price) p::before
-            @extend %button-icon
-            height: 16px
-            width: 16px
-        span
-            font-weight: 800
-    .card-item__more-dates-btn
-        &::before
-            @extend %button-icon
-            margin-right: 6px
-            background-image: $icon_search
-    .card-item__discount
-        display: flex
-        align-items: flex-start
-        gap: 8px
-        padding: 12px 16px
-        border-radius: 10px
-        border: 1px solid $accent-yellow
-        background: #FFFBEE
-        @media screen and (max-width: 540px)
-            font-size: 13px
-        &::before
-            @extend %button-icon
-            width: 26px
-            height: 26px
-            background-image: $icon_gift
-        p
-            flex: 1 0 0
-    .card-item__price
-        right: 16px
-        top: 94px
-        p
-            display: flex
-            flex-direction: column
-            text-align: right
-            font-size: 30px
-            font-weight: 700
-            color: $accent-yellow
-        span
-            font-size: 14px
-            font-weight: 400
-            color: $white
-    .card-item__description,
-    .card-item__description--text
-        display: flex
-        flex-direction: column
-        gap: 8px
-        @media screen and (max-width: 540px)
-            font-size: 13px
-    .card-item__description--title
-        font-weight: 800
-    .card-item__buttons
-        display: flex
-        gap: 12px
-    .card-item__feedback-btn::before
+        gap: 4px
+.card-item__info
+    :not(.card-item__info--duration) p::before 
         @extend %button-icon
-        margin-right: 4px
-        background-image: $icon_comments
-    .card-item__cta
-        @extend .cta-primary
-        margin-top: -4px
-        text-transform: uppercase
-        font-weight: 600
-        letter-spacing: 1.92px
-        box-shadow: none
-        &::before
-            content: 'Забронировать'
+    @media screen and (max-width: 540px) and (min-width: 400px)
+        font-size: 3.3vw
+.card-item__info--date p::before
+    background-image: $icon_calendar-date
+.card-item__info--time p::before
+    background-image: $icon_time
+.card-item__info--duration p::before
+    content: '~'
+    width: auto
+.card-item__additional-info--pickup-point p::before
+    background-image: $icon_pin
+.card-item__additional-info--seats p::before
+    background-image: $icon_people-group
+@media screen and (max-width: 412px)
+    .card-item__additional-info--pickup-point
+        order: 1
+    .card-item__additional-info--seats
+        order: 2
+    .card-item__additional-info--kids-price
+        order: 3        
+.card-item__dropdown-btn,
+.card-item__price
+    position: absolute
+.card-item__dropdown-btn
+    top: 118px
+    padding: 0
+    height: 32px
+    width: 32px
+    &::before
+        @extend %button-icon
+        height: 8px
+        width: 16px
+        background-image: $icon_arrow_black
+        @extend %arrow-rotate-back
+    [type="checkbox"]
+        position: absolute
+        cursor: pointer
+        width: 100%
+        height: 100%
+        z-index: 1
+        opacity: 0
+    &:has([type="checkbox"]:checked) ~ .card-item__dropdown-info
+        margin-top: 0
+        max-height: 0
+        margin-bottom: 0
+        opacity: 0
+        transform: translate(0, 50%)
+        transition: all 0.25s ease-in-out
+    &:has([type="checkbox"]:checked)::before
+        @extend %arrow-rotate-default
+        
+.card-item__dropdown-info
+    display: flex
+    flex-direction: column
+    gap: 12px
+    max-height: 800px
+    margin-bottom: 12px
+    animation: flipdown 0.5s ease both
+    
+.card-item__additional-info 
+    p
+        @media screen and (max-width: 540px)
+            font-size: 13px
+    :not(.card-item__additional-info--kids-price) p::before
+        @extend %button-icon
+        height: 16px
+        width: 16px
+        flex: 0 0 16px
+    span
+        font-weight: 800
+.card-item__more-dates-btn
+    &::before
+        @extend %button-icon
+        margin-right: 6px
+        background-image: $icon_search
+.card-item__discount
+    display: flex
+    align-items: flex-start
+    gap: 8px
+    padding: 12px 16px
+    border-radius: 10px
+    border: 1px solid $accent-yellow
+    background: #FFFBEE
+    @media screen and (max-width: 540px)
+        font-size: 13px
+    &::before
+        @extend %button-icon
+        width: 26px
+        height: 26px
+        background-image: $icon_gift
+        flex: 0 0 26px
+    p
+        flex: 1 0 0
+.card-item__price
+    right: 16px
+    top: 94px
+    p
+        display: flex
+        flex-direction: column
+        text-align: right
+        font-size: 30px
+        font-weight: 700
+        color: $accent-yellow
+    span
+        font-size: 14px
+        font-weight: 400
+        color: $white
+.card-item__description,
+.card-item__description--text
+    display: flex
+    flex-direction: column
+    gap: 8px
+    @media screen and (max-width: 540px)
+        font-size: 13px
+.card-item__description--title
+    font-weight: 800
+.card-item__buttons
+    display: flex
+    gap: 12px
+.card-item__feedback-btn::before
+    @extend %button-icon
+    margin-right: 4px
+    background-image: $icon_comments
+.card-item__cta
+    @extend .cta-primary
+    margin-top: -4px
+    text-transform: uppercase
+    font-weight: 600
+    letter-spacing: 1.92px
+    box-shadow: none
+    &::before
+        content: 'Забронировать'
+
 .schedule .more-btn
     margin: auto
 
@@ -315,17 +318,21 @@ $tab-count: 10
 .schedule__display--table
     .card-item__image,
     .card-item__dropdown-btn,
-    .card-item__info--duration,
+    // .card-item__info--duration,
     .separator-right::after,
     .separator-left::before,
     .card-item__dropdown-info
         display: none
     .schedule__card-item
         flex-direction: row
-        padding: 0
+        padding: 12px
         gap: 10px
         box-shadow: none
         border-radius: 0
+        border-bottom: 1px solid $accent-yellow
+    .card-item__info--duration
+        font-size: 12px
+        color: $dark-gray
     .card-item__price
         position: relative
         top: 0
@@ -343,7 +350,6 @@ $tab-count: 10
     .card-item__cta
         width: 36px
         height: 36px
-        padding: 0
         &::before
             @extend %button-icon
             content: ''
@@ -381,8 +387,12 @@ $tab-count: 10
         order: 2
         flex: 1 0 0
 
+
+
 /* display first 3 cards, then 3 more cards */
 .schedule__display:not(.schedule__display--table)
+    .schedule__display--table-header
+        display: none
     .schedule__card-item
         .card-item__title .h4
             display: inline-block
@@ -398,6 +408,17 @@ $tab-count: 10
 
 /* display first 6 rows in table, then 6 more */
 .schedule__display--table
+    .schedule__display--table-header
+        display: flex
+        gap: 10px
+        padding: 0 12px 28px
+        p
+            color: $dark-gray
+            &:nth-child(1)
+                flex: 0 0 76px
+            &:nth-child(2)
+                max-width: 146px
+                width: 100%
     .schedule__card-item
         &:nth-child(n+7)
             display: none

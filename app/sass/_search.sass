@@ -82,12 +82,7 @@ input.main-search__dropdown-btn
     transform: translate(0, 0)  
     z-index: 3
     overflow: hidden
-.search-form__form-field--label
-    display: block
-    opacity: 0
-    visibility: hidden
-    height: 0
-.search-form__form-field--input
+[class$='form-field--input']
     position: relative
     display: flex
     align-items: center
@@ -100,26 +95,33 @@ input.main-search__dropdown-btn
     border-radius: 30px
     &:has(select)
         padding: 13px 18px
-    &::before
+    &:not(.no-icon)::before
         @extend %button-icon-20
-    &:has([name="place"])::before
+    &:has([name$="place"])::before
         background-image: $icon_pin
-    &:has([name="date"])::before
+    &:has([name$="date"])::before
         background-image: $icon_calendar
-    &:has([name="types"])::before
+    &:has([name$="types"])::before
         background-image: $icon_filters
-    input, select
+    input,
+    select
         position: absolute
         height: 100%
         background: transparent
         padding-left: 28px
         width: calc(100% - 28px)
-.search-form__form-field:has(.search-form__form-field--date)
+        font-size: 16px
+        &.no-icon
+            padding-left: 0
+            &::placeholder
+                color: $dark-gray
+                font-style: italic
+[class$='__form-field']:has([class$='__form-field--date'])
     display: flex
     gap: 10px
-.search-form__form-field--date
+[class$='__form-field--date']
     width: 100% 
-.search-form__submit-btn
+[class$='form__submit-btn']
     @extend .cta-primary
     display: flex
     align-items: center

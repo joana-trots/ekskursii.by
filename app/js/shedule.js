@@ -13,7 +13,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-06',
+        date: '2024-02-10',
 
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -38,7 +38,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-02',
+        date: '2024-02-11',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -63,7 +63,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бревамвнд Беларуси',
 
-        date: '2024-02-02',
+        date: '2024-02-12',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -88,7 +88,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-05',
+        date: '2024-02-13',
 
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -113,82 +113,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-04',
-        
-        start: '10:00',
-        duration: '4 ч 30 мин',
-        symbol_euro: ' €',
-        symbol_rub: ' ₽',
-        symbol_byn: ' BYN',
-        price_euro: '47',
-        price_ru: '47',
-        price_byn: '47',
-        price_kids_euro: '39',
-        price_kids_ru: '39',
-        price_kids_byn: '39',
-        discount: 'Скидка 12% на экскурсии с отправлением по 25.11.2023 и оплате до 25.11.2023',
-        addressLink: 'https://maps.app.goo.gl/WruWwwoDQ3f7eXnF8',
-        address: 'Минск',
-        description: 'В стоимость групповой экскурсии включено: <br>',
-        aboutLink: '#',
-        feedbackLink: '#'
-    },
-    {
-        src: 'images/01.webp',
-        seats: 'нет мест',
-        title: 'БЕЛАЗ - Бревамвнд Беларуси',
-
-        date: '2024-02-03',
-        
-        start: '10:00',
-        duration: '4 ч 30 мин',
-        symbol_euro: ' €',
-        symbol_rub: ' ₽',
-        symbol_byn: ' BYN',
-        price_euro: '47',
-        price_ru: '47',
-        price_byn: '47',
-        price_kids_euro: '39',
-        price_kids_ru: '39',
-        price_kids_byn: '39',
-        discount: 'Скидка 12% на экскурсии с отправлением по 25.11.2023 и оплате до 25.11.2023',
-        addressLink: 'https://maps.app.goo.gl/WruWwwoDQ3f7eXnF8',
-        address: 'Минск',
-        description: 'В стоимость групповой экскурсии включено: <br>',
-        aboutLink: '#',
-        feedbackLink: '#'
-    },
-    {
-        src: 'images/01.webp',
-        seats: 'нет мест',
-        title: 'БЕЛАЗ - Бренд Беларуси',
-
-        date: '2024-02-05',
-
-        start: '10:00',
-        duration: '4 ч 30 мин',
-        symbol_euro: ' €',
-        symbol_rub: ' ₽',
-        symbol_byn: ' BYN',
-        price_euro: '47',
-        price_ru: '47',
-        price_byn: '47',
-        price_kids_euro: '39',
-        price_kids_ru: '39',
-        price_kids_byn: '39',
-        discount: 'Скидка 12% на экскурсии с отправлением по 25.11.2023 и оплате до 25.11.2023',
-        addressLink: 'https://maps.app.goo.gl/WruWwwoDQ3f7eXnF8',
-        address: 'Минск',
-        description: 'В стоимость групповой экскурсии включено: <br>',
-        aboutLink: '#',
-        feedbackLink: '#'
-    },
-    {
-        src: 'images/01.webp',
-        seats: 'нет мест',
-        title: 'БЕЛАЗ - Бренд Беларуси',
-
-        date: '2024-02-03',
+        date: '2024-02-14',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -213,7 +138,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бревамвнд Беларуси',
 
-        date: '2024-02-07',
+        date: '2024-02-13',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -238,8 +163,33 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-06',
+        date: '2024-02-15',
 
+        start: '10:00',
+        duration: '4 ч 30 мин',
+        symbol_euro: ' €',
+        symbol_rub: ' ₽',
+        symbol_byn: ' BYN',
+        price_euro: '47',
+        price_ru: '47',
+        price_byn: '47',
+        price_kids_euro: '39',
+        price_kids_ru: '39',
+        price_kids_byn: '39',
+        discount: 'Скидка 12% на экскурсии с отправлением по 25.11.2023 и оплате до 25.11.2023',
+        addressLink: 'https://maps.app.goo.gl/WruWwwoDQ3f7eXnF8',
+        address: 'Минск',
+        description: 'В стоимость групповой экскурсии включено: <br>',
+        aboutLink: '#',
+        feedbackLink: '#'
+    },
+    {
+        src: 'images/11.webp',
+        seats: 'нет мест',
+        title: 'БЕЛАЗ - Бренд Беларуси',
+
+        date: '2024-02-03',
+        
         start: '10:00',
         duration: '4 ч 30 мин',
         symbol_euro: ' €',
@@ -261,9 +211,9 @@ const cardData = [
     {
         src: 'images/01.webp',
         seats: 'нет мест',
-        title: 'БЕЛАЗ - Бренд Беларуси',
+        title: 'БЕЛАЗ - Бревамвнд Беларуси',
 
-        date: '2024-02-02',
+        date: '2024-02-17',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -288,7 +238,32 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-08',
+        date: '2024-02-16',
+
+        start: '10:00',
+        duration: '4 ч 30 мин',
+        symbol_euro: ' €',
+        symbol_rub: ' ₽',
+        symbol_byn: ' BYN',
+        price_euro: '47',
+        price_ru: '47',
+        price_byn: '47',
+        price_kids_euro: '39',
+        price_kids_ru: '39',
+        price_kids_byn: '39',
+        discount: 'Скидка 12% на экскурсии с отправлением по 25.11.2023 и оплате до 25.11.2023',
+        addressLink: 'https://maps.app.goo.gl/WruWwwoDQ3f7eXnF8',
+        address: 'Минск',
+        description: 'В стоимость групповой экскурсии включено: <br>',
+        aboutLink: '#',
+        feedbackLink: '#'
+    },
+    {
+        src: 'images/01.webp',
+        seats: 'нет мест',
+        title: 'БЕЛАЗ - Бренд Беларуси',
+
+        date: '2024-02-12',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -313,7 +288,32 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-08',
+        date: '2024-02-18',
+        
+        start: '10:00',
+        duration: '4 ч 30 мин',
+        symbol_euro: ' €',
+        symbol_rub: ' ₽',
+        symbol_byn: ' BYN',
+        price_euro: '47',
+        price_ru: '47',
+        price_byn: '47',
+        price_kids_euro: '39',
+        price_kids_ru: '39',
+        price_kids_byn: '39',
+        discount: 'Скидка 12% на экскурсии с отправлением по 25.11.2023 и оплате до 25.11.2023',
+        addressLink: 'https://maps.app.goo.gl/WruWwwoDQ3f7eXnF8',
+        address: 'Минск',
+        description: 'В стоимость групповой экскурсии включено: <br>',
+        aboutLink: '#',
+        feedbackLink: '#'
+    },
+    {
+        src: 'images/01.webp',
+        seats: 'нет мест',
+        title: 'БЕЛАЗ - Бренд Беларуси',
+
+        date: '2024-02-18',
         
         start: '10:00',
         duration: '4 ч 30 мин',

@@ -16,12 +16,20 @@ scheduleButton.forEach((btn) => {
 /* flatpickr (DATEPICKER in the MAIN SEARCH) */
 
 flatpickr('#main-search-date', {
-  dateFormat: "m-d-Y",
+  dateFormat: "d-m-Y",
   mode: "range",
   "locale": "ru",
   // "locale": "be",
   // "locale": "en"
 });
+flatpickr('#booking-date', {
+  dateFormat: "d-m-Y",
+  mode: "range",
+  "locale": "ru",
+  // "locale": "be",
+  // "locale": "en"
+});
+
 
 
 /* SPLIDE */

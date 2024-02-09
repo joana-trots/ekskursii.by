@@ -1,7 +1,52 @@
 .booking
-    #li-for-panel-2
-        max-width: 50%
-        .panel-label
-            overflow: hidden
-            text-overflow: ellipsis
-            white-space: nowrap
+  #li-for-panel-1
+    max-width: 134px
+  #li-for-panel-2
+    max-width: calc(100% - 134px)
+    min-width: 50%
+    .panel-label
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+.booking-info
+  padding-bottom: 30px
+  .h6:not(.hidden-label)
+    margin-top: 20px
+.booking-info__about--time p,
+.booking-info__about--place p
+  display: flex
+  align-items: flex-start
+  gap: 4px
+  color: $dark-gray
+.booking-info__about--time p::before,
+.booking-info__about--place p::before
+  @extend %button-icon-20
+  opacity: 0.8
+.booking-info__about--time p::before
+  background-image: $icon_time
+.booking-info__about--place p::before
+  background-image: $icon_pin
+
+
+.booking-form__form-field
+  display: flex
+  flex-direction: column
+  gap: 10px
+  &--input
+    border: 0
+    box-shadow: $shadow-gray
+  .select-selected
+    width: calc(100% - 30px)
+    text-transform: lowercase
+  .select-items
+    text-transform: lowercase
+  &:has(#people-amount)
+    .select-selected
+      z-index: 4
+    .select-items
+      z-index: 3
+  &:has(#kids-amount)
+    .select-selected
+      z-index: 2
+    .select-items
+      z-index: 1

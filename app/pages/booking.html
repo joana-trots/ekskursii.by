@@ -3,7 +3,7 @@
         <section class="intro">
           <div class="container">
             <div class="intro__inner">
-              <h1 class="h2">Экскурсии по Беларуси</h1>
+              <h1 class="h2">Брестская крепость - Беловежская пуща</h1>
               <h6 class="h6">Бронирование экскурсии</h6>
               <div class="intro__cta">
                 <a class="btn simple-btn-arrow" href="#" title="Описание экскурсии">Описание экскурсии</a>
@@ -31,7 +31,82 @@
                 <div class="panels-wrapper">
                   <div class="panel-1">
                     <div class="panel__content">
-                      drfgfh
+                      <form class="booking-form" id="booking-group">
+                        
+                        <div class="booking-info booking-info__about">
+                          <p class="h4">Данные экскурсии</p>
+
+                          <div class="booking-form__form-field">
+                            <p class="h6">Время и место отправления</p>
+                            <div class="booking-info__about--time">
+                              <p>10:00</p>
+                            </div>
+                            <div class="booking-info__about--place">
+                              <p>
+                                <a href="https://maps.app.goo.gl/WruWwwoDQ3f7eXnF8">
+                                  г. Минск, ЖД вокзал (Минск-Пассажирский), 1 этаж (уровень города) около центрального эскалатора
+                                </a>
+                              </p>
+                            </div>
+                          </div>
+                          
+                          <div class="booking-form__form-field">
+                            <label class="h6" for="booking-date">Дата отправления</label>
+                            <span class="booking-form__form-field--input">
+                              <input type="text" name="booking-date" id="booking-date" placeholder="Выберите дату">
+                            </span>
+                          </div>
+                          <div class="booking-form__form-field">
+                            <label class="h6" for="people-amount">Количество человек</label>
+                            <span class="custom-select booking-form__form-field--input">
+                              <select type="text" name="people-amount" id="people-amount" value="1">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                              </select>
+                            </span>
+                          </div>
+                          <div class="booking-form__form-field">
+                            <label class="h6 hidden-label" for="kids-amount">Количество детей</label>
+                            <span class="custom-select booking-form__form-field--input">
+                              <select type="text" name="kids-amount" id="kids-amount">
+                                <option value="0">без детей</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                              </select>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="booking-info booking-info__profile">
+                          <p class="h4">Ваши данные</p>
+
+                          <div class="booking-form__form-field">
+                            <label class="h6" for="name">ФИО</label>
+                            <span class="booking-form__form-field--input">
+                              <input class="no-icon" type="text" name="name" id="name" placeholder="Введите ваше ФИО">
+                            </span>
+                          </div>
+                          <div class="booking-form__form-field">
+                            <label class="h6" for="people-amount">Номер телефона</label>
+                            <span class="booking-form__form-field--input">
+                              <input class="no-icon" type="text" name="phone" id="phone" placeholder="Введите номер телефона">
+                            </span>
+                          </div>
+                          <div class="booking-form__form-field">
+                            <label class="h6 hidden-label" for="kids-amount">Email</label>
+                            <span class="booking-form__form-field--input">
+                              <input class="no-icon" type="text" name="email" id="email" placeholder="Введите ваш email">
+                            </span>
+                          </div>
+                        </div>
+
+                      </form>
+                      
+                      
+
+
+
+
                     </div>
                   </div>
                   <div class="panel-2">
