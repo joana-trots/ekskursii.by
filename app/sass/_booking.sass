@@ -38,6 +38,7 @@
   .select-selected
     width: calc(100% - 30px)
     text-transform: lowercase
+    padding: 0 0 0 28px
   .select-items
     text-transform: lowercase
   &:has(#people-amount)
@@ -50,3 +51,9 @@
       z-index: 2
     .select-items
       z-index: 1
+  &:has(#country)
+    option
+      text-transform: captialize
+
+.booking-form__form-field:has([required]) label::before
+  content: '* '
