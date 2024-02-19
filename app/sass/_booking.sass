@@ -27,7 +27,6 @@
 .booking-info__about--place p::before
   background-image: $icon_pin
 
-
 .booking-form__form-field
   display: flex
   flex-direction: column
@@ -37,9 +36,11 @@
     box-shadow: $shadow-gray
   .select-selected
     width: calc(100% - 30px)
+    font-size: 16px
     text-transform: lowercase
   .select-items
     text-transform: lowercase
+    // font-size: 16px
   &:has(#people-amount)
     .select-selected
       z-index: 4
@@ -50,3 +51,13 @@
       z-index: 2
     .select-items
       z-index: 1
+  select#country 
+    & ~ .select-selected
+      text-transform: initial  
+    & ~ .select-items
+      text-transform: initial
+      a:first-child
+        color: $dark-gray
+        background-color: $light-gray
+.booking-form__form-field--input:has(.select-items .same-as-selected:first-child) .select-selected
+  color: $dark-gray
