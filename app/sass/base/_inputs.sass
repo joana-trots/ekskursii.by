@@ -1,75 +1,63 @@
-.custom-select
+[class$='form-field--input'],
+textarea
     position: relative
     display: flex
-    justify-content: flex-start
-    width: 72px
-    height: 100%
-    min-height: 40px
-    padding: 0
-    text-align: left
+    align-items: center
+    gap: 8px
+    width: 100%
+    padding: 14px 18px
+    border: 1px solid $dark-gray
     color: $black
-    font-family: 'Mulish', sans-serif
-    text-transform: uppercase
-    font-weight: 600
-    cursor: pointer
-    select
-        display: none
-        cursor: pointer
-    .select-selected
+    background-color: $white
+    border-radius: 30px
+    &:has(select)
+        padding: 13px 18px
+    &:not(.no-icon)::before
+        @extend %button-icon-20
+    &:has([name$="place"])::before,
+    &:has([name$="country"])::before
+        background-image: $icon_pin
+    &:has([name$="date"])::before
+        background-image: $icon_calendar
+    &:has([name$="types"])::before
+        background-image: $icon_filters
+    &:has([name$="people-amount"])::before
+        background-image: $icon_user
+    &:has([name$="kids-amount"])::before
+        background-image: $icon_kid
+    input:not([type='radio']):not([type='checkbox']),
+    select,
+    textarea
         position: absolute
-        display: flex
-        align-items: center
-        padding: 10px
-        width: 100%
-        height: 40px
-        z-index: 2
-        &::after 
-            @extend %button-icon-arrow
-            position: absolute
-            right: 10px
-            background-image: $icon_arrow_black
-            @extend %arrow-rotate-default
-        &.select-arrow-active::after 
-            @extend %arrow-rotate-back
- 
-    .select-items 
-        position: absolute
-        top: calc(100% - 20px)
-        left: 0
-        right: 0
-        padding-top: 20px
-        border-radius: 8px
-        background-color: $white
-        box-shadow: 0px 5px 12px -8px rgba(47, 47, 47, 0.24)
-        z-index: 0
-        a
-            display: block
-            padding: 8px
-            border-top: 1px solid $light-gray
-            cursor: pointer
-    .select-items a:hover, 
-    .same-as-selected 
-        background-color: $accent-yellow
-    .select-items a:last-child
-        border-bottom-left-radius: 8px
-        border-bottom-right-radius: 8px
-
-.schedule__options-item--sort.custom-select
+        height: 100%
+        background: transparent
+        padding-left: 28px
+        width: calc(100% - 28px)
+        font-size: 16px
+        &.no-icon
+            padding-left: 0
+        &::placeholder
+            color: $dark-gray
+            font-style: italic
+    textarea
+        padding: 14px 18px
+        border: 0
+[class$='__form-field']:has([class$='__form-field--date'])
+    display: flex
+    gap: 10px
+[class$='__form-field--date']
+    width: 100% 
+[class$='form__submit-btn']
+    @extend .cta-primary
+    display: flex
+    align-items: center
     justify-content: center
+    width: 100%
+    margin-top: 4px
+    font-size: 16px
+    box-shadow: none
+    transition: all 0.3s
     &::before
-        position: relative
-        z-index: 1
-    .select-selected
-        opacity: 0
-    .select-items
-        width: max-content
-        text-transform: lowercase
-@media screen and (max-width: 540px)
-    .lang-item.custom-select
-        width: 52px
-    .lang-item .select-selected
-        font-size: 12px
-        &::after
-            right: 0
-            width: 16px
-            height: 16px
+        @extend %button-icon-20
+        margin-right: 4px
+        background-image: $icon_search

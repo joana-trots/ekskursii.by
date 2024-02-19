@@ -118,7 +118,17 @@ $tab-count: 10
         @include active-tab-li-style
 
 
-
+.schedule__options-item--sort.custom-select
+    justify-content: center
+    &::before
+        position: relative
+        z-index: 1
+    .select-selected
+        opacity: 0
+    .select-items
+        width: max-content
+        text-transform: lowercase
+        
 .schedule__card-item
     position: relative
     display: flex

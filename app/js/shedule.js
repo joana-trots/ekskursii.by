@@ -184,7 +184,7 @@ const cardData = [
         feedbackLink: '#'
     },
     {
-        src: 'images/11.webp',
+        src: 'images/02.webp',
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 

@@ -40,8 +40,8 @@
     text-transform: lowercase
     padding: 0 0 0 28px
   .select-items
+    font-size: 16px
     text-transform: lowercase
-    // font-size: 16px
   &:has(#people-amount)
     .select-selected
       z-index: 4
@@ -52,19 +52,18 @@
       z-index: 2
     .select-items
       z-index: 1
-  select#country 
-    & ~ .select-selected
-      text-transform: initial  
-    & ~ .select-items
+  &:has(#country)
+    .select-items,
+    .select-selected
       text-transform: initial
-      a:first-child
-        color: $dark-gray
-        background-color: $light-gray
+    .select-items div:first-child
+      color: $dark-gray
+      background-color: $light-gray
+      cursor: disabled
+  textarea
+    font-size: 16px
 .booking-form__form-field--input:has(.select-items .same-as-selected:first-child) .select-selected
   color: $dark-gray
-  &:has(#country)
-    option
-      text-transform: captialize
-
+  font-style: italic
 .booking-form__form-field:has([required]) label::before
   content: '* '
