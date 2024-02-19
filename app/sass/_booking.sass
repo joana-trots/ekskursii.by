@@ -10,7 +10,7 @@
       white-space: nowrap
 .booking-info
   padding-bottom: 30px
-  .h6:not(.hidden-label)
+  .h6:not(.hidden-label):not(.checkmark-label)
     margin-top: 20px
 .booking-info__about--time p,
 .booking-info__about--place p
@@ -60,8 +60,6 @@
       color: $dark-gray
       background-color: $light-gray
       cursor: disabled
-  textarea
-    font-size: 16px
 .booking-form__form-field--input:has(.select-items .same-as-selected:first-child) .select-selected
   color: $dark-gray
   font-style: italic
