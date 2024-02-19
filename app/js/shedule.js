@@ -13,7 +13,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-10',
+        date: '2024-02-25',
 
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -38,7 +38,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-11',
+        date: '2024-02-21',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -63,7 +63,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бревамвнд Беларуси',
 
-        date: '2024-02-12',
+        date: '2024-02-22',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -88,7 +88,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-13',
+        date: '2024-02-23',
 
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -113,7 +113,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-14',
+        date: '2024-02-20',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -138,7 +138,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бревамвнд Беларуси',
 
-        date: '2024-02-13',
+        date: '2024-02-29',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -163,7 +163,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-15',
+        date: '2024-02-29',
 
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -188,7 +188,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-03',
+        date: '2024-02-23',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -213,7 +213,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бревамвнд Беларуси',
 
-        date: '2024-02-17',
+        date: '2024-02-27',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -238,7 +238,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-16',
+        date: '2024-02-26',
 
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -263,7 +263,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-12',
+        date: '2024-02-22',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -288,7 +288,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-18',
+        date: '2024-02-26',
         
         start: '10:00',
         duration: '4 ч 30 мин',
@@ -313,7 +313,7 @@ const cardData = [
         seats: 'нет мест',
         title: 'БЕЛАЗ - Бренд Беларуси',
 
-        date: '2024-02-18',
+        date: '2024-02-26',
         
         start: '10:00',
         duration: '4 ч 30 мин',

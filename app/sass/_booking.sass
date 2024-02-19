@@ -8,6 +8,13 @@
       overflow: hidden
       text-overflow: ellipsis
       white-space: nowrap
+  [class$='form__submit-btn']
+    @extend .card-item__cta
+    padding: 14px 28px
+  textarea
+    padding: 14px 18px
+    border: 0
+    font-size: 16px      
 .booking-info
   padding-bottom: 30px
   .h6:not(.hidden-label):not(.checkmark-label)
@@ -30,7 +37,7 @@
 .booking-form__form-field
   display: flex
   flex-direction: column
-  gap: 10px
+  gap: 10px 
   &--input
     border: 0
     box-shadow: $shadow-gray
@@ -60,8 +67,14 @@
       color: $dark-gray
       background-color: $light-gray
       cursor: disabled
-.booking-form__form-field--input:has(.select-items .same-as-selected:first-child) .select-selected
+  &:has(#promocode)
+    .booking-form__form-field--input
+
+
+.booking-form__form-field--input:has(#country):has(.select-items .same-as-selected:first-child) .select-selected
   color: $dark-gray
   font-style: italic
 .booking-form__form-field:has([required]) label::before
   content: '* '
+
+

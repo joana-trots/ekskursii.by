@@ -82,7 +82,9 @@ input.main-search__dropdown-btn
     transform: translate(0, 0)  
     z-index: 3
     overflow: hidden
-    [class$='submit-btn']::before
-        @extend %button-icon-20
-        margin-right: 4px
-        background-image: $icon_search
+    [class$='submit-btn']
+        width: 100%
+        &::before
+            @extend %button-icon-20
+            margin-right: 4px
+            background-image: $icon_search
