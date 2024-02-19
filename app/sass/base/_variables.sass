@@ -30,7 +30,7 @@ $icon_people-group: url(../images/sprite.svg#icons--people-group)
 $icon_gift: url(../images/sprite.svg#icons--gift)
 $icon_comments: url(../images/sprite.svg#icons--comments)
 $icon_like-green: url(../images/sprite.svg#icons--like-green)
-$icon_kid: url(../images/kid-icon.svg)
+$icon_kid: url(../images/kid-icon.webp)
 
 %flex-center
     display: flex
@@ -38,21 +38,19 @@ $icon_kid: url(../images/kid-icon.svg)
     justify-content: center
 %button-icon
     content: ''
+    position: relative
     display: block
     width: 18px
     height: 18px
     background-repeat: no-repeat
     background-position: center
     background-size: cover
-    flex: 0 0 18px 
+    flex: 0 0 18px
+    z-index: 4
 %button-icon-20
-    content: ''
-    display: block
+    @extend %button-icon
     width: 20px
     height: 20px
-    background-repeat: no-repeat
-    background-position: center
-    background-size: cover
     flex: 0 0 20px 
 %button-icon-arrow
     content: ''

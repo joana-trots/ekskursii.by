@@ -38,6 +38,7 @@
     width: calc(100% - 30px)
     font-size: 16px
     text-transform: lowercase
+    padding: 0 0 0 28px
   .select-items
     text-transform: lowercase
     // font-size: 16px
@@ -61,3 +62,9 @@
         background-color: $light-gray
 .booking-form__form-field--input:has(.select-items .same-as-selected:first-child) .select-selected
   color: $dark-gray
+  &:has(#country)
+    option
+      text-transform: captialize
+
+.booking-form__form-field:has([required]) label::before
+  content: '* '
