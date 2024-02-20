@@ -1,0 +1,140 @@
+<form class="booking-form" id="booking-group">
+                          
+  <div class="booking-info booking-info__about">
+    <p class="h4">Данные экскурсии</p>
+
+    <div class="booking-form__form-field">
+      <p class="h6">Время и место отправления</p>
+      <div class="booking-info__about--time">
+        <p>10:00</p>
+      </div>
+      <div class="booking-info__about--place">
+        <p>
+          <a href="https://maps.app.goo.gl/WruWwwoDQ3f7eXnF8">
+            г. Минск, ЖД вокзал (Минск-Пассажирский), 1 этаж (уровень города) около центрального эскалатора
+          </a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="booking-form__form-field">
+      <label class="h6" for="booking-date">Дата отправления</label>
+      <span class="booking-form__form-field--input">
+        <input type="text" name="booking-date" id="booking-date" placeholder="Выберите дату">
+      </span>
+    </div>
+    <div class="booking-form__form-field">
+      <label class="h6" for="people-amount">Количество человек</label>
+      <span class="custom-select booking-form__form-field--input">
+        <select type="text" name="people-amount" id="people-amount" value="1">
+          <option value="1">1 взрослый</option>
+          <option value="2">2 взрослых</option>
+        </select>
+      </span>
+    </div>
+    <div class="booking-form__form-field">
+      <label class="h6 hidden-label" for="kids-amount">Количество детей</label>
+      <span class="custom-select booking-form__form-field--input">
+        <select type="text" name="kids-amount" id="kids-amount">
+          <option value="0">без детей</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <div class="booking-info booking-info__profile">
+    <p class="h4">Ваши данные</p>
+
+    <div class="booking-form__form-field">
+      <label class="h6" for="name">ФИО</label>
+      <span class="booking-form__form-field--input">
+        <input class="no-icon" type="text" name="name" id="name" placeholder="Введите ваше ФИО" required>
+      </span>
+    </div>
+    <div class="booking-form__form-field">
+      <label class="h6" for="phone">Номер телефона</label>
+      <span class="booking-form__form-field--input">
+        <input class="no-icon" type="text" name="phone" id="phone" placeholder="Введите номер телефона">
+      </span>
+    </div>
+    <div class="booking-form__form-field">
+      <label class="h6" for="email">Email</label>
+      <span class="booking-form__form-field--input">
+        <input class="no-icon" type="email" name="email" id="email" placeholder="Введите ваш email" required>
+      </span>
+    </div>
+    <div class="booking-form__form-field">
+      <label class="h6" for="country">Страна проживания</label>
+      <span class="custom-select booking-form__form-field--input">
+        <select class="no-icon" type="text" name="country" id="country" value="0" required>
+          <option value="0">Выберите страну проживания</option>
+          <option value="1">Беларусь</option>
+          <option value="2">Россия</option>
+        </select>
+      </span>
+    </div>
+    <div class="booking-form__form-field">
+      <label class="h6" for="question">Задать вопрос по экскурсии</label>
+      <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="Задайте вопрос по экскурсии..."></textarea>
+    </div>
+  </div>
+
+  <div class="booking-info booking-info__payment">
+    <p class="h4">Оплата</p>
+
+    <div class="booking-form__form-field">
+      <p class="h6">Способ оплаты</p>
+      
+      <span class="booking-form__form-field--radio">
+        <input class="no-icon" type="radio" id="payment_1" name="payment" value="0">
+        <span class="checkmark"></span>
+        <label for="payment_1">Оплата картой на сайте</label>
+      </span>
+      <span class="booking-form__form-field--radio">
+        <input class="no-icon" type="radio" id="payment_2" name="payment" value="1">
+        <span class="checkmark"></span>
+        <label for="payment_2">Оплата на месте карта / наличные</label>
+      </span>
+      <div class="booking-form__hint-text">
+        <p class="hint-gray">В&nbsp;выходной день оплата на&nbsp;месте не&nbsp;принимается. Оплатить экскурсию нужно заранее онлайн или через инфокиоск.</p>
+        <p class="hint-gray">Бесплатная отмена бронирования за&nbsp;48&nbsp;часов.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="booking-info booking-info__promocode">
+    <div class="booking-form__form-field">
+      <label class="h6 hidden-label" for="promocode">
+        Промокод
+      </label>
+      <span class="booking-form__form-field--input">
+        <input class="no-icon" type="text" name="promocode" id="promocode" placeholder="У меня есть промокод">
+      </span>
+    </div>
+  </div>
+
+  <div class="booking-info booking-info__rules">
+    <div class="booking-form__form-field">
+      <span class="booking-form__form-field--checkbox">
+        <input class="no-icon" type="checkbox" name="payment_rules" id="payment_rules" checked>
+        <span class="checkmark"></span>
+        <label class="h6 checkmark-label" for="payment_rules">
+          Согласен(на) с <a href="https://pda.ekskursii.by/?Oplata_ekskursij_po_Belarusi" title="Правила бронирования и оплаты">Правилами бронирования и оплаты Ekskursii.by</a>
+        </label>
+      </span>
+      <span class="booking-form__form-field--checkbox">
+        <input class="no-icon" type="checkbox" name="privacy_policy" id="privacy_policy" checked>
+        <span class="checkmark"></span>
+        <label class="h6 checkmark-label" for="privacy_policy">
+          Согласен(на) с <a href="https://pda.ekskursii.by/?Politika_konfidencialinosti">Политикой конфиденциальности и Соглашением на обработку персональных данных</a>
+        </label>
+      </span>
+    </div>
+  </div>
+
+  <button class="btn booking-form__submit-btn" type="submit" value="Забронировать"></button>
+
+  <button class="booking-price" type="submit">К оплате: <span>320 BYN</span></button>
+</form>
