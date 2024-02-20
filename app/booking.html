@@ -148,7 +148,6 @@
                   <img src="images/sprite.svg#icons--socials--skype" alt="skype">
                 </a>
               </div>
-              <a class="btn modal__btn">Заказать обратный звонок</a>
             </div>
           </div>
         </div>
@@ -249,7 +248,7 @@
                           <div class="booking-form__form-field">
                             <label class="h6" for="email">Email</label>
                             <span class="booking-form__form-field--input">
-                              <input class="no-icon" type="text" name="email" id="email" placeholder="Введите ваш email" required>
+                              <input class="no-icon" type="email" name="email" id="email" placeholder="Введите ваш email" required>
                             </span>
                           </div>
                           <div class="booking-form__form-field">
@@ -268,9 +267,6 @@
                           </div>
                         </div>
 
-
-
-
                         <div class="booking-info booking-info__payment">
                           <p class="h4">Оплата</p>
 
@@ -285,15 +281,16 @@
                             <span class="booking-form__form-field--radio">
                               <input class="no-icon" type="radio" id="payment_2" name="payment" value="1">
                               <span class="checkmark"></span>
-                              <label for="payment_2">Оплата на месте картой или наличными</label>
+                              <label for="payment_2">Оплата на месте карта / наличные</label>
                             </span>
+                            <div class="booking-form__hint-text">
+                              <p class="hint-gray">В&nbsp;выходной день оплата на&nbsp;месте не&nbsp;принимается. Оплатить экскурсию нужно заранее онлайн или через инфокиоск.</p>
+                              <p class="hint-gray">Бесплатная отмена бронирования за&nbsp;48&nbsp;часов.</p>
+                            </div>
                           </div>
+                        </div>
 
-                          <div>
-                            <p class="hint hint-gray">В&nbsp;выходной день оплата на&nbsp;месте не&nbsp;принимается. Оплатить экскурсию нужно заранее онлайн или через инфокиоск.</p>
-                            <p class="hint hint-gray">Бесплатная отмена бронирования за&nbsp;48&nbsp;часов.</p>
-                          </div>
-
+                        <div class="booking-info booking-info__promocode">
                           <div class="booking-form__form-field">
                             <label class="h6 hidden-label" for="promocode">
                               Промокод
@@ -302,46 +299,132 @@
                               <input class="no-icon" type="text" name="promocode" id="promocode" placeholder="У меня есть промокод">
                             </span>
                           </div>
+                        </div>
 
+                        <div class="booking-info booking-info__rules">
                           <div class="booking-form__form-field">
                             <span class="booking-form__form-field--checkbox">
                               <input class="no-icon" type="checkbox" name="payment_rules" id="payment_rules" checked>
                               <span class="checkmark"></span>
                               <label class="h6 checkmark-label" for="payment_rules">
-                                Ознакомлен(а) с <a href="https://pda.ekskursii.by/?Oplata_ekskursij_po_Belarusi" title="Правила бронирования и оплаты">Правилами бронирования и оплаты Ekskursii.by</a> и принимаю их.
+                                Согласен(на) с <a href="https://pda.ekskursii.by/?Oplata_ekskursij_po_Belarusi" title="Правила бронирования и оплаты">Правилами бронирования и оплаты Ekskursii.by</a>
                               </label>
                             </span>
                             <span class="booking-form__form-field--checkbox">
                               <input class="no-icon" type="checkbox" name="privacy_policy" id="privacy_policy" checked>
                               <span class="checkmark"></span>
                               <label class="h6 checkmark-label" for="privacy_policy">
-                                Ознакомлен(а) с <a href="https://pda.ekskursii.by/?Politika_konfidencialinosti">Политикой конфиденциальности и Соглашением на обработку персональных данных</a> и принимаю их.
+                                Согласен(на) с <a href="https://pda.ekskursii.by/?Politika_konfidencialinosti">Политикой конфиденциальности и Соглашением на обработку персональных данных</a>
                               </label>
                             </span>
                           </div>
-                          
-                          
-                          
-                          <button class="btn booking-form__submit-btn" type="submit" value="Забронировать"></button>
-                          
-                          
                         </div>
 
-                      </form>
-                      
+                        <button class="btn booking-form__submit-btn" type="submit" value="Забронировать"></button>
 
+                        <button class="booking-price" type="submit">К оплате: <span>320 BYN</span></button>
+                      </form>
                     </div>
                   </div>
                   <div class="panel-2">
                     <div class="panel__content">
-                      567657u867>
+                      <form class="booking-form" id="booking-individual">
+                        
+                        <div class="booking-info booking-info__about">
+                          <p class="h4">Данные экскурсии</p>
+                          <div class="booking-form__form-field">
+                            <label class="h6" for="booking-date-individual">Дата отправления</label>
+                            <span class="booking-form__form-field--input">
+                              <input type="text" name="booking-date-individual" id="booking-date-individual" placeholder="Выберите дату">
+                            </span>
+                          </div>
+                          <div class="booking-form__form-field">
+                            <label class="h6" for="people-amount-individual">Количество человек</label>
+                            <span class="custom-select booking-form__form-field--input">
+                              <select type="text" name="people-amount-individual" id="people-amount-individual" value="1">
+                                <option value="1">1 взрослый</option>
+                                <option value="2">2 взрослых</option>
+                              </select>
+                            </span>
+                          </div>
+                          <div class="booking-form__form-field">
+                            <label class="h6 hidden-label" for="kids-amount-individual">Количество детей</label>
+                            <span class="custom-select booking-form__form-field--input">
+                              <select type="text" name="kids-amount-individual" id="kids-amount-individual">
+                                <option value="0">без детей</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                              </select>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="booking-info booking-info__profile">
+                          <p class="h4">Ваши данные</p>
+
+                          <div class="booking-form__form-field">
+                            <label class="h6" for="name-individual">ФИО</label>
+                            <span class="booking-form__form-field--input">
+                              <input class="no-icon" type="text" name="name-individual" id="name-individual" placeholder="Введите ваше ФИО" required>
+                            </span>
+                          </div>
+                          <div class="booking-form__form-field">
+                            <label class="h6" for="phone-individual">Номер телефона</label>
+                            <span class="booking-form__form-field--input">
+                              <input class="no-icon" type="text" name="phone-individual" id="phone-individual" placeholder="Введите номер телефона">
+                            </span>
+                          </div>
+                          <div class="booking-form__form-field">
+                            <label class="h6" for="email-individual">Email</label>
+                            <span class="booking-form__form-field--input">
+                              <input class="no-icon" type="email" name="email-individual" id="email-individual" placeholder="Введите ваш email" required>
+                            </span>
+                          </div>
+                          <div class="booking-form__form-field">
+                            <label class="h6" for="country-individual">Страна проживания</label>
+                            <span class="custom-select booking-form__form-field--input">
+                              <select class="no-icon" type="text" name="country-individual" id="country-individual" value="0"  required>
+                                <option value="0" disabled selected>Выберите страну проживания</option>
+                                <option value="1">Беларусь</option>
+                                <option value="2">Россия</option>
+                              </select>
+                            </span>
+                          </div>
+                          <div class="booking-form__form-field">
+                            <label class="h6 hidden-label" for="question-individual">Пожелания по маршруту, программе, питанию...</label>
+                            <textarea class="booking-form__form-field--input no-icon" id="question-individual" rows="1" placeholder="Пожелания по маршруту, программе, питанию..."></textarea>
+                          </div>
+                        </div>
+
+                        <div class="booking-info booking-info__rules">
+                          <div class="booking-form__form-field">
+                            <span class="booking-form__form-field--checkbox">
+                              <input class="no-icon" type="checkbox" name="payment_rules" id="payment_rules" checked>
+                              <span class="checkmark"></span>
+                              <label class="h6 checkmark-label" for="payment_rules">
+                                Согласен(на) с <a href="https://pda.ekskursii.by/?Oplata_ekskursij_po_Belarusi" title="Правила бронирования и оплаты">Правилами бронирования и оплаты Ekskursii.by</a>
+                              </label>
+                            </span>
+                            <span class="booking-form__form-field--checkbox">
+                              <input class="no-icon" type="checkbox" name="privacy_policy" id="privacy_policy" checked>
+                              <span class="checkmark"></span>
+                              <label class="h6 checkmark-label" for="privacy_policy">
+                                Согласен(на) с <a href="https://pda.ekskursii.by/?Politika_konfidencialinosti">Политикой конфиденциальности и Соглашением на обработку персональных данных</a>
+                              </label>
+                            </span>
+                          </div>
+                        </div>
+
+                        <button class="btn booking-form__submit-btn" type="submit" value="Забронировать"></button>
+
+                      </form>
                     </div>
                   </div>
                  
                 </div>
               </div>
               
-              <a class="all-btn btn" href="#" title="Оставить заявку">Все экскурсии</a>
+              
             </div>
           </div>
         </div>

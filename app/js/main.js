@@ -1,6 +1,4 @@
 /* SCHEDULE TOGGLE CARDS\TABLE */
-
-
 var scheduleDisplay = document.querySelectorAll('.schedule__display'),
     scheduleButton  = document.querySelectorAll('.schedule__options-item--display');
 scheduleButton.forEach((btn) => {
@@ -14,26 +12,16 @@ scheduleButton.forEach((btn) => {
 
 
 /* flatpickr (DATEPICKER in the MAIN SEARCH) */
-
-flatpickr('#main-search-date', {
+flatpickr('[id*="-date"]', {
   dateFormat: "d-m-Y",
   mode: "range",
   "locale": "ru",
   // "locale": "be",
   // "locale": "en"
 });
-flatpickr('#booking-date', {
-  dateFormat: "d-m-Y",
-  mode: "range",
-  "locale": "ru",
-  // "locale": "be",
-  // "locale": "en"
-});
-
 
 
 /* SPLIDE */
-
 var elms = document.getElementsByClassName('splide');
 for ( var i = 0; i < elms.length; i++ ) {
   new Splide(elms[i], {

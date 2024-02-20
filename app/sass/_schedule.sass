@@ -1,5 +1,3 @@
-$tab-count: 10
-
 .schedule__wrapper-cards
     display: flex
     flex-direction: column
@@ -231,8 +229,7 @@ $tab-count: 10
         max-height: 0
         margin-bottom: 0
         opacity: 0
-        transform: translate(0, 50%)
-        transition: all 0.25s ease-in-out
+        
     &:has([type="checkbox"]:checked)::before
         @extend %arrow-rotate-default
         
@@ -242,6 +239,8 @@ $tab-count: 10
     gap: 12px
     max-height: 800px
     margin-bottom: 12px
+    opacity: 1
+    transition: all 0.25s ease-in-out
     animation: flipdown 0.5s ease both
     
 .card-item__additional-info 
@@ -268,8 +267,6 @@ $tab-count: 10
     border-radius: 10px
     border: 1px solid $accent-yellow
     background: #FFFBEE
-    @media screen and (max-width: 540px)
-        font-size: 13px
     &::before
         @extend %button-icon
         width: 26px
@@ -278,6 +275,8 @@ $tab-count: 10
         flex: 0 0 26px
     p
         flex: 1 0 0
+.card-item__hint-text p
+    margin-top: 0
 .card-item__price
     right: 16px
     top: 94px

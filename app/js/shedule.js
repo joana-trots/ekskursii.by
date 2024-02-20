@@ -461,7 +461,7 @@ const createCards = (data) => {
         moreDates.textContent = 'Другие даты';
 
         const discount = document.createElement('div');
-        discount.className ='card-item__discount';
+        discount.className ='card-item__discount card-item__hint-text';
         const parDiscount = document.createElement('p');
         parDiscount.textContent = item.discount;
         discount.append(parDiscount);

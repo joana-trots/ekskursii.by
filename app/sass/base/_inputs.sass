@@ -14,16 +14,16 @@ textarea
         padding: 13px 18px
     &:not(.no-icon)::before
         @extend %button-icon-20
-    &:has([name$="place"])::before,
-    &:has([name$="country"])::before
+    &:has([name*="place"])::before,
+    &:has([name*="country"])::before
         background-image: $icon_pin
-    &:has([name$="date"])::before
+    &:has([name*="date"])::before
         background-image: $icon_calendar
-    &:has([name$="types"])::before
+    &:has([name*="types"])::before
         background-image: $icon_filters
-    &:has([name$="people-amount"])::before
+    &:has([name*="people-amount"])::before
         background-image: $icon_user
-    &:has([name$="kids-amount"])::before
+    &:has([name*="kids-amount"])::before
         background-image: $icon_kid
     input:not([type='radio']):not([type='checkbox']),
     select,
@@ -36,12 +36,13 @@ textarea
         font-size: 16px
         &.no-icon
             padding-left: 0
-        &::placeholder
-            color: $dark-gray
-            font-style: italic
-textarea::placeholder
+[type='radio'] ~ label,
+[type='checkbox'] ~ label
+    font-size: 16px
+::placeholder
     color: $dark-gray
     font-style: italic
+    font-weight: 600
 [class$='__form-field']:has([class$='__form-field--date'])
     display: flex
     gap: 10px
@@ -52,7 +53,7 @@ textarea::placeholder
     display: flex
     align-items: center
     justify-content: center
-    margin: 4px auto
+    margin: 4px auto 0
     font-size: 16px
     box-shadow: none
     transition: all 0.3s
@@ -65,10 +66,13 @@ textarea::placeholder
         position: absolute
         opacity: 0
         cursor: pointer
-        height: 0
-        width: 0
-        &:checked ~ .checkmark::after
-            display: block
+        height: 30px
+        width: 30px
+        z-index: 1
+        &:checked ~ .checkmark
+            background-color: $light-gray
+            &::after
+                display: block
     .checkmark
         position: absolute
         top: 1px

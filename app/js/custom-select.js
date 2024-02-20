@@ -46,6 +46,7 @@ var x, i, j, l, ll, selElmnt, a, b, c, notGenerate, val;
                 if (selElmnt.options[j].selected) {
                     c.setAttribute('class', 'same-as-selected');
                 }
+                console.log(selElmnt.options[j].disabled);
                 c.addEventListener('click', function(e) {
                     /* When an item is clicked, update the original select box,
                     and the selected item: */
