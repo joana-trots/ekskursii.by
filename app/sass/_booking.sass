@@ -56,6 +56,15 @@
       z-index: 6
     .select-items
       z-index: 5
+    &:has(.select-arrow-active)::after
+      content: ''
+      position: absolute
+      top: 20px
+      left: 0
+      display: block
+      background-color: $white
+      height: 30px
+      width: 100%
   &:has([id*='kids-amount'])
     .select-selected,
     &::before

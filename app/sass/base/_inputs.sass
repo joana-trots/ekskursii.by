@@ -14,16 +14,16 @@ textarea
         padding: 13px 18px
     &:not(.no-icon)::before
         @extend %button-icon-20
-    &:has([name*="place"])::before,
-    &:has([name*="country"])::before
+    &:has([id*="place"])::before,
+    &:has([id*="country"])::before
         background-image: $icon_pin
-    &:has([name*="date"])::before
+    &:has([id*="date"])::before
         background-image: $icon_calendar
-    &:has([name*="types"])::before
+    &:has([id*="types"])::before
         background-image: $icon_filters
-    &:has([name*="people-amount"])::before
+    &:has([id*="people"])::before
         background-image: $icon_user
-    &:has([name*="kids-amount"])::before
+    &:has([id*="kids"])::before
         background-image: $icon_kid
     input:not([type='radio']):not([type='checkbox']),
     select,
