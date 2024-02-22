@@ -6,7 +6,14 @@ button,
     font-family: 'Mulish', sans-serif
     cursor: pointer
     transition: all 0.3s
-    
+
+button[class$='form__submit-btn']::after,
+button.btn::after
+    content: attr(value)
+a[class$='form__submit-btn']::after,
+a.btn::after
+    content: attr(title)
+
 .cta-primary
     position: relative
     @extend %flex-center
@@ -25,20 +32,13 @@ button,
         padding: 14px
 
 .cta-secondary
-    position: relative
-    @extend %flex-center
-    padding: 14px 18px
+    @extend .cta-primary
     background: $white
     border: 1px solid $white
-    border-radius: 30px
     box-shadow: $shadow-gray
-    text-align: center
-    font-weight: 700
     &:hover
         border: 1px solid $black
         box-shadow: none
-    @media screen and (max-width: 540px)
-        padding: 14px
 
 .more-btn
     position: relative
@@ -80,12 +80,6 @@ button,
         border-color: $additional-gray
         background-color: $light-gray
 
-.simple-btn-arrow
-    @extend .simple-btn
-    &::after
-        @extend %button-icon
-        margin-left: 4px
-        background-image: $icon_arrow-right
 .simple-secondary-btn
     @extend .simple-btn
     padding: 0
@@ -96,17 +90,19 @@ button,
     &:hover
         border-color: $black
         background: none
-    &::after
-        @extend %button-icon
-        margin-left: 2px
-        background-image: $icon_arrow-right
+
+.arrow-btn::before
+    @extend %button-icon
+    margin-left: 2px
+    background-image: $icon_arrow-right
+    order: 2
 
 .all-btn
     @extend .cta-primary
     width: fit-content
     margin: 20px auto 0
     font-size: 16px
-    &::after
+    &.arrow-btn::before
         @extend %button-icon-20
         margin-left: 4px
         background-image: $icon_arrow-right
