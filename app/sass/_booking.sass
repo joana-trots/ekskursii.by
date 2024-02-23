@@ -1,21 +1,11 @@
 .booking
-  #li-for-panel-1
-    max-width: 134px
-  #li-for-panel-2
-    max-width: calc(100% - 134px)
-    min-width: 50%
-    .panel-label
-      overflow: hidden
-      text-overflow: ellipsis
-      white-space: nowrap
   [class$='form__submit-btn']
     @extend .card-item__cta
     padding: 14px 28px
     margin-top: 0
   textarea
-    padding: 14px 18px
     border: 0
-    font-size: 16px      
+    font-size: 16px
 .booking-info
   padding-bottom: 30px
   .h6:not(.hidden-label):not(.checkmark-label)
@@ -56,15 +46,6 @@
       z-index: 6
     .select-items
       z-index: 5
-    &:has(.select-arrow-active)::after
-      content: ''
-      position: absolute
-      top: 20px
-      left: 0
-      display: block
-      background-color: $white
-      height: 30px
-      width: 100%
   &:has([id*='kids-amount'])
     .select-selected,
     &::before
@@ -108,7 +89,7 @@
   display: block
   position: sticky
   bottom: 0
-  width: calc(100vw)
+  width: calc(100vw - 16px)
   padding: 18px 0
   margin: 30px auto -60px -16px
   text-align: center
@@ -118,4 +99,6 @@
   z-index: 7
   span
     font-weight: 800
+  @media screen and (max-width: 430px)
+    width: 100vw
 

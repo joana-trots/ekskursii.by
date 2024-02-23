@@ -5,13 +5,12 @@ textarea
     align-items: center
     gap: 8px
     width: 100%
+    min-height: 46px
     padding: 14px 18px
     border: 1px solid $dark-gray
     color: $black
     background-color: $white
     border-radius: 30px
-    &:has(select)
-        padding: 13px 18px
     &:not(.no-icon)::before
         @extend %button-icon-20
     &:has([id*="place"])::before,
@@ -86,8 +85,8 @@ textarea
             content: ''
             position: absolute
             display: none
-    input[name='payment_rules'],
-    input[name='privacy_policy']
+    input[id='payment_rules'],
+    input[id='privacy_policy']
         & ~ label
             font-size: 13px
             font-weight: 600

@@ -45,7 +45,7 @@ const cardData = [
         symbol_euro: ' €',
         symbol_rub: ' ₽',
         symbol_byn: ' BYN',
-        pprice_euro: '47',
+        price_euro: '47',
         price_ru: '4700',
         price_byn: '150',
         price_kids_euro: '39',
@@ -510,7 +510,7 @@ const createCards = (data) => {
         cardButtons.className ='card-item__buttons';
         
         const descriptionBtn = document.createElement('a');
-        descriptionBtn.className ='card-item__description-btn simple-btn-arrow btn';
+        descriptionBtn.className ='card-item__description-btn arrow-btn btn';
         descriptionBtn.textContent = 'Описание экскурсии';
         descriptionBtn.href = item.aboutLink;
         

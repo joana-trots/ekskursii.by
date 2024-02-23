@@ -42,80 +42,6 @@
     &::before
         display: none
 
-.schedule__tabs,
-.booking__tabs
-    position: relative
-    margin-top: 20px
-    z-index: 1
-    label.panel-label
-        user-select: none
-        display: block
-        width: 100%
-        color: $dark-gray
-        border-radius: 24px
-        padding: 11px
-        cursor: pointer
-        transition: all 0.6s
-        font-size: 14px
-        font-weight: 700
-        &:hover
-            color: $black
-    .panels
-        padding: 30px 0
-    .panels-wrapper
-        margin: 0 auto
-        width: 100%
-    .panel__content
-        box-sizing: border-box
-        max-height: 0
-        opacity: 0
-        transition: opacity 0.6s
-        @extend .clearfix
-    .panel-radios
-        display: none
-    .tabs-list
-        @extend %flex-center
-        background: $light-gray
-        border-radius: 30px
-        li
-            flex: 1
-            text-align: center
-            text-transform: lowercase
-    .h2
-        text-align: center
-
-@mixin active-label
-    background-color: $accent-yellow
-    color: $black
-    
-@mixin active-tab-li-style
-    pointer-events: none
-    cursor: default
-    label.panel-label
-        @include active-label
-
-// active menu li style
-@mixin active-menu-li-style
-    max-height: $menu-item-height
-    opacity: 1
-    label.panel-label
-        @include active-label
-        @include active-menu-label
- 
-// active panel style
-@mixin active-panel-style
-    .panel__content
-        max-height: initial
-        opacity: 1
-
-// panel toggling
-@for $i from 1 through $tab-count
-    #panel-#{$i}-ctrl:checked ~ .panels .panel-#{$i}
-        @include active-panel-style
-    #panel-#{$i}-ctrl:checked ~ .tabs-list #li-for-panel-#{$i}
-        @include active-tab-li-style
-
-
 .schedule__options-item--sort.custom-select
     justify-content: center
     &::before
@@ -316,25 +242,10 @@
     box-shadow: none
 ul.card-item__price-include
     li
-        position: relative
-        padding-left: 12px
-        display: flex
-        flex-direction: row
-        &::before
-            position: absolute
-            left: 0
-            top: 8px
-            content: ''
-            display: block
-            margin-right: 6px
-            width: 3px
-            height: 3px
-            border-radius: 50%
-            background-color: $dark-gray
+        @extend ul.list li
 
-.schedule .more-btn
+.schedule .more-btns
     margin: auto
-
 
 .schedule__options-item--display-table
     &::before
@@ -366,7 +277,7 @@ ul.card-item__price-include
         flex: 1
         p
             display: block
-            text-align: right
+            text-align: left
             font-size: 14px
             font-weight: 700
             color: $black
@@ -375,7 +286,7 @@ ul.card-item__price-include
     .card-item__cta
         width: 36px
         height: 36px
-        &::before
+        &::after
             @extend %button-icon
             content: ''
             width: 24px
@@ -439,6 +350,7 @@ ul.card-item__price-include
         display: flex
         gap: 10px
         padding: 0 12px 28px
+        border-bottom: 1px solid $accent-yellow
         p
             color: $dark-gray
             &:nth-child(1)
