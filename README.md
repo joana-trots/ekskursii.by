@@ -3,6 +3,12 @@
 ## Build: `gulp build`
 ## Deploy: `npm run deploy`
 
+## Live:
+### https://joana-trots.github.io/ekskursii.by/
+### https://joana-trots.github.io/ekskursii.by/booking.html
+### https://joana-trots.github.io/ekskursii.by/about.html
+
+
 ## May be useful:
 ### https://codepen.io/abergin/pen/BaKVWd?editors=1100 (Accordion)
 ### https://splidejs.com/ (Splide slider)
