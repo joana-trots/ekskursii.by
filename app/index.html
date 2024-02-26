@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekskursii.by</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container header__container--primary">
+          <nav class="menu__primary">
+            <a class="header__logo" href="/" title="Ekskursii.by">
+              <img src="images/sprite.svg#logo" alt="logo">
+            </a>
+            <ul class="menu__primary-list">
+              <li class="menu__primary-list--item phone-item modal-open">
+                <div class="menu__primary-list--link" id="phone-item">
+                  <img src="images/sprite.svg#icons--socials--messengers" alt="messengers">
+                  <span>+375 29-756-66-65</span>
+                </div>
+              </li>
+              <li class="menu__primary-list--item account-item">
+                <a class="menu__primary-list--link" href="#product" title="phone">
+                  <span>Заявки</span>
+                </a>
+              </li>
+              <li class="menu__primary-list--item">
+                <a class="menu__primary-list--link" href="#product" title="О нас">
+                  <span>О нас</span>
+                </a>
+              </li>
+              <li class="menu__primary-list--item">
+                <a class="menu__primary-list--link" href="#product" title="Контакты">
+                  <span>Контакты</span>
+                </a>
+              </li>
+              <li class="menu__primary-list--item dropdown-item lang-item custom-select">
+                <select class="menu__primary-list--link" id="lang-item" name="lang-item">
+                  <option value="byn">рус</option>
+                  <option value="rub">бел</option>
+                  <option value="euro">en</option>
+                </select>
+              </li>
+              <li class="menu__primary-list--item dropdown-item currency-item custom-select">
+                <select class="menu__primary-list--link" id="currency-item" name="currency-item">
+                  <option value="byn">BYN</option>
+                  <option value="rub">₽</option>
+                  <option value="euro">€</option>
+                </select>
+              </li>
+            </ul>
+        
+            <div class="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
+        </div>
+        <div class="container header__container--mobile">
+          <nav class="menu__mobile">
+            <ul class="menu__mobile-list">
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="#">Личный кабинет</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="#">График экскурсий</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Групповые экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Индивидуальные экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Корпоративные экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="#">Больше экскурсий</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Как заказать?</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Частые вопросы</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="#">Все об экскурсиях</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Контакты</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <ul>
+                  <li>
+                    <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                      <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                    </a>
+                    <a href="https://telegram.me/ekskursii" title="telegram">
+                      <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                    </a>
+                    <a href="viber://add?number=375297566665" title="viber">
+                      <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                    </a>
+                    <a href="skype:+375297566665?add" title="skype">
+                      <img src="images/sprite.svg#icons--socials--skype" alt="skype">
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="btn modal__btn menu__mobile-list--link">Заказать обратный звонок</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="contacts-modal modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Телефоны</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            <div class="modal__main">
+              <a href="tel:+375173944913">+375 (17) 394-49-13</a>
+              <a href="tel:+375291903216">+375 (29) 190-32-16 (А1)</a>
+              <a href="tel:+375297566665">+375 (29) 756-66-65 (МТС)</a>
+            </div>
+            <div class="modal__footer">
+              <p>Мы в мессенджерах</p>
+              <div class="modal__footer--social-icons">
+                <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                  <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                </a>
+                <a href="https://telegram.me/ekskursii" title="telegram">
+                  <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                </a>
+                <a href="viber://add?number=375297566665" title="viber">
+                  <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                </a>
+                <a href="skype:+375297566665?add" title="skype">
+                  <img src="images/sprite.svg#icons--socials--skype" alt="skype">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="intro">
+            <div class="container">
+              <div class="intro__inner">
+                <h1 class="h1">Экскурсии по Беларуси</h1>
+                <p class="intro__description">
+                  Ежегодно организацию <span>отдыха в&nbsp;Беларуси</span> нам
+                  доверяют более <span>20&nbsp;тысяч</span> клиентов
+                </p>
+                <div class="intro__cta">
+                  <a class="btn intro__btn--primary" href="#" title="Оставить заявку"></a>
+                  <a class="btn intro__btn--secondary" href="#" title="График экскурсий"></a>
+                </div>
+              </div>
+            </div>
+        </section>
+        <section class="main-search">
+          <div class="container">
+            <div class="main-search__inner">
+              <input class="main-search__dropdown-btn" id="main-search__dropdown-btn" type="checkbox">
+              <h2 class="h2">Поиск</h2>
+              <span class="main-search__dropdown-arrow"></span>
+              <form class="search-form" id="search-form">
+                <div class="search-form__form-field">
+                  <label class="hidden-label" for="main-search-place">Место</label>
+                  <span class="search-form__form-field--input">
+                    <input type="text" name="place" id="main-search-place" placeholder="Место">
+                  </span>
+                </div>
+                <div class="search-form__form-field">
+                  <div class="search-form__form-field--date">
+                    <label class="hidden-label" for="main-search-date">Выберите дату</label>
+                    <span class="search-form__form-field--input">
+                      <input type="text" name="date" id="main-search-date" placeholder="Выберите дату">
+                    </span>
+                  </div>
+                </div>
+                <div class="search-form__form-field">
+                  <label class="hidden-label" for="main-search-types">Виды экскурсий</label>
+                  <span class="search-form__form-field--input">
+                    <select name="types" id="main-search-types">
+                      <option>Групповые</option>
+                      <option>Индивидуальные</option>
+                    </select>
+                  </span>
+                </div>
+                <button class="btn search-form__submit-btn" value="Искать"></button>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section class="popular">
+          <div class="container">
+            <div class="popular__inner">
+              <h2 class="h2">Популярные места</h2>
+              <ul class="popular__tags-group">
+                <li class="popular__tags-group--tag">
+                  <a class="popular__tags-group--tag-link" title="Хатынь">Хатынь</a>
+                </li>
+                <li class="popular__tags-group--tag">
+                  <a class="popular__tags-group--tag-link" title="Беловежская пуща">Беловежская пуща</a>
+                </li>
+                <li class="popular__tags-group--tag">
+                  <a class="popular__tags-group--tag-link" title="Несвиж">Несвиж</a>
+                </li>
+                <li class="popular__tags-group--tag">
+                  <a class="popular__tags-group--tag-link" title="Вечерний Минск">Вечерний Минск</a>
+                </li>
+                <li class="popular__tags-group--tag">
+                  <a class="popular__tags-group--tag-link" title="Мир">Мир</a>
+                </li>
+                <li class="popular__tags-group--tag">
+                  <a class="popular__tags-group--tag-link" title="Гродно">Гродно</a>
+                </li>
+                <li class="more-btn popular__tags-group--tag">
+                  <input class="popular__tags-group--tag-link" type="checkbox" id="more-btn" name="more-btn">
+                  <label for="more-btn">Еще...</label>
+                </li>
+                <li class="popular__tags-group--tag">
+                  <a class="popular__tags-group--tag-link" title="Хатынь">Хатынь</a>
+                </li>
+                <li class="popular__tags-group--tag">
+                  <a class="popular__tags-group--tag-link" title="Беловежская пуща">Беловежская пуща</a>
+                </li>
+                <li class="popular__tags-group--tag">
+                  <a class="popular__tags-group--tag-link" title="Несвиж">Несвиж</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="promo">
+          <div class="container">
+            <div class="promo__inner splide">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <div class="splide__slide--wrapper">
+                      <img src="images/promo_slider_1.webp" alt="promo image">
+                      <div class="promo__text-block">
+                        <h3 class="h3">Новогодние каникулы<br><span>в&nbsp;Беларуси</span></h3>
+                        <a class="btn cta-secondary">Маршруты и туры</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="splide__slide--wrapper">
+                      <img src="images/promo_slider_2.webp" alt="promo image">
+                      <div class="promo__text-block">
+                        <h3 class="h3">Брестская крепость - Беловежская пуща<br><span>2&nbsp;декабря</span></h3>
+                        <a class="btn cta-secondary">Забронировать</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="schedule">
+          <div class="container">
+            <div class="schedule__inner">
+              <h2>Ближайшие экскурсии по Минску и всей Беларуси</h2>
+              <div class="schedule__options">
+                <div class="schedule__options-item schedule__options-item--filters modal-open">Фильтры</div>
+                <div class="schedule__options-item-wp">
+                  <div class="schedule__options-item schedule__options-item--display"></div>
+                  <div class="schedule__options-item schedule__options-item--sort custom-select">
+                    <select id="sort" name="sort">
+                      <option value="byn">по цене</option>
+                      <option value="rub">по названию</option>
+                    </select>
+                  </div>
+                  <div class="schedule__options-item schedule__options-item--currency custom-select">
+                    <select id="currency" name="currency">
+                      <option value="byn">BYN</option>
+                      <option value="rub">₽</option>
+                      <option value="euro">€</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="schedule__tabs">
+                <input id="panel-1-ctrl" class="panel-radios" type="radio" name="tab-radios" checked>
+                <input id="panel-2-ctrl" class="panel-radios" type="radio" name="tab-radios">
+                <input id="panel-3-ctrl" class="panel-radios" type="radio" name="tab-radios">
+                <ul class="tabs-list">
+                  <li id="li-for-panel-1">
+                    <label class="panel-label" for="panel-1-ctrl">на неделю</label>
+                  </li>
+                  <li id="li-for-panel-2">
+                    <label class="panel-label" for="panel-2-ctrl">Сегодня</label>
+                  </li>
+                  <li id="li-for-panel-3">
+                    <label class="panel-label" for="panel-3-ctrl">Завтра</label>
+                  </li>
+                </ul>
+                <!-- THE PANELS -->
+                <div class="panels">
+                  <div class="panels-wrapper">
+                    <div class="panel-1">
+                      <div class="panel__content">
+                        <div class="schedule__display">
+                          <div class="schedule__display--table-header">
+                            <p>Дата</p>
+                            <p>Название</p>
+                            <p>Цена</p>
+                          </div>
+                          <div class="schedule__wrapper-cards"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel-2">
+                      <div class="panel__content">
+                        <div class="schedule__display">
+                          <div class="schedule__wrapper-cards"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel-3">
+                      <div class="panel__content">
+                        <div class="schedule__display">
+                          <div class="schedule__wrapper-cards"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="more-btn">
+                  <input type="checkbox" id="card-more-btn" name="card-more-btn">
+                  <label for="card-more-btn">Еще...</label>
+                </div>
+                <a class="all-btn btn arrow-btn" href="#" title="Все экскурсии"></a>
+              </div>
+            </div>
+          </div>
+          <div class="filters-modal modal">
+            <div class="modal-content">
+              <div class="modal__header">
+                <h2 class="h2">Фильтры</h2>
+                <button class="btn modal-close">
+                  <img src="images/sprite.svg#icons--cross" alt="close">
+                </button>
+              </div>
+              <div class="modal__main">
+                <div class="filters-item">
+                  <p class="filters-item__title">Город отправления</p>
+                  <ul class="filters-item__list">
+                    <li class="filters-item__list--item">  
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-1">
+                      <label for="filters-item__input-1" class="filters-item__label">Брест</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-2">
+                      <label for="filters-item__input-2" class="filters-item__label">Витебск</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-3">
+                      <label for="filters-item__input-3" class="filters-item__label">Гомель</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-4">
+                      <label for="filters-item__input-4" class="filters-item__label">Гродно</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-5">
+                      <label for="filters-item__input-5" class="filters-item__label">Минск</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-6">
+                      <label for="filters-item__input-6" class="filters-item__label">Могилев</label>
+                    </li>          
+                  </ul>
+                </div>
+          
+                <div class="filters-item">
+                  <p class="filters-item__title">Тип экскурсии</p>
+                  <ul class="filters-item__list">
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-7">
+                      <label for="filters-item__input-7" class="filters-item__label">групповая сборная экскурсия</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-8">
+                      <label for="filters-item__input-8" class="filters-item__label">индивидуальная экскурсия / тур</label>
+                    </li>        
+                  </ul>
+                </div>
+          
+                <div class="filters-item">
+                  <p class="filters-item__title">Продолжительность экскурсии</p>
+                  <ul class="filters-item__list">
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-9">
+                      <label for="filters-item__input-9" class="filters-item__label">до 6 часов</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-10">
+                      <label for="filters-item__input-10" class="filters-item__label">1 день</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-11">
+                      <label for="filters-item__input-11" class="filters-item__label">2 дня</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-12">
+                      <label for="filters-item__input-12" class="filters-item__label">3 дня</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-13">
+                      <label for="filters-item__input-13" class="filters-item__label">3 дня  - 7 дней</label>
+                    </li>
+                  </ul>
+                </div>
+          
+                <div class="filters-item">
+                  <p class="filters-item__title">Цена за 1 человека</p>
+                  <ul class="filters-item__list">
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-14">
+                      <label for="filters-item__input-14" class="filters-item__label">
+                        Менее <span>100</span> <span>BYN</span>
+                      </label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-15">
+                      <label for="filters-item__input-15" class="filters-item__label">
+                        <span>100</span> - <span>250</span> <span>BYN</span>
+                      </label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-16">
+                      <label for="filters-item__input-16" class="filters-item__label">
+                        Более <span>250</span> <span>BYN</span>
+                      </label>
+                    </li>        
+                  </ul>
+                </div>
+          
+                <div class="filters-item">
+                  <p class="filters-item__title">Тема экскурсии</p>
+                  <ul class="filters-item__list">
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-17">
+                      <label for="filters-item__input-17" class="filters-item__label">Анимации</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-18">
+                      <label for="filters-item__input-18" class="filters-item__label">Военно-патриотические</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-19">
+                      <label for="filters-item__input-19" class="filters-item__label">Для школьников</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-20">
+                      <label for="filters-item__input-20" class="filters-item__label">На производство</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-21">
+                      <label for="filters-item__input-21" class="filters-item__label">Новый год и Рождество</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-22">
+                      <label for="filters-item__input-22" class="filters-item__label">По святым местам</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-23">
+                      <label for="filters-item__input-23" class="filters-item__label">Туры в Беларусь</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-24">
+                      <label for="filters-item__input-24" class="filters-item__label">Туры выходного дня</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-25">
+                      <label for="filters-item__input-25" class="filters-item__label">Экологические</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-26">
+                      <label for="filters-item__input-26" class="filters-item__label">Экскурсии по Минску</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-27">
+                      <label for="filters-item__input-27" class="filters-item__label">Экскурсии по замкам</label>
+                    </li>
+                    <li class="filters-item__list--item">
+                      <input type="checkbox" class="filters-item__input" id="filters-item__input-28">
+                      <label for="filters-item__input-28" class="filters-item__label">Этнографические</label>
+                    </li>
+                  </ul>
+                </div>
+                  
+              </div>
+              
+              <div class="modal__footer">
+                <a class="btn modal__btn">Искать</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="feedback">
+          <div class="container">
+            <div class="feedback__inner">
+              <div class="container">
+                <div class="feedback__inner--header">
+                  <h2>Отзывы</h2>
+                  <a class="btn simple-secondary-btn arrow-btn" href="#" title="Все отзывы"></a>
+                </div>
+              </div>
+              <div class="splide">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <div class="splide__slide--wrapper">
+                        <div class="feedback__userinfo">
+                          <p class="feedback__userinfo--name">
+                            Яна <span class="feedback__userinfo--city separator-left">Москва</span>
+                          </p>
+                          <p class="feedback__userinfo--date">5 ноября 2023</p>
+                        </div>
+                        <div class="feedback__rateinfo">
+                          <p class="feedback__rateinfo--title">
+                            <a href="#" title="Мир - Несвиж">Мир - Несвиж</a>
+                          </p>
+                          <div class="feedback__rateinfo--rate">9.0</div>
+                        </div>
+                        <div class="feedback__text">
+                          <p>
+                            Экскурсия очень понравилась, насыщенная и обширная
+                            программа, интересный маршрут, красивые замки и вся
+                            архитектура. Гид Татьяна рассказывала очень
+                            интересно, чувствовался профессионализм и полная
+                            отдача. Организация экскурсии была чёткой и
+                            слаженной.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="splide__slide">
+                      <div class="splide__slide--wrapper">
+                        <div class="feedback__userinfo">
+                          <p class="feedback__userinfo--name">
+                            Яна <span class="feedback__userinfo--city separator-left">Москва</span>
+                          </p>
+                          <p class="feedback__userinfo--date">5 ноября 2023</p>
+                        </div>
+                        <div class="feedback__rateinfo">
+                          <p class="feedback__rateinfo--title">
+                            <a href="#" title="Мир - Несвиж">Мир - Несвиж</a>
+                          </p>
+                          <div class="feedback__rateinfo--rate">9.0</div>
+                        </div>
+                        <div class="feedback__text">
+                          <p>
+                            Экскурсия очень понравилась, насыщенная и обширная
+                            программа, интересный маршрут, красивые замки и вся
+                            архитектура.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="splide__slide">
+                      <div class="splide__slide--wrapper">
+                        <div class="feedback__userinfo">
+                          <p class="feedback__userinfo--name">
+                            Яна <span class="feedback__userinfo--city separator-left">Москва</span>
+                          </p>
+                          <p class="feedback__userinfo--date">5 ноября 2023</p>
+                        </div>
+                        <div class="feedback__rateinfo">
+                          <p class="feedback__rateinfo--title">
+                            <a href="#" title="Мир - Несвиж">Мир - Несвиж</a>
+                          </p>
+                          <div class="feedback__rateinfo--rate">9.0</div>
+                        </div>
+                        <div class="feedback__text">
+                          <p>
+                            Экскурсия очень понравилась, насыщенная и обширная
+                            программа, интересный маршрут, красивые замки и вся
+                            архитектура. Гид Татьяна рассказывала очень
+                            интересно, чувствовался профессионализм и полная
+                            отдача. Организация экскурсии была чёткой и
+                            слаженной.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="contacts">
+          <div class="container">
+            <div class="contacts__inner">
+              <h2 class="h2">Контакты</h2>
+              <address>
+                <p class="h5"> ЧНПУП "Автоматизированные технологии туризма"</p>
+                <p class="h5">Телефоны</p>
+                <div class="contacts__phones">
+                  <div class="contacts__phones--numbers">
+                    <a href="tel:+375173944913">+375 (17) 394-49-13</a>
+                    <a href="tel:+375297566665">+375 (29) 756-66-65</a>
+                  </div>
+                  <div class="contacts__phones--socials">
+                    <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                      <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                    </a>
+                    <a href="viber://add?number=375297566665/" title="viber">
+                      <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                    </a>
+                    <a href="https://telegram.me/ekskursii" title="telegram">
+                      <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                    </a>
+                  </div>
+                </div>
+                <p class="h5">Адрес</p>
+                <div class="contacts__address">
+                  <a href="#">220007, Беларусь, г. Минск,<br>ул. Суражская д.10, оф.21(5 этаж)</a>
+                </div>
+                <div class="contacts__map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.6724568648065!2d27.5322264!3d53.8842508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd01edd0b19d7%3A0xc0280ec2a33bc7b3!2sUlitsa%20Surazhskaya%2010%2C%20Minsk%2C%20Minskaja%20voblas%C4%87%20220089!5e0!3m2!1sen!2sby!4v1703255270678!5m2!1sen!2sby"
+                    width="600"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+                <p class="h5">График работы офиса и кассы предприятия</p>
+                <div class="contacts__schedule">
+                  <p>понедельник - пятница, 09.00-18.00</p>
+                  <p>обеденный перерыв 13.00-14.00</p>
+                </div>
+                <div class="contacts__social-media">
+                  <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Вк">
+                    <img src="images/sprite.svg#icons--socials--vk" alt="Вк">
+                  </a>
+                  <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Одноклассниках">
+                    <img src="images/sprite.svg#icons--socials--ok" alt="Одноклассники">
+                  </a>
+                  <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы на YouTube">
+                    <img src="images/sprite.svg#icons--socials--youtube" alt="YouTube">
+                  </a>
+                  <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Instagram">
+                    <img src="images/sprite.svg#icons--socials--instagram" alt="Instagram">
+                  </a>
+                  <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Facebook">
+                    <img src="images/sprite.svg#icons--socials--fb" alt="Facebook">
+                  </a>
+                </div>
+              </address>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__inner">
+            <div class="footer__main-nav">
+              <ul class="footer__nav-col">
+                <li class="footer__nav-item">
+                  <a href="#" title="Все экскурсии">Все экскурсии</a>
+                  <ul class="footer__subnav-col">
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Новогодние каникулы">Новогодние каникулы</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Групповые экскурсии">Групповые</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Индивидуальные экскурсии">Индивидуальные</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Корпоративные экскурсии">Корпоративные</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Школьные экскурсии">Школьные</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Бонусы и скидки">Бонусы и скидки</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Все об экскурсиях">Все об экскурсиях</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Города">Города</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Музеи">Музеи</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Знаковые места">Знаковые места</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Туризм в Беларуси">Туризм в Беларуси</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="О Беларуси">О Беларуси</a>
+                </li>
+              </ul>
+              <ul class="footer__nav-col">
+                <li class="footer__nav-item">
+                  <a href="#" title="Поиск">Поиск</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="График экскурсий">График экскурсий</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Личный кабинет">Личный кабинет</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Новости">Новости</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Частые вопросы">Частые вопросы</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Отзывы">Отзывы</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="О нас">О нас</a>
+                  <ul class="footer__subnav-col">
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Новогодние каникулы">Общая информация</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Награды">Награды</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Наши преимущества">Наши преимущества</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Сотрудники">Сотрудники</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Контакты">Контакты</a>
+                </li>
+                <li class="footer__nav-item">
+                  <ul class="footer__subnav-socials">
+                    <li class="footer__subnav-item">
+                      <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                        <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                      </a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="https://telegram.me/ekskursii" title="telegram">
+                        <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                      </a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="viber://add?number=375297566665" title="viber">
+                        <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                      </a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="skype:+375297566665?add" title="skype">
+                        <img src="images/sprite.svg#icons--socials--skype" alt="skype">
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__disclaimer">
+              <p class="footer__disclaimer--text">
+                Информация, размещенная на интернет-портале <a href="https://ekskursii.by/" title="ekskursii.by">Ekskursii.by</a>, не является предложением публичной оферты.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <a class="footer__logo" href="#">
+                <img src="images/sprite.svg#logo" alt="logo">
+              </a>
+              <div class="footer__secondary-nav">
+                <div class="footer__secondary-nav-col">
+                  <a class="footer__secondary-nav-btn" href="#">Вход для гидов</a>
+                  <a class="footer__secondary-nav-btn" href="#">Вход для партнеров</a>
+                  <a class="footer__secondary-nav-btn--alt" href="#">Регистрация нового Агента</a>
+                </div>
+                <div class="footer__secondary-nav-col">
+                  <a class="footer__secondary-nav-link" href="https://sanatorii.by/" title="sanatorii.by" target="_blank">Санатории</a>
+                  <a class="footer__secondary-nav-link" href="https://beltur.by/" title="beltur.by" target="_blank">Базы отдыха</a>
+                  <a class="footer__secondary-nav-link" href="https://belhotel.by/" title="belhotel.by" target="_blank">Гостиницы</a>
+                  <a class="footer__secondary-nav-link" href="https://beltransfer.by/" title="beltransfer.by" target="_blank">Трансфер</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <div class="footer__payment">
+                <img src="images/sprite.svg#icons--payment--master-card-secure-code" alt="master card secure code">
+                <img src="images/sprite.svg#icons--payment--mastercard" alt="mastercard">
+                <img src="images/sprite.svg#icons--payment--verified-visa" alt="verified by visa">
+                <img src="images/sprite.svg#icons--payment--visa" alt="visa">
+                <img src="images/sprite.svg#icons--payment--bepaid" alt="bepaid">
+                <img src="images/sprite.svg#icons--payment--erip" alt="система ЕРИП">
+              </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <div class="footer__copyright">
+                <p>© Частное научно-производственное унитарное предприятие "Автоматизированные технологии туризма"</p>
+              </div>
+            </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
