@@ -1,0 +1,35 @@
+<section class="main-search search-header">
+  <div class="container">
+    <div class="main-search__inner">
+      <input class="main-search__dropdown-btn" id="main-search__dropdown-btn" type="checkbox" checked>
+      <h2 class="h2">Поиск</h2>
+      <span class="main-search__dropdown-arrow"></span>
+      <form class="search-form" id="search-form">
+        <div class="search-form__form-field">
+          <label class="hidden-label" for="header-search-place">Место</label>
+          <span class="search-form__form-field--input">
+            <input type="text" name="place" id="header-search-place" placeholder="Место">
+          </span>
+        </div>
+        <div class="search-form__form-field">
+          <div class="search-form__form-field--date">
+            <label class="hidden-label" for="header-search-date">Выберите дату</label>
+            <span class="search-form__form-field--input">
+              <input type="text" name="date" id="header-search-date" placeholder="Выберите дату">
+            </span>
+          </div>
+        </div>
+        <div class="search-form__form-field">
+          <label class="hidden-label" for="header-search-types">Виды экскурсий</label>
+          <span class="custom-select search-form__form-field--input">
+            <select name="types" id="header-search-types">
+              <option value="0">Групповые</option>
+              <option value="1">Индивидуальные</option>
+            </select>
+          </span>
+        </div>
+        <button class="btn search-form__submit-btn">Искать</button>
+      </form>
+    </div>
+  </div>
+</section>
