@@ -1,0 +1,31 @@
+[class$='tags-group']
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    margin-top: 20px
+    gap: 8px
+    @media screen and (max-width: 430px)
+        gap: 6px
+    [class$='tags-group--tag-link']
+        display: block
+        padding: 8px 12px
+        font-size: 16px
+        background: $light-gray
+        border: 1px solid $light-gray
+        border-radius: 24px
+        &:not(.more-btn):hover
+            background: $accent-yellow
+            color: $black
+        @media screen and (max-width: 414px)
+            padding: 8px 10px
+            font-size: 14px
+    [class$='tags-group--tag'].more-btn
+        @extend .more-btn
+        label[for='more-btn']
+            font-size: 14px
+        & ~ [class$='tags-group--tag']
+            display: none
+        &:has([type="checkbox"]:checked)
+            display: none
+            & ~ [class$='tags-group--tag']
+                display: block

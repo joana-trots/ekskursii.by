@@ -1,0 +1,79 @@
+<section class="schedule">
+  <div class="container">
+    <div class="schedule__inner">
+      <h2>Ближайшие экскурсии по Минску и всей Беларуси</h2>
+      <div class="schedule__options">
+        <div class="schedule__options-item schedule__options-item--filters modal-open">Фильтры</div>
+        <div class="schedule__options-item-wp">
+          <div class="schedule__options-item schedule__options-item--display"></div>
+          <div class="schedule__options-item schedule__options-item--sort custom-select">
+            <select id="sort" name="sort">
+              <option value="byn">по цене</option>
+              <option value="rub">по названию</option>
+            </select>
+          </div>
+          <div class="schedule__options-item schedule__options-item--currency custom-select">
+            <select id="currency" name="currency">
+              <option value="byn">BYN</option>
+              <option value="rub">₽</option>
+              <option value="euro">€</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="schedule__tabs">
+        <input id="panel-1-ctrl" class="panel-radios" type="radio" name="tab-radios" checked>
+        <input id="panel-2-ctrl" class="panel-radios" type="radio" name="tab-radios">
+        <input id="panel-3-ctrl" class="panel-radios" type="radio" name="tab-radios">
+        <ul class="tabs-list">
+          <li id="li-for-panel-1">
+            <label class="panel-label" for="panel-1-ctrl">на неделю</label>
+          </li>
+          <li id="li-for-panel-2">
+            <label class="panel-label" for="panel-2-ctrl">Сегодня</label>
+          </li>
+          <li id="li-for-panel-3">
+            <label class="panel-label" for="panel-3-ctrl">Завтра</label>
+          </li>
+        </ul>
+        <!-- THE PANELS -->
+        <div class="panels">
+          <div class="panels-wrapper">
+            <div class="panel-1">
+              <div class="panel__content">
+                <div class="schedule__display">
+                  <div class="schedule__display--table-header">
+                    <p>Дата</p>
+                    <p>Название</p>
+                    <p>Цена</p>
+                  </div>
+                  <div class="schedule__wrapper-cards"></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-2">
+              <div class="panel__content">
+                <div class="schedule__display">
+                  <div class="schedule__wrapper-cards"></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-3">
+              <div class="panel__content">
+                <div class="schedule__display">
+                  <div class="schedule__wrapper-cards"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="more-btn">
+          <input type="checkbox" id="card-more-btn" name="card-more-btn">
+          <label for="card-more-btn">Еще...</label>
+        </div>
+        <a class="all-btn btn arrow-btn" href="#" title="Все экскурсии"></a>
+      </div>
+    </div>
+  </div>
+  <!--=include modal-filters.html -->
+</section>

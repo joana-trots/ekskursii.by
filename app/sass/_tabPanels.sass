@@ -1,0 +1,95 @@
+$tab-count: 10
+
+input#panel-1-ctrl:checked ~ .panels [class^='panel-']:not(.panel-1)
+  display: none
+input#panel-2-ctrl:checked ~ .panels [class^='panel-']:not(.panel-2)
+  display: none
+input#panel-3-ctrl:checked ~ .panels [class^='panel-']:not(.panel-3)
+  display: none
+
+
+.schedule__tabs,
+.booking__tabs,
+.price__tabs
+    position: relative
+    margin-top: 20px
+    z-index: 1
+    label.panel-label
+        user-select: none
+        display: block
+        width: 100%
+        color: $dark-gray
+        border-radius: 24px
+        padding: 11px
+        cursor: pointer
+        transition: all 0.6s
+        font-size: 14px
+        font-weight: 700
+        &:hover
+            color: $black
+    .panels
+        padding: 30px 0
+    .panels-wrapper
+        margin: 0 auto
+        width: 100%
+    .panel__content
+        box-sizing: border-box
+        max-height: 0
+        opacity: 0
+        transition: opacity 0.6s
+        @extend .clearfix
+    .panel-radios
+        display: none
+    .tabs-list
+        @extend %flex-center
+        background: $light-gray
+        border-radius: 30px
+        li
+            flex: 1
+            text-align: center
+            text-transform: lowercase
+    .h2
+        text-align: center
+
+@mixin active-label
+    background-color: $accent-yellow
+    color: $black
+    
+@mixin active-tab-li-style
+    pointer-events: none
+    cursor: default
+    label.panel-label
+        @include active-label
+
+// active menu li style
+@mixin active-menu-li-style
+    max-height: $menu-item-height
+    opacity: 1
+    label.panel-label
+        @include active-label
+        @include active-menu-label
+ 
+// active panel style
+@mixin active-panel-style
+    .panel__content
+        max-height: initial
+        opacity: 1
+
+// panel toggling
+@for $i from 1 through $tab-count
+    #panel-#{$i}-ctrl:checked ~ .panels .panel-#{$i}
+        @include active-panel-style
+    #panel-#{$i}-ctrl:checked ~ .tabs-list #li-for-panel-#{$i}
+        @include active-tab-li-style
+
+.booking__tabs,
+.price__tabs
+  #li-for-panel-1
+    max-width: 134px
+  #li-for-panel-2
+    max-width: calc(100% - 134px)
+    min-width: 50%
+    .panel-label
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap

@@ -1,0 +1,123 @@
+.main-search
+    min-height: 30px
+    .container
+        margin: 16px
+        padding-top: 16px
+        padding-bottom: 20px
+        background: $light-gray
+        border-radius: 10px
+    .main-search__inner
+        position: relative
+        padding: 0
+        margin: 0
+        display: flex
+        flex-direction: column
+        animation: flipdown 0.5s ease both
+        animation-delay: 0.5s
+        .h2
+            display: flex
+            align-items: center
+            width: auto
+            float: left
+            font-weight: 400
+            &::before
+                @extend %button-icon-20
+                display: inline-block
+                width: 30px
+                height: 30px
+                margin-right: 6px
+                background-image: $icon_search
+    .main-search__dropdown-arrow
+        position: absolute
+        right: 0
+        top: 4px
+        display: flex
+        align-items: flex-end
+        gap: 8px
+        justify-content: flex-end
+        color: $dark-gray
+        &::before
+            content: 'свернуть'
+        &::after
+            @extend %button-icon
+            position: relative
+            width: 10px
+            height: 6px
+            background-image: $icon_arrow_gray
+            transform: rotate(180deg) translateY(5px)
+            transition: all 0.25s ease-in-out
+    input.main-search__dropdown-btn
+        position: absolute
+        cursor: pointer
+        width: 100%
+        height: 30px
+        z-index: 1
+        opacity: 0
+        &:checked
+            &~.search-form
+                margin-top: 0
+                max-height: 0
+                opacity: 0
+                transform: translate(0, 50%)   
+            &~.main-search__dropdown-arrow
+                &::before
+                    content: 'раскрыть'
+                &::after
+                    transform: rotate(360deg) translateY(-3px)
+    .main-search__title
+        display: flex
+        justify-content: space-between
+        align-items: center
+        p
+            color: $dark-gray
+    .search-form
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 20px
+        max-height: 600px
+        margin-top: 30px
+        transition: all 0.25s ease-in-out
+        opacity: 1
+        transform: translate(0, 0)  
+        z-index: 3
+        overflow: hidden
+        [class$='submit-btn']
+            width: 100%
+            &::before
+                @extend %button-icon-20
+                margin-right: 4px
+                background-image: $icon_search
+    .search-form__form-field--input.custom-select:has(#header-search-types)
+        padding: 13px 18px
+        font-size: 16px
+        .select-selected
+            width: calc(100% - 30px)
+            padding: 0 0 0 28px
+            text-transform: initial
+            z-index: 2
+        &::before
+            z-index: 2
+        .select-items
+            text-transform: initial
+            z-index: 1
+    &.search-header
+        margin-top: 0
+        .container
+            margin: 0
+            border-radius: 0
+        .h2
+            font-size: 20px
+            &::before
+                width: 24px
+                height: 24px
+        .search-form
+            margin-top: 18px
+            gap: 12px
+            overflow: visible
+            [class$='form-field--input']
+                padding: 12px 14px
+        .search-form__form-field--input
+            border: 0
+            box-shadow: $shadow-gray
+

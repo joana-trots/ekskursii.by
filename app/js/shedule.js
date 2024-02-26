@@ -458,7 +458,7 @@ const createCards = (data) => {
         const moreDates = document.createElement('a');
         moreDates.className ='card-item__more-dates-btn simple-btn btn';
         moreDates.href = '#';
-        moreDates.title = 'Другие даты';
+        moreDates.textContent = 'Другие даты';
 
         const discount = document.createElement('div');
         discount.className ='card-item__discount card-item__hint-text';
@@ -510,13 +510,13 @@ const createCards = (data) => {
         cardButtons.className ='card-item__buttons';
         
         const descriptionBtn = document.createElement('a');
-        descriptionBtn.className ='card-item__description-btn  simple-btn arrow-btn btn';
-        descriptionBtn.title = 'Описание экскурсии';
+        descriptionBtn.className ='card-item__description-btn arrow-btn btn';
+        descriptionBtn.textContent = 'Описание экскурсии';
         descriptionBtn.href = item.aboutLink;
         
         const feedbackBtn = document.createElement('a');
         feedbackBtn.className ='card-item__feedback-btn simple-btn btn';
-        feedbackBtn.title = 'Отзывы';
+        feedbackBtn.textContent = 'Отзывы';
         feedbackBtn.href = item.feedbackLink;
 
         cardButtons.append(descriptionBtn, feedbackBtn);

@@ -1,0 +1,108 @@
+button,
+.btn
+    background: transparent
+    outline: none
+    border: 0
+    font-family: 'Mulish', sans-serif
+    cursor: pointer
+    transition: all 0.3s
+
+button[class$='form__submit-btn']::after,
+button.btn::after
+    content: attr(value)
+a[class$='form__submit-btn']::after,
+a.btn::after
+    content: attr(title)
+
+.cta-primary
+    position: relative
+    @extend %flex-center
+    padding: 14px 18px
+    background: $accent-yellow
+    border: 1px solid $accent-yellow
+    border-radius: 30px
+    box-shadow: $shadow-yellow
+    text-align: center
+    font-weight: 700
+    color: $black
+    &:hover
+        border: 1px solid $black
+        background: $white
+    @media screen and (max-width: 540px)
+        padding: 14px
+
+.cta-secondary
+    @extend .cta-primary
+    background: $white
+    border: 1px solid $white
+    box-shadow: $shadow-gray
+    &:hover
+        border: 1px solid $black
+        box-shadow: none
+
+.more-btn
+    position: relative
+    display: flex
+    align-items: center
+    width: fit-content
+    border: 1px solid $additional-gray
+    color: $dark-gray
+    background: $white
+    border-radius: 24px
+    &:hover
+        border-color: $dark-gray
+        background: $white
+        color: $black
+    [type="checkbox"]
+        width: 100%
+        height: 38px
+        opacity: 0
+        position: absolute
+        cursor: pointer
+        @media screen and (max-width: 414px)
+            height: 36px
+    label[for$="more-btn"]
+        padding: 8px 12px
+        @media screen and (max-width: 414px)
+            padding: 8px 10px
+
+.simple-btn
+    display: inline-flex
+    align-items: center
+    width: fit-content
+    padding: 8px 12px
+    border: 1px solid $black
+    color: $black
+    background: $white
+    border-radius: 24px
+    font-size: 14px
+    &:hover
+        border-color: $additional-gray
+        background-color: $light-gray
+
+.simple-secondary-btn
+    @extend .simple-btn
+    padding: 0
+    border: 0
+    border-bottom: 1px solid transparent
+    border-radius: 0
+    text-transform: lowercase
+    &:hover
+        border-color: $black
+        background: none
+
+.arrow-btn::before
+    @extend %button-icon
+    margin-left: 2px
+    background-image: $icon_arrow-right
+    order: 2
+
+.all-btn
+    @extend .cta-primary
+    width: fit-content
+    margin: 20px auto 0
+    font-size: 16px
+    &.arrow-btn::before
+        @extend %button-icon-20
+        margin-left: 4px
+        background-image: $icon_arrow-right

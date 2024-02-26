@@ -1,0 +1,110 @@
+.footer
+    margin-top: 30px
+    .container:first-child
+        background-color: $light-gray
+.footer__inner
+    padding-top: 20px
+    padding-bottom: 20px
+.footer__main-nav,
+.footer__secondary-nav
+    display: flex
+    gap: 20px
+    flex-wrap: wrap
+.footer__nav-col,
+.footer__secondary-nav-col
+    display: flex
+    flex-direction: column
+    gap: 12px
+    a
+        font-size: 14px
+        font-weight: 700
+        &:hover
+            text-decoration: underline
+.footer__nav-col
+    flex: 1 0 0
+.footer__nav-item
+    page-break-inside: avoid
+    break-inside: avoid
+.footer__subnav-col
+    display: flex
+    flex-direction: column
+    gap: 10px
+    margin-top: 8px
+    margin-left: 16px
+    a
+        font-weight: 600
+.footer__subnav-socials
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    gap: 10px
+    a
+        flex: 1 0 0
+    img
+        width: 28px
+        height: 26px
+        object-fit: cover
+.footer__disclaimer
+    margin-top: 24px
+    padding-top: 16px
+    border-top: 1px solid $dark-gray
+.footer__disclaimer--text
+    color: $dark-gray
+    font-size: 12px
+    font-weight: 600
+    a
+        text-decoration: underline
+        &:hover
+            color: $black
+.footer__secondary-nav
+    padding-top: 20px
+    align-items: flex-end
+    gap: 20px
+.footer__logo
+    display: block
+    max-width: 160px
+    width: 100%
+.footer__secondary-nav-btn
+    display: block
+    width: fit-content
+    padding: 8px 12px
+    background-color: $light-gray
+    border-radius: 24px
+    border: 1px solid $light-gray
+    color: $dark-gray
+    font-size: 14px
+    font-weight: 700
+    &--alt
+        font-weight: 600 !important
+        color: $dark-gray
+    &:hover
+        text-decoration: none !important
+        background-color: $white
+        border-color: $black
+.footer__secondary-nav-link
+    color: $dark-gray
+.footer__payment
+    display: flex
+    max-width: 100%
+    flex-wrap: wrap
+    gap: 10px
+    img
+        max-height: 20px
+        width: auto
+        object-fit: cover
+.footer__copyright
+    font-size: 12px
+
+@media screen and (min-width: 541px)
+    .footer .container
+        max-width: 100%
+    .footer__inner
+        max-width: 1320px
+        padding: 20px 60px
+        margin: auto
+    .footer__nav-col
+        display: block
+        column-count: 2
+        column-width: 25%
+    .footer__nav-item
+        margin-bottom: 12px

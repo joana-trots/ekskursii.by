@@ -1,0 +1,104 @@
+.booking
+  [class$='form__submit-btn']
+    @extend .card-item__cta
+    padding: 14px 28px
+    margin-top: 0
+  textarea
+    border: 0
+    font-size: 16px
+.booking-info
+  padding-bottom: 30px
+  .h6:not(.hidden-label):not(.checkmark-label)
+    margin-top: 20px
+.booking-info__about--time p,
+.booking-info__about--place p
+  display: flex
+  align-items: flex-start
+  gap: 4px
+  color: $dark-gray
+.booking-info__about--time p::before,
+.booking-info__about--place p::before
+  @extend %button-icon-20
+  opacity: 0.8
+.booking-info__about--time p::before
+  background-image: $icon_time
+.booking-info__about--place p::before
+  background-image: $icon_pin
+
+.booking-form__form-field
+  display: flex
+  flex-direction: column
+  gap: 10px 
+.booking-form__form-field--input
+  border: 0
+  box-shadow: $shadow-gray
+  .select-selected
+    width: calc(100% - 30px)
+    font-size: 16px
+    text-transform: lowercase
+    padding: 0 0 0 28px
+  .select-items
+    font-size: 16px
+    text-transform: lowercase
+  &:has([id*='people-amount'])
+    .select-selected,
+    &::before
+      z-index: 6
+    .select-items
+      z-index: 5
+  &:has([id*='kids-amount'])
+    .select-selected,
+    &::before
+      z-index: 4
+    .select-items
+      z-index: 3
+  &:has([id*='country'])
+    .select-items,
+    .select-selected
+      text-transform: initial
+    .select-items div:first-child
+      color: $dark-gray
+      background-color: $light-gray
+      cursor: disabled
+    .select-selected,
+    &::before
+      z-index: 2
+    .select-items
+      z-index: 1
+  &:has([id*='promocode'])
+    width: 213px
+    border: 1px solid $black
+    box-shadow: none
+    input
+      text-transform: uppercase
+      &::placeholder
+        font-style: normal
+        color: $black
+        text-transform: initial
+      &:focus
+        &::placeholder
+          color: $dark-gray
+
+.booking-form__form-field:has([class$='--checkbox'])
+  gap: 18px
+.booking-form__form-field--input:has([id*='country']):has(.select-items .same-as-selected:first-child) .select-selected
+  @extend ::placeholder
+.booking-form__form-field:has([required]) label::before
+  content: '* '
+.booking-price
+  display: block
+  position: sticky
+  bottom: 0
+  width: calc(100vw - 16px)
+  padding: 18px 0
+  margin: 30px auto -60px -16px
+  text-align: center
+  font-size: 18px
+  background-color: $accent-yellow
+  box-shadow: $shadow-gray
+  z-index: 7
+  span
+    font-weight: 800
+  @media screen and (max-width: 430px)
+    width: 100vw
+
