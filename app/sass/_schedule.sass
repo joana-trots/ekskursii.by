@@ -158,7 +158,6 @@
         
     &:has([type="checkbox"]:checked)::before
         @extend %arrow-rotate-default
-        
 .card-item__dropdown-info
     display: flex
     flex-direction: column
@@ -242,12 +241,11 @@
     box-shadow: none
 ul.card-item__price-include
     @extend .list
-//     li
-//         @extend ul.list li
 
-.schedule .more-btns
+.schedule .more-btn
     margin: auto
 
+    
 .schedule__options-item--display-table
     &::before
         background-image: $icon_table
