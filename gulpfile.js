@@ -70,15 +70,16 @@ function scripts() {
         'node_modules/flatpickr/dist/flatpickr.min.js',
         'node_modules/flatpickr/dist/l10n/ru.js',
         'node_modules/flatpickr/dist/l10n/be.js',
-        'node_modules/dayjs/dayjs.min.js',
-        'node_modules/dayjs/plugin/isToday.js',
-        'node_modules/dayjs/plugin/isTomorrow.js',
-        'node_modules/dayjs/plugin/isBetween.js',
-        'node_modules/dayjs/plugin/utc.js',
-        'node_modules/dayjs/locale/ru.js',
-        'node_modules/dayjs/locale/be.js',
+        '!node_modules/dayjs/dayjs.min.js',
+        '!node_modules/dayjs/plugin/isToday.js',
+        '!node_modules/dayjs/plugin/isTomorrow.js',
+        '!node_modules/dayjs/plugin/isBetween.js',
+        '!node_modules/dayjs/plugin/utc.js',
+        '!node_modules/dayjs/locale/ru.js',
+        '!node_modules/dayjs/locale/be.js',
         
         'app/js/*.js',
+        '!app/js/schedule.js',
         '!app/js/main.min.js'
     ])
         .pipe(concat('main.min.js'))

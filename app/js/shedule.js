@@ -337,7 +337,7 @@ const cardData = [
 
 const errorMessage = document.createElement('h2');
 errorMessage.className = 'h2';
-errorMessage.textContent = ' Упс! Нет запланированных экскурсий';
+errorMessage.textContent = 'Упс! Нет запланированных экскурсий';
 
 const createCards = (data) => {
 
