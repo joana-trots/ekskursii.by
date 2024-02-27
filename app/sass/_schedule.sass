@@ -129,10 +129,8 @@
         order: 2
     .card-item__additional-info--kids-price
         order: 3        
-.card-item__dropdown-btn,
-.card-item__price
-    position: absolute
 .card-item__dropdown-btn
+    position: absolute !important
     top: 118px
     padding: 0
     height: 32px
@@ -143,19 +141,6 @@
         width: 16px
         background-image: $icon_arrow_black
         @extend %arrow-rotate-back
-    [type="checkbox"]
-        position: absolute
-        cursor: pointer
-        width: 100%
-        height: 100%
-        z-index: 1
-        opacity: 0
-    &:has([type="checkbox"]:checked) ~ .card-item__dropdown-info
-        margin-top: 0
-        max-height: 0
-        margin-bottom: 0
-        opacity: 0
-        
     &:has([type="checkbox"]:checked)::before
         @extend %arrow-rotate-default
         
@@ -165,10 +150,6 @@
     gap: 12px
     max-height: 800px
     margin-bottom: 12px
-    opacity: 1
-    transition: all 0.25s ease-in-out
-    animation: flipdown 0.5s ease both
-    
 .card-item__additional-info 
     p
         @media screen and (max-width: 540px)
@@ -204,6 +185,7 @@
 .card-item__hint-text p
     margin-top: 0
 .card-item__price
+    position: absolute
     right: 16px
     top: 94px
     p
