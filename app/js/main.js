@@ -1,3 +1,38 @@
+/* QUICK NAV */
+const qsection = document.getElementById('qsection'),
+      qnavbar = document.getElementById('qnavbar'),
+      price = document.querySelector('.about__price');
+
+var qlink = document.querySelectorAll('.quicknav__tags-group--tag-link'),
+    qlinkActive = document.querySelector('.quicknav__active-link');
+
+window.onscroll = function() {
+  if ((window.scrollY - qsection.offsetTop) > 0) {
+    qnavbar.classList.add('onscroll');
+  } else {
+    qnavbar.classList.remove('onscroll');
+  }
+};   
+
+const sections = document.querySelectorAll('.about__inner section');
+let options = { 
+  root: qsection, 
+  threshold: 0.5 
+}  
+let callback = function(entries) { 
+  entries.forEach(entry => { 
+    if (entry.isIntersecting) { 
+        const target = entry.target; 
+        // делаем каку-то логику с нужным элементом. Связываешь таргет который видишь с пунктом в меню 
+        console.log(target) 
+    } 
+  }); 
+}
+const observer = new IntersectionObserver(callback, options); 
+sections.forEach(section => { 
+  observer.observe(section); 
+});
+
 /* SCHEDULE TOGGLE CARDS\TABLE */
 var scheduleDisplay = document.querySelectorAll('.schedule__display'),
     scheduleButton  = document.querySelectorAll('.schedule__options-item--display');
@@ -9,7 +44,6 @@ scheduleButton.forEach((btn) => {
     btn.classList.toggle('schedule__options-item--display-table');
   }
 })
-
 
 /* flatpickr (DATEPICKER in the MAIN SEARCH) */
 flatpickr('[id*="-date"]', {

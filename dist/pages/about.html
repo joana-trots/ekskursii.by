@@ -53,8 +53,8 @@
           </div>
         </section>
 
-        <section class="about">
-          <div class="about__nav">
+        <section class="about" id="qsection">
+          <div class="about__nav" id="qnavbar">
             <h6 class="h6">Быстрая навигация</h6>
             <ul class="quicknav__tags-group">
               <li class="quicknav__tags-group--tag">
@@ -237,7 +237,7 @@
                         </div>
                       </div>
                       <div class="card-item__seats">
-                        <p>9+ мест</p>
+                        <p>19+</p>
                       </div>
                       <a class="card-item__cta btn" href="#" title="Забронировать"></a>
                     </div>
@@ -251,7 +251,7 @@
                 <div class="about__description--short-info">
                   <div>
                     <p>Маршрут</p>
-                    <p><a href="" title="">Минск</a> - <a href="" title="">Брест</a> - <a href="" title="">Каменюки Беловежская пуща</a> - Минск</a></p>
+                    <p><a href="" title="">Минск</a> - <a href="" title="">Брест</a> - <a href="" title="">Каменюки Беловежская пуща</a> - <a href="" title="">Минск</a></p>
                   </div>
                   <div>
                     <p>Протяженность</p>
@@ -286,18 +286,18 @@
 
               <section class="about__program" id="program">
                 <h2 class="h2">Программа</h2>
-                <div>
+                <div class="program__wrapper">
                   <div class="program__item">
-                    <p>Сбор группы</p>
-                    <a href="" title="">Беларусь, г. Минск, ж/д вокзал, 1 этаж, центральный эскалатор, (ст. метро Площадь Ленина)</a>
+                    <p class="program__item--title">Сбор группы</p>
+                    <p><a href="" title="">Беларусь, г. Минск, ж/д вокзал, 1 этаж, центральный эскалатор, (ст. метро Площадь Ленина)</a></p>
                   </div>
                   <div class="program__item">
-                    <p>Переезд в Брест <span>(350 км)</span></p>
+                    <p class="program__item--title">Переезд в Брест <span>(350 км)</span></p>
                   </div>
                   <div class="program__item">
                     <div class="dropdown-btn">
-                      <p>Брестский кафедральный собор Св.Симеона  (внешний осмотр)</p>
-                      <input type="checkbox" name="dropdown-btn" readonly>
+                      <p class="program__item--title">Брестский кафедральный собор Св.Симеона  (внешний осмотр)</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
                     </div>
                     <div class="dropdown-content">
                       <p>Главный православный храм города, который является его настоящим украшением и гордостью. Построенный в 1865 году в псевдорусском стиле собор особенно величественно выглядит вечером в лучах ночной подсветки. Одной из главных святынь храма являются мощи преподобного мученика Афанасия, игумена Брестского, который несмотря на пытки и мучения не отрекся от православия. Сегодня памятник Афанасию Брестскому установлен возле кафедрального собора.</p>
@@ -305,8 +305,8 @@
                   </div>
                   <div class="program__item">
                     <div class="dropdown-btn">
-                      <p>Брестская крепость-герой</p>
-                      <input type="checkbox" name="dropdown-btn" readonly>
+                      <p class="program__item--title">Брестская крепость-герой</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
                     </div>
                     <div class="dropdown-content">
                       <p>В ходе экскурсии перед Вами откроются страницы истории страшных дней начала войны, когда на рассвете 22 июня 1941 года гарнизон Брестской крепости первым принял на себя удары немецко-фашистских захватчиков и более месяца держал оборону в полном окружении. Уже на входе Вас встретит пронзительный голос Ю.Левитана с правительственным сообщением о нападении на Советский Союз войск немецко-фашистской Германии и песня А.Александрова «Священная война», ставшая гимном тех лет. 8 мая 1965 года крепости присвоено звание «крепость-герой».</p>
@@ -314,8 +314,8 @@
                   </div>
                   <div class="program__item">
                     <div class="dropdown-btn">
-                      <p>Музей обороны Брестской крепости</p>
-                      <input type="checkbox" name="dropdown-btn" readonly>
+                      <p class="program__item--title">Музей обороны Брестской крепости</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
                     </div>
                     <div class="dropdown-content">
                       <p>Музей, экспозиция которого отражает не только военные действия 1941 года на территории крепости, но и историю ее строительства, а также крупнейшие сражения Великой отечественной войны и освобождение Беларуси от немецко-фашистских захватчиков. Музей обороны был открыт в 1956 году, с тех пор его площадь и экспозиция расширились в 2,5 раза, здесь представлены предметы из раскопок, произведения искусства, военные документы, фотографии. Наибольшую ценность среди всех предметов экспозиции имеют записи С.С. Смирнова с воспоминаниями участников обороны Брестской крепости.</p>
@@ -323,23 +323,23 @@
                   </div>
                   <div class="program__item">
                     <div class="dropdown-btn">
-                      <p>Брестская церковь Св. Николая</p>
-                      <input type="checkbox" name="dropdown-btn" readonly>
+                      <p class="program__item--title">Брестская церковь Св. Николая</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
                     </div>
                     <div class="dropdown-content">
                       <p>Великолепный образец храма в ретроспективно-русском стиле, первое упоминание о котором относится еще к 1390 году. По легенде, церковь была построена на средства купца, который, увязнув в реке, смог освободиться, только дав обет построить храм в Бресте во имя Св. Николая. Церковь имела свою собственную длинную историю - так, здесь находилось одно из старейших в Беларуси кафедральных братств, действовал госпиталь.</p>
                     </div>
                   </div>
                   <div class="program__item">
-                    <p>Обед</p>
+                    <p class="program__item--title">Обед</p>
                   </div>
                   <div class="program__item">
-                    <p>Переезд в Каменюки Беловежская пуща <span>(57 км)</span></p>
+                    <p class="program__item--title">Переезд в Каменюки Беловежская пуща <span>(57&nbsp;км)</span></p>
                   </div>
                   <div class="program__item">
                     <div class="dropdown-btn">
-                      <p>Национальный парк «Беловежская пуща»</p>
-                      <input type="checkbox" name="dropdown-btn" readonly>
+                      <p class="program__item--title">Национальный парк «Беловежская пуща»</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
                     </div>
                     <div class="dropdown-content">
                       <p>Один из крупнейших туристических центров Республики Беларусь. Он считается одним из старейших заповедников в мире, история которого насчитывает не одно столетие.</p>
@@ -349,32 +349,42 @@
                   </div>
                   <div class="program__item">
                     <div class="dropdown-btn">
-                      <p>Демонстрационные вольеры с дикими животными</p>
-                      <input type="checkbox" name="dropdown-btn" readonly>
+                      <p class="program__item--title">Демонстрационные вольеры с дикими животными</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
                     </div>
                     <div class="dropdown-content">
                       <p>Демонстрационные вольеры расположены вблизи Музея природы Беловежской пущи. На площади около 20 га Вы увидите основные виды животных, обитающих в Беловежской пуще. Здесь вблизи можно увидеть и лесных жителей, угостить кусочком хлеба, яблоком или веточкой привыкших к посетителям зубров, лосей, кабанов, тарпановидную лошадь или медведя.</p>
                     </div>
                   </div>
                   <div class="program__item">
-                    <p>Переезд в Минск <span>(360 км)</span></p>
+                    <p class="program__item--title">Переезд в Минск <span>(360&nbsp;км)</span></p>
                   </div>
 
                 </div>
               </section>
-              <section id="route">
-                <h2 class="h2">Карта маршрута</h2>
-              </section>
-              
             </div>
           </div>
-
         </section>
 
+        <section class="route" id="route">
+          <div class="container">
+            <div class="route__inner">
+              <h2 class="h2">Карта маршрута</h2>
+              <div class="route__map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.6724568648065!2d27.5322264!3d53.8842508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd01edd0b19d7%3A0xc0280ec2a33bc7b3!2sUlitsa%20Surazhskaya%2010%2C%20Minsk%2C%20Minskaja%20voblas%C4%87%20220089!5e0!3m2!1sen!2sby!4v1703255270678!5m2!1sen!2sby"
+                  width="100%"
+                  height="250"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
         <!-- =include slider-feedback.html -->
-        
-
-        
         
       </main>
 <!--=include footer.html -->
