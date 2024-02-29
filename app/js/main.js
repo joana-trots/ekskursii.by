@@ -36,7 +36,7 @@ window.onscroll = function() {
                 console.log('true');
                 link.classList.add('quicknav__active-link');
               }
-              else link.classList.add('quicknav__active-link');
+              else link.classList.remove('quicknav__active-link');
             }));
             
           }));
@@ -50,7 +50,7 @@ window.onscroll = function() {
     observer.observe(section); 
   });
 
-  
+
 };   
 
 

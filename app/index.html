@@ -174,13 +174,15 @@
               <input class="main-search__dropdown-btn" id="main-search__dropdown-btn" type="checkbox">
               <h2 class="h2">Поиск</h2>
               <span class="main-search__dropdown-arrow"></span>
+              
               <form class="search-form" id="search-form">
                 <div class="search-form__form-field">
                   <label class="hidden-label" for="main-search-place">Место</label>
                   <span class="search-form__form-field--input">
-                    <input type="text" name="place" id="main-search-place" placeholder="Место">
+                    <input type="text" name="place" id="main-search-place" minlength="3" placeholder="Место" required>
                   </span>
                 </div>
+                
                 <div class="search-form__form-field">
                   <div class="search-form__form-field--date">
                     <label class="hidden-label" for="main-search-date">Выберите дату</label>
@@ -191,7 +193,7 @@
                 </div>
                 <div class="search-form__form-field">
                   <label class="hidden-label" for="main-search-types">Виды экскурсий</label>
-                  <span class="search-form__form-field--input">
+                  <span class="custom-select search-form__form-field--input">
                     <select name="types" id="main-search-types">
                       <option>Групповые</option>
                       <option>Индивидуальные</option>
@@ -200,9 +202,26 @@
                 </div>
                 <button class="btn search-form__submit-btn" value="Искать"></button>
               </form>
+        
+              
             </div>
           </div>
         </section>
+        
+        <div class="search-form__modal">
+          sfgdf<br>dfgvdfc<br>vbd<br>tgfbrd<br>fxgb
+          <br>
+          fsedr<br>fvg
+          f<br>dzvg<br>bdxdzs<br>tg<br><br>hslj<br>koi
+          sfgdf<br>dfgvdfc<br>vbd<br>tgfbrd<br>fxgb
+          <br>
+          fsedr<br>fvg
+          f<br>dzvg<br>bdxdzs<br>tg<br><br>hslj<br>koi
+          sfgdf<br>dfgvdfc<br>vbd<br>tgfbrd<br>fxgb
+          <br>
+          fsedr<br>fvg
+          f<br>dzvg<br>bdxdzs<br>tg<br><br>hslj<br>koi
+        </div>
         <section class="popular">
           <div class="container">
             <div class="popular__inner">
@@ -742,168 +761,334 @@
             </div>
           </div>
         </section>
-      </main>
-      <footer class="footer">
-        <div class="container">
-          <div class="footer__inner">
-            <div class="footer__main-nav">
-              <ul class="footer__nav-col">
-                <li class="footer__nav-item">
-                  <a href="#" title="Все экскурсии">Все экскурсии</a>
-                  <ul class="footer__subnav-col">
-                    <li class="footer__subnav-item">
-                      <a href="#" title="Новогодние каникулы">Новогодние каникулы</a>
-                    </li>
-                    <li class="footer__subnav-item">
-                      <a href="#" title="Групповые экскурсии">Групповые</a>
-                    </li>
-                    <li class="footer__subnav-item">
-                      <a href="#" title="Индивидуальные экскурсии">Индивидуальные</a>
-                    </li>
-                    <li class="footer__subnav-item">
-                      <a href="#" title="Корпоративные экскурсии">Корпоративные</a>
-                    </li>
-                    <li class="footer__subnav-item">
-                      <a href="#" title="Школьные экскурсии">Школьные</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="Бонусы и скидки">Бонусы и скидки</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="Все об экскурсиях">Все об экскурсиях</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="Города">Города</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="Музеи">Музеи</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="Знаковые места">Знаковые места</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="Туризм в Беларуси">Туризм в Беларуси</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="О Беларуси">О Беларуси</a>
-                </li>
-              </ul>
-              <ul class="footer__nav-col">
-                <li class="footer__nav-item">
-                  <a href="#" title="Поиск">Поиск</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="График экскурсий">График экскурсий</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="Личный кабинет">Личный кабинет</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="Новости">Новости</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="Частые вопросы">Частые вопросы</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="Отзывы">Отзывы</a>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="О нас">О нас</a>
-                  <ul class="footer__subnav-col">
-                    <li class="footer__subnav-item">
-                      <a href="#" title="Новогодние каникулы">Общая информация</a>
-                    </li>
-                    <li class="footer__subnav-item">
-                      <a href="#" title="Награды">Награды</a>
-                    </li>
-                    <li class="footer__subnav-item">
-                      <a href="#" title="Наши преимущества">Наши преимущества</a>
-                    </li>
-                    <li class="footer__subnav-item">
-                      <a href="#" title="Сотрудники">Сотрудники</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="footer__nav-item">
-                  <a href="#" title="Контакты">Контакты</a>
-                </li>
-                <li class="footer__nav-item">
-                  <ul class="footer__subnav-socials">
-                    <li class="footer__subnav-item">
-                      <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
-                        <img src="/images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
-                      </a>
-                    </li>
-                    <li class="footer__subnav-item">
-                      <a href="https://telegram.me/ekskursii" title="telegram">
-                        <img src="/images/sprite.svg#icons--socials--telegram" alt="telegram">
-                      </a>
-                    </li>
-                    <li class="footer__subnav-item">
-                      <a href="viber://add?number=375297566665" title="viber">
-                        <img src="/images/sprite.svg#icons--socials--viber" alt="viber">
-                      </a>
-                    </li>
-                    <li class="footer__subnav-item">
-                      <a href="skype:+375297566665?add" title="skype">
-                        <img src="/images/sprite.svg#icons--socials--skype" alt="skype">
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div class="footer__disclaimer">
-              <p class="footer__disclaimer--text">
-                Информация, размещенная на интернет-портале <a href="https://ekskursii.by/" title="ekskursii.by">Ekskursii.by</a>, не является предложением публичной оферты.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-            <div class="footer__inner">
-              <a class="footer__logo" href="#">
-                <img src="/images/sprite.svg#logo" alt="logo">
-              </a>
-              <div class="footer__secondary-nav">
-                <div class="footer__secondary-nav-col">
-                  <a class="footer__secondary-nav-btn" href="#">Вход для гидов</a>
-                  <a class="footer__secondary-nav-btn" href="#">Вход для партнеров</a>
-                  <a class="footer__secondary-nav-btn--alt" href="#">Регистрация нового Агента</a>
-                </div>
-                <div class="footer__secondary-nav-col">
-                  <a class="footer__secondary-nav-link" href="https://sanatorii.by/" title="sanatorii.by" target="_blank">Санатории</a>
-                  <a class="footer__secondary-nav-link" href="https://beltur.by/" title="beltur.by" target="_blank">Базы отдыха</a>
-                  <a class="footer__secondary-nav-link" href="https://belhotel.by/" title="belhotel.by" target="_blank">Гостиницы</a>
-                  <a class="footer__secondary-nav-link" href="https://beltransfer.by/" title="beltransfer.by" target="_blank">Трансфер</a>
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="footer__inner">
-              <div class="footer__payment">
-                <img src="/images/sprite.svg#icons--payment--master-card-secure-code" alt="master card secure code">
-                <img src="/images/sprite.svg#icons--payment--mastercard" alt="mastercard">
-                <img src="/images/sprite.svg#icons--payment--verified-visa" alt="verified by visa">
-                <img src="/images/sprite.svg#icons--payment--visa" alt="visa">
-                <img src="/images/sprite.svg#icons--payment--bepaid" alt="bepaid">
-                <img src="/images/sprite.svg#icons--payment--erip" alt="система ЕРИП">
-              </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="footer__inner">
-              <div class="footer__copyright">
-                <p>© Частное научно-производственное унитарное предприятие "Автоматизированные технологии туризма"</p>
-              </div>
-            </div>
-        </div>
-      </footer>
-    </div>
 
+        
+      </main>
+      
+      <footer class="footer">
+      
+        <div class="container">
+      
+          <div class="footer__inner">
+      
+            <div class="footer__main-nav">
+      
+              <ul class="footer__nav-col">
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Все экскурсии">Все экскурсии</a>
+      
+                  <ul class="footer__subnav-col">
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Новогодние каникулы">Новогодние каникулы</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Групповые экскурсии">Групповые</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Индивидуальные экскурсии">Индивидуальные</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Корпоративные экскурсии">Корпоративные</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Школьные экскурсии">Школьные</a>
+      
+                    </li>
+      
+                  </ul>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Бонусы и скидки">Бонусы и скидки</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Все об экскурсиях">Все об экскурсиях</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Города">Города</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Музеи">Музеи</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Знаковые места">Знаковые места</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Туризм в Беларуси">Туризм в Беларуси</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="О Беларуси">О Беларуси</a>
+      
+                </li>
+      
+              </ul>
+      
+              <ul class="footer__nav-col">
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Поиск">Поиск</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="График экскурсий">График экскурсий</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Личный кабинет">Личный кабинет</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Новости">Новости</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Частые вопросы">Частые вопросы</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Отзывы">Отзывы</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="О нас">О нас</a>
+      
+                  <ul class="footer__subnav-col">
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Новогодние каникулы">Общая информация</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Награды">Награды</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Наши преимущества">Наши преимущества</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Сотрудники">Сотрудники</a>
+      
+                    </li>
+      
+                  </ul>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Контакты">Контакты</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <ul class="footer__subnav-socials">
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+      
+                        <img src="/images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+      
+                      </a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="https://telegram.me/ekskursii" title="telegram">
+      
+                        <img src="/images/sprite.svg#icons--socials--telegram" alt="telegram">
+      
+                      </a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="viber://add?number=375297566665" title="viber">
+      
+                        <img src="/images/sprite.svg#icons--socials--viber" alt="viber">
+      
+                      </a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="skype:+375297566665?add" title="skype">
+      
+                        <img src="/images/sprite.svg#icons--socials--skype" alt="skype">
+      
+                      </a>
+      
+                    </li>
+      
+                  </ul>
+      
+                </li>
+      
+              </ul>
+      
+            </div>
+      
+            <div class="footer__disclaimer">
+      
+              <p class="footer__disclaimer--text">
+      
+                Информация, размещенная на интернет-портале <a href="https://ekskursii.by/" title="ekskursii.by">Ekskursii.by</a>, не является предложением публичной оферты.
+      
+              </p>
+      
+            </div>
+      
+          </div>
+      
+        </div>
+      
+        <div class="container">
+      
+            <div class="footer__inner">
+      
+              <a class="footer__logo" href="#">
+      
+                <img src="/images/sprite.svg#logo" alt="logo">
+      
+              </a>
+      
+              <div class="footer__secondary-nav">
+      
+                <div class="footer__secondary-nav-col">
+      
+                  <a class="footer__secondary-nav-btn" href="#">Вход для гидов</a>
+      
+                  <a class="footer__secondary-nav-btn" href="#">Вход для партнеров</a>
+      
+                  <a class="footer__secondary-nav-btn--alt" href="#">Регистрация нового Агента</a>
+      
+                </div>
+      
+                <div class="footer__secondary-nav-col">
+      
+                  <a class="footer__secondary-nav-link" href="https://sanatorii.by/" title="sanatorii.by" target="_blank">Санатории</a>
+      
+                  <a class="footer__secondary-nav-link" href="https://beltur.by/" title="beltur.by" target="_blank">Базы отдыха</a>
+      
+                  <a class="footer__secondary-nav-link" href="https://belhotel.by/" title="belhotel.by" target="_blank">Гостиницы</a>
+      
+                  <a class="footer__secondary-nav-link" href="https://beltransfer.by/" title="beltransfer.by" target="_blank">Трансфер</a>
+      
+                </div>
+      
+              </div>
+      
+            </div>
+      
+        </div>
+      
+        <div class="container">
+      
+            <div class="footer__inner">
+      
+              <div class="footer__payment">
+      
+                <img src="/images/sprite.svg#icons--payment--master-card-secure-code" alt="master card secure code">
+      
+                <img src="/images/sprite.svg#icons--payment--mastercard" alt="mastercard">
+      
+                <img src="/images/sprite.svg#icons--payment--verified-visa" alt="verified by visa">
+      
+                <img src="/images/sprite.svg#icons--payment--visa" alt="visa">
+      
+                <img src="/images/sprite.svg#icons--payment--bepaid" alt="bepaid">
+      
+                <img src="/images/sprite.svg#icons--payment--erip" alt="система ЕРИП">
+      
+              </div>
+      
+            </div>
+      
+        </div>
+      
+        <div class="container">
+      
+            <div class="footer__inner">
+      
+              <div class="footer__copyright">
+      
+                <p>© Частное научно-производственное унитарное предприятие "Автоматизированные технологии туризма"</p>
+      
+              </div>
+      
+            </div>
+      
+        </div>
+      
+      </footer>
+      
+    </div>
+      
+
+      
     <script src="js/main.min.js"></script>
+      
   </body>
+      
 </html>
