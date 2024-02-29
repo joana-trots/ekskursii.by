@@ -1,10 +1,10 @@
 /* QUICK NAV */
 const qsection = document.getElementById('qsection'),
-      qnavbar = document.getElementById('qnavbar'),
-      price = document.querySelector('.about__price');
+      qnavbar = document.getElementById('qnavbar');
 
 var qlink = document.querySelectorAll('.quicknav__tags-group--tag-link'),
-    qlinkActive = document.querySelector('.quicknav__active-link');
+    qlinkActive = document.querySelector('.quicknav__active-link'),
+    qid = document.querySelectorAll('.about__inner section, section.route, section.feedback');
 
 window.onscroll = function() {
   if ((window.scrollY - qsection.offsetTop) > 0) {
@@ -14,6 +14,7 @@ window.onscroll = function() {
   }
 };   
 
+
 const sections = document.querySelectorAll('.about__inner section');
 let options = { 
   root: qsection, 
@@ -22,8 +23,18 @@ let options = {
 let callback = function(entries) { 
   entries.forEach(entry => { 
     if (entry.isIntersecting) { 
-        const target = entry.target; 
-        // делаем каку-то логику с нужным элементом. Связываешь таргет который видишь с пунктом в меню 
+        const target = entry.target;
+
+        qid.forEach((id => {
+          id.getAttribute('id');
+          // console.log(id.getAttribute('id'));
+          qlink.forEach((link => {
+            href = link.getAttribute('href').substring(1);
+            // console.log(href);
+            if (id === href) {console.log('true')}
+          }));
+        }));
+
         console.log(target) 
     } 
   }); 
