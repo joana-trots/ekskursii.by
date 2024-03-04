@@ -20,15 +20,18 @@ modalOpenBtn.forEach((item) => {
 })
 
 let mainInput =  document.querySelector('#main-search-place');
-let mainInputModal = document.querySelector('#main-search-place_modal')
-mainInput.oninput = function() {
-  if (mainInput.value.length > 2) {
-    searchModal.style.display = "block";
-    document.body.classList.toggle('overflow-hidden');
-    mainInputModal.value = mainInput.value;
-    mainInputModal.focus();
+let mainInputModal = document.querySelector('#main-search-place_modal');
+if (mainInput) {
+  mainInput.oninput = function() {
+    if (mainInput.value.length > 2) {
+      searchModal.style.display = "block";
+      document.body.classList.toggle('overflow-hidden');
+      mainInputModal.value = mainInput.value;
+      mainInputModal.focus();
+    }
   }
 }
+
 
 modalClose.forEach((item) => {
   item.onclick = function() {
