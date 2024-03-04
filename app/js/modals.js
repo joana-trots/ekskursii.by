@@ -1,11 +1,11 @@
-let  modal          = document.querySelectorAll('.modal'),
+let modal          = document.querySelectorAll('.modal'),
 
-     contactsModal  = document.querySelector('.contacts-modal'),
-     filtersModal   = document.querySelector('.filters-modal'),
-     searchModal    = document.querySelector('.search-modal'),
+    contactsModal  = document.querySelector('.contacts-modal'),
+    filtersModal   = document.querySelector('.filters-modal'),
+    searchModal    = document.querySelector('.search-modal'),
 
-     modalOpenBtn   = document.querySelectorAll('.modal-open'),
-     modalClose     = document.querySelectorAll('.modal-close');
+    modalOpenBtn   = document.querySelectorAll('.modal-open'),
+    modalClose     = document.querySelectorAll('.modal-close');
      
 modalOpenBtn.forEach((item) => {
   item.onclick = function() {
@@ -18,20 +18,17 @@ modalOpenBtn.forEach((item) => {
     document.body.classList.toggle('overflow-hidden');
   }
 })
-let input =  document.querySelector('#main-search-place');
-let minput = document.querySelector('#main-search-place_modal')
-input.oninput = function() {
-  if (input.value.length > 2) {
+
+let mainInput =  document.querySelector('#main-search-place');
+let mainInputModal = document.querySelector('#main-search-place_modal')
+mainInput.oninput = function() {
+  if (mainInput.value.length > 2) {
     searchModal.style.display = "block";
     document.body.classList.toggle('overflow-hidden');
-    minput.value = input.value;
-    minput.focus();
+    mainInputModal.value = mainInput.value;
+    mainInputModal.focus();
   }
 }
-
-
-
-
 
 modalClose.forEach((item) => {
   item.onclick = function() {

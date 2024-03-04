@@ -33,7 +33,7 @@
     width: fit-content
     margin: 30px auto 10px
     padding: 14px 18px
-    background: $accent-yellow
+    background-color: $accent-yellow
     border: 1px solid $accent-yellow
     border-radius: 30px
     box-shadow: $shadow-yellow
@@ -127,20 +127,40 @@
         font-weight: 800
 
 .search-modal
-  .modal-content
-    width: auto
-    margin: 16px
-    height: calc(100vh - 32px)
-  .search-results
-    margin-top: 20px
-  .search-results__item--header
-    margin-top: 10px
-    padding-top: 16px
-    border-top: 1px solid $additional-gray
-  .search-results__item--info,
-  .search-results__item--route
-    margin-top: 10px
-  [class$=hint-text] p
-    margin-top: 4px
-  li span
-    text-decoration: underline
+    .modal-content
+        width: auto
+        margin: 16px
+        height: calc(100vh - 32px)
+        overflow: auto
+    .search-form
+        position: relative
+        margin-top: 20px
+        input
+            width: calc(100% - 28px - 38px)
+    .btn.modal-close
+        display: block
+        margin: 0 0 0 auto
+    .btn.simple-btn
+        position: absolute
+        top: 6px
+        right: 7px
+        padding: 9px 8px
+        border: 0
+        background-color: $accent-yellow
+    .search-form__submit-btn
+        width: 100%
+        margin-top: 20px
+    .search-results
+        margin-top: 20px
+    .search-results__item--header
+        margin-top: 10px
+        padding-top: 16px
+        border-top: 1px solid $additional-gray
+    .search-results__item--info,
+    .search-results__item--route
+        margin-top: 10px
+    [class$=hint-text] p
+        margin-top: 4px
+    li span
+        text-decoration: underline
+        .btn.modal-close,

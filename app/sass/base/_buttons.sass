@@ -1,6 +1,6 @@
 button,
 .btn
-    background: transparent
+    background-color: transparent
     outline: none
     border: 0
     font-family: 'Mulish', sans-serif
@@ -18,7 +18,7 @@ a.btn::after
     position: relative
     @extend %flex-center
     padding: 14px 18px
-    background: $accent-yellow
+    background-color: $accent-yellow
     border: 1px solid $accent-yellow
     border-radius: 30px
     box-shadow: $shadow-yellow
@@ -27,13 +27,13 @@ a.btn::after
     color: $black
     &:hover
         border: 1px solid $black
-        background: $white
+        background-color: $white
     @media screen and (max-width: 540px)
         padding: 14px
 
 .cta-secondary
     @extend .cta-primary
-    background: $white
+    background-color: $white
     border: 1px solid $white
     box-shadow: $shadow-gray
     &:hover
@@ -47,11 +47,11 @@ a.btn::after
     width: fit-content
     border: 1px solid $additional-gray
     color: $dark-gray
-    background: $white
+    background-color: $white
     border-radius: 24px
     &:hover
         border-color: $dark-gray
-        background: $white
+        background-color: $white
         color: $black
     [type="checkbox"]
         width: 100%
@@ -73,7 +73,7 @@ a.btn::after
     padding: 8px 12px
     border: 1px solid $black
     color: $black
-    background: $white
+    background-color: $white
     border-radius: 24px
     font-size: 14px
     &:hover
