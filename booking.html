@@ -107,9 +107,6 @@
                     <a href="viber://add?number=375297566665" title="viber">
                       <img src="images/sprite.svg#icons--socials--viber" alt="viber">
                     </a>
-                    <a href="skype:+375297566665?add" title="skype">
-                      <img src="images/sprite.svg#icons--socials--skype" alt="skype">
-                    </a>
                   </li>
                 </ul>
               </li>
@@ -143,9 +140,6 @@
                 </a>
                 <a href="viber://add?number=375297566665" title="viber">
                   <img src="images/sprite.svg#icons--socials--viber" alt="viber">
-                </a>
-                <a href="skype:+375297566665?add" title="skype">
-                  <img src="images/sprite.svg#icons--socials--skype" alt="skype">
                 </a>
               </div>
             </div>
@@ -301,6 +295,16 @@
                               </span>
                             </div>
                             <div class="booking-form__form-field">
+                              <label class="h6" for="city">Страна проживания</label>
+                              <span class="custom-select booking-form__form-field--input">
+                                <select class="no-icon" type="text" name="city" id="city" value="0" required>
+                                  <option value="0">Выберите город</option>
+                                  <option value="1">Беларусь</option>
+                                  <option value="2">Россия</option>
+                                </select>
+                              </span>
+                            </div>
+                            <div class="booking-form__form-field">
                               <label class="h6" for="question">Задать вопрос по экскурсии</label>
                               <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="Задайте вопрос по экскурсии..."></textarea>
                             </div>
@@ -421,6 +425,16 @@
                               <span class="custom-select booking-form__form-field--input">
                                 <select class="no-icon" type="text" name="country-individual" id="country-individual" value="0"  required>
                                   <option value="0" disabled selected>Выберите страну проживания</option>
+                                  <option value="1">Беларусь</option>
+                                  <option value="2">Россия</option>
+                                </select>
+                              </span>
+                            </div>
+                            <div class="booking-form__form-field">
+                              <label class="h6" for="city-individual">Страна проживания</label>
+                              <span class="custom-select booking-form__form-field--input">
+                                <select class="no-icon" type="text" name="city" id="city-individual" value="0" required>
+                                  <option value="0">Выберите город</option>
                                   <option value="1">Беларусь</option>
                                   <option value="2">Россия</option>
                                 </select>
@@ -561,11 +575,6 @@
                     <li class="footer__subnav-item">
                       <a href="viber://add?number=375297566665" title="viber">
                         <img src="/images/sprite.svg#icons--socials--viber" alt="viber">
-                      </a>
-                    </li>
-                    <li class="footer__subnav-item">
-                      <a href="skype:+375297566665?add" title="skype">
-                        <img src="/images/sprite.svg#icons--socials--skype" alt="skype">
                       </a>
                     </li>
                   </ul>
