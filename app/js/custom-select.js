@@ -56,6 +56,7 @@ var x, i, j, l, ll, selElmnt, a, b, c, notGenerate, val;
                     for (i = 0; i < sl; i++) {
                         if (s.options[i].innerHTML == this.innerHTML) {
                             s.selectedIndex = i;
+                            s.dispatchEvent(new Event('change'));
                             h.innerHTML = this.innerHTML;
                             y = this.parentNode.getElementsByClassName('same-as-selected');
                             yl = y.length;
