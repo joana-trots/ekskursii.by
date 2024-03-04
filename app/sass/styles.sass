@@ -34,3 +34,27 @@
 @import _slider
 @import _modals
 @import _dropdown
+
+
+.selected-filters-item__list
+  @extend .filters-item__list
+.selected-filters-item__list--item
+  @extend .filters-item__list--item
+.selected-filters-item__input    
+  @extend .filters-item__input
+  &:checked ~ .selected-filters-item__label
+    background-color: $accent-yellow
+    border-color: $accent-yellow
+    color: $black
+.selected-filters-item__label
+  @extend .filters-item__label
+  font-size: 14px !important
+  &::after
+    @extend %button-icon
+    display: inline-block
+    margin-left: 8px
+    width: 10px
+    height: 10px
+    background-image: $icon_cross
+    
+    
