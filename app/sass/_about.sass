@@ -114,9 +114,11 @@
     border-left: 1px solid $additional-gray
   .program__item
     margin-top: 12px
-    a
+    a:not(.btn)
       color: $black
       text-decoration: underline
+    a.btn
+      margin: 10px 0
     .dropdown-content p,
     p:nth-of-type(2)
       margin-top: 6px

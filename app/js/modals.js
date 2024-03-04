@@ -19,18 +19,25 @@ modalOpenBtn.forEach((item) => {
   }
 })
 
-let mainInput =  document.querySelector('#main-search-place');
+let mainInput      = document.querySelectorAll('#main-search-place, #header-search-place');
 let mainInputModal = document.querySelector('#main-search-place_modal');
+
 if (mainInput) {
-  mainInput.oninput = function() {
-    if (mainInput.value.length > 2) {
-      searchModal.style.display = "block";
-      document.body.classList.toggle('overflow-hidden');
-      mainInputModal.value = mainInput.value;
-      mainInputModal.focus();
+  mainInput.forEach((input => {
+    input.oninput = function() {
+      if (input.value.length > 2) {
+        searchModal.style.display = "block";
+        document.body.classList.toggle('overflow-hidden');
+        mainInputModal.value = input.value;
+        mainInputModal.focus();
+        mainInputModal.onchange = function(){
+          input.value = mainInputModal.value;
+        }
+      }
     }
-  }
+  }));
 }
+
 
 
 modalClose.forEach((item) => {

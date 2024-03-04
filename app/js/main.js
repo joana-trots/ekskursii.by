@@ -71,9 +71,7 @@ scheduleButton.forEach((btn) => {
 flatpickr('[id*="-date"]', {
   dateFormat: "d-m-Y",
   mode: "range",
-  "locale": "ru",
-  // "locale": "be",
-  // "locale": "en"
+  "locale": document.documentElement.lang == "by" ? 'be' : document.documentElement.lang,
 });
 
 

@@ -14,7 +14,8 @@ textarea
     &:not(.no-icon)::before
         @extend %button-icon-20
     &:has([id*="place"])::before,
-    &:has([id*="country"])::before
+    &:has([id*="country"])::before,
+    &:has([id*="city"])::before
         background-image: $icon_pin
     &:has([id*="date"])::before
         background-image: $icon_calendar
