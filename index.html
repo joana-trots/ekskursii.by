@@ -205,9 +205,13 @@
             </div>
           </div>
         </section>
-        
         <div class="search-modal modal">
           <div class="modal-content">
+        
+            <button class="btn modal-close">
+              <img src="images/sprite.svg#icons--cross" alt="close">
+            </button>
+        
             <form class="search-form" id="search-form">
               <div class="search-form__form-field">
                 <label class="hidden-label" for="main-search-place_modal">Место</label>
@@ -215,8 +219,10 @@
                   <input type="text" name="place" id="main-search-place_modal" minlength="3" placeholder="Место" required>
                 </span>
               </div>
+              <a class="btn simple-btn arrow-btn" href="#" title=""></a>
+              <button class="btn search-form__submit-btn" value="Искать"></button>
             </form>
-            
+        
             <div class="search-results">
               <ul>
                 <li class="h6 search-results__item--header">Групповые экскурсии</li>
@@ -258,7 +264,6 @@
             </div>
           </div>
         </div>
-        
         <section class="popular">
           <div class="container">
             <div class="popular__inner">
