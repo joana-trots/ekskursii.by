@@ -91,7 +91,7 @@
 .booking-form__form-field--input:has([id*='country']):has(.select-items .same-as-selected:first-child) .select-selected,
 .booking-form__form-field--input:has([id*='city']):has(.select-items .same-as-selected:first-child) .select-selected
   @extend ::placeholder
-.booking-form__form-field:has([required]) label::before
+.booking-form__form-field:has([required]:not([type='radio'])) label::before
   content: '* '
 .booking-price
   display: block
@@ -110,3 +110,23 @@
   @media screen and (max-width: 430px)
     width: 100vw
 
+.booking-form__form-field--pay
+  display: flex
+  gap: 10px
+[class*='booking-form__form-field--payment']
+  display: none
+  flex-direction: column
+  gap: 10px
+  padding: 10px
+  background-color: $light-gray
+
+.booking-form__form-field--pay:has(input#individual:checked)
+  & ~ .booking-form__form-field--payment-individual
+    display: flex
+  & ~ .booking-form__form-field--payment-entity
+    display: none
+.booking-form__form-field--pay:has(input#entity:checked)
+  & ~ .booking-form__form-field--payment-individual
+    display: none
+  & ~ .booking-form__form-field--payment-entity
+    display: flex

@@ -98,39 +98,6 @@
     .filters-item__title
         @extend .h6
         font-weight: 800
-.filters-item__list
-    display: flex
-    gap: 8px
-    flex-wrap: wrap
-    margin-top: 16px
-.filters-item__list--item
-    position: relative
-    display: flex
-    align-items: center
-.filters-item__input
-    position: absolute
-    width: 100%
-    opacity: 0
-    cursor: pointer
-    &:checked ~ .filters-item__label
-        background-color: $accent-yellow
-        border-color: $accent-yellow
-        color: $black
-        &::after
-            @extend %button-icon
-            display: inline-block
-            margin-left: 8px
-            width: 10px
-            height: 10px
-            background-image: $icon_cross
-.filters-item__label
-    padding: 8px 12px
-    border: 1px solid $light-gray
-    border-radius: 24px
-    color: $dark-gray
-    cursor: pointer
-    background-color: $white
-
 
 .search-modal
     .modal-content
