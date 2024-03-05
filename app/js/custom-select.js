@@ -1,6 +1,7 @@
-function customSelect (classNameOrElement) {
+const CustomSelect = (function () {
+  function init (classNameOrElement) {
     var x, i, j, l, ll, selElmnt, a, b, c, notGenerate, val;
-  
+
     if (
       typeof classNameOrElement === 'string' ||
       classNameOrElement instanceof String
@@ -31,9 +32,9 @@ function customSelect (classNameOrElement) {
         b = document.createElement ('DIV');
         b.setAttribute ('class', 'select-items display-none');
       }
+
+      /* For each option in the original select element, create a new DIV that will act as an option item: */
       for (j = 0; j < ll; j++) {
-        /* For each option in the original select element,
-                  create a new DIV that will act as an option item: */
         if (notGenerate) {
           c = b.children[j];
           if (val == c.textContent) {
@@ -53,9 +54,9 @@ function customSelect (classNameOrElement) {
           if (selElmnt.options[j].selected) {
             c.setAttribute ('class', 'same-as-selected');
           }
+
+          /* When an item is clicked, update the original select box, and the selected item: */
           c.addEventListener ('click', function (e) {
-            /* When an item is clicked, update the original select box,
-                          and the selected item: */
             var y, i, k, s, h, sl, yl;
             s = this.parentNode.parentNode.getElementsByTagName ('select')[0];
             sl = s.length;
@@ -84,9 +85,9 @@ function customSelect (classNameOrElement) {
       if (!notGenerate) {
         x[i].appendChild (b);
       }
+
+      /* When the select box is clicked, close any other select boxes, and open/close the current select box: */
       a.addEventListener ('click', function (e) {
-        /* When the select box is clicked, close any other select boxes,
-                  and open/close the current select box: */
         e.stopPropagation ();
         closeAllSelect (this);
         this.nextElementSibling.classList.toggle ('display-none');
@@ -94,30 +95,34 @@ function customSelect (classNameOrElement) {
       });
     }
   }
-  
-  customSelect ('.custom-select:not(.custom-select-false)');
 
-    function closeAllSelect(elmnt) {
-      /* A function that will close all select boxes in the document,
-      except the current select box: */
-      var x, y, i, xl, yl, arrNo = [];
-      x = document.getElementsByClassName('select-items');
-      y = document.getElementsByClassName('select-selected');
-      xl = x.length;
-      yl = y.length;
-      for (i = 0; i < yl; i++) {
-          if (elmnt == y[i]) {
-              arrNo.push(i)
-          } else {
-              y[i].classList.remove('select-arrow-active');
-          }
+  /* A function that will close all select boxes in the document, except the current select box: */
+  function closeAllSelect (elmnt) {
+    var x, y, i, xl, yl, arrNo = [];
+    x = document.getElementsByClassName ('select-items');
+    y = document.getElementsByClassName ('select-selected');
+    xl = x.length;
+    yl = y.length;
+    for (i = 0; i < yl; i++) {
+      if (elmnt == y[i]) {
+        arrNo.push (i);
+      } else {
+        y[i].classList.remove ('select-arrow-active');
       }
-      for (i = 0; i < xl; i++) {
-          if (arrNo.indexOf(i)) {
-              x[i].classList.add('display-none');
-          }
+    }
+    for (i = 0; i < xl; i++) {
+      if (arrNo.indexOf (i)) {
+        x[i].classList.add ('display-none');
       }
+    }
   }
-  /* If the user clicks anywhere outside the select box,
-  then close all select boxes: */
-  document.addEventListener('click', closeAllSelect);
+
+  /* If the user clicks anywhere outside the select box, then close all select boxes: */
+  document.addEventListener ('click', closeAllSelect);
+
+  return {init};
+}) ();
+
+window.CustomSelect = CustomSelect;
+
+CustomSelect.init ('.custom-select:not(.custom-select-false)');
