@@ -37,12 +37,11 @@
 @import _dropdown
 
 
-// .booking-form__form-field
-//   &:has(.booking-form__form-field--input):has(input:invalid)
-//     .booking-form__form-field--input
-//       border: 1px solid red
-//     label::after
-//       @extend %error-message
-//   &:has(.booking-form__form-field--radio):has(input:invalid)
-//     p.h6::after
-//       @extend %error-message
+.booking-form__form-field.invalid
+  .booking-form__form-field--input
+    border: 1px solid red
+  label::after
+    @extend %error-message
+  // &:has(.booking-form__form-field--radio)
+  //   p.h6::after
+  //     @extend %error-message
