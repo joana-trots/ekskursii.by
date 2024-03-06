@@ -56,9 +56,9 @@ function sprite() {
 }
 function styles() {
     return src('app/sass/styles.sass')
-        // .pipe(autoprefixer({ 
-        //     overrideBrowserslist: ['last 10 version']
-        // }))
+        .pipe(autoprefixer({ 
+            overrideBrowserslist: ['last 10 version']
+        }))
         .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(concat('styles.min.css'))
         .pipe(dest('app/css'))
