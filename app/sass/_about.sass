@@ -8,18 +8,17 @@
   .card-item__cta.btn
     margin-top: 18px
 
-
-
 .about__nav
+  position: relative
   width: 100%
   padding: 40px 16px 0
-  background-color: $white 
+  background-color: $white
+  z-index: 8
   &.onscroll
     position: sticky
     top: 40px
     padding: 16px
     box-shadow: $shadow-gray
-    z-index: 8
     .quicknav__tags-group--tag-link
       padding: 7px 10px
       font-size: 14px
@@ -145,3 +144,12 @@
       font-weight: 600
 .route__map
   margin-top: 20px
+
+#price,
+#schedule,
+#description,
+#program,
+#route,
+#feedback
+  padding-top: 200px
+  margin-top: -160px

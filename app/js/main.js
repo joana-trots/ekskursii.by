@@ -69,6 +69,3 @@ for ( var i = 0; i < elms.length; i++ ) {
     observer.observe(section);
   });
 })();
-window.addEventListener("hashchange", function () {
-  window.scrollTo(window.scrollX, window.scrollY - 200);
-});
