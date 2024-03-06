@@ -46,7 +46,6 @@ for ( var i = 0; i < elms.length; i++ ) {
     links.forEach((link) => {
       if (link.getAttribute("href") === `#${id}`) {
         link.classList.add("quicknav__active-link");
-        console.log(window.scrollY - link.offsetTop)
       } else {
         link.classList.remove("quicknav__active-link");
       }
@@ -54,10 +53,10 @@ for ( var i = 0; i < elms.length; i++ ) {
   };
   let options = {
     root: null,
-    threshold: 0.5,
+    threshold: 0.75,
   };
   let callback = function (entries) {
-    entries.forEach((entry) => {
+    entries.toReversed().forEach((entry) => {
       if (entry.isIntersecting) {
         const target = entry.target;
         setActiveLink(target.getAttribute("id"));
