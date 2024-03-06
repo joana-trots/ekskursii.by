@@ -1,22 +1,5 @@
-// var formField = document.querySelectorAll('.booking-form__form-field'),
-//     submitBtn = document.querySelectorAll('[type="submit"]');
 
-// formField.forEach((field => {
-//   var input = field.querySelectorAll('input');
-//   input.forEach((item) => {
-//     item.onblur = function(e){
-//       const isValid = e.target.checkValidity();
-//       if (!isValid) field.classList.add('invalid');
-//       else field.classList.remove('invalid');
-//     }
-//   });
-// }))
-// submitBtn.forEach(btn => {
-//   btn.onclick = function(e) {
-//     e.preventDefault();
-    
-//   }
-// })
+
 /* SCHEDULE TOGGLE CARDS\TABLE */
 var scheduleDisplay = document.querySelectorAll('.schedule__display'),
     scheduleButton  = document.querySelectorAll('.schedule__options-item--display');
@@ -54,3 +37,38 @@ for ( var i = 0; i < elms.length; i++ ) {
     }
   }).mount();
 }
+
+/* QUICK NAV */
+(function () {
+  const sections = document.querySelectorAll("#price, #schedule, #description, #program, #route, #feedback");
+  const links = document.querySelectorAll(".quicknav__tags-group--tag-link");
+  const setActiveLink = (id) => {
+    links.forEach((link) => {
+      if (link.getAttribute("href") === `#${id}`) {
+        link.classList.add("quicknav__active-link");
+        console.log(window.scrollY - link.offsetTop)
+      } else {
+        link.classList.remove("quicknav__active-link");
+      }
+    });
+  };
+  let options = {
+    root: null,
+    threshold: 0.5,
+  };
+  let callback = function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = entry.target;
+        setActiveLink(target.getAttribute("id"));
+      }
+    });
+  };
+  const observer = new IntersectionObserver(callback, options);
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+})();
+window.addEventListener("hashchange", function () {
+  window.scrollTo(window.scrollX, window.scrollY - 200);
+});

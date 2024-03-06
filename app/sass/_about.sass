@@ -13,24 +13,16 @@
 .about__nav
   width: 100%
   padding: 40px 16px 0
-  margin-top: -40px
   background-color: $white 
   &.onscroll
     position: sticky
-    top: 75px
+    top: 40px
     padding: 16px
     box-shadow: $shadow-gray
     z-index: 8
-    .h6
-      display: none
-    .quicknav__tags-group
-      margin-top: 0
     .quicknav__tags-group--tag-link
       padding: 7px 10px
       font-size: 14px
-    ~ .container
-      position: relative
-      top: 75px
   .quicknav__active-link
     background-color: $accent-yellow
     border-color: $accent-yellow
@@ -117,8 +109,9 @@
     a:not(.btn)
       color: $black
       text-decoration: underline
-    a.btn
-      margin: 10px 0
+    a.simple-secondary-btn
+      display: flex
+      margin: 10px 0 10px auto
     .dropdown-content p,
     p:nth-of-type(2)
       margin-top: 6px

@@ -17,7 +17,7 @@ modalOpenBtn.forEach((item) => {
     }
     document.body.classList.toggle('overflow-hidden');
   }
-})
+});
 
 let mainInput      = document.querySelectorAll('#main-search-place, #header-search-place');
 let mainInputModal = document.querySelector('#main-search-place_modal');
@@ -37,15 +37,12 @@ if (mainInput) {
     }
   }));
 }
-
-
-
 modalClose.forEach((item) => {
   item.onclick = function() {
     modal.forEach((item => {item.style.display = "none";}));
     document.body.classList.toggle('overflow-hidden');
   }
-})
+});
 window.onclick = function(event) {
   modal.forEach((item => {
     if (event.target === item) {

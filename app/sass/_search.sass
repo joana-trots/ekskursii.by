@@ -39,7 +39,7 @@
         justify-content: flex-end
         color: $dark-gray
         &::before
-            content: 'свернуть'
+            content: attr(data-close-text)
         &::after
             @extend %button-icon
             position: relative
@@ -63,7 +63,7 @@
                 transform: translate(0, 50%)   
             &~.main-search__dropdown-arrow
                 &::before
-                    content: 'раскрыть'
+                    content: attr(data-open-text)
                 &::after
                     transform: rotate(360deg) translateY(-3px)
     .main-search__title

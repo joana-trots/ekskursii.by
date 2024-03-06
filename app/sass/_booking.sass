@@ -98,9 +98,9 @@
   display: block
   position: sticky
   bottom: -1px
-  width: calc(100vw - 16px)
+  width: 100%
   padding: 18px 0
-  margin: 30px auto -60px -16px
+  margin: 0
   text-align: center
   font-size: 18px
   background-color: $accent-yellow
@@ -108,8 +108,9 @@
   z-index: 7
   span
     font-weight: 800
-  @media screen and (max-width: 430px)
-    width: 100vw
+  @media screen and (max-width: 540px)
+    width: calc(100vw - 16px)
+    margin: 30px auto -60px -16px
 
 .booking-form__form-field--pay
   display: flex

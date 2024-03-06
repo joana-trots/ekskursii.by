@@ -16,3 +16,4 @@
 ### https://codepen.io/theaftermath87/pen/meZgzM (Mobile menu)
 ### https://flatpickr.js.org/ (Flatpickr - date picker)
 ### https://day.js.org/en/ (Day.js)
+### https://codepen.io/tribex/pen/EgQERR (No JS Tabs - alternate)
