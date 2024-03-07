@@ -53,7 +53,7 @@ for ( var i = 0; i < elms.length; i++ ) {
   };
   let options = {
     root: null,
-    threshold: 0.75,
+    threshold: 0.5,
   };
   let callback = function (entries) {
     entries.toReversed().forEach((entry) => {

@@ -3,10 +3,11 @@ let modal          = document.querySelectorAll('.modal'),
     contactsModal  = document.querySelector('.contacts-modal'),
     filtersModal   = document.querySelector('.filters-modal'),
     searchModal    = document.querySelector('.search-modal'),
+    bookingModal   = document.querySelector('.booking-modal'),
 
     modalOpenBtn   = document.querySelectorAll('.modal-open'),
     modalClose     = document.querySelectorAll('.modal-close');
-     
+
 modalOpenBtn.forEach((item) => {
   item.onclick = function() {
     if (item.classList.contains('phone-item')) {
@@ -14,6 +15,9 @@ modalOpenBtn.forEach((item) => {
     }
     if (item.classList.contains('schedule__options-item--filters')) {
       filtersModal.style.display = "flex";
+    }
+    if (item.classList.contains('intro__btn--primary')) {
+      bookingModal.style.display = "flex";
     }
     document.body.classList.toggle('overflow-hidden');
   }
