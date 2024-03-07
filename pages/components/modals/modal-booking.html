@@ -1,0 +1,41 @@
+<div class="booking-modal modal">
+  <div class="modal-content">
+    <div class="modal__header">
+      <h2 class="h2">Быстрая заявка</h2>
+      <button class="btn modal-close">
+        <img src="images/sprite.svg#icons--cross" alt="close">
+      </button>
+    </div>
+    
+    <form class="booking-form" id="booking-group">
+      <div class="booking-info booking-info__profile">
+        <div class="booking-form__form-field">
+          <label class="h6" for="name">ФИО</label>
+          <span class="booking-form__form-field--input">
+            <input class="no-icon" type="text" name="name" id="name" placeholder="Введите ваше ФИО" required>
+          </span>
+        </div>
+        <div class="booking-form__form-field">
+          <label class="h6" for="phone">Email или телефон</label>
+          <span class="booking-form__form-field--input">
+            <input class="no-icon" type="text" name="phone" id="phone" placeholder="Email или телефон" required>
+          </span>
+        </div>
+        <div class="booking-form__form-field">
+          <label class="h6" for="question">Пожелания по маршруту, программе, питанию...</label>
+          <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="Пожелания по экскурсии"></textarea>
+        </div>
+      </div>
+    
+      <div class="booking-info booking-info__rules">
+        <div class="booking-form__form-field hint-text">
+          <p>Нажимая кнопку «Отправить» Вы соглашаетесь с <a href="https://ekskursii.by/?Politika_konfidencialinosti" target="_blank">Политикой обработки персональных данных</a>.</p>
+        </div>
+      </div>
+    
+      <button class="btn booking-form__submit-btn" type="submit" value="Отправить"></button>
+  
+    </form>
+
+  </div>
+</div>
