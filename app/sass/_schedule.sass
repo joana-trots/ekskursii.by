@@ -118,10 +118,13 @@
 .card-item__info--duration p::before
     content: '~'
     width: auto
+.card-item__info--place p::before,
 .card-item__additional-info--pickup-point p::before
     background-image: $icon_pin
 .card-item__additional-info--seats p::before
     background-image: $icon_people-group
+.card-item__info--type p::before
+    background-image: $icon_flag
 @media screen and (max-width: 412px)
     .card-item__additional-info--pickup-point
         order: 1

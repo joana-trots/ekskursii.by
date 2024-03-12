@@ -1,4 +1,4 @@
-.booking
+.booking-tabs
   [class$='form__submit-btn']
     @extend .card-item__cta
     padding: 14px 28px
@@ -132,3 +132,9 @@
     display: none
   & ~ .booking-form__form-field--payment-entity
     display: flex
+
+.booking-form__form-field.invalid
+  .booking-form__form-field--input
+    border: 1px solid red
+  label::after
+    @extend %error-message

@@ -16,7 +16,6 @@
 
 @import _header
 
-/* homepage */
 @import _intro
 @import _search
 
@@ -25,23 +24,12 @@
 @import _feedback
 @import _contacts
 
-/* booking */
 @import _booking
-/* about */
 @import _about
+@import _attractions
 
 @import _footer
 @import _animations
 @import _slider
 @import _modals
 @import _dropdown
-
-
-.booking-form__form-field.invalid
-  .booking-form__form-field--input
-    border: 1px solid red
-  label::after
-    @extend %error-message
-  // &:has(.booking-form__form-field--radio)
-  //   p.h6::after
-  //     @extend %error-message

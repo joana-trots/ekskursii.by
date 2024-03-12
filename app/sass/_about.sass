@@ -97,7 +97,8 @@
     p:nth-of-type(2)
       margin-top: 6px
       a
-        text-decoration: underline
+        border-bottom: 1px solid $black
+
 
 .about__program
   .h6
@@ -110,7 +111,7 @@
     margin-top: 12px
     a:not(.btn)
       color: $black
-      text-decoration: underline
+      border-bottom: 1px solid $black
     a.simple-secondary-btn
       display: flex
       margin: 10px 0 10px auto
@@ -128,8 +129,11 @@
         flex: 0 0 10px
         transform: rotate(180deg)
         background-image: $icon_arrow_black
-      &:has([type="checkbox"]:checked) p::after
-        transform: rotate(0deg)
+      &:has([type="checkbox"]:checked) 
+        p::after
+          transform: rotate(0deg)
+        & ~ .dropdown-content p
+          margin-top: 0
   .program__item--title
     position: relative
     font-weight: 800
