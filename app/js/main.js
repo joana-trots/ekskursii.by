@@ -18,17 +18,17 @@ flatpickr('[id*="-date"]', {
 });
 
 /* ONLY ONE CHECKBOX */
-var checkboxes  = document.querySelectorAll('.attractions input');
-checkboxes && checkboxes.forEach((item => {
-    item.onclick = function(e){
-      if (item !== e.target) { item.checked = false; }
-    }
-}));
 
-// function onlyOne(checkbox) {
-  
-//   checkboxes.forEach((item) => {
-//       if (item !== checkbox) item.checked = false;
-//   })
-// }
+// checkboxes && checkboxes.forEach((item => {
+//     item.onclick = function(e){
+//       if (item !== e.target) { item.checked = false; }
+//     }
+// }));
+
+function onlyOne(checkbox) {
+  var checkboxes  = document.querySelectorAll('.attractions input[id*="filters-item"]');
+  checkboxes.forEach((item) => {
+      if (item !== checkbox) item.checked = false;
+  })
+}
 
