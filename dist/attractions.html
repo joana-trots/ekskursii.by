@@ -244,7 +244,8 @@
         <section class="attractions-intro">
           <div class="container">
             <div class="intro__inner">
-              <h1 class="h2">Популярные достопримечательности Беларуси</h1>
+              <!-- <h1 class="h2">Популярные достопримечательности Беларуси</h1> -->
+              <h1 class="h2">Знаковые места Беларуси</h1>
             </div>
           </div>
           <div class="gallery-slider splide">
@@ -360,37 +361,37 @@
               <div class="filters-item">
                 <ul class="filters-item__list">
                   <li class="filters-item__list--item">  
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-all" checked onclick="onlyOne(this)">
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-all" name="filters-item__input-1" checked onclick="onlyOne(this)">
                     <label for="filters-item__input-1" class="filters-item__label">Вся Беларусь <span>1464</span></label>
                   </li>
                   <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-minsk" >
-                    <label for="filters-item__input-6" class="filters-item__label">Минская <span>564</span></label>
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-minsk" name="filters-item__input-2">
+                    <label for="filters-item__input-2" class="filters-item__label">Минская <span>564</span></label>
                   </li>
                   <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-brest" >
-                    <label for="filters-item__input-2" class="filters-item__label">Брестская <span>564</span></label>
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-brest" name="filters-item__input-3">
+                    <label for="filters-item__input-3" class="filters-item__label">Брестская <span>564</span></label>
+                  </li>
+                  <li class="filters-item__list--item">
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-grodno" name="filters-item__input-4">
+                    <label for="filters-item__input-4" class="filters-item__label">Гродненская <span>564</span></label>
                   </li>
         
                   <li class="more-btn">
-                    <input class="popular__tags-group--tag-link" type="checkbox" id="more-btn" name="more-btn">
+                    <input class="popular__tags-group--tag-link" type="checkbox" id="more-btn-1" name="more-btn">
                     <label for="more-btn">Еще...</label>
                   </li>
-        
+                  
                   <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-grodno" >
-                    <label for="filters-item__input-5" class="filters-item__label">Гродненская <span>564</span></label>
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-vitebsk" name="filters-item__input-5">
+                    <label for="filters-item__input-5" class="filters-item__label">Витебская <span>564</span></label>
                   </li>
                   <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-vitebsk" >
-                    <label for="filters-item__input-3" class="filters-item__label">Витебская <span>564</span></label>
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-gomel" name="filters-item__input-6">
+                    <label for="filters-item__input-6" class="filters-item__label">Гомельская <span>564</span></label>
                   </li>
                   <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-gomel" >
-                    <label for="filters-item__input-4" class="filters-item__label">Гомельская <span>564</span></label>
-                  </li>
-                  <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-mogilev" >
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-mogilev" name="filters-item__input-7">
                     <label for="filters-item__input-7" class="filters-item__label">Могилевская <span>564</span></label>
                   </li>          
                 </ul>
@@ -407,31 +408,37 @@
               <div class="filters-item">
                 <ul class="filters-item__list">
                   <li class="filters-item__list--item">  
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-8">
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-8" name="filters-item__input-8">
                     <label for="filters-item__input-8" class="filters-item__label">Всe <span>564</span></label>
                   </li>
                   <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-9">
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-9" name="filters-item__input-9">
                     <label for="filters-item__input-9" class="filters-item__label">Археологические памятники <span>698</span></label>
                   </li>
                   <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-10">
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-10" name="filters-item__input-10">
                     <label for="filters-item__input-10" class="filters-item__label">Башни, брамы <span>564</span></label>
                   </li>
                   <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-11">
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-11" name="filters-item__input-11">
                     <label for="filters-item__input-11" class="filters-item__label">Вокзалы, ж/д и почтовые станции <span>564</span></label>
                   </li>
+        
+                  <li class="more-btn">
+                    <input class="popular__tags-group--tag-link" type="checkbox" id="more-btn" name="more-btn">
+                    <label for="more-btn">Еще...</label>
+                  </li>
+        
                   <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-12">
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-12" name="filters-item__input-12">
                     <label for="filters-item__input-12" class="filters-item__label">Дворцы и усадьбы <span>564</span></label>
                   </li>
                   <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-13">
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-13" name="filters-item__input-13">
                     <label for="filters-item__input-13" class="filters-item__label">Деревянное зодчество <span>135</span></label>
                   </li>
                   <li class="filters-item__list--item">
-                    <input type="checkbox" class="filters-item__input" id="filters-item__input-14">
+                    <input type="checkbox" class="filters-item__input" id="filters-item__input-14" name="filters-item__input-14">
                     <label for="filters-item__input-14" class="filters-item__label">Костелы <span>123</span></label>
                   </li>          
                 </ul>
@@ -459,7 +466,7 @@
             </div>
           </div>
         </section>
-        <section class="region__minsk">
+        <section class="region region__minsk">
           <div class="container">
             <div class="region__inner">
               <h2 class="h2">Минская область</h2>
@@ -477,7 +484,7 @@
             </div>
           </div>
         </section>
-        <section class="region__mogilev">
+        <section class="region region__mogilev">
           <div class="container">
             <div class="region__inner">
               <h2 class="h2">Могилёвская область</h2>
@@ -495,7 +502,7 @@
             </div>
           </div>
         </section>
-        <section class="region__brest">
+        <section class="region region__brest">
           <div class="container">
             <div class="region__inner">
               <h2 class="h2">Брестская область</h2>
@@ -513,7 +520,7 @@
             </div>
           </div>
         </section>
-        <section class="region__vitebsk">
+        <section class="region region__vitebsk">
           <div class="container">
             <div class="region__inner">
               <h2 class="h2">Витебская область</h2>
@@ -531,7 +538,7 @@
             </div>
           </div>
         </section>
-        <section class="region__gomel">
+        <section class="region region__gomel">
           <div class="container">
             <div class="region__inner">
               <h2 class="h2">Гомельская область</h2>

@@ -48,6 +48,7 @@
       font-size: 20px
     ul
       margin-top: 16px
+
 .about__schedule
   .schedule__display
     margin-top: 20px
@@ -99,7 +100,6 @@
       a
         border-bottom: 1px solid $black
 
-
 .about__program
   .h6
     margin-top: 20px
@@ -149,17 +149,21 @@
       border-radius: 50%
     span
       font-weight: 600
-.route__map
-  margin-top: 20px
 
-.about
-  #price
-    padding-top: 242px
-    margin-top: -202px
-  #schedule,
-  #description,
-  #program,
-  #route,
-  #feedback
+.about 
+  .route__map,
+  .video-wrapper
+    width: 100%
+    height: 260px
+    margin-top: 20px
+  iframe
+    width: 100%
+    height: 260px
+
+.about#qsection .about__inner 
+  section
     padding-top: 210px
     margin-top: -180px
+  section:first-child
+    padding-top: 242px !important
+    margin-top: -202px !important

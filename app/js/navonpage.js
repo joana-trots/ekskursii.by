@@ -7,7 +7,7 @@ if (qsection && qnavbar) {
 }
 /* QUICK NAV */
 (function () {
-  const sections = document.querySelectorAll("#price, #schedule, #description, #program, #route, #feedback");
+  const sections = document.querySelectorAll(".about#qsection .about__inner section, #route, #feedback");
   const links = document.querySelectorAll(".quicknav__tags-group--tag-link");
   const setActiveLink = (id) => {
     links.forEach((link) => {
