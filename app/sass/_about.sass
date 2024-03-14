@@ -1,14 +1,4 @@
-.about__short-info
-  margin-top: 10px
-  .short-info__inner
-    display: flex
-    flex-direction: column
-    gap: 12px
-    margin-top: 30px
-  .card-item__cta.btn
-    margin-top: 18px
-
-.about__nav
+.quicknav__navbar
   position: relative
   width: 100%
   padding: 0 16px
@@ -19,12 +9,32 @@
     top: 40px
     padding: 16px
     box-shadow: $shadow-gray
-    .quicknav__tags-group--tag-link
+    .tags-group__link
       padding: 7px 10px
       font-size: 14px
-  .quicknav__active-link
+  .tags-group__link--active
     background-color: $accent-yellow
     border-color: $accent-yellow
+
+.section__quicknav
+  .route__map,
+  .video-wrapper
+    width: 100%
+    height: 260px
+    margin-top: 20px
+  iframe
+    width: 100%
+    height: 260px
+    
+.about__short-info
+  margin-top: 10px
+  .short-info__inner
+    display: flex
+    flex-direction: column
+    gap: 12px
+    margin-top: 30px
+  .card-item__cta.btn
+    margin-top: 18px
 
 .about__price
   .price__header
@@ -150,20 +160,10 @@
     span
       font-weight: 600
 
-.about 
-  .route__map,
-  .video-wrapper
-    width: 100%
-    height: 260px
-    margin-top: 20px
-  iframe
-    width: 100%
-    height: 260px
-
-.about#qsection .about__inner 
+#qsection .section__inner 
   section
     padding-top: 210px
     margin-top: -180px
   section:first-child
-    padding-top: 242px !important
-    margin-top: -202px !important
+    padding-top: 230px !important
+    margin-top: -220px !important

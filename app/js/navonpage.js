@@ -7,14 +7,14 @@ if (qsection && qnavbar) {
 }
 /* QUICK NAV */
 (function () {
-  const sections = document.querySelectorAll(".about#qsection .about__inner section, #route, #feedback");
-  const links = document.querySelectorAll(".quicknav__tags-group--tag-link");
+  const sections = document.querySelectorAll(".quicknav__section, #route, #feedback");
+  const links = document.querySelectorAll(".tags-group__link");
   const setActiveLink = (id) => {
     links.forEach((link) => {
       if (link.getAttribute("href") === `#${id}`) {
-        link.classList.add("quicknav__active-link");
+        link.classList.add("tags-group__link--active");
       } else {
-        link.classList.remove("quicknav__active-link");
+        link.classList.remove("tags-group__link--active");
       }
     });
   };
