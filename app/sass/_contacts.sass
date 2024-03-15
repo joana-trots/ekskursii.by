@@ -1,60 +1,67 @@
-.contacts
-    .h5
-        margin-top: 16px
-        &:first-child
-            margin-top: 22px
-    a:hover
-        text-decoration: underline
-    .contacts__phones,
-    .contacts__address,
-    .contacts__schedule
+.section__inner--contacts
+  display: flex
+  gap: 20px
+  @media screen and (max-width: 540px)
+    flex-direction: column
+.address,
+.contacts__phones,
+.contacts__socials,
+.contacts__address,
+.contacts__schedule
+    display: flex
+    flex-direction: column
+    gap: 10px
+.address
+    flex: 1
+    gap: 20px
+.contacts__phones--numbers,
+.contacts__schedule--items
+    display: flex
+    flex-direction: column
+    gap: 4px
+.contacts__socials--items
+    display: flex
+    gap: 12px
+    a, img
+        width: 40px
+        height: 40px
+    img
+        object-fit: cover
+.contacts__map
+    iframe
+        width: 100%
+.contacts__social-media
+    display: flex
+    gap: 12px
+    img
+        width: 42px
+        height: 42px
+        object-fit: cover
+        border-radius: 50%
+.contacts__website p
+    display: flex
+    gap: 4px
+    &::before
+        @extend %button-icon
+        background-image: $icon-web
+    a
+        border-bottom: 1px solid $black
+
+
+.section__employees
+    display: flex
+    gap: 20px
+    flex-wrap: wrap
+    .employee__info
         margin-top: 10px
-    .contacts__phones
-        display: flex
-        align-items: flex-end
-        gap: 10px
-        margin-top: 10px
-        @media screen and (max-width: 540px)
-            flex-direction: column
-            align-items: flex-start
-    .contacts__phones--numbers,
-    .contacts__schedule
-        display: flex
-        flex-direction: column
-        gap: 4px
-    .contacts__phones--socials
-        display: flex
-        justify-content: flex-end
-        align-items: flex-end
-        gap: 6px
-        a
-            width: 16px
-            height: 16px
-            opacity: 0.5
-            &:hover
-                opacity: 1
-        img
-            width: 16px
-            height: 16px
-            object-fit: cover
-        @media screen and (max-width: 540px)
-            gap: 12px
-            a
-                opacity: 1
-            a, img
-                width: 40px
-                height: 40px
-    .contacts__map
-        margin-top: 16px
-        iframe
-            width: 100%
-            height: 210px
-    .contacts__social-media
-        display: flex
-        gap: 12px
-        margin-top: 24px
-        img
-            width: 42px
-            height: 42px
-            object-fit: cover
-            border-radius: 50%
+        .h5
+            margin-top: 4px
+.title--link a
+    &:hover
+        border-bottom: 1px solid $black
+    @media screen and (max-width: 540px)
+        border-bottom: 1px solid $black
+
+
+.section.contact-form
+    display: flex

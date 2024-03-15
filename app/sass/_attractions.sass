@@ -24,14 +24,7 @@
 .filters-item__list--item:has(+ .more-btn) ~ .filters-item__list--item
   display: none
 .filters-item__list:has(.more-btn [type="checkbox"]:checked)
-  .filters-item__list--item:nth-child(n+5)
+  .filters-item__list--item:has(+ .more-btn) ~ .filters-item__list--item
     display: flex
   .more-btn
     display: none
-
-// .navbar__tags-group
-
-
-// .tags-group__link--active
-//   background-color: $accent-yellow
-//   border-color: $accent-yellow
