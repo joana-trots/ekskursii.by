@@ -252,6 +252,8 @@ ul.card-item__price-include
     &::before
         background-image: $icon_table
 .schedule__display--table
+    .schedule__wrapper-cards
+        gap: 0
     .card-item__image,
     .card-item__dropdown-btn,
     .separator-right::after,
@@ -310,6 +312,7 @@ ul.card-item__price-include
         p::before
             display: none !important
     .card-item__info--date
+        max-width: 76px
         font-weight: 700
         span
             display: none
@@ -357,7 +360,7 @@ ul.card-item__price-include
             &:nth-child(1)
                 flex: 0 0 76px
             &:nth-child(2)
-                max-width: 146px
+                max-width: 116px
                 width: 100%
     .schedule__card-item
         &:nth-child(n+7)
@@ -381,3 +384,6 @@ ul.card-item__price-include
     margin-top: 20px
     .h2
         margin: 20px 0
+.schedule__display--all-individual:not(.schedule__display--table)
+    .card-item__price p
+        font-size: 20px
