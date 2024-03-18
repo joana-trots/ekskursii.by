@@ -2,7 +2,19 @@ var qsection = document.getElementById('qsection'),
     qnavbar = document.getElementById('qnavbar');
 if (qsection && qnavbar) {
   window.onscroll = function() {
-    (window.scrollY - qsection.offsetTop) > 0 ? qnavbar.classList.add('onscroll') : qnavbar.classList.remove('onscroll');
+    if ((window.scrollY - qsection.offsetTop) > 0) {
+      qnavbar.classList.add('onscroll');
+    }
+    else {
+      qnavbar.classList.remove('onscroll');
+    }
+    if ((window.scrollY - qsection.offsetTop) > 100) {
+      document.querySelector('.section__about .sticky-btn').classList.remove('display-none');
+    }
+    else {
+      document.querySelector('.section__about .sticky-btn').classList.add('display-none');
+    } 
+     
   }
 }
 /* QUICK NAV */
