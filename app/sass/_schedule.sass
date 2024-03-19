@@ -19,7 +19,7 @@
     &:hover
         border: 0
         box-shadow: $shadow-gray
-    &:not(.schedule__options-item--filters):not(.schedule__options-item--currency)
+    &:not(.schedule__options-item--filters):not(.schedule__options-item--currency):not(.schedule__options-item--date)
         width: 40px
         height: 40px
         padding: 0
@@ -30,11 +30,15 @@
     &--sort::before
         background-image: $icon_sort
     
-.schedule__options-item--filters
-    padding: 10px
+.schedule__options-item--filters,
+.schedule__options-item--date
+    padding: 10px 14px
     &::before
         @extend %button-icon
         background-image: $icon_filters
+.schedule__options-item--date
+    &::before
+        background-image: $icon_calendar
 
 .schedule__options-item--currency
     font-size: 14px
@@ -247,6 +251,8 @@ ul.card-item__price-include
 .section__schedule .more-btn
     margin: auto
 
+.schedule__display
+    margin-top: 20px
 .schedule__options-item--display-table
     &::before
         background-image: $icon_table
