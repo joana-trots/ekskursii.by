@@ -17,14 +17,6 @@ flatpickr('[id*="-date"]', {
   "locale": document.documentElement.lang == "by" ? 'be' : document.documentElement.lang,
 });
 
-/* ONLY ONE CHECKBOX */
-
-// checkboxes && checkboxes.forEach((item => {
-//     item.onclick = function(e){
-//       if (item !== e.target) { item.checked = false; }
-//     }
-// }));
-
 function onlyOne(checkbox) {
   var checkboxes  = document.querySelectorAll('.attractions input[id*="filters-item"]');
   checkboxes.forEach((item) => {
@@ -32,3 +24,12 @@ function onlyOne(checkbox) {
   })
 }
 
+
+window.onscroll = function() {
+  var stickyBtn = document.querySelector('.sticky-btn'),
+      parentSection = stickyBtn.closest(".section");
+
+      window.scrollY - parentSection.offsetTop > 100 
+      ? stickyBtn.classList.remove('display-none') 
+      : stickyBtn.classList.add('display-none');
+}

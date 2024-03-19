@@ -220,7 +220,6 @@
     background-image: $icon_comments
 .card-item__cta
     @extend .cta-primary
-    // margin-top: -4px
     text-transform: uppercase
     font-weight: 600
     letter-spacing: 1.92px
@@ -245,7 +244,7 @@ ul.card-item__price-include
             border-radius: 50%
             background-color: $dark-gray
 
-.schedule .more-btn
+.section__schedule .more-btn
     margin: auto
 
 .schedule__options-item--display-table
@@ -296,6 +295,7 @@ ul.card-item__price-include
             height: 24px
             background-image: $icon_arrow-right
     .schedule__card-item--header
+        max-width: 202px
         flex-direction: row
         gap: 10px
         flex: 1 0 0
@@ -323,15 +323,10 @@ ul.card-item__price-include
         margin-top: 12px
         color: $dark-gray
     .card-item__info2
-        max-width: 100%
+        max-width: 116px
         order: 2
         flex: 1 0 0
-    
 
-
-
-
-/* display first 3 cards, then 3 more cards */
 .schedule__display:not(.schedule__display--table)
     .schedule__display--table-header
         display: none
@@ -341,14 +336,6 @@ ul.card-item__price-include
             border-bottom: 1px solid transparent
             &:hover
                 border-color: $black
-        &:nth-child(n+4)
-            display: none
-.schedule__tabs:has(.schedule__display:not(.schedule__display--table)):has(.more-btn [type="checkbox"]:checked) 
-    .schedule__card-item
-        &:nth-child(n+4):nth-child(-n+6)
-            display: flex
-
-/* display first 6 rows in table, then 6 more */
 .schedule__display--table
     .schedule__display--table-header
         display: flex
@@ -362,21 +349,30 @@ ul.card-item__price-include
             &:nth-child(2)
                 max-width: 116px
                 width: 100%
-    .schedule__card-item
-        &:nth-child(n+7)
-            display: none
-.schedule__tabs:has(.schedule__display--table):has(.more-btn [type="checkbox"]:checked)
-    .schedule__card-item
-        &:nth-child(n+7):nth-child(-n+12)
-            display: flex
-
 .schedule__tabs:has(.more-btn [type="checkbox"]:checked)
     .more-btn
         display: none
     .all-btn
-        position: sticky
-        bottom: 40px
         margin-top: 0
+
+/* display first 3 cards, then 3 more cards */    
+.section__schedule--homepage 
+    .schedule__display:not(.schedule__display--table)
+        .schedule__card-item:nth-child(n+4)
+            display: none
+    .schedule__tabs:has(.schedule__display:not(.schedule__display--table)):has(.more-btn [type="checkbox"]:checked) 
+        .schedule__card-item
+            &:nth-child(n+4):nth-child(-n+6)
+                display: flex
+/* display first 6 rows in table, then 6 more */
+.section__schedule--homepage 
+    .schedule__display--table 
+        .schedule__card-item:nth-child(n+7)
+            display: none
+    .schedule__tabs:has(.schedule__display--table):has(.more-btn [type="checkbox"]:checked)
+        .schedule__card-item:nth-child(n+7):nth-child(-n+12)
+            display: flex
+
 
 
 .schedule__display--all-group,
@@ -387,32 +383,3 @@ ul.card-item__price-include
 .schedule__display--all-individual:not(.schedule__display--table)
     .card-item__price p
         font-size: 20px
-
-
-
-// /* display first 6 rows in table, then 6 more */
-// .schedule__display--table
-//     .schedule__display--table-header
-//         display: flex
-//         gap: 10px
-//         padding: 0 12px 16px
-//         border-bottom: 1px solid $accent-yellow
-//         p
-//             color: $dark-gray
-//             &:nth-child(1)
-//                 flex: 0 0 76px
-//             &:nth-child(2)
-//                 max-width: 116px
-//                 width: 100%
-//     .schedule__card-item
-//         &:has(+ .more-btn) ~ .schedule__card-item
-//             display: none
-// .schedule__tabs:has(.schedule__display--table):has(.more-btn [type="checkbox"]:checked)
-//     .schedule__card-item:has(+ .more-btn) ~ .schedule__card-item
-//         display: flex
-
-// .schedule__tabs:has(.more-btn [type="checkbox"]:checked)
-//     .more-btn
-//         display: none
-//     .all-btn
-//         margin-top: 0

@@ -8,13 +8,6 @@ if (qsection && qnavbar) {
     else {
       qnavbar.classList.remove('onscroll');
     }
-    if ((window.scrollY - qsection.offsetTop) > 100) {
-      document.querySelector('.section__about .sticky-btn').classList.remove('display-none');
-    }
-    else {
-      document.querySelector('.section__about .sticky-btn').classList.add('display-none');
-    } 
-     
   }
 }
 /* QUICK NAV */
