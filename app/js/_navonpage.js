@@ -1,15 +1,3 @@
-var qsection = document.getElementById('qsection'),
-    qnavbar = document.getElementById('qnavbar');
-if (qsection && qnavbar) {
-  window.onscroll = function() {
-    if ((window.scrollY - qsection.offsetTop) > 0) {
-      qnavbar.classList.add('onscroll');
-    }
-    else {
-      qnavbar.classList.remove('onscroll');
-    }
-  }
-}
 /* QUICK NAV */
 (function () {
   const sections = document.querySelectorAll(".quicknav__section, #route, #feedback");
