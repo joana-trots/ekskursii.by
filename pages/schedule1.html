@@ -9,16 +9,55 @@
               <h2 class="h2">График экскурсий</h2>
             </div>
             <div class="section__inner">
+
+
+              <ul class="months__tags-group">
+                <li class="months__tags-group--tag">
+                  <a class="months__tags-group--tag-link" title="Хатынь">Март 2024</a>
+                </li>
+                <li class="months__tags-group--tag">
+                  <a class="months__tags-group--tag-link" title="Беловежская пуща">Апрель 2024</a>
+                </li>
+                <li class="months__tags-group--tag">
+                  <a class="months__tags-group--tag-link" title="Несвиж">Май 2024</a>
+                </li>
+                <li class="months__tags-group--tag">
+                  <a class="months__tags-group--tag-link" title="Вечерний Минск">Июнь 2024</a>
+                </li>
+                <li class="months__tags-group--tag">
+                  <a class="months__tags-group--tag-link" title="Мир">Июль 2024</a>
+                </li>
+
+                <li class="more-btn months__tags-group--tag">
+                  <input class="months__tags-group--tag-link" type="checkbox" id="more-btn" name="more-btn">
+                  <label for="more-btn">Еще...</label>
+                </li>
+
+
+                <li class="months__tags-group--tag">
+                  <a class="months__tags-group--tag-link" title="Гродно">Август 2024</a>
+                </li>
+                <li class="months__tags-group--tag">
+                  <a class="months__tags-group--tag-link" title="Хатынь">Сентябрь 2024</a>
+                </li>
+                <li class="months__tags-group--tag">
+                  <a class="months__tags-group--tag-link" title="Беловежская пуща">Октябрь 2024</a>
+                </li>
+                <li class="months__tags-group--tag">
+                  <a class="months__tags-group--tag-link" title="Несвиж">Ноябрь 2024</a>
+                </li>
+                <li class="months__tags-group--tag">
+                  <a class="months__tags-group--tag-link" title="Несвиж">Декабрь 2024</a>
+                </li>
+              </ul>
+
+
+
               <div class="schedule__options">
-                <div class="schedule__options-item schedule__options-item--filters modal-open">Фильтры</div>
+                <div class="schedule__options-item schedule__options-item--date" id="schedule__options-item--date">Выбор даты</div>
                 <div class="schedule__options-item-wp">
                   <div class="schedule__options-item schedule__options-item--display"></div>
-                  <div class="schedule__options-item schedule__options-item--sort custom-select">
-                    <select id="sort" name="sort">
-                      <option value="byn">по цене</option>
-                      <option value="rub">по названию</option>
-                    </select>
-                  </div>
+                  
                   <div class="schedule__options-item schedule__options-item--currency custom-select">
                     <select id="currency" name="currency">
                       <option value="byn">BYN</option>
@@ -29,9 +68,7 @@
                 </div>
               </div>
 
-              <div class="schedule__display schedule__display--all-group">
-
-                <h2 class="h2">Групповые экскурсии</h2>
+              <div class="schedule__display schedule__display--table">
 
                 <div class="schedule__display--table-header">
                   <p>Дата</p>
@@ -170,80 +207,9 @@
 
                 </div>
               </div>
-
-              <div class="schedule__display schedule__display--all-individual">
-
-                <h2 class="h2">Индивидуальные экскурсии</h2>
-                
-                <div class="schedule__display--table-header">
-                  <p>Дата</p>
-                  <p>Название</p>
-                  <p>Цена</p>
-                </div>
-                <div class="schedule__wrapper-cards">
-
-                  <!-- CARD -->
-                  <div class="schedule__card-item">
-                    <div class="card-item__image">
-                      <img src="images/01.webp" alt="Брестская крепость - Беловежская пуща">
-                      <div class="card-item__image--overlay"></div>
-                    </div>
-                    <div class="schedule__card-item--header">
-                      <div class="card-item__info2">
-                        <div class="card-item__title">
-                          <h4 class="h4">
-                            <a href="#">Брестская крепость - Беловежская пуща</a>
-                          </h4>
-                        </div>
-                      </div>
-                      <div class="card-item__info">
-                        <div class="card-item__info--date">
-                          <p>дата по запросу</p>
-                        </div>
-                        <div class="card-item__info--duration">
-                          <p>16 ч</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-item__price">
-                      <p>цена<br>по запросу</p>
-                    </div>
-                    <div class="card-item__dropdown-btn btn cta-secondary dropdown-btn">
-                      <input type="checkbox" name="dropdown-btn" readonly checked>
-                    </div>
-                    <div class="card-item__dropdown-info dropdown-content">
-                      <div class="card-item__additional-info">
-                        <div class="card-item__additional-info--pickup-point">
-                          <p>Минск - Хойники - Минск</p>
-                        </div>
-                      </div>
-                      <div class="card-item__description">
-                        <p class="card-item__description--title">В стоимость групповой экскурсии включено:</p>
-                        <ul class="list card-item__price-include">
-                          <li>входные билеты по программе : Музей в Брестской крепости, обзорная экскурсия по пуще с выходами, вольеры с дикими животными</li>
-                          <li>питание комплексный обед</li>
-                          <li>транспортные услуги (автобус/микроавтобус тур. класса)</li>
-                          <li>экскурсии по программе</li>
-                        </ul>
-                      </div>
-                      <div class="card-item__buttons">
-                        <a class="card-item__description-btn simple-btn arrow-btn btn" title="Описание экскурсии" href="#"></a>
-                        <a class="card-item__feedback-btn simple-btn btn" title="Отзывы" href="#"></a>
-                      </div>
-                    </div>
-                    <a class="card-item__cta btn" href="#" title="Забронировать"></a>
-                  </div> <!-- CARD ENDS -->
-
-                  
-
-
-                </div>
-              </div>
-
 
             </div>
           </div>
-          <!--=include modal-filters.html -->
         </section>
 
       </main>
