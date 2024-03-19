@@ -11,6 +11,9 @@
     background-color: $white
     box-shadow: $shadow-gray
     z-index: 2
+    @media screen and (max-width: 540px)
+        padding-top: 14px
+        padding-bottom: 14px
 .header__logo
     width: 100%
     height: auto
@@ -19,6 +22,9 @@
     @media screen and (max-width: 1200px)
         max-width: 100%
         flex: 1 0 0
+    @media screen and (max-width: 540px)
+        width: auto
+        max-height: 40px
     img
         height: 40px
         width: 100%
@@ -137,10 +143,6 @@
 $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99)
 $menuItems: 12
 
-.header__container--mobile, 
-.burger
-    // @media screen and (min-width: 1201px)
-    //     display: none
 .burger
     position: relative
     display: flex
@@ -178,7 +180,7 @@ $menuItems: 12
             display: none
 .header__container--mobile
     position: absolute
-    top: 72px
+    top: 68px
     left: 0
     height: 0
     width: 100%
@@ -190,13 +192,13 @@ $menuItems: 12
     ul.menu__mobile-list
         display: flex
         flex-direction: column
-        gap: 18px
+        gap: 16px
         height: 0
-        margin-top: 40px
+        margin-top: 20px
     li.menu__mobile-list--item
         height: 0
         width: 0
-        font-size: 20px
+        font-size: 16px
         opacity: 0
         transform: scale(1.15) translateY(-30px)
         transition: transform 0.3s $cubic, opacity 0.5s $cubic
@@ -204,13 +206,16 @@ $menuItems: 12
             display: none
             height: 0
             width: 0
+        .cta-primary
+            font-size: 14px
+            padding: 14px
         @for $i from 1 through $menuItems
             &:nth-child(#{$i}) 
                 transition-delay: #{0.84 - ($i * 0.07)}s
         
     &.menu-opened
-        height: 100% 
-        min-height: calc(100vh - 72px)
+        height: 100dvh 
+        // min-height: calc(100dvh - 72px)
         background-color: $white
         opacity: 1
         transition: all 0.3s ease
@@ -230,9 +235,14 @@ $menuItems: 12
                 display: inline-block
                 height: auto
                 width: auto
+            &:last-child
+                padding-bottom: 22px
+                li
+                    display: flex
+                    gap: 6px
             @for $i from 1 through $menuItems
                 &:nth-child(#{$i}) 
                     transition-delay: #{0.07 * $i+0.2}s
     .divided-item
         border-bottom: 1px solid $light-gray
-        padding-bottom: 18px
+        padding-bottom: 14px
