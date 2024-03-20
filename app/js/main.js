@@ -23,3 +23,15 @@ function onlyOne(checkbox) {
       if (item !== checkbox) item.checked = false;
   })
 }
+
+
+/* FEEDBACK LONG TEXT */
+let feedbackSlide = document.querySelectorAll('#feedback .splide__slide');
+if (feedbackSlide) {
+  feedbackSlide.forEach((slide) => {
+    let feedbackText  = slide.querySelector('.feedback__text');
+    slide.offsetHeight - (feedbackText.offsetTop + feedbackText.offsetHeight) > 20
+    ? feedbackText.classList.remove('feedback__text--long')
+    : feedbackText.classList.add('feedback__text--long');
+  });
+}

@@ -45,7 +45,6 @@
         font-size: 14px
         font-weight: 700
         border-radius: 24px
-
         height: 30px
         display: inline-block
         overflow: hidden
@@ -61,3 +60,22 @@
             height: 24px
             background-image: $icon_like-green
             flex: 0 0 24px
+    .feedback__text
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -moz-box
+        -moz-box-orient: vertical
+        display: -webkit-box
+        -webkit-line-clamp: 4
+        -webkit-box-orient: vertical
+        line-clamp: 4
+        box-orient: vertical
+        a
+            display: none
+        &.feedback__text--long
+            margin-bottom: 30px
+            a
+                display: flex
+                position: absolute
+                right: 20px
+                bottom: 20px
