@@ -26,7 +26,7 @@ function onlyOne(checkbox) {
 
 
 /* FEEDBACK LONG TEXT */
-let feedbackSlide = document.querySelectorAll('#feedback .splide__slide, .feedback .splide__slide,');
+let feedbackSlide = document.querySelectorAll('#feedback .splide__slide, .feedback .splide__slide');
 if (feedbackSlide) {
   feedbackSlide.forEach((slide) => {
     let feedbackText  = slide.querySelector('.feedback__text');
