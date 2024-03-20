@@ -102,6 +102,7 @@ function watching() {
 function building() {
     return src([
         'app/css/styles.min.css',
+        'app/css/rSlider.min.css',
         'app/images/*.webp',
         '!app/images/*.svg',
         'app/images/sprite.svg',
