@@ -1,10 +1,10 @@
 let stickyBtn = document.querySelector('.sticky-btn'),
-    qsection = document.getElementById('qsection'),
-    qnavbar = document.getElementById('qnavbar');
+    upBtn     = document.querySelector('.btn-up'),
+    qsection  = document.getElementById('qsection'),
+    qnavbar   = document.getElementById('qnavbar');
 
 window.addEventListener('scroll', () => {
-
-      if (stickyBtn && parentSection) {
+      if (stickyBtn) {
             let parentSection = stickyBtn.closest(".section");
             window.scrollY - parentSection.offsetTop > 100
             ? stickyBtn.classList.remove('display-none') 
@@ -15,4 +15,8 @@ window.addEventListener('scroll', () => {
             ? qnavbar.classList.add('onscroll') 
             : qnavbar.classList.remove('onscroll');
       }
+
+      upBtn && window.scrollY > 400
+      ? upBtn.classList.add('visible')
+      : upBtn.classList.remove('visible');
 });
