@@ -43,7 +43,9 @@ if (mainInput) {
 }
 modalClose.forEach((item) => {
   item.onclick = function() {
-    modal.forEach((item => {item.style.display = "none";}));
+    modal.forEach((item) => {
+      item.style.display = "none";
+    });
     document.body.classList.toggle('overflow-hidden');
   }
 });

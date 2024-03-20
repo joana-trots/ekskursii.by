@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@splidejs/splide": "^4.1.4",
     "browser-sync": "^3.0.2",
     "dayjs": "^1.11.10",
     "flatpickr": "^4.6.13",

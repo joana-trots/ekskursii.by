@@ -1,13 +1,19 @@
 <div class="filters-modal modal">
   <div class="modal-content">
+
+
+
+    
+
     <div class="modal__header">
       <h2 class="h2">Фильтры</h2>
       <button class="btn modal-close">
         <img src="images/sprite.svg#icons--cross" alt="close">
       </button>
     </div>
+    
     <div class="modal__main">
-      <div class="filters-item">
+      <!-- <div class="filters-item">
         <p class="filters-item__title">Город отправления</p>
         <ul class="filters-item__list">
           <li class="filters-item__list--item">  
@@ -35,21 +41,7 @@
             <label for="filters-item__input-6" class="filters-item__label">Могилев</label>
           </li>          
         </ul>
-      </div>
-
-      <div class="filters-item">
-        <p class="filters-item__title">Тип экскурсии</p>
-        <ul class="filters-item__list">
-          <li class="filters-item__list--item">
-            <input type="checkbox" class="filters-item__input" id="filters-item__input-7">
-            <label for="filters-item__input-7" class="filters-item__label">групповая сборная экскурсия</label>
-          </li>
-          <li class="filters-item__list--item">
-            <input type="checkbox" class="filters-item__input" id="filters-item__input-8">
-            <label for="filters-item__input-8" class="filters-item__label">индивидуальная экскурсия / тур</label>
-          </li>
-        </ul>
-      </div>
+      </div> -->
 
       <div class="filters-item">
         <p class="filters-item__title">Продолжительность экскурсии</p>
@@ -79,8 +71,12 @@
 
       <div class="filters-item">
         <p class="filters-item__title">Цена за 1 человека</p>
-        <ul class="filters-item__list">
-          <li class="filters-item__list--item">
+        
+        <div class="filters-item__list">
+
+          <input type="text" id="rangeSlider">
+
+          <!-- <li class="filters-item__list--item">
             <input type="checkbox" class="filters-item__input" id="filters-item__input-14">
             <label for="filters-item__input-14" class="filters-item__label">
               Менее <span>100</span> <span>BYN</span>
@@ -97,7 +93,21 @@
             <label for="filters-item__input-16" class="filters-item__label">
               Более <span>250</span> <span>BYN</span>
             </label>
-          </li>        
+          </li>         -->
+        </div>
+      </div>
+
+      <div class="filters-item">
+        <p class="filters-item__title">Тип экскурсии</p>
+        <ul class="filters-item__list">
+          <li class="filters-item__list--item">
+            <input type="checkbox" class="filters-item__input" id="filters-item__input-7">
+            <label for="filters-item__input-7" class="filters-item__label">групповая сборная экскурсия</label>
+          </li>
+          <li class="filters-item__list--item">
+            <input type="checkbox" class="filters-item__input" id="filters-item__input-8">
+            <label for="filters-item__input-8" class="filters-item__label">индивидуальная экскурсия / тур</label>
+          </li>
         </ul>
       </div>
 
@@ -154,11 +164,11 @@
           </li>
         </ul>
       </div>
-        
     </div>
     
     <div class="modal__footer">
       <a class="btn modal__btn">Искать</a>
     </div>
+
   </div>
 </div>
