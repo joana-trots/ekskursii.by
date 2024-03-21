@@ -1,7 +1,7 @@
 /* QUICK NAV */
 (function () {
   const sections = document.querySelectorAll(".quicknav__section, #route, #feedback");
-  const links = document.querySelectorAll(".tags-group__link");
+  const links = document.querySelectorAll(".quicknav__tags-group--tag-link");
   const setActiveLink = (id) => {
     links.forEach((link) => {
       if (link.getAttribute("href") === `#${id}`) {

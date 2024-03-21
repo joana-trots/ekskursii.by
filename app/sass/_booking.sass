@@ -2,7 +2,6 @@
   [class$='form__submit-btn']
     @extend .card-item__cta
     padding: 14px 28px
-    // margin-top: 0
   textarea
     border: 0
     font-size: 16px
@@ -24,7 +23,8 @@
   background-image: $icon_time
 .booking-info__about--place p::before
   background-image: $icon_pin
-
+.booking-form
+  margin-top: 20px
 .booking-form__form-field
   position: relative
   display: flex
@@ -98,9 +98,9 @@
   display: block
   position: sticky
   bottom: -1px
-  width: 100%
+  width: calc(100vw - 16px)
   padding: 18px 0
-  margin: 0
+  margin: 30px auto -30px -60px
   text-align: center
   font-size: 18px
   background-color: $accent-yellow
@@ -109,8 +109,8 @@
   span
     font-weight: 800
   @media screen and (max-width: 540px)
-    width: calc(100vw - 16px)
-    margin: 30px auto -60px -16px
+    width: 100dvw
+    margin: 30px auto -30px -16px
 
 .booking-form__form-field--pay
   display: flex
