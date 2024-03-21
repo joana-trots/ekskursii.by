@@ -35,3 +35,4 @@ if (feedbackSlide) {
     : feedbackText.classList.add('feedback__text--long');
   });
 }
+

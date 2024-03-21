@@ -15,6 +15,7 @@ modalOpenBtn.forEach((item) => {
     }
     if (item.classList.contains('schedule__options-item--filters')) {
       filtersModal.style.display = "flex";
+      multiRange();
     }
     if (item.classList.contains('intro__btn--primary')) {
       bookingModal.style.display = "flex";
