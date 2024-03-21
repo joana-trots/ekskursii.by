@@ -258,8 +258,8 @@ function MultiRangeSlider(element, settings) {
 **/
 const settings = {
   start: 0,
-  end: 300,
-  increment: 1
+  end: 500,
+  increment: 50
 };
 
 /**
