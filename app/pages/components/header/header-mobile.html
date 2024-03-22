@@ -12,7 +12,41 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <!--=include nav-primary.html -->
+        <div class="container header__container--primary">
+          <nav class="menu__primary">
+            <a class="header__logo" href="/ekskursii.by/" title="Ekskursii.by">
+              <img src="images/sprite.svg#logo" alt="logo">
+            </a>
+            <ul class="menu__primary-list">
+              <li class="menu__primary-list--item phone-item modal-open">
+                <div class="menu__primary-list--link" id="phone-item">
+                  <img src="images/sprite.svg#icons--socials--messengers" alt="messengers">
+                  <span>+375 29-756-66-65</span>
+                </div>
+              </li>
+              <li class="menu__primary-list--item dropdown-item lang-item custom-select">
+                <select class="menu__primary-list--link" id="lang-item" name="lang-item">
+                  <option value="byn">рус</option>
+                  <option value="rub">бел</option>
+                  <option value="euro">en</option>
+                </select>
+              </li>
+              <li class="menu__primary-list--item dropdown-item currency-item custom-select">
+                <select class="menu__primary-list--link" id="currency-item" name="currency-item">
+                  <option value="byn">BYN</option>
+                  <option value="rub">₽</option>
+                  <option value="euro">€</option>
+                </select>
+              </li>
+            </ul>
+        
+            <div class="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
+        </div>
         <!--=include nav-mobile.html -->
         <!--=include modal-contacts.html -->
       </header>
