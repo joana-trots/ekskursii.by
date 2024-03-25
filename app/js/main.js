@@ -24,7 +24,6 @@ function onlyOne(checkbox) {
   })
 }
 
-
 /* FEEDBACK LONG TEXT */
 let feedbackSlide = document.querySelectorAll('#feedback .splide__slide, .feedback .splide__slide');
 if (feedbackSlide) {
@@ -35,4 +34,3 @@ if (feedbackSlide) {
     : feedbackText.classList.add('feedback__text--long');
   });
 }
-
