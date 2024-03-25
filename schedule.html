@@ -24,21 +24,6 @@
                   <span>+375 29-756-66-65</span>
                 </div>
               </li>
-              <li class="menu__primary-list--item account-item">
-                <a class="menu__primary-list--link" href="#product" title="Заявки">
-                  <span>Заявки</span>
-                </a>
-              </li>
-              <li class="menu__primary-list--item">
-                <a class="menu__primary-list--link" href="/ekskursii.by/about.html" title="О нас">
-                  <span>О нас</span>
-                </a>
-              </li>
-              <li class="menu__primary-list--item">
-                <a class="menu__primary-list--link" href="/ekskursii.by/contacts.html" title="Контакты">
-                  <span>Контакты</span>
-                </a>
-              </li>
               <li class="menu__primary-list--item dropdown-item lang-item custom-select">
                 <select class="menu__primary-list--link" id="lang-item" name="lang-item">
                   <option value="byn">рус</option>
@@ -69,7 +54,6 @@
               <li class="menu__mobile-list--item divided-item">
                 <a class="btn cta-primary modal-open" href="#" title="Оставить заявку"></a>
               </li>
-        
               
               <li class="menu__mobile-list--item divided-item">
                 <a class="menu__mobile-list--link" href="#">Личный кабинет</a>
@@ -87,7 +71,7 @@
                 <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Корпоративные экскурсии</a>
               </li>
               <li class="menu__mobile-list--item divided-item">
-                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule.html">Больше экскурсий</a>
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule.html">Все экскурсии</a>
               </li>
               <li class="menu__mobile-list--item">
                 <a class="menu__mobile-list--link" href="#">Как заказать?</a>
@@ -119,6 +103,47 @@
             </ul>
           </nav>
         </div>
+        <div class="booking-modal modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Быстрая заявка</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            
+            <form class="booking-form" id="booking-group">
+              <div class="booking-info booking-info__profile">
+                <div class="booking-form__form-field">
+                  <label class="h6" for="name">ФИО</label>
+                  <span class="booking-form__form-field--input">
+                    <input class="no-icon" type="text" name="name" id="name" placeholder="Введите ваше ФИО" required>
+                  </span>
+                </div>
+                <div class="booking-form__form-field">
+                  <label class="h6" for="phone">Email или телефон</label>
+                  <span class="booking-form__form-field--input">
+                    <input class="no-icon" type="text" name="phone" id="phone" placeholder="Email или телефон" required>
+                  </span>
+                </div>
+                <div class="booking-form__form-field">
+                  <label class="h6" for="question">Пожелания по маршруту, программе, питанию...</label>
+                  <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="Пожелания по экскурсии" required></textarea>
+                </div>
+              </div>
+            
+              <div class="booking-info booking-info__rules">
+                <div class="booking-form__form-field hint-text">
+                  <p>Нажимая кнопку «Отправить» Вы соглашаетесь с <a href="https://ekskursii.by/?Politika_konfidencialinosti" target="_blank">Политикой обработки персональных данных</a>.</p>
+                </div>
+              </div>
+            
+              <button class="btn booking-form__submit-btn" type="submit" value="Отправить"></button>
+          
+            </form>
+        
+          </div>
+        </div>
         <div class="contacts-modal modal">
           <div class="modal-content">
             <div class="modal__header">
@@ -148,6 +173,7 @@
             </div>
           </div>
         </div>
+        
       </header>
       <main class="main">
 
