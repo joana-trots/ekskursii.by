@@ -6,7 +6,7 @@ burger.addEventListener('click', () => {
     burger.classList.toggle('active');
     document.body.classList.toggle('overflow-hidden');
 });
-modalOpenBtnNav.addEventListener('click', () => {
+modalOpenBtnNav?.addEventListener('click', () => {
     menu.classList.remove('menu-opened');
     burger.classList.remove('active');
     
