@@ -1,10 +1,12 @@
 $black:           #2F2F2F
-// $dark-gray:       #787878
 $dark-gray:       #898989
 $light-gray:      #F3F3F3
 $additional-gray: #D9D9D9
 $accent-yellow:   #FFD966
 $white:           #FFFFFF
+
+$red:   #F96868
+$green: #00AD98
 
 $shadow-yellow: 0 0 15px 0 rgba(166, 125, 0, 0.25)
 $shadow-gray:   0 0 15px 0 rgba(47, 47, 47, 0.10)
@@ -34,6 +36,9 @@ $icon_comments: url(../images/sprite.svg#icons--comments)
 $icon_like-green: url(../images/sprite.svg#icons--like-green)
 $icon_cross: url(../images/sprite.svg#icons--cross)
 $icon_web: url(../images/sprite.svg#icons--web)
+$icon_error: url(../images/sprite.svg#icons--error)
+$icon_success: url(../images/sprite.svg#icons--success)
+
 $icon_kid: url(../images/kid-icon.webp)
 
 %flex-center
@@ -79,11 +84,11 @@ $icon_kid: url(../images/kid-icon.webp)
     content: attr(data-error-title)
     // content: 'Это поле обязательное'
     display: block
-    position: absolute
-    top: 18px
-    right: 0
+    position: relative
+    margin-bottom: 10px
+    top: 0
+    left: 0
     font-size: 12px
-    color: red
+    color: $red
     text-transform: none
     letter-spacing: normal
-    text-align: right

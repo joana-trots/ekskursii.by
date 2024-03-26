@@ -173,6 +173,19 @@
             </div>
           </div>
         </div>
+        <div class="validation-modal validation-modal--error modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Заголовок</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            <div class="modal__main">
+              Сообщение
+            </div>
+          </div>
+        </div>
         
       </header>
       <main class="main booking">
@@ -267,26 +280,26 @@
                           <div class="booking-info booking-info__profile">
                             <p class="h4">Ваши данные</p>
                         
-                            <div class="booking-form__form-field">
-                              <label class="h6" for="name">ФИО</label>
+                            <div class="booking-form__form-field" data-error-title="Введите ваше ФИО">
+                              <label class="h6 hidden-label" for="name">ФИО</label>
                               <span class="booking-form__form-field--input">
                                 <input class="no-icon" type="text" name="name" id="name" placeholder="Введите ваше ФИО" required>
                               </span>
                             </div>
-                            <div class="booking-form__form-field">
-                              <label class="h6" for="phone">Номер телефона</label>
+                            <div class="booking-form__form-field" data-error-title="Введите номер телефона">
+                              <label class="h6 hidden-label" for="phone">Номер телефона</label>
                               <span class="booking-form__form-field--input">
                                 <input class="no-icon" type="text" name="phone" id="phone" placeholder="Введите номер телефона" required>
                               </span>
                             </div>
-                            <div class="booking-form__form-field">
-                              <label class="h6" for="email">Email</label>
+                            <div class="booking-form__form-field" data-error-title="Введите ваш email">
+                              <label class="h6 hidden-label" for="email">Email</label>
                               <span class="booking-form__form-field--input">
                                 <input class="no-icon" type="email" name="email" id="email" placeholder="Введите ваш email">
                               </span>
                             </div>
-                            <div class="booking-form__form-field">
-                              <label class="h6" for="country">Страна проживания</label>
+                            <div class="booking-form__form-field" data-error-title="Выберите страну проживания">
+                              <label class="h6 hidden-label" for="country">Страна проживания</label>
                               <span class="custom-select booking-form__form-field--input">
                                 <select class="no-icon" type="text" name="country" id="country" value="0" required>
                                   <option value="0">Выберите страну проживания</option>
@@ -295,8 +308,8 @@
                                 </select>
                               </span>
                             </div>
-                            <div class="booking-form__form-field">
-                              <label class="h6" for="city">Город</label>
+                            <div class="booking-form__form-field" data-error-title="Выберите город">
+                              <label class="h6 hidden-label" for="city">Город</label>
                               <span class="custom-select booking-form__form-field--input">
                                 <select class="no-icon" type="text" name="city" id="city" value="0" required>
                                   <option value="0">Выберите город</option>
@@ -306,7 +319,7 @@
                               </span>
                             </div>
                             <div class="booking-form__form-field">
-                              <label class="h6" for="question">Задать вопрос по экскурсии</label>
+                              <label class="h6 hidden-label" for="question">Задать вопрос по экскурсии</label>
                               <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="У меня есть вопрос по экскурсии"></textarea>
                             </div>
                           </div>
@@ -314,8 +327,8 @@
                           <div class="booking-info booking-info__payment">
                             <p class="h4">Оплата</p>
                         
-                            <div class="booking-form__form-field">
-                              <p class="h6">Способ оплаты</p>
+                            <div class="booking-form__form-field" data-error-title="Выберите способ оплаты">
+                              <p class="h6" data-error-title="Выберите способ оплаты">Способ оплаты</p>
                               
                               <span class="booking-form__form-field--radio">
                                 <input class="no-icon" type="radio" id="payment_1" name="payment" value="0" required>
@@ -346,16 +359,16 @@
                           </div>
                         
                           <div class="booking-info booking-info__rules">
-                            <div class="booking-form__form-field">
+                            <div class="booking-form__form-field" data-error-title="Все поля должны быть отмечены">
                               <span class="booking-form__form-field--checkbox">
-                                <input class="no-icon" type="checkbox" name="payment_rules" id="payment_rules" checked>
+                                <input class="no-icon" type="checkbox" name="payment_rules" id="payment_rules" checked required>
                                 <span class="checkmark"></span>
                                 <label class="h6 checkmark-label" for="payment_rules">
                                   Согласен(на) с <a href="https://pda.ekskursii.by/?Oplata_ekskursij_po_Belarusi" title="Правила бронирования и оплаты">Правилами бронирования и оплаты Ekskursii.by</a>
                                 </label>
                               </span>
                               <span class="booking-form__form-field--checkbox">
-                                <input class="no-icon" type="checkbox" name="privacy_policy" id="privacy_policy" checked>
+                                <input class="no-icon" type="checkbox" name="privacy_policy" id="privacy_policy" checked required>
                                 <span class="checkmark"></span>
                                 <label class="h6 checkmark-label" for="privacy_policy">
                                   Согласен(на) с <a href="https://pda.ekskursii.by/?Politika_konfidencialinosti">Политикой конфиденциальности и Соглашением на обработку персональных данных</a>
@@ -366,7 +379,7 @@
                         
                           <button class="btn booking-form__submit-btn" type="submit" value="Забронировать"></button>
                         
-                          <button class="booking-price" type="submit">К оплате: <span>320 BYN</span></button>
+                          <button class="modal-open booking-price" type="submit">К оплате: <span>320 BYN</span></button>
                         </form>
                       </div>
                     </div>
@@ -404,27 +417,27 @@
                           <div class="booking-info booking-info__profile">
                             <p class="h4">Ваши данные</p>
                             <div class="booking-form__form-field">
-                              <label class="h6" for="name-individual">ФИО</label>
-                              <span class="booking-form__form-field--input">
+                              <label class="h6 hidden-label" for="name-individual">ФИО</label>
+                              <span class="booking-form__form-field--input" data-error-title="Введите ФИО">
                                 <input class="no-icon" type="text" name="name-individual" id="name-individual" placeholder="Введите ваше ФИО" required>
                               </span>
                             </div>
                             <div class="booking-form__form-field">
-                              <label class="h6" for="phone-individual">Номер телефона</label>
-                              <span class="booking-form__form-field--input">
+                              <label class="h6 hidden-label" for="phone-individual">Номер телефона</label>
+                              <span class="booking-form__form-field--input" data-error-title="Введите номер телефона">
                                 <input class="no-icon" type="text" name="phone-individual" id="phone-individual" placeholder="Введите номер телефона">
                               </span>
                             </div>
                             <div class="booking-form__form-field">
-                              <label class="h6" for="email-individual">Email</label>
-                              <span class="booking-form__form-field--input">
+                              <label class="h6 hidden-label" for="email-individual">Email</label>
+                              <span class="booking-form__form-field--input" data-error-title="Введите ваш email">
                                 <input class="no-icon" type="email" name="email-individual" id="email-individual" placeholder="Введите ваш email" required>
                               </span>
                             </div>
                             <div class="booking-form__form-field">
-                              <label class="h6" for="country-individual">Страна проживания</label>
-                              <span class="custom-select booking-form__form-field--input">
-                                <select class="no-icon" type="text" name="country-individual" id="country-individual" value="0"  required>
+                              <label class="h6 hidden-label" for="country-individual">Страна проживания</label>
+                              <span class="custom-select booking-form__form-field--input" data-error-title="Выберите страну проживания">
+                                <select class="no-icon" type="text" name="country-individual" id="country-individual" value="0" required>
                                   <option value="0" disabled selected>Выберите страну проживания</option>
                                   <option value="1">Беларусь</option>
                                   <option value="2">Россия</option>
@@ -432,8 +445,8 @@
                               </span>
                             </div>
                             <div class="booking-form__form-field">
-                              <label class="h6" for="city-individual">Город</label>
-                              <span class="custom-select booking-form__form-field--input">
+                              <label class="h6 hidden-label" for="city-individual">Город</label>
+                              <span class="custom-select booking-form__form-field--input" data-error-title="Выберите город">
                                 <select class="no-icon" type="text" name="city" id="city-individual" value="0" required>
                                   <option value="0">Выберите город</option>
                                   <option value="1">Беларусь</option>
@@ -442,7 +455,7 @@
                               </span>
                             </div>
                             <div class="booking-form__form-field">
-                              <label class="h6" for="question-individual">Пожелания по маршруту, программе, питанию...</label>
+                              <label class="h6 hidden-label" for="question-individual">Пожелания по маршруту, программе, питанию...</label>
                               <textarea class="booking-form__form-field--input no-icon" id="question-individual" rows="1" placeholder="Пожелания по программе..."></textarea>
                             </div>
                           </div>
@@ -518,14 +531,14 @@
                           <div class="booking-info booking-info__rules">
                             <div class="booking-form__form-field">
                               <span class="booking-form__form-field--checkbox">
-                                <input class="no-icon" type="checkbox" name="payment_rules" id="payment_rules" checked>
+                                <input class="no-icon" type="checkbox" name="payment_rules" id="payment_rules" checked required>
                                 <span class="checkmark"></span>
                                 <label class="h6 checkmark-label" for="payment_rules">
                                   Согласен(на) с <a href="https://pda.ekskursii.by/?Oplata_ekskursij_po_Belarusi" title="Правила бронирования и оплаты">Правилами бронирования и оплаты Ekskursii.by</a>
                                 </label>
                               </span>
                               <span class="booking-form__form-field--checkbox">
-                                <input class="no-icon" type="checkbox" name="privacy_policy" id="privacy_policy" checked>
+                                <input class="no-icon" type="checkbox" name="privacy_policy" id="privacy_policy" checked required>
                                 <span class="checkmark"></span>
                                 <label class="h6 checkmark-label" for="privacy_policy">
                                   Согласен(на) с <a href="https://pda.ekskursii.by/?Politika_konfidencialinosti">Политикой конфиденциальности и Соглашением на обработку персональных данных</a>

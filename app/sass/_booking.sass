@@ -3,7 +3,7 @@
     @extend .card-item__cta
     padding: 14px 28px
   textarea
-    border: 0
+    // border: 0
     font-size: 16px
 .booking-info
   padding-bottom: 30px
@@ -29,10 +29,14 @@
   position: relative
   display: flex
   flex-direction: column
-  gap: 10px 
+  // gap: 12px 
+  margin-top: 12px
+  &:has(.booking-form__form-field--radio)
+    gap: 12px
+    margin-top: 0
 .booking-form__form-field--input
-  border: 0
-  box-shadow: $shadow-gray
+  // border: 0
+  // box-shadow: $shadow-gray
   .select-selected
     width: calc(100% - 30px)
     font-size: 16px
@@ -88,7 +92,7 @@
           color: $dark-gray
 
 .booking-form__form-field:has([class$='--checkbox'])
-  gap: 18px
+  gap: 12px
 .booking-form__form-field--input:has([id*='country']):has(.select-items .same-as-selected:first-child) .select-selected,
 .booking-form__form-field--input:has([id*='city']):has(.select-items .same-as-selected:first-child) .select-selected
   @extend ::placeholder
@@ -106,7 +110,7 @@
   font-size: 18px
   background-color: $accent-yellow
   box-shadow: $shadow-gray
-  z-index: 7
+  z-index: 8
   span
     font-weight: 800
   @media screen and (max-width: 540px)
@@ -134,13 +138,23 @@
   & ~ .booking-form__form-field--payment-entity
     display: flex
 
-.booking-form__form-field.invalid
-  .booking-form__form-field--input
-    border: 1px solid red
-  label::after
-    @extend %error-message
-.booking-form__form-field--input:has(input:user-invalid)
-  border: 1px solid red
+
+
+
+/* validation */
 .booking-form__form-field
-  label:has(+ span input:user-invalid)
-    @extend %error-message
+  &:has(input:user-invalid),
+  &:has(select.invalid)
+    .booking-form__form-field--input
+      border: 1px solid $red
+    &::before
+      @extend %error-message
+  &:has(.booking-form__form-field--radio):has(input:user-invalid)
+    &::before
+      display: none
+    .h6
+      display: flex
+      gap: 12px
+      &::after
+        @extend %error-message
+        margin-bottom: 1px

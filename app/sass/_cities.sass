@@ -16,3 +16,43 @@
     li
       display: block
       margin-bottom: 12px
+
+
+.city-item__card-wrapper
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 12px
+  margin-top: 16px
+  .city-item__card
+    height: 100px
+    width: 100%
+    display: flex
+    flex-direction: row
+    align-items: center
+    background-color: $light-gray
+    div
+      height: 100px
+      flex: 1
+      clip-path: border-box
+      box-sizing: border-box
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+      &:has(a)
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 12px
+    a
+      @extend .h5
+
+.city-item__card:has(+ .more-btn) ~ .city-item__card
+  display: none
+.city-item__card-wrapper:has(.more-btn [type="checkbox"]:checked)
+  .city-item__card:has(+ .more-btn) ~ .city-item__card
+    display: flex
+  .more-btn
+    display: none

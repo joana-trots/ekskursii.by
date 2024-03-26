@@ -11,7 +11,7 @@
 .modal-content
     position: relative
     width: 100%
-    max-width: 100vw
+    max-width: calc(100vw - 32px)
     background-color: $white
     border-radius: 10px
     box-shadow: $shadow-gray
@@ -21,6 +21,8 @@
     padding: 20px
     animation-name: animatetop
     animation-duration: 0.4s
+    .h2
+        word-break: break-word
 .modal-close img
     width: 20px
     height: 20px
@@ -145,3 +147,22 @@
         font-size: 16px
     .booking-form__submit-btn
         width: 100%
+
+.validation-modal
+  .modal__header
+    align-items: center
+  .h2
+    display: flex
+    gap: 8px
+    &::before
+      @extend %button-icon
+      width: 28px
+      height: 28px
+      flex: 0 0 28px
+  .modal__main
+    margin-top: 20px
+    font-size: 16px
+  &--error .h2::before
+    background-image: $icon_error
+  &--success .h2::before
+    background-image: $icon_success

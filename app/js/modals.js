@@ -4,6 +4,7 @@ let modal          = document.querySelectorAll('.modal'),
     filtersModal   = document.querySelector('.filters-modal'),
     searchModal    = document.querySelector('.search-modal'),
     bookingModal   = document.querySelector('.booking-modal'),
+    validationModal = document.querySelector('.validation-modal'),
 
     modalOpenBtn   = document.querySelectorAll('.modal-open'),
     modalClose     = document.querySelectorAll('.modal-close');
@@ -15,10 +16,12 @@ modalOpenBtn.forEach((item) => {
     }
     if (item.classList.contains('schedule__options-item--filters')) {
       filtersModal.style.display = "flex";
-      multiRange();
     }
     if (item.classList.contains('intro__btn--primary')) {
       bookingModal.style.display = "flex";
+    }
+    if (item.classList.contains('booking-form__submit-btn') || item.classList.contains('booking-price')) {
+      validationModal.style.display = "flex";
     }
     document.body.classList.toggle('overflow-hidden');
   }
@@ -50,11 +53,11 @@ modalClose.forEach((item) => {
     document.body.classList.toggle('overflow-hidden');
   }
 });
-window.onclick = function(event) {
-  modal.forEach((item => {
+window.addEventListener('click', (event) => {
+  modal.forEach((item) => {
     if (event.target === item) {
       item.style.display = "none";
       document.body.classList.toggle('overflow-hidden');
     }
-  }));
-}
+  });
+});
