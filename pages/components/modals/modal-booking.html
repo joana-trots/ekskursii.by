@@ -9,25 +9,25 @@
     
     <form class="booking-form" id="booking-group">
       <div class="booking-info booking-info__profile">
-        <div class="booking-form__form-field">
-          <label class="h6" for="name">ФИО</label>
+        <div class="booking-form__form-field" data-error-title="Введите ваше ФИО">
+          <label class="h6 hidden-label" for="name">ФИО</label>
           <span class="booking-form__form-field--input">
             <input class="no-icon" type="text" name="name" id="name" placeholder="Введите ваше ФИО" required>
           </span>
         </div>
-        <div class="booking-form__form-field">
-          <label class="h6" for="phone">Email или телефон</label>
+        <div class="booking-form__form-field" data-error-title="Введите email или телефон">
+          <label class="h6 hidden-label" for="phone">Email или телефон</label>
           <span class="booking-form__form-field--input">
             <input class="no-icon" type="text" name="phone" id="phone" placeholder="Email или телефон" required>
           </span>
         </div>
-        <div class="booking-form__form-field">
-          <label class="h6" for="question">Пожелания по маршруту, программе, питанию...</label>
+        <div class="booking-form__form-field" data-error-title="Напишите пожелания по маршруту, программе, питанию...">
+          <label class="h6 hidden-label" for="question">Пожелания по маршруту, программе, питанию...</label>
           <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="Пожелания по экскурсии" required></textarea>
         </div>
       </div>
     
-      <div class="booking-info booking-info__rules">
+      <div class="booking-info booking-info__rules" data-error-title="Поле должно быть отмечено">
         <div class="booking-form__form-field hint-text">
           <p>Нажимая кнопку «Отправить» Вы соглашаетесь с <a href="https://ekskursii.by/?Politika_konfidencialinosti" target="_blank">Политикой обработки персональных данных</a>.</p>
         </div>
