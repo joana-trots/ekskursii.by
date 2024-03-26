@@ -29,27 +29,27 @@
   </div>
   <div class="booking-info booking-info__profile">
     <p class="h4">Ваши данные</p>
-    <div class="booking-form__form-field">
+    <div class="booking-form__form-field" data-error-title="Введите ФИО">
       <label class="h6 hidden-label" for="name-individual">ФИО</label>
-      <span class="booking-form__form-field--input" data-error-title="Введите ФИО">
+      <span class="booking-form__form-field--input">
         <input class="no-icon" type="text" name="name-individual" id="name-individual" placeholder="Введите ваше ФИО" required>
       </span>
     </div>
-    <div class="booking-form__form-field">
+    <div class="booking-form__form-field" data-error-title="Введите номер телефона">
       <label class="h6 hidden-label" for="phone-individual">Номер телефона</label>
-      <span class="booking-form__form-field--input" data-error-title="Введите номер телефона">
+      <span class="booking-form__form-field--input">
         <input class="no-icon" type="text" name="phone-individual" id="phone-individual" placeholder="Введите номер телефона">
       </span>
     </div>
-    <div class="booking-form__form-field">
+    <div class="booking-form__form-field" placeholder="Введите ваш email">
       <label class="h6 hidden-label" for="email-individual">Email</label>
       <span class="booking-form__form-field--input" data-error-title="Введите ваш email">
-        <input class="no-icon" type="email" name="email-individual" id="email-individual" placeholder="Введите ваш email" required>
+        <input class="no-icon" type="email" name="email-individual" id="email-individual" required>
       </span>
     </div>
-    <div class="booking-form__form-field">
+    <div class="booking-form__form-field" data-error-title="Выберите страну проживания">
       <label class="h6 hidden-label" for="country-individual">Страна проживания</label>
-      <span class="custom-select booking-form__form-field--input" data-error-title="Выберите страну проживания">
+      <span class="custom-select booking-form__form-field--input">
         <select class="no-icon" type="text" name="country-individual" id="country-individual" value="0" required>
           <option value="0" disabled selected>Выберите страну проживания</option>
           <option value="1">Беларусь</option>
@@ -57,9 +57,9 @@
         </select>
       </span>
     </div>
-    <div class="booking-form__form-field">
+    <div class="booking-form__form-field" data-error-title="Выберите город">
       <label class="h6 hidden-label" for="city-individual">Город</label>
-      <span class="custom-select booking-form__form-field--input" data-error-title="Выберите город">
+      <span class="custom-select booking-form__form-field--input">
         <select class="no-icon" type="text" name="city" id="city-individual" value="0" required>
           <option value="0">Выберите город</option>
           <option value="1">Беларусь</option>
@@ -76,7 +76,7 @@
     <p class="h4">Оплата</p>
 
     <div class="booking-form__form-field">
-      <p class="h6">Способ оплаты</p>
+      <p class="h6" data-error-title="Выберите способ оплаты">Способ оплаты</p>
       <div class="booking-form__form-field--pay">
         <span class="booking-form__form-field--radio">
           <input class="no-icon" type="radio" id="individual" name="pay">
@@ -142,7 +142,7 @@
     </div>
   </div>
   <div class="booking-info booking-info__rules">
-    <div class="booking-form__form-field">
+    <div class="booking-form__form-field" data-error-title="Все поля должны быть отмечены">
       <span class="booking-form__form-field--checkbox">
         <input class="no-icon" type="checkbox" name="payment_rules" id="payment_rules" checked required>
         <span class="checkmark"></span>
