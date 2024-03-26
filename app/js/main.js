@@ -12,10 +12,20 @@ scheduleButton.forEach((btn) => {
 
 /* flatpickr (DATEPICKER in the MAIN SEARCH) */
 flatpickr('[id*="-date"]', {
+  allowInput: true,
+  onOpen: function(selectedDates, dateStr, instance) {
+      instance.input.readOnly = true;
+  },
+  onClose: function(selectedDates, dateStr, instance) {
+      instance.input.readOnly = false;
+      instance.input.blur();
+  },
   dateFormat: "d-m-Y",
   mode: "range",
   "locale": document.documentElement.lang == "by" ? 'be' : document.documentElement.lang,
 });
+
+
 
 function onlyOne(checkbox) {
   let checkboxes  = document.querySelectorAll('.attractions input[id*="filters-item"]');
