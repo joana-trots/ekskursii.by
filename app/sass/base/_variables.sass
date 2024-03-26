@@ -76,7 +76,8 @@ $icon_kid: url(../images/kid-icon.webp)
     transform: rotate(180deg)
     transition: transform 0.3s
 %error-message
-    content: 'Это поле обязательное'
+    content: attr(data-error-title)
+    // content: 'Это поле обязательное'
     display: block
     position: absolute
     top: 18px

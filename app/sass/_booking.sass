@@ -135,7 +135,9 @@
     display: flex
 
 .booking-form__form-field.invalid
-  .booking-form__form-field--input
+  .booking-form__form-field--input,
     border: 1px solid red
   label::after
     @extend %error-message
+.booking-form__form-field--input:has(input:user-invalid)
+  border: 1px solid red
