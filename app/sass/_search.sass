@@ -34,8 +34,8 @@
         right: 0
         top: 4px
         display: flex
-        align-items: flex-end
-        gap: 8px
+        align-items: center
+        gap: 4px
         justify-content: flex-end
         color: $dark-gray
         &::before
@@ -46,7 +46,7 @@
             width: 10px
             height: 6px
             background-image: $icon_arrow_gray
-            transform: rotate(180deg) translateY(5px)
+            transform: rotate(180deg)
             transition: all 0.25s ease-in-out
     input.main-search__dropdown-btn
         position: absolute
@@ -65,7 +65,7 @@
                 &::before
                     content: attr(data-open-text)
                 &::after
-                    transform: rotate(360deg) translateY(-3px)
+                    transform: rotate(360deg)
     .main-search__title
         display: flex
         justify-content: space-between
@@ -81,7 +81,7 @@
         margin-top: 30px
         transition: all 0.25s ease-in-out
         opacity: 1
-        transform: translate(0, 0)  
+        transform: translate(0, 0)
         z-index: 3
         overflow: hidden
         [class$='submit-btn']

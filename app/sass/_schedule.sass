@@ -228,6 +228,13 @@
     font-weight: 600
     letter-spacing: 1.92px
     box-shadow: none
+    &.invalid
+        background-color: $light-gray
+        border-color: $light-gray
+        color: $dark-gray
+        &:hover
+            cursor: not-allowed
+            border-color: $light-gray
 ul.card-item__price-include
     @extend .list
     gap: 8px
