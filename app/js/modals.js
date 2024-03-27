@@ -9,6 +9,8 @@ let modal          = document.querySelectorAll('.modal'),
     modalOpenBtn   = document.querySelectorAll('.modal-open'),
     modalClose     = document.querySelectorAll('.modal-close');
 
+let isModalFilter = false;
+
 modalOpenBtn.forEach((item) => {
   item.onclick = function() {
     if (item.classList.contains('phone-item')) {
@@ -16,7 +18,7 @@ modalOpenBtn.forEach((item) => {
     }
     if (item.classList.contains('schedule__options-item--filters')) {
       filtersModal.style.display = "flex";
-      // multiRange();
+      !isModalFilter && (isModalFilter = true) && multiRange();
     }
     if (item.classList.contains('intro__btn--primary')) {
       bookingModal.style.display = "flex";
