@@ -68,20 +68,20 @@
       <div class="filters-item">
         <p class="filters-item__title">Цена за 1 человека</p>
 
-        <div class="filters-item__list">
+        <div class="filters-item__list" data-dual-range>
           <div class="range-slider-output">
-            <div>
-              <p class="start-price"></p>
-              <span class="price--currency">BYN</span>
-            </div>
-            <div>
-              <p class="end-price"></p>
-              <span class="price--currency">BYN</span>
-            </div>
+              <div>
+                  <p class="start-price" data-range-slider-output-start></p>
+                  <span class="price--currency">BYN</span>
+              </div>
+              <div>
+                  <p class="end-price" data-range-slider-output-end></p>
+                  <span class="price--currency">BYN</span>
+              </div>
           </div>
-          
-          <div class="multi-range"></div>
-        </div>
+          <div class="multi-range" data-dual-range-start></div>
+          <input type="text" min="0" max="100" step="1" value="4-20" hidden data-range-slider-input>
+      </div>
 
       </div>
       
