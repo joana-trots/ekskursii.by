@@ -381,12 +381,16 @@ ul.card-item__price-include
             display: flex
 
 
-
 .schedule__display--all-group,
 .schedule__display--all-individual
     margin-top: 20px
     .h2
-        margin: 20px 0
+        position: sticky
+        top: 68px
+        z-index: 2
+        margin: 8px 0
+        padding: 12px
+        background-color: $white
 .schedule__display--all-individual:not(.schedule__display--table)
     .card-item__price p
         font-size: 20px
