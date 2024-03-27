@@ -4,78 +4,98 @@
     z-index: 1
     .splide__slide
         border-radius: 24px
-    .splide__slide--wrapper    
+        .feedback__text
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -moz-box
+            -moz-box-orient: vertical
+            display: -webkit-box
+            -webkit-line-clamp: 4
+            -webkit-box-orient: vertical
+            line-clamp: 4
+            box-orient: vertical
+            a
+                display: none
+            &.feedback__text--long
+                margin-bottom: 30px
+                a
+                    display: flex
+                    position: absolute
+                    right: 20px
+                    bottom: 20px
+    .splide__slide--wrapper
         display: flex
         flex-direction: column
         gap: 16px
     .splide
         margin-top: 12px
-    .feedback__inner--header,
-    .feedback__userinfo
-        @extend %flex-center
-        justify-content: space-between
-    .feedback__rateinfo
-        @extend %flex-center
-        justify-content: flex-start
-        gap: 10px
-    .feedback__userinfo--name,
-    .feedback__userinfo--city
-        @extend %flex-center
-        justify-content: flex-start
-        gap: 6px
-    .feedback__userinfo--name
-        font-size: 16px
-        font-weight: 700
-        text-transform: uppercase
-    .feedback__userinfo--city
-        color: $dark-gray
-        font-size: 12px
-        font-weight: 400
-        text-transform: capitalize
-    .feedback__userinfo--date
-        color: $dark-gray
-        font-size: 14px
-        font-weight: 400
-    .feedback__rateinfo--title
-        height: 30px
-        overflow: hidden
-    .feedback__rateinfo--title a
-        padding: 6px 12px
-        background-color: $accent-yellow
-        font-size: 14px
-        font-weight: 700
-        border-radius: 24px
-        height: 30px
-        display: inline-block
-        overflow: hidden
-        word-break: break-all
-        &:hover
-            text-decoration: underline
-    .feedback__rateinfo--rate
-        @extend %flex-center
-        color: $green
-        &::before
-            @extend %button-icon
-            width: 24px
-            height: 24px
-            background-image: $icon_like-green
-            flex: 0 0 24px
-    .feedback__text
-        overflow: hidden
-        text-overflow: ellipsis
-        display: -moz-box
-        -moz-box-orient: vertical
-        display: -webkit-box
-        -webkit-line-clamp: 4
-        -webkit-box-orient: vertical
-        line-clamp: 4
-        box-orient: vertical
-        a
-            display: none
-        &.feedback__text--long
-            margin-bottom: 30px
-            a
-                display: flex
-                position: absolute
-                right: 20px
-                bottom: 20px
+.feedback__inner--header,
+.feedback__userinfo
+    @extend %flex-center
+    justify-content: space-between
+    flex-wrap: wrap
+    gap: 12px
+.feedback__rateinfo
+    @extend %flex-center
+    justify-content: flex-start
+    flex-wrap: wrap
+    gap: 10px
+.feedback__userinfo--name,
+.feedback__userinfo--city
+    @extend %flex-center
+    justify-content: flex-start
+    gap: 6px
+.feedback__userinfo--name
+    font-size: 16px
+    font-weight: 700
+    text-transform: uppercase
+.feedback__userinfo--city
+    color: $dark-gray
+    font-size: 12px
+    font-weight: 400
+    text-transform: capitalize
+.feedback__userinfo--date
+    color: $dark-gray
+    font-size: 14px
+    font-weight: 400
+.feedback__rateinfo--title
+    height: 30px
+    overflow: hidden
+.feedback__rateinfo--title a
+    padding: 6px 12px
+    background-color: $accent-yellow
+    font-size: 14px
+    font-weight: 700
+    border-radius: 24px
+    height: 30px
+    display: inline-block
+    overflow: hidden
+    word-break: break-all
+    &:hover
+        text-decoration: underline  
+
+.feedback__rateinfo--rate
+    @extend %flex-center
+    color: $green
+    &::before
+        @extend %button-icon
+        width: 24px
+        height: 24px
+        background-image: $icon_like-green
+        flex: 0 0 24px
+
+.section__inner--feedback
+    display: flex
+    flex-direction: column
+    gap: 20px
+.feedback-wrapper,
+.feedback-footer
+    display: flex
+    flex-direction: column
+    gap: 16px
+    padding-top: 16px
+    border-top: 1px solid $additional-gray
+    .simple-btn 
+        align-self: flex-end
+.feedback-wrapper:nth-child(2)
+    border-top: 0
