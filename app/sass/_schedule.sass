@@ -323,8 +323,11 @@ ul.card-item__price-include
         display: block
         font-size: 14px
         order: 1
-        p::before
-            display: none !important
+        div:not(.card-item__info--duration)
+            p::before
+                display: none
+        .card-item__info--duration p
+            gap: 0 
     .card-item__info--date
         max-width: 76px
         font-weight: 700

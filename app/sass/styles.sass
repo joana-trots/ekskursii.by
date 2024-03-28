@@ -35,3 +35,47 @@
 @import _modals
 @import _dropdown
 @import _rangeSlider
+
+.quicknav__section#description
+  display: flex
+  flex-direction: column
+.dropdown-text-btn
+  margin-top: 12px
+  order: 9
+  cursor: pointer
+  input
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 4px
+    appearance: none
+    &::before
+      content: attr(data-open-text)
+    &::after
+      @extend %button-icon
+      position: relative
+      width: 10px
+      height: 6px
+      background-image: $icon_arrow_gray
+      transform: rotate(360deg)
+      transition: all 0.25s ease-in-out
+  & ~ .dropdown-text-content
+    order: 9
+    // display: none
+    max-height: 0
+    opacity: 0
+    transform: translate(0, 50%)
+  &:has(input:checked)
+    order: 10
+    input
+      &::before
+        content: attr(data-close-text)
+      &::after
+        transform: rotate(180deg)
+    & ~ .dropdown-text-content
+      // display: block
+      max-height: 100%
+      transition: all 0.25s ease-in-out
+      opacity: 1
+      transform: translate(0, 0)
+
