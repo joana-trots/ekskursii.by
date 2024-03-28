@@ -98,15 +98,14 @@
     display: flex
     flex-direction: column
     gap: 12px
-.card-item__seats
-    display: none
 .card-item__info,
-.card-item__additional-info
+.card-item__additional-info,
+.card-item__seats
     display: flex
     align-items: center
     flex-wrap: wrap
     gap: 12px
-    & p
+    p
         display: flex
         align-items: center
         gap: 4px
@@ -115,6 +114,12 @@
         @extend %button-icon
     @media screen and (max-width: 540px) and (min-width: 400px)
         font-size: 3.3vw
+.card-item__seats
+    margin-top: 12px
+.card-item__seats p::before
+    @extend %button-icon
+    opacity: 1
+    background-image: $icon_people-group
 .card-item__info--date p::before
     background-image: $icon_calendar-date
 .card-item__info--time p::before
@@ -125,15 +130,13 @@
 .card-item__info--place p::before,
 .card-item__additional-info--pickup-point p::before
     background-image: $icon_pin
-.card-item__additional-info--seats p::before
-    background-image: $icon_people-group
 .card-item__info--type p::before
     background-image: $icon_flag
 @media screen and (max-width: 412px)
     .card-item__additional-info--pickup-point
         order: 1
-    .card-item__additional-info--seats
-        order: 2
+    // .card-item__additional-info--seats
+    //     order: 2
     .card-item__additional-info--kids-price
         order: 3        
 .card-item__dropdown-btn
@@ -228,13 +231,19 @@
     font-weight: 600
     letter-spacing: 1.92px
     box-shadow: none
-    &.invalid
+    &.inactive
         background-color: $light-gray
         border-color: $light-gray
         color: $dark-gray
+        cursor: not-allowed
         &:hover
             cursor: not-allowed
             border-color: $light-gray
+.schedule__card-item:has(.card-item__cta.inactive)
+    .card-item__seats p
+        color: $dark-gray
+        &::before
+            opacity: 0.7
 ul.card-item__price-include
     @extend .list
     gap: 8px
@@ -328,17 +337,15 @@ ul.card-item__price-include
                 display: none
         .card-item__info--duration p
             gap: 0 
+    .card-item__seats p:before
+        display: none
     .card-item__info--date
         max-width: 76px
         font-weight: 700
         span
             display: none
     .card-item__info--time
-        font-weight: 500
-    .card-item__seats
-        display: block
-        margin-top: 12px
-        color: $dark-gray
+        font-weight: 500  
     .card-item__info2
         max-width: 116px
         order: 2
@@ -404,3 +411,6 @@ ul.card-item__price-include
 .schedule__display--all-individual:not(.schedule__display--table)
     .card-item__price p
         font-size: 20px
+
+.card-item__additional-info--seats
+    display: none
