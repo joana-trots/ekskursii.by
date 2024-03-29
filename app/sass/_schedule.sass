@@ -73,6 +73,7 @@
     width: calc(100% + 16px * 2)
     left: -16px
     clip-path: border-box
+    z-index: 0
     img,
     .card-item__image--overlay
         position: absolute
@@ -94,10 +95,13 @@
     filter: blur(50px)
     bottom: -106px
     right: 0
+    z-index: 0
 .schedule__card-item--header
+    position: relative
     display: flex
     flex-direction: column
     gap: 12px
+    z-index: 1
 .card-item__info,
 .card-item__additional-info,
 .card-item__seats
