@@ -1,3 +1,10 @@
 .dropdown-content
-  .phone-item .menu__primary-list--link::after
-    display: none
+  .list li
+    display: block
+  .phone-item .menu__primary-list--link
+    &::after
+      display: none
+  p
+    color: $black
+  span ~ ul.list
+    padding-top: 12px
