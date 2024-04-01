@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekskursii.by</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container header__container--primary">
+          <nav class="menu__primary">
+            <a class="header__logo" href="/ekskursii.by/" title="Ekskursii.by">
+              <img src="images/sprite.svg#logo" alt="logo">
+            </a>
+            <ul class="menu__primary-list">
+              <li class="menu__primary-list--item phone-item modal-open">
+                <div class="menu__primary-list--link" id="phone-item">
+                  <img src="images/sprite.svg#icons--socials--messengers" alt="messengers">
+                  <span>+375 29-756-66-65</span>
+                </div>
+              </li>
+              <li class="menu__primary-list--item dropdown-item lang-item custom-select">
+                <select class="menu__primary-list--link" id="lang-item" name="lang-item">
+                  <option value="byn">рус</option>
+                  <option value="rub">бел</option>
+                  <option value="euro">en</option>
+                </select>
+              </li>
+              <li class="menu__primary-list--item dropdown-item currency-item custom-select">
+                <select class="menu__primary-list--link" id="currency-item" name="currency-item">
+                  <option value="byn">BYN</option>
+                  <option value="rub">₽</option>
+                  <option value="euro">€</option>
+                </select>
+              </li>
+            </ul>
+        
+            <div class="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
+        </div>
+        <div class="container header__container--mobile">
+          <nav class="menu__mobile">
+            <ul class="menu__mobile-list">
+        
+              <li class="menu__mobile-list--item divided-item">
+                <a class="btn cta-primary modal-open" href="#" title="Оставить заявку"></a>
+              </li>
+              
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="#">Личный кабинет</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">График экскурсий</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Групповые экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Индивидуальные экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Корпоративные экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule.html">Все экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Как заказать?</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Частые вопросы</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="#">Все об экскурсиях</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/contacts.html">Контакты</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <ul>
+                  <li>
+                    <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                      <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                    </a>
+                    <a href="https://telegram.me/ekskursii" title="telegram">
+                      <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                    </a>
+                    <a href="viber://add?number=375297566665" title="viber">
+                      <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="booking-modal modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Быстрая заявка</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            
+            <form class="booking-form" id="booking-group">
+              <div class="booking-info booking-info__profile">
+                <div class="booking-form__form-field" data-error-title="Введите ваше ФИО">
+                  <label class="h6 hidden-label" for="name">ФИО</label>
+                  <span class="booking-form__form-field--input">
+                    <input class="no-icon" type="text" name="name" id="name" placeholder="Введите ваше ФИО" required>
+                  </span>
+                </div>
+                <div class="booking-form__form-field" data-error-title="Введите email или телефон">
+                  <label class="h6 hidden-label" for="phone">Email или телефон</label>
+                  <span class="booking-form__form-field--input">
+                    <input class="no-icon" type="text" name="phone" id="phone" placeholder="Email или телефон" required>
+                  </span>
+                </div>
+                <div class="booking-form__form-field" data-error-title="Напишите пожелания по маршруту, программе, питанию...">
+                  <label class="h6 hidden-label" for="question">Пожелания по маршруту, программе, питанию...</label>
+                  <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="Пожелания по экскурсии" required></textarea>
+                </div>
+              </div>
+            
+              <div class="booking-info booking-info__rules" data-error-title="Поле должно быть отмечено">
+                <div class="booking-form__form-field hint-text">
+                  <p>Нажимая кнопку «Отправить» Вы соглашаетесь с <a href="https://ekskursii.by/?Politika_konfidencialinosti" target="_blank">Политикой обработки персональных данных</a>.</p>
+                </div>
+              </div>
+            
+              <button class="btn booking-form__submit-btn" type="submit" value="Отправить"></button>
+          
+            </form>
+        
+          </div>
+        </div>
+        <div class="contacts-modal modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Телефоны</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            <div class="modal__main">
+              <a href="tel:+375173944913">+375 (17) 394-49-13</a>
+              <a href="tel:+375291903216">+375 (29) 190-32-16 (А1)</a>
+              <a href="tel:+375297566665">+375 (29) 756-66-65 (МТС)</a>
+            </div>
+            <div class="modal__footer">
+              <p>Мы в мессенджерах</p>
+              <div class="modal__footer--social-icons">
+                <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                  <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                </a>
+                <a href="https://telegram.me/ekskursii" title="telegram">
+                  <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                </a>
+                <a href="viber://add?number=375297566665" title="viber">
+                  <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="validation-modal validation-modal--error modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Заголовок</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            <div class="modal__main">
+              Сообщение
+            </div>
+          </div>
+        </div>
+        
+      </header>
+      <main class="main">
+        <section class="main-search search-header">
+          <div class="container">
+            <div class="main-search__inner">
+              <input class="main-search__dropdown-btn" id="main-search__dropdown-btn" type="checkbox" checked>
+              <h2 class="h2">Поиск</h2>
+              <span class="main-search__dropdown-arrow" data-open-text="раскрыть" data-close-text="свернуть"></span>
+              <form class="search-form" id="search-form">
+                <div class="search-form__form-field">
+                  <label class="hidden-label" for="header-search-place">Место</label>
+                  <span class="search-form__form-field--input">
+                    <input type="text" name="place" id="header-search-place" placeholder="Место">
+                  </span>
+                </div>
+                <div class="search-form__form-field">
+                  <div class="search-form__form-field--date">
+                    <label class="hidden-label" for="header-search-date">Выберите дату</label>
+                    <span class="search-form__form-field--input">
+                      <input type="text" name="date" id="header-search-date" placeholder="Выберите дату">
+                    </span>
+                  </div>
+                </div>
+                <div class="search-form__form-field">
+                  <label class="hidden-label" for="header-search-types">Виды экскурсий</label>
+                  <span class="custom-select search-form__form-field--input">
+                    <select name="types" id="header-search-types">
+                      <option value="0">Групповые</option>
+                      <option value="1">Индивидуальные</option>
+                    </select>
+                  </span>
+                </div>
+                <button class="btn search-form__submit-btn">Искать</button>
+              </form>
+            </div>
+          </div>
+        </section>
+        <div class="search-modal modal">
+          <div class="modal-content">
+        
+            <button class="btn modal-close">
+              <img src="images/sprite.svg#icons--cross" alt="close">
+            </button>
+        
+            <form class="search-form" id="search-form_modal">
+              <div class="search-form__form-field">
+                <label class="hidden-label" for="main-search-place_modal">Место</label>
+                <span class="search-form__form-field--input">
+                  <input type="text" name="place" id="main-search-place_modal" minlength="3" placeholder="Место" required>
+                </span>
+              </div>
+              <a class="btn simple-btn arrow-btn modal-close" href="#" title=""></a>
+              <button class="btn search-form__submit-btn" value="Искать"></button>
+            </form>
+        
+            <div class="search-results">
+              <ul>
+                <li class="h6 search-results__item--header">Групповые экскурсии</li>
+                
+                <li class="search-results__item--info">
+                  <a href="https://pda.ekskursii.by/?Brest_Belovezhskaya_puscha_Mir_Minsk_2_dnya">
+                    <p class="h5"><span>Минск</span> вечерний</p>
+                    <div class="hint-text">
+                      <p class="hint-gray">
+                        Ближайшая: 18:00 05-Марта-2024 <br>
+                        Цена за человека 50 BYN
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li class="search-results__item--info">
+                  <a href="https://pda.ekskursii.by/?Brest_Belovezhskaya_puscha_Mir_Minsk_2_dnya">
+                    <p class="h5">Обзорная экскурсия по <span>Минск</span>у</p>
+                    <div class="hint-text">
+                      <p class="hint-gray">
+                        Ближайшая: 18:00 05-Марта-2024 <br>
+                        Цена за человека 50 BYN
+                      </p>
+                    </div>
+                  </a>
+                </li>
+        
+                <li class="h6 search-results__item--header">Все экскурсии</li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <section class="section">
+          <div class="container">
+            <div class="section__header">
+              <h1 class="h2">Все об экскурсиях</h1>
+              <h6 class="h6">Карта сайта</h6>
+            </div>
+          </div>
+        </section>
+        
+        <section class="section section__quicknav section__about" id="qsection">
+          <div class="quicknav__navbar" id="qnavbar">
+            <h6 class="h6">Быстрая навигация</h6>
+            <ul class="quicknav__tags-group">
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#about" title="О предприятии">О предприятии</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#interesting" title="Интересная Беларусь">Интересная Беларусь</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#tours" title="Экскурсия и туры по Беларуси">Экскурсия и туры по Беларуси</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#types" title="Виды туризма">Виды туризма</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#clients" title="Нашим клиентам">Нашим клиентам</a>
+              </li>
+            </ul>
+          </div>
+        
+          <div class="container">
+            <div class="section__inner">
+              <section class="quicknav__section" id="about">
+                
+                <h2 class="h2">О предприятии</h2>
+                
+                <ul class="list">
+                  <li>
+                    <a href="https://att.by/?agentstvam" target="_blank" title="информация для туристических агентств">Агентствам</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Kak_projti_k_ofisu_predpriyatiya" target="_blank" title="подробная схема прохода к офису ЧНПУП Автоматизированные технологии туризма">Как пройти к офису предприятия</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?contact" target="_blank" title="Контакты">Контакты</a>
+                  </li>
+                  <li>
+                    <a href="https://att.by/?nagrady" target="_blank" title="Награды предприятия">Награды предприятия</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?O_predpriyatii" target="_blank" title="подробная информация о ЧНПУП Автоматизированные технологии туризма">О предприятии</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Partnyoram" target="_blank" title="основные направления сотрудничества">Партнерам</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Podrobno_o_portale_Ekskursii_by" target="_blank" title="Подробно о портале">Подробно о портале</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Informaciya_o_sotrudnikah" target="_blank" title="Сотрудники">Сотрудники</a>
+                  </li>
+                </ul>
+              </section>
+        
+              <section class="quicknav__section about__schedule" id="interesting">
+
+                <h2 class="h2">Интересная Беларусь</h2>
+
+                <ul class="list">
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Bezvizovyj_vezd_v_Respubliku_Belarusi" target="_blank" title="особенности и порядок въезда в Беларусь без визы, необходимые документы">Без визы в Беларусь</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?citys" target="_blank" title="Города Беларуси">Города Беларуси</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Dostoprimechatelnosti_Belarusi" target="_blank" title="Достопримечательности">Знаковые места</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Informaciya_o_strane" target="_blank" title="Информация о Беларуси">О Беларуси</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Karta_belarusi=all" target="_blank" title="Карта Беларуси">Карта Беларуси</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Legendy" target="_blank" title="Легенды и предания">Легенды и предания</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?museum" target="_blank" title="Музеи Беларуси">Музеи Беларуси</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Nematerialnoe_kulturnoe_nasledie_Belarusi" target="_blank" title="народные традиции и обряды в Беларуси">Нематериальное культурное наследие Беларуси</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?event" target="_blank" title="календарь событий в Беларуси">Туристические события</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Suveniry_iz_Belarusi" target="_blank" title="Сувениры из Беларуси">Сувениры из Беларуси</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Shopping_v_Minske" target="_blank" title="лучшие места для шоппинга в Минске">Шоппинг в Минске</a>
+                  </li>
+                </ul>
+              </section>
+        
+              <section class="quicknav__section about__description" id="tours">
+                <h2 class="h2">Экскурсии и туры по Беларуси</h2>
+                <ul class="list">
+                  <li>
+                    <a href="https://att.by/?agentstvam" target="_blank" title="информация для туристических агентств">Агентствам</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Kak_projti_k_ofisu_predpriyatiya" target="_blank" title="подробная схема прохода к офису ЧНПУП Автоматизированные технологии туризма">Как пройти к офису предприятия</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?contact" target="_blank" title="Контакты">Контакты</a>
+                  </li>
+                  <li>
+                    <a href="https://att.by/?nagrady" target="_blank" title="Награды предприятия">Награды предприятия</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?O_predpriyatii" target="_blank" title="подробная информация о ЧНПУП Автоматизированные технологии туризма">О предприятии</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Partnyoram" target="_blank" title="основные направления сотрудничества">Партнерам</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Podrobno_o_portale_Ekskursii_by" target="_blank" title="Подробно о портале">Подробно о портале</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Informaciya_o_sotrudnikah" target="_blank" title="Сотрудники">Сотрудники</a>
+                  </li>
+                </ul>
+              </section>
+        
+              <section class="quicknav__section about__program" id="types">
+                <h2 class="h2">Виды туризма</h2>
+        
+                <ul class="list">
+                  <li>
+                    <a href="https://att.by/?agentstvam" target="_blank" title="информация для туристических агентств">Агентствам</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Kak_projti_k_ofisu_predpriyatiya" target="_blank" title="подробная схема прохода к офису ЧНПУП Автоматизированные технологии туризма">Как пройти к офису предприятия</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?contact" target="_blank" title="Контакты">Контакты</a>
+                  </li>
+                  <li>
+                    <a href="https://att.by/?nagrady" target="_blank" title="Награды предприятия">Награды предприятия</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?O_predpriyatii" target="_blank" title="подробная информация о ЧНПУП Автоматизированные технологии туризма">О предприятии</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Partnyoram" target="_blank" title="основные направления сотрудничества">Партнерам</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Podrobno_o_portale_Ekskursii_by" target="_blank" title="Подробно о портале">Подробно о портале</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Informaciya_o_sotrudnikah" target="_blank" title="Сотрудники">Сотрудники</a>
+                  </li>
+                </ul>
+              </section>
+        
+              <section class="quicknav__section about__program" id="clients">
+                <h2 class="h2">Нашим клиентам</h2>
+        
+                <ul class="list">
+                  <li>
+                    <a href="https://att.by/?agentstvam" target="_blank" title="информация для туристических агентств">Агентствам</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Kak_projti_k_ofisu_predpriyatiya" target="_blank" title="подробная схема прохода к офису ЧНПУП Автоматизированные технологии туризма">Как пройти к офису предприятия</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?contact" target="_blank" title="Контакты">Контакты</a>
+                  </li>
+                  <li>
+                    <a href="https://att.by/?nagrady" target="_blank" title="Награды предприятия">Награды предприятия</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?O_predpriyatii" target="_blank" title="подробная информация о ЧНПУП Автоматизированные технологии туризма">О предприятии</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Partnyoram" target="_blank" title="основные направления сотрудничества">Партнерам</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Podrobno_o_portale_Ekskursii_by" target="_blank" title="Подробно о портале">Подробно о портале</a>
+                  </li>
+                  <li>
+                    <a href="https://pda.ekskursii.by/?Informaciya_o_sotrudnikah" target="_blank" title="Сотрудники">Сотрудники</a>
+                  </li>
+                </ul>
+              </section>
+             
+        
+            </div>
+          </div>
+        </section>
+
+
+
+
+
+        
+        
+      </main>
+      
+      <footer class="footer">
+      
+        <div class="container">
+      
+          <div class="footer__inner">
+      
+            <div class="footer__main-nav">
+      
+              <ul class="footer__nav-col">
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Все экскурсии">Все экскурсии</a>
+      
+                  <ul class="footer__subnav-col">
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Новогодние каникулы">Новогодние каникулы</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Групповые экскурсии">Групповые</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Индивидуальные экскурсии">Индивидуальные</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Корпоративные экскурсии">Корпоративные</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Школьные экскурсии">Школьные</a>
+      
+                    </li>
+      
+                  </ul>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Бонусы и скидки">Бонусы и скидки</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Все об экскурсиях">Все об экскурсиях</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Города">Города</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Музеи">Музеи</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Знаковые места">Знаковые места</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Туризм в Беларуси">Туризм в Беларуси</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="О Беларуси">О Беларуси</a>
+      
+                </li>
+      
+              </ul>
+      
+              <ul class="footer__nav-col">
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Поиск">Поиск</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="График экскурсий">График экскурсий</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Личный кабинет">Личный кабинет</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Новости">Новости</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Частые вопросы">Частые вопросы</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Отзывы">Отзывы</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="О нас">О нас</a>
+      
+                  <ul class="footer__subnav-col">
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Новогодние каникулы">Общая информация</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Награды">Награды</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Наши преимущества">Наши преимущества</a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="#" title="Сотрудники">Сотрудники</a>
+      
+                    </li>
+      
+                  </ul>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <a href="#" title="Контакты">Контакты</a>
+      
+                </li>
+      
+                <li class="footer__nav-item">
+      
+                  <ul class="footer__subnav-socials">
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+      
+                        <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+      
+                      </a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="https://telegram.me/ekskursii" title="telegram">
+      
+                        <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+      
+                      </a>
+      
+                    </li>
+      
+                    <li class="footer__subnav-item">
+      
+                      <a href="viber://add?number=375297566665" title="viber">
+      
+                        <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+      
+                      </a>
+      
+                    </li>
+      
+                  </ul>
+      
+                </li>
+      
+              </ul>
+      
+            </div>
+      
+            <div class="footer__disclaimer">
+      
+              <p class="footer__disclaimer--text">
+      
+                Информация, размещенная на интернет-портале <a href="https://ekskursii.by/" title="ekskursii.by">Ekskursii.by</a>, не является предложением публичной оферты.
+      
+              </p>
+      
+            </div>
+      
+          </div>
+      
+        </div>
+      
+        <div class="container">
+      
+            <div class="footer__inner">
+      
+              <a class="footer__logo" href="#">
+      
+                <img src="images/sprite.svg#logo" alt="logo">
+      
+              </a>
+      
+              <div class="footer__secondary-nav">
+      
+                <div class="footer__secondary-nav-col">
+      
+                  <a class="footer__secondary-nav-btn" href="#">Вход для гидов</a>
+      
+                  <a class="footer__secondary-nav-btn" href="#">Вход для партнеров</a>
+      
+                  <a class="footer__secondary-nav-btn--alt" href="#">Регистрация нового Агента</a>
+      
+                </div>
+      
+                <div class="footer__secondary-nav-col">
+      
+                  <a class="footer__secondary-nav-link" href="https://sanatorii.by/" title="sanatorii.by" target="_blank">Санатории</a>
+      
+                  <a class="footer__secondary-nav-link" href="https://beltur.by/" title="beltur.by" target="_blank">Базы отдыха</a>
+      
+                  <a class="footer__secondary-nav-link" href="https://belhotel.by/" title="belhotel.by" target="_blank">Гостиницы</a>
+      
+                  <a class="footer__secondary-nav-link" href="https://beltransfer.by/" title="beltransfer.by" target="_blank">Трансфер</a>
+      
+                </div>
+      
+              </div>
+      
+            </div>
+      
+        </div>
+      
+        <div class="container">
+      
+            <div class="footer__inner">
+      
+              <div class="footer__payment">
+      
+                <img src="images/sprite.svg#icons--payment--master-card-secure-code" alt="master card secure code">
+      
+                <img src="images/sprite.svg#icons--payment--mastercard" alt="mastercard">
+      
+                <img src="images/sprite.svg#icons--payment--verified-visa" alt="verified by visa">
+      
+                <img src="images/sprite.svg#icons--payment--visa" alt="visa">
+      
+                <img src="images/sprite.svg#icons--payment--bepaid" alt="bepaid">
+      
+                <img src="images/sprite.svg#icons--payment--erip" alt="система ЕРИП">
+      
+              </div>
+      
+            </div>
+      
+        </div>
+      
+        <div class="container">
+      
+            <div class="footer__inner">
+      
+              <div class="footer__copyright">
+      
+                <p>© Частное научно-производственное унитарное предприятие "Автоматизированные технологии туризма"</p>
+      
+              </div>
+      
+            </div>
+      
+        </div>
+      
+      </footer>
+      
+      <a class="btn btn-up" href="#"></a>
+      
+    </div>
+      
+    <script src="js/main.min.js"></script>
+      
+  </body>
+      
+</html>

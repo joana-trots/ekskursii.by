@@ -6,11 +6,15 @@
   padding: 0 16px
   background-color: $white
   z-index: 8
+  @media screen and (min-width: 541px)
+    padding: 0 60px
   &.onscroll
     position: sticky
     top: 30px
     padding: 16px
     box-shadow: $shadow-gray
+    @media screen and (min-width: 541px)
+      padding: 16px 60px
     .tags-group__link
       padding: 7px 10px
       font-size: 14px
@@ -31,6 +35,11 @@
 .quicknav__section#description
   display: flex
   flex-direction: column
+
+.quicknav__section
+  ul.list
+    margin-top: 12px
+
 
 .about__short-info
   margin-top: 10px
