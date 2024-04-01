@@ -9,6 +9,8 @@
   padding-bottom: 30px
   .h6:not(.hidden-label):not(.checkmark-label)
     margin-top: 20px
+    display: flex
+    // margin-bottom: 12px
 .booking-info__about--time p,
 .booking-info__about--place p
   display: flex
@@ -29,11 +31,10 @@
   position: relative
   display: flex
   flex-direction: column
-  // gap: 12px 
-  margin-top: 12px
-  &:has(.booking-form__form-field--radio)
-    gap: 12px
-    margin-top: 0
+  // margin-top: 12px
+  // &:has(.booking-form__form-field--radio)
+  gap: 12px
+  margin-top: 0
 .booking-form__form-field--input
   // border: 0
   // box-shadow: $shadow-gray
@@ -78,18 +79,52 @@
     .select-items
       z-index: 1
   &:has([id*='promocode'])
-    width: 213px
-    border: 1px solid $black
+    display: flex
+    width: 208px
+    text-transform: uppercase
+    // border: 0
+    // padding: 0
+    // border: 1px solid $black
     box-shadow: none
+    padding: 12px
+    font-size: 12px
+    // color: $dark-gray
+    // &:focus-visible,
+    // &:focus-within,
+    // &:focus,
+    // &:target,
+    // &:mouseout
+    //   border: 1px solid $black
+    //   padding: 14px 18px
     input
       text-transform: uppercase
+      // &:focus-visible,
+      // &:focus-within,
+      // &:focus,
+      // &:target
+      //   border: 1px solid $black
+      //   padding: 14px 18px
       &::placeholder
-        font-style: normal
-        color: $black
+        // font-style: normal
+        // color: $black
         text-transform: initial
-      &:focus
-        &::placeholder
-          color: $dark-gray
+      // &:focus
+      //   &::placeholder
+      //     color: $dark-gray
+// .booking-info__promocode
+//   [name='dropdown-btn']:checked
+//     & ~ .booking-form__form-field--input
+//       padding: 12px
+//       border: 1px solid $black
+//       color: $black
+.booking-form__form-field:has([id='promocode'])
+    margin-top: -12px
+    .booking-form__form-field--input
+      min-height: 40px
+      padding: 8px
+    input
+      font-size: 14px
+
 
 .booking-form__form-field:has([class$='--checkbox'])
   gap: 12px
@@ -99,23 +134,33 @@
 .booking-form__form-field:has([required]:not([type='radio'])) label::before
   content: '* '
 .booking-price
-  display: block
-  position: sticky
-  bottom: -1px
-  width: calc(100vw - 16px)
-  max-width: 1320px
-  padding: 18px 0
-  margin: 30px auto -30px -60px
-  text-align: center
-  font-size: 18px
-  background-color: $accent-yellow
-  box-shadow: $shadow-gray
+  // display: block
+  // margin: 0 auto 30px
+  // bottom: -1px
+  // width: calc(100vw - 16px)
+  // max-width: 1320px
+  // padding: 18px 0
+  // margin: 30px auto -30px -60px
+  // text-align: center
+  // font-size: 18px
+  // color: $dark-gray
+  // background-color: $light-gray
+  // box-shadow: $shadow-gray
   z-index: 8
   span
     font-weight: 800
   @media screen and (max-width: 540px)
     width: 100dvw
     margin: 30px auto -30px -16px
+
+
+.booking-form__submit-btn
+  @extend .btn
+  @extend .cta-primary
+  @extend .sticky-btn
+  margin: 0 auto 30px
+  
+
 
 .booking-form__form-field--pay
   display: flex

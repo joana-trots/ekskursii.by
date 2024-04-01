@@ -18,13 +18,13 @@
     </div>
     
     <div class="booking-form__form-field">
-      <label class="h6" for="booking-date">Дата отправления</label>
+      <label class="h6 hidden-label" for="booking-date">Дата отправления</label>
       <span class="booking-form__form-field--input">
         <input type="text" name="booking-date" id="booking-date" placeholder="Выберите дату">
       </span>
     </div>
     <div class="booking-form__form-field">
-      <label class="h6" for="people-amount">Количество человек</label>
+      <label class="h6 hidden-label" for="people-amount">Количество человек</label>
       <span class="custom-select booking-form__form-field--input">
         <select type="text" name="people-amount" id="people-amount" value="1">
           <option value="1">1 взрослый</option>
@@ -129,13 +129,15 @@
   <div class="booking-info booking-info__promocode">
     <div class="booking-form__form-field">
       <label class="h6 hidden-label" for="promocode">
-        Промокод
+        Ввести промокод
       </label>
       <span class="booking-form__form-field--input">
         <input class="no-icon" type="text" name="promocode" id="promocode" placeholder="У меня есть промокод">
       </span>
     </div>
   </div>
+
+  <button class="arrow-btn modal-open booking-form__submit-btn booking-price" type="submit">Перейти к оплате&nbsp;<span>(320 BYN)</span></button>
 
   <div class="booking-info booking-info__rules">
     <div class="booking-form__form-field" data-error-title="Все поля должны быть отмечены">
@@ -156,7 +158,7 @@
     </div>
   </div>
 
-  <button class="btn booking-form__submit-btn" type="submit" value="Забронировать"></button>
+  <!-- <button class="btn booking-form__submit-btn" type="submit" value="Забронировать"></button> -->
 
-  <button class="modal-open booking-price" type="submit">К оплате: <span>320 BYN</span></button>
+  
 </form>
