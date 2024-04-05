@@ -100,8 +100,14 @@
       </span>
     </div>
     <div class="booking-form__form-field">
-      <label class="h6 hidden-label" for="question">Задать вопрос по экскурсии</label>
-      <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="У меня есть вопрос по экскурсии"></textarea>
+      <div class="dropdown-btn">
+        <p class="h6">У меня есть вопрос по экскурсии</p>
+        <input type="checkbox" name="dropdown-btn" readonly="" checked="">
+      </div>
+      <div class="dropdown-content">
+        <label class="h6 hidden-label" for="question">Задать вопрос по экскурсии</label>
+        <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="У меня есть вопрос по экскурсии"></textarea>
+      </div>
     </div>
   </div>
 
@@ -130,12 +136,18 @@
 
   <div class="booking-info booking-info__promocode">
     <div class="booking-form__form-field">
-      <label class="h6 hidden-label" for="promocode">
-        Ввести промокод
-      </label>
-      <span class="booking-form__form-field--input">
-        <input class="no-icon" type="text" name="promocode" id="promocode" placeholder="У меня есть промокод">
-      </span>
+      <div class="dropdown-btn">
+        <p class="h6">У меня есть промокод</p>
+        <input type="checkbox" name="dropdown-btn" readonly="" checked="">
+      </div>
+      <div class="dropdown-content">
+        <label class="h6 hidden-label" for="promocode">
+          Ввести промокод
+        </label>
+        <span class="booking-form__form-field--input">
+          <input class="no-icon" type="text" name="promocode" id="promocode" placeholder="У меня есть промокод">
+        </span>
+      </div>
     </div>
   </div>
 
