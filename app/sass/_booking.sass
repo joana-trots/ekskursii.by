@@ -6,7 +6,7 @@
     // border: 0
     font-size: 16px
 .booking-info
-  padding-bottom: 30px
+  padding-bottom: 20px
   .h6:not(.hidden-label):not(.checkmark-label)
     margin-top: 20px
     display: flex
@@ -35,6 +35,27 @@
   // &:has(.booking-form__form-field--radio)
   gap: 12px
   margin-top: 0
+  &:has(.dropdown-btn)
+    .dropdown-content
+      gap: 0
+      margin-top: -12px
+    .dropdown-btn
+      p
+        display: flex
+        align-items: center
+        margin-top: 0
+        &::after
+          @extend %button-icon
+          display: inline-block
+          margin-left: 6px
+          height: 6px
+          transform: rotate(180deg)
+          background-image: $icon_arrow_black
+          opacity: 0.7
+      &:has([type="checkbox"]:checked) 
+        p::after
+          transform: rotate(0deg)
+
 .booking-form__form-field--input
   // border: 0
   // box-shadow: $shadow-gray
@@ -117,13 +138,7 @@
 //       padding: 12px
 //       border: 1px solid $black
 //       color: $black
-.booking-form__form-field:has([id='promocode'])
-    margin-top: -12px
-    .booking-form__form-field--input
-      min-height: 40px
-      padding: 8px
-    input
-      font-size: 14px
+
 
 
 .booking-form__form-field:has([class$='--checkbox'])
@@ -203,4 +218,3 @@
       gap: 12px
       &::after
         @extend %error-message
-        // margin-bottom: 1px
