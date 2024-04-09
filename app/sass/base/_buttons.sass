@@ -137,6 +137,7 @@ a.btn::after
 
 .dropdown-btn
   position: relative
+  z-index: 0
   [type='checkbox']
     position: absolute
     top: 0
@@ -146,7 +147,6 @@ a.btn::after
     z-index: 1
     opacity: 0
   & ~ .dropdown-content
-    // max-height: 800px
     opacity: 1
     transition: all .25s ease-in-out
     animation: flipdown .5s ease both

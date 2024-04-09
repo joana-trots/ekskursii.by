@@ -150,16 +150,21 @@
     a.simple-secondary-btn
       display: flex
       margin: 10px 0 10px auto
-    .dropdown-content p,
-    p:nth-of-type(2),
     .dropdown-content ul.list
-      margin-top: 12px
+      padding-top: 12px
       color: $dark-gray
+      b
+        color: $black
+    .dropdown-content p
+      color: $dark-gray
+      b
+        color: $black
     .dropdown-content .phone-item
       display: inline-block
     .dropdown-btn
       p::after
         @extend %button-icon
+        top: -1px
         display: inline-block
         margin-left: 6px
         width: 10px

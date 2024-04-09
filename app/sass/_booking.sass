@@ -135,8 +135,6 @@
 //       border: 1px solid $black
 //       color: $black
 
-
-
 .booking-form__form-field:has([class$='--checkbox'])
   gap: 12px
 .booking-form__form-field--input:has([id*='country']):has(.select-items .same-as-selected:first-child) .select-selected,
@@ -145,33 +143,17 @@
 .booking-form__form-field:has([required]:not([type='radio'])) label::before
   content: '* '
 .booking-price
-  // display: block
-  // margin: 0 auto 30px
-  // bottom: -1px
-  // width: calc(100vw - 16px)
-  // max-width: 1320px
-  // padding: 18px 0
-  // margin: 30px auto -30px -60px
-  // text-align: center
-  // font-size: 18px
-  // color: $dark-gray
-  // background-color: $light-gray
-  // box-shadow: $shadow-gray
   z-index: 8
   span
     font-weight: 800
   @media screen and (max-width: 540px)
-    // width: 100dvw
     margin: 30px auto -30px -16px
-
 
 .booking-form__submit-btn
   @extend .btn
   @extend .cta-primary
   @extend .sticky-btn
   margin: 0 auto 30px
-  
-
 
 .booking-form__form-field--pay
   display: flex
@@ -193,8 +175,6 @@
     display: none
   & ~ .booking-form__form-field--payment-entity
     display: flex
-
-
 
 
 /* validation */
