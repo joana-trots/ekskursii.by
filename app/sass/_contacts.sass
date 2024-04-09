@@ -14,6 +14,8 @@
 .address
     flex: 1
     gap: 16px
+    p
+      margin-top: 0
 .contacts__phones--numbers,
 .contacts__schedule--items
     display: flex
@@ -75,7 +77,8 @@
     min-width: 400px
     background-color: $light-gray
     @media screen and (max-width: 672px)
-       width: 100%
+      width: 100%
+      min-width: auto
     .container
       padding-top: 30px
       padding-bottom: 30px
