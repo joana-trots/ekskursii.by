@@ -38,6 +38,9 @@
 .quicknav__section
   ul.list
     margin-top: 12px
+  a
+    // text-decoration: underline
+    border-bottom: 1px solid $black
 
 
 .about__short-info
@@ -200,3 +203,23 @@
 //   section:first-child
 //     padding-top: 230px !important
 //     margin-top: -220px !important
+
+
+.section__about-company
+  img
+    position: relative
+    border-radius: 10px
+    margin: 12px 12px 10px 0
+    z-index: 0
+    @media screen and (min-width: 541px)
+      float: left
+      margin: 12px 12px 12px 0
+  .par-wrapper
+    @media screen and (max-width: 540px)
+      position: relative
+      box-shadow: $shadow-gray
+      padding: 0.1px 12px 12px
+      border-radius: 10px
+      margin: -50px 0 0 16px
+      background-color: $white
+      z-index: 1
