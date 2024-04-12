@@ -28,7 +28,7 @@ flatpickr('[id*="-date"]', {
 
 
 function onlyOne(checkbox) {
-  let checkboxes  = document.querySelectorAll('.attractions input[id*="filters-item"]');
+  let checkboxes  = document.querySelectorAll('.attractions input[id*="filters-item"]:not(.filters-item__input--all)');
   checkboxes.forEach((item) => {
       if (item !== checkbox) item.checked = false;
   })
