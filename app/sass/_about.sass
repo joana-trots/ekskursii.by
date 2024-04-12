@@ -47,7 +47,9 @@
   .short-info__inner
     display: flex
     flex-direction: column
-    gap: 12px
+    .card-item__info,
+    .card-item__additional-info
+      margin-top: 12px
     &:has(.inactive)
       .card-item__seats p
         color: $dark-gray
