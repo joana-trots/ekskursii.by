@@ -28,3 +28,18 @@
     display: flex
   .more-btn
     display: none
+
+
+
+
+
+
+.quicknav__section.about__schedule .schedule__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item
+  display: none
+.quicknav__section.about__schedule:has(.dropdown-text-btn [type="checkbox"]:checked)
+  .schedule__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item
+    display: flex
+  .more-btn
+    // display: none
+    margin: auto
+    order: 1000

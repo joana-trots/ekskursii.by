@@ -66,6 +66,13 @@ a.btn::after
     padding: 8px 12px
     @media screen and (max-width: 414px)
       padding: 8px 10px
+  &--slider
+    position: absolute
+    top: 142px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: #ffffffb3 !important
+    font-size: 13px !important
 
 .simple-btn
   display: inline-flex
@@ -194,7 +201,7 @@ a.btn::after
     background-color: $white
     padding: 10px 14px
     border-radius: 24px
-    order: 10
+    order: 1000
     input
       &::before
         content: attr(data-close-text)
@@ -206,3 +213,13 @@ a.btn::after
       transition: all 0.25s ease-in-out
       opacity: 1
       transform: translate(0, 0)
+  &--more-btn
+    margin: 20px auto 0
+    padding: 10px
+    border-radius: 24px
+    border: 1px solid $light-gray
+    input
+      font-size: 16px
+      color: $dark-gray  
+    &:has(input:checked)
+      @extend .sticky-btn
