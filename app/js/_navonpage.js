@@ -32,7 +32,7 @@
   });
 })();
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('.quicknav__tags-group--tag-link[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
       e.preventDefault();
 
