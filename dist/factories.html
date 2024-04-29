@@ -18,6 +18,9 @@
               <img src="images/sprite.svg#logo" alt="logo">
             </a>
             <ul class="menu__primary-list">
+              <li class="menu__primary-list--item desktop-item">
+                <a href="#" class="menu__primary-list--link" title="Полная версия сайта"></a>
+              </li>
               <li class="menu__primary-list--item phone-item modal-open">
                 <div class="menu__primary-list--link" id="phone-item">
                   <img src="images/sprite.svg#icons--socials--messengers" alt="messengers">
@@ -286,499 +289,502 @@
         <section class="section">
           <div class="container">
             <div class="section__header">
-              <h1 class="h2">Контакты</h1>
-              <p class="h5">Белорусский туроператор ЧНПУП "Автоматизированные технологии туризма"</p>
-            </div>
-            <div class="section__inner section__inner--contacts">
-              <address class="address">
-                <div class="contacts__website">
-                  <p class="h5">
-                    <a href="https://att.by/" target="_blank" title="att.by">att.by</a>
-                  </p>
-                </div>
-                <div class="contacts__phones">
-                  <p class="h5">Телефоны</p>
-                  <div class="contacts__phones--numbers">
-                    <a href="tel:+375173944913">+375 (17) 394-49-13</a>
-                    <a href="tel:+375297566665">+375 (29) 756-66-65</a>
-                  </div>
-                </div>
-                <div class="contacts__socials">
-                  <p class="h5">Мы в мессенджерах</p>
-                  <p><a href="tel:+375297566665">+375 (29) 756-66-65</a></p>
-                  <div class="contacts__socials--items">
-                    <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
-                      <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
-                    </a>
-                    <a href="viber://add?number=375297566665/" title="viber">
-                      <img src="images/sprite.svg#icons--socials--viber" alt="viber">
-                    </a>
-                    <a href="https://telegram.me/ekskursii" title="telegram">
-                      <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
-                    </a>
-                  </div>
-                </div>
-                <div class="contacts__address">
-                  <p class="h5">Адрес</p>
-                  <a href="#">220007, Беларусь, г. Минск,<br>ул. Суражская д.10, оф.21 (5 этаж)</a>
-                  <a class="btn simple-btn arrow-btn" title="Как добраться"></a>
-                </div>
-                <div class="contacts__schedule">
-                  <p class="h5">График работы офиса и кассы предприятия</p>
-                  <div class="contacts__schedule--items">
-                    <p>понедельник - пятница, 09.00-18.00</p>
-                    <p>обеденный перерыв 13.00-14.00</p>
-                  </div>
-                </div>
-                <div class="contacts__social-media">
-                  <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Вк">
-                    <img src="images/sprite.svg#icons--socials--vk" alt="Вк">
-                  </a>
-                  <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Одноклассниках">
-                    <img src="images/sprite.svg#icons--socials--ok" alt="Одноклассники">
-                  </a>
-                  <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы на YouTube">
-                    <img src="images/sprite.svg#icons--socials--youtube" alt="YouTube">
-                  </a>
-                  <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Instagram">
-                    <img src="images/sprite.svg#icons--socials--instagram" alt="Instagram">
-                  </a>
-                  <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Facebook">
-                    <img src="images/sprite.svg#icons--socials--fb" alt="Facebook">
-                  </a>
-                </div>
-              </address>
-              <div class="contacts__map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.6724568648065!2d27.5322264!3d53.8842508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd01edd0b19d7%3A0xc0280ec2a33bc7b3!2sUlitsa%20Surazhskaya%2010%2C%20Minsk%2C%20Minskaja%20voblas%C4%87%20220089!5e0!3m2!1sen!2sby!4v1703255270678!5m2!1sen!2sby"
-                  width="100%"
-                  height="100%"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-              </div>
+              <h1 class="h2">Экскурсии на фабрики, заводы Беларуси</h1>
+              <!-- <h6 class="h6">Фабрики, заводы, </h6> -->
             </div>
           </div>
         </section>
 
-        <section class="section">
+        <section class="section section__quicknav section__factories" id="qsection">
+          <section class="quicknav__navbar" id="qnavbar">
+            <h6 class="h6">Быстрая навигация</h6>
+            <ul class="quicknav__tags-group">
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#factories">Фабрики и заводы</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#cultural">Объекты культуры</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#food" title="Описание">Пищевая промышленность</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#farms">Фермы</a>
+              </li>
+            </ul>
+          </section>
+
           <div class="container">
-            <div class="section__header">
-              <h2 class="h2 title--link">
-                <a href="https://att.by/?sotrudniki" target="_blank">Сотрудники экскурсионного отдела</a>
-              </h2>
-            </div>
-            <div class="section__inner section__employees">
-              <div class="employee">
-                <img class="employee__photo" src="images/emp1.gif" alt="Никулина Диана">
-                <div class="employee__info">
-                  <p class="h6">Начальник отдела</p>
-                  <p class="h5">Никулина Диана</p>
-                </div>
-              </div>
-              <div class="employee">
-                <img class="employee__photo" src="images/emp2.gif" alt="Ефименкова Евгения">
-                <div class="employee__info">
-                  <p class="h6">Ведущий специалист</p>
-                  <p class="h5">Ефименкова Евгения</p>
-                </div>
-              </div>
-              <div class="employee">
-                <img class="employee__photo" src="images/emp3.gif" alt="Огнева Татьяна">
-                <div class="employee__info">
-                  <p class="h6">Ведущий специалист</p>
-                  <p class="h5">Огнева Татьяна</p>
-                </div>
-              </div>
-              <div class="employee">
-                <img class="employee__photo" src="images/emp4.gif" alt="Яцынович Алина">
-                <div class="employee__info">
-                  <p class="h6">Специалист</p>
-                  <p class="h5">Яцынович Алина</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+            <div class="section__inner">
 
+              <section class="quicknav__section" id="factories">
 
-        <section class="section section__contact-form">
-          
-            <div class="contact-form__image">
-              <img src="images/building-photo.webp">
-            </div>
-
-            <div class="contact-form__form">
-              <div class="container">
                 <div class="section__header">
-                  <h2 class="h2">Отправить сообщение</h2>
+                  <h2 class="h2">Фабрики и заводы</h2>
                 </div>
-                <div class="section__inner">
-                  <form class="booking-form" id="booking-group">
-                    <div class="">
-                      <div class="booking-form__form-field">
-                        <label class="h6 hidden-label" for="name">ФИО</label>
-                        <span class="booking-form__form-field--input">
-                          <input class="no-icon" type="text" name="name" id="name" placeholder="Введите ваше ФИО" required>
-                        </span>
+
+                <div class="section__inner schedule__card-item">
+                  <a class="card-item__image" href="https://ekskursii.by/?place=17997_Seramic_factory_%C2%ABBelhudozhkeramika%C2%BB_Zavod_%C2%ABBelhudozhkeramika%C2%BB">
+                    <img src="images/01.webp" alt="Завод «Белхудожкерамика»">
+                    <div class="card-item__image--overlay"></div>
+                  </a>
+                  <div class="schedule__card-item--header">
+                    <div class="card-item__info">
+                      <div class="card-item__title">
+                        <h4 class="h4">
+                          <a href="#">Завод «Белхудожкерамика»</a>
+                        </h4>
                       </div>
-                      <div class="booking-form__form-field">
-                        <label class="h6 hidden-label" for="phone">Email или телефон</label>
-                        <span class="booking-form__form-field--input">
-                          <input class="no-icon" type="text" name="phone" id="phone" placeholder="Email или телефон" required>
-                        </span>
+                      <div class="card-item__info--place">
+                        <p>Расположение: г.п. Радошковичи</p>
                       </div>
-
-
-                      <div class="booking-form__form-field">
-                        <label class="h6 hidden-label" for="country">Страна проживания</label>
-                        <span class="custom-select booking-form__form-field--input">
-                          <select class="no-icon" type="text" name="country" id="country" value="0" required>
-                            <option value="0">Выберите страну проживания</option>
-                            <option value="1">Беларусь</option>
-                            <option value="2">Россия</option>
-                          </select>
-                        </span>
+                      <div class="card-item__seats">
+                        <p>Группа: не менее 15 человек</p>
                       </div>
-
-
-                      <div class="booking-form__form-field">
-                        <label class="h6 hidden-label" for="question">Пожелания по маршруту, программе, питанию...</label>
-                        <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="Пожелания по экскурсии" required></textarea>
+                      <div class="card-item__info--time">
+                        <p>понедельник - пятница 09.00 - 19.00, выходные суббота, воскресенье</p>
                       </div>
                     </div>
+                  </div>
                   
-                    <div class="booking-info__rules">
-                      <div class="booking-form__form-field hint-text">
-                        <p class="hint-gray">Нажимая кнопку «Отправить» Вы соглашаетесь с <a href="https://ekskursii.by/?Politika_konfidencialinosti" target="_blank">Политикой обработки персональных данных</a>.</p>
+                  <div class="card-item__dropdown-btn btn cta-secondary dropdown-btn">
+                    <input type="checkbox" name="dropdown-btn" readonly="" checked="">
+                  </div>
+                  <div class="card-item__dropdown-info dropdown-content">
+                    <div class="card-item__description">
+                      <p>«Белхудожкерамика» — завод по производству керамических изделий. Во время экскурсии происходит знакомство со всем технологическим процессом изготовления керамических изделий. В сувенирной лавке можно приобрести вазы, горшочки для цветов, чайные сервизы, наборы посуды, различные памятные вещи из керамики.</p>
+                    </div>
+                  </div>
+                  <a class="card-item__description-btn simple-btn arrow-btn btn" title="Подробнее" href="https://ekskursii.by/?place=17997_Seramic_factory_%C2%ABBelhudozhkeramika%C2%BB_Zavod_%C2%ABBelhudozhkeramika%C2%BB"></a>
+                </div>
+
+                <div class="section__inner schedule__card-item">
+                  <a class="card-item__image" href="#">
+                    <img src="images/01.webp" alt="Стеклозавод «Нёман»">
+                    <div class="card-item__image--overlay"></div>
+                  </a>
+                  <div class="schedule__card-item--header">
+                    <div class="card-item__info">
+                      <div class="card-item__title">
+                        <h4 class="h4">
+                          <a href="https://ekskursii.by/?Dostoprimechatelnosti_Belarusi=17895_Steklozavod_N_man">Стеклозавод «Нёман»</a>
+                        </h4>
+                      </div>
+                      <div class="card-item__info--place">
+                        <p>Расположение: г.п. Березовка, Лидский район</p>
+                      </div>
+                      <div class="card-item__seats">
+                        <p>Группа: не менее 25 человек</p>
+                      </div>
+                      <div class="card-item__info--time">
+                        <p>08.00 - 17.00 суббота, воскресенье</p>
                       </div>
                     </div>
+                  </div>
                   
-                    <button class="btn booking-form__submit-btn" type="submit" value="Отправить"></button>
+                  <div class="card-item__dropdown-btn btn cta-secondary dropdown-btn">
+                    <input type="checkbox" name="dropdown-btn" readonly="" checked="">
+                  </div>
+                  <div class="card-item__dropdown-info dropdown-content">
+                    <div class="card-item__description">
+                      <p>На стеклозаводе «Нёман» гости познакомятся с технологией изготовления цветного стекла и хрусталя, побывают в заводском музее, где представлены работы лучших мастеров, художников-стеклодувов. Экскурсия на стеклозавод «Нёман» дает возможность открыть для себя историю развития этого самобытного предприятия, где люди вручную создают красоту из стекла.</p>
+                    </div>
+                  </div>
+                  <a class="card-item__description-btn simple-btn arrow-btn btn" title="Подробнее" href="https://ekskursii.by/?Dostoprimechatelnosti_Belarusi=17895_Steklozavod_N_man"></a>
+                </div>
+
+              </section>
+        
+              <section class="quicknav__section" id="cultural">
+                <div class="section__header">
+                  <h2 class="h2">Объекты культуры</h2>
+                </div>
+
+                <div class="section__inner schedule__card-item">
+                  <a class="card-item__image" href="https://ekskursii.by/?place=17997_Seramic_factory_%C2%ABBelhudozhkeramika%C2%BB_Zavod_%C2%ABBelhudozhkeramika%C2%BB">
+                    <img src="images/01.webp" alt="Национальная библиотека Беларуси">
+                    <div class="card-item__image--overlay"></div>
+                  </a>
+                  <div class="schedule__card-item--header">
+                    <div class="card-item__info">
+                      <div class="card-item__title">
+                        <h4 class="h4">
+                          <a href="https://ekskursii.by/?place=16206__Nacionalinaya_Biblioteka_Belarusi">Национальная библиотека Беларуси</a>
+                        </h4>
+                      </div>
+                      <div class="card-item__info--place">
+                        <p>Расположение: г. Минск</p>
+                      </div>
+                      <div class="card-item__seats">
+                        <p>от 1 человека</p>
+                      </div>
+                      <div class="card-item__info--time">
+                        <p>вторник, среда, пятница 10.00 - 17.00; четверг, суббота 10.00 -17.00;<br>
+                          летний период с 1 июля по 31 августа - понедельник, четверг, суббота 10.00 -17.00; вторник, среда, пятница 10.00 - 18.00</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card-item__dropdown-btn btn cta-secondary dropdown-btn">
+                    <input type="checkbox" name="dropdown-btn" readonly="" checked="">
+                  </div>
+                  <div class="card-item__dropdown-info dropdown-content">
+                    <div class="card-item__description">
+                      <p>Во время экскурсии гости Национальной библиотеки узнают о книжном фонде, уникальных памятниках книгопечатания, каталогах и картотеках библиотеки, системе заказа и выдачи документов, познакомятся с особенностями художественного оформления здания. Также у посетителей библиотеки есть возможность подняться на обзорную площадку и полюбоваться видом на город с высоты более 73 м.</p>
+                    </div>
+                  </div>
+                  <a class="card-item__description-btn simple-btn arrow-btn btn" title="Подробнее" href="https://ekskursii.by/?place=16206__Nacionalinaya_Biblioteka_Belarusi"></a>
+                </div>
+
+                <div class="section__inner schedule__card-item">
+                  <a class="card-item__image" href="#">
+                    <img src="images/01.webp" alt="Большой театр оперы и балета">
+                    <div class="card-item__image--overlay"></div>
+                  </a>
+                  <div class="schedule__card-item--header">
+                    <div class="card-item__info">
+                      <div class="card-item__title">
+                        <h4 class="h4">
+                          <a href="https://ekskursii.by/?place=16167_Nacionalinyj_akademicheskij_teatr_opery_i_baleta">Большой театр оперы и балета</a>
+                        </h4>
+                      </div>
+                      <div class="card-item__info--place">
+                        <p>Расположение: г. Минск</p>
+                      </div>
+                      <div class="card-item__seats">
+                        <p>Группа: не менее 10 человек</p>
+                      </div>
+                      <div class="card-item__info--time">
+                        <p>ежедневно, часовая экскурсия днем, получасовая перед спектаклем</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card-item__dropdown-btn btn cta-secondary dropdown-btn">
+                    <input type="checkbox" name="dropdown-btn" readonly="" checked="">
+                  </div>
+                  <div class="card-item__dropdown-info dropdown-content">
+                    <div class="card-item__description">
+                      <p>Экскурсанты смогут побывать за кулисами самого знаменитого белорусского театра, окунуться в атмосферу театральных постановок, почувствовать дух оперы и воочию увидеть красочные декорации к популярным постановкам. Гости театра посетят мастерскую гримеров и дизайнеров, полюбуются на костюмы самых разных персонажей и узнают удивительные тайны Большого театра.</p>
+                    </div>
+                  </div>
+                  <a class="card-item__description-btn simple-btn arrow-btn btn" title="Подробнее" href="https://ekskursii.by/?place=16167_Nacionalinyj_akademicheskij_teatr_opery_i_baleta"></a>
+                </div>
                 
-                  </form>
+              </section>
+
+              <section class="quicknav__section" id="food">
+                <div class="section__header">
+                  <h2 class="h2">Фабрики и заводы</h2>
                 </div>
-              </div>
-            </div>
-        </section>
-      </main>
-      
-      <footer class="footer">
-      
-        <div class="container">
-      
-          <div class="footer__inner">
-      
-            <div class="footer__main-nav">
-      
-              <ul class="footer__nav-col">
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Все экскурсии">Все экскурсии</a>
-      
-                  <ul class="footer__subnav-col">
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="#" title="Новогодние каникулы">Новогодние каникулы</a>
-      
-                    </li>
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="#" title="Групповые экскурсии">Групповые</a>
-      
-                    </li>
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="#" title="Индивидуальные экскурсии">Индивидуальные</a>
-      
-                    </li>
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="#" title="Корпоративные экскурсии">Корпоративные</a>
-      
-                    </li>
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="#" title="Школьные экскурсии">Школьные</a>
-      
-                    </li>
-      
-                  </ul>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Бонусы и скидки">Бонусы и скидки</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Все об экскурсиях">Все об экскурсиях</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Города">Города</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Музеи">Музеи</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Знаковые места">Знаковые места</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Туризм в Беларуси">Туризм в Беларуси</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="О Беларуси">О Беларуси</a>
-      
-                </li>
-      
-              </ul>
-      
-              <ul class="footer__nav-col">
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Поиск">Поиск</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="График экскурсий">График экскурсий</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Личный кабинет">Личный кабинет</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Новости">Новости</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Частые вопросы">Частые вопросы</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Отзывы">Отзывы</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="О нас">О нас</a>
-      
-                  <ul class="footer__subnav-col">
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="#" title="Новогодние каникулы">Общая информация</a>
-      
-                    </li>
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="#" title="Награды">Награды</a>
-      
-                    </li>
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="#" title="Наши преимущества">Наши преимущества</a>
-      
-                    </li>
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="#" title="Сотрудники">Сотрудники</a>
-      
-                    </li>
-      
-                  </ul>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <a href="#" title="Контакты">Контакты</a>
-      
-                </li>
-      
-                <li class="footer__nav-item">
-      
-                  <ul class="footer__subnav-socials">
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
-      
-                        <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
-      
-                      </a>
-      
-                    </li>
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="https://telegram.me/ekskursii" title="telegram">
-      
-                        <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
-      
-                      </a>
-      
-                    </li>
-      
-                    <li class="footer__subnav-item">
-      
-                      <a href="viber://add?number=375297566665" title="viber">
-      
-                        <img src="images/sprite.svg#icons--socials--viber" alt="viber">
-      
-                      </a>
-      
-                    </li>
-      
-                  </ul>
-      
-                </li>
-      
-              </ul>
-      
-            </div>
-      
-            <div class="footer__disclaimer">
-      
-              <p class="footer__disclaimer--text">
-      
-                Информация, размещенная на интернет-портале <a href="https://ekskursii.by/" title="ekskursii.by">Ekskursii.by</a>, не является предложением публичной оферты.
-      
-              </p>
-      
-            </div>
-      
+
+                <div class="section__inner schedule__card-item">
+                  <a class="card-item__image" href="https://ekskursii.by/?place=17997_Seramic_factory_%C2%ABBelhudozhkeramika%C2%BB_Zavod_%C2%ABBelhudozhkeramika%C2%BB">
+                    <img src="images/01.webp" alt="Завод «Белхудожкерамика»">
+                    <div class="card-item__image--overlay"></div>
+                  </a>
+                  <div class="schedule__card-item--header">
+                    <div class="card-item__info">
+                      <div class="card-item__title">
+                        <h4 class="h4">
+                          <a href="#">Завод «Белхудожкерамика»</a>
+                        </h4>
+                      </div>
+                      <div class="card-item__info--place">
+                        <p>Расположение: г.п. Радошковичи</p>
+                      </div>
+                      <div class="card-item__seats">
+                        <p>Группа: не менее 15 человек</p>
+                      </div>
+                      <div class="card-item__info--time">
+                        <p>понедельник - пятница 09.00 - 19.00, выходные суббота, воскресенье</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card-item__dropdown-btn btn cta-secondary dropdown-btn">
+                    <input type="checkbox" name="dropdown-btn" readonly="" checked="">
+                  </div>
+                  <div class="card-item__dropdown-info dropdown-content">
+                    <div class="card-item__description">
+                      <p>«Белхудожкерамика» — завод по производству керамических изделий. Во время экскурсии происходит знакомство со всем технологическим процессом изготовления керамических изделий. В сувенирной лавке можно приобрести вазы, горшочки для цветов, чайные сервизы, наборы посуды, различные памятные вещи из керамики.</p>
+                    </div>
+                  </div>
+                  <a class="card-item__description-btn simple-btn arrow-btn btn" title="Подробнее" href="https://ekskursii.by/?place=17997_Seramic_factory_%C2%ABBelhudozhkeramika%C2%BB_Zavod_%C2%ABBelhudozhkeramika%C2%BB"></a>
+                </div>
+
+                <div class="section__inner schedule__card-item">
+                  <a class="card-item__image" href="#">
+                    <img src="images/01.webp" alt="Стеклозавод «Нёман»">
+                    <div class="card-item__image--overlay"></div>
+                  </a>
+                  <div class="schedule__card-item--header">
+                    <div class="card-item__info">
+                      <div class="card-item__title">
+                        <h4 class="h4">
+                          <a href="https://ekskursii.by/?Dostoprimechatelnosti_Belarusi=17895_Steklozavod_N_man">Стеклозавод «Нёман»</a>
+                        </h4>
+                      </div>
+                      <div class="card-item__info--place">
+                        <p>Расположение: г.п. Березовка, Лидский район</p>
+                      </div>
+                      <div class="card-item__seats">
+                        <p>Группа: не менее 25 человек</p>
+                      </div>
+                      <div class="card-item__info--time">
+                        <p>08.00 - 17.00 суббота, воскресенье</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card-item__dropdown-btn btn cta-secondary dropdown-btn">
+                    <input type="checkbox" name="dropdown-btn" readonly="" checked="">
+                  </div>
+                  <div class="card-item__dropdown-info dropdown-content">
+                    <div class="card-item__description">
+                      <p>На стеклозаводе «Нёман» гости познакомятся с технологией изготовления цветного стекла и хрусталя, побывают в заводском музее, где представлены работы лучших мастеров, художников-стеклодувов. Экскурсия на стеклозавод «Нёман» дает возможность открыть для себя историю развития этого самобытного предприятия, где люди вручную создают красоту из стекла.</p>
+                    </div>
+                  </div>
+                  <a class="card-item__description-btn simple-btn arrow-btn btn" title="Подробнее" href="https://ekskursii.by/?Dostoprimechatelnosti_Belarusi=17895_Steklozavod_N_man"></a>
+                </div>
+              </section>
+
+              <section class="quicknav__section" id="farms">
+                <div class="section__header">
+                  <h2 class="h2">Фермы</h2>
+                </div>
+
+                <div class="section__inner schedule__card-item">
+                  <a class="card-item__image" href="https://ekskursii.by/?place=17997_Seramic_factory_%C2%ABBelhudozhkeramika%C2%BB_Zavod_%C2%ABBelhudozhkeramika%C2%BB">
+                    <img src="images/01.webp" alt="Национальная библиотека Беларуси">
+                    <div class="card-item__image--overlay"></div>
+                  </a>
+                  <div class="schedule__card-item--header">
+                    <div class="card-item__info">
+                      <div class="card-item__title">
+                        <h4 class="h4">
+                          <a href="https://ekskursii.by/?place=16206__Nacionalinaya_Biblioteka_Belarusi">Национальная библиотека Беларуси</a>
+                        </h4>
+                      </div>
+                      <div class="card-item__info--place">
+                        <p>Расположение: г. Минск</p>
+                      </div>
+                      <div class="card-item__seats">
+                        <p>от 1 человека</p>
+                      </div>
+                      <div class="card-item__info--time">
+                        <p>вторник, среда, пятница 10.00 - 17.00; четверг, суббота 10.00 -17.00;<br>
+                          летний период с 1 июля по 31 августа - понедельник, четверг, суббота 10.00 -17.00; вторник, среда, пятница 10.00 - 18.00</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card-item__dropdown-btn btn cta-secondary dropdown-btn">
+                    <input type="checkbox" name="dropdown-btn" readonly="" checked="">
+                  </div>
+                  <div class="card-item__dropdown-info dropdown-content">
+                    <div class="card-item__description">
+                      <p>Во время экскурсии гости Национальной библиотеки узнают о книжном фонде, уникальных памятниках книгопечатания, каталогах и картотеках библиотеки, системе заказа и выдачи документов, познакомятся с особенностями художественного оформления здания. Также у посетителей библиотеки есть возможность подняться на обзорную площадку и полюбоваться видом на город с высоты более 73 м.</p>
+                    </div>
+                  </div>
+                  <a class="card-item__description-btn simple-btn arrow-btn btn" title="Подробнее" href="https://ekskursii.by/?place=16206__Nacionalinaya_Biblioteka_Belarusi"></a>
+                </div>
+
+                <div class="section__inner schedule__card-item">
+                  <a class="card-item__image" href="#">
+                    <img src="images/01.webp" alt="Большой театр оперы и балета">
+                    <div class="card-item__image--overlay"></div>
+                  </a>
+                  <div class="schedule__card-item--header">
+                    <div class="card-item__info">
+                      <div class="card-item__title">
+                        <h4 class="h4">
+                          <a href="https://ekskursii.by/?place=16167_Nacionalinyj_akademicheskij_teatr_opery_i_baleta">Большой театр оперы и балета</a>
+                        </h4>
+                      </div>
+                      <div class="card-item__info--place">
+                        <p>Расположение: г. Минск</p>
+                      </div>
+                      <div class="card-item__seats">
+                        <p>Группа: не менее 10 человек</p>
+                      </div>
+                      <div class="card-item__info--time">
+                        <p>ежедневно, часовая экскурсия днем, получасовая перед спектаклем</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card-item__dropdown-btn btn cta-secondary dropdown-btn">
+                    <input type="checkbox" name="dropdown-btn" readonly="" checked="">
+                  </div>
+                  <div class="card-item__dropdown-info dropdown-content">
+                    <div class="card-item__description">
+                      <p>Экскурсанты смогут побывать за кулисами самого знаменитого белорусского театра, окунуться в атмосферу театральных постановок, почувствовать дух оперы и воочию увидеть красочные декорации к популярным постановкам. Гости театра посетят мастерскую гримеров и дизайнеров, полюбуются на костюмы самых разных персонажей и узнают удивительные тайны Большого театра.</p>
+                    </div>
+                  </div>
+                  <a class="card-item__description-btn simple-btn arrow-btn btn" title="Подробнее" href="https://ekskursii.by/?place=16167_Nacionalinyj_akademicheskij_teatr_opery_i_baleta"></a>
+                </div>
+              </section>
           </div>
-      
-        </div>
-      
+        </section>
+
+      </main>
+      <footer class="footer">
         <div class="container">
-      
+          <div class="footer__inner">
+            <div class="footer__main-nav">
+              <ul class="footer__nav-col">
+                <li class="footer__nav-item">
+                  <a href="#" title="Все экскурсии">Все экскурсии</a>
+                  <ul class="footer__subnav-col">
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Новогодние каникулы">Новогодние каникулы</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Групповые экскурсии">Групповые</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Индивидуальные экскурсии">Индивидуальные</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Корпоративные экскурсии">Корпоративные</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Школьные экскурсии">Школьные</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Бонусы и скидки">Бонусы и скидки</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Все об экскурсиях">Все об экскурсиях</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Города">Города</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Музеи">Музеи</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Знаковые места">Знаковые места</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Туризм в Беларуси">Туризм в Беларуси</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="О Беларуси">О Беларуси</a>
+                </li>
+              </ul>
+              <ul class="footer__nav-col">
+                <li class="footer__nav-item">
+                  <a href="#" title="Поиск">Поиск</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="График экскурсий">График экскурсий</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Личный кабинет">Личный кабинет</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Новости">Новости</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Частые вопросы">Частые вопросы</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Отзывы">Отзывы</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="О нас">О нас</a>
+                  <ul class="footer__subnav-col">
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Новогодние каникулы">Общая информация</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Награды">Награды</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Наши преимущества">Наши преимущества</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Сотрудники">Сотрудники</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Контакты">Контакты</a>
+                </li>
+                <li class="footer__nav-item">
+                  <ul class="footer__subnav-socials">
+                    <li class="footer__subnav-item">
+                      <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                        <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                      </a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="https://telegram.me/ekskursii" title="telegram">
+                        <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                      </a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="viber://add?number=375297566665" title="viber">
+                        <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__disclaimer">
+              <p class="footer__disclaimer--text">
+                Информация, размещенная на интернет-портале <a href="https://ekskursii.by/" title="ekskursii.by">Ekskursii.by</a>, не является предложением публичной оферты.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
             <div class="footer__inner">
-      
               <a class="footer__logo" href="#">
-      
                 <img src="images/sprite.svg#logo" alt="logo">
-      
               </a>
-      
               <div class="footer__secondary-nav">
-      
                 <div class="footer__secondary-nav-col">
-      
                   <a class="footer__secondary-nav-btn" href="#">Вход для гидов</a>
-      
                   <a class="footer__secondary-nav-btn" href="#">Вход для партнеров</a>
-      
                   <a class="footer__secondary-nav-btn--alt" href="#">Регистрация нового Агента</a>
-      
                 </div>
-      
                 <div class="footer__secondary-nav-col">
-      
                   <a class="footer__secondary-nav-link" href="https://sanatorii.by/" title="sanatorii.by" target="_blank">Санатории</a>
-      
                   <a class="footer__secondary-nav-link" href="https://beltur.by/" title="beltur.by" target="_blank">Базы отдыха</a>
-      
                   <a class="footer__secondary-nav-link" href="https://belhotel.by/" title="belhotel.by" target="_blank">Гостиницы</a>
-      
                   <a class="footer__secondary-nav-link" href="https://beltransfer.by/" title="beltransfer.by" target="_blank">Трансфер</a>
-      
                 </div>
-      
               </div>
-      
             </div>
-      
         </div>
-      
         <div class="container">
-      
             <div class="footer__inner">
-      
               <div class="footer__payment">
-      
                 <img src="images/sprite.svg#icons--payment--master-card-secure-code" alt="master card secure code">
-      
                 <img src="images/sprite.svg#icons--payment--mastercard" alt="mastercard">
-      
                 <img src="images/sprite.svg#icons--payment--verified-visa" alt="verified by visa">
-      
                 <img src="images/sprite.svg#icons--payment--visa" alt="visa">
-      
                 <img src="images/sprite.svg#icons--payment--bepaid" alt="bepaid">
-      
                 <img src="images/sprite.svg#icons--payment--erip" alt="система ЕРИП">
-      
               </div>
-      
             </div>
-      
         </div>
-      
         <div class="container">
-      
             <div class="footer__inner">
-      
               <div class="footer__copyright">
-      
                 <p>© Частное научно-производственное унитарное предприятие "Автоматизированные технологии туризма"</p>
-      
               </div>
-      
             </div>
-      
         </div>
-      
       </footer>
-      
       <a class="btn btn-up" href="#"></a>
-      
     </div>
-      
     <script src="js/main.min.js"></script>
-      
   </body>
-      
 </html>
