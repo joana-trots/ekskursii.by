@@ -36,16 +36,21 @@
 @import _modals
 @import _rangeSlider
 
-.section__factories
-  .card-item__info
-    flex-direction: column
-    align-items: flex-start
-    gap: 0
-  .card-item__seats
-    margin-top: 0
-  .card-item__info--time p
-    align-items: flex-start
-  .card-item__dropdown-info
-    margin-bottom: 0
-    p
+@media screen and (max-width: 540px)
+  .section__factories
+    .card-item__info
+      flex-direction: column
+      align-items: flex-start
+      gap: 0
+    .card-item__seats
       margin-top: 0
+    .card-item__info--time p
+      align-items: flex-start
+    .card-item__dropdown-info
+      margin-bottom: 0
+      p
+        margin-top: 0
+  .attractions 
+    .attractions__card-item--header,
+    .card-item__info
+      gap: 0

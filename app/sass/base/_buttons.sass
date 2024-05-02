@@ -188,12 +188,13 @@ a.btn::after
       background-image: $icon_arrow_gray
       transform: rotate(360deg)
       transition: all 0.25s ease-in-out
-  & ~ .dropdown-text-content
+  & ~ .dropdown-text-content,
+  & ~ .dropdown-text-content > *
     order: 9
-    // display: none
-    max-height: 0
-    opacity: 0
-    transform: translate(0, 50%)
+    display: none
+    // max-height: 0
+    // opacity: 0
+    // transform: translate(0, 50%)
     ul.list:first-child
       margin-top: 12px
   &:has(input:checked)
@@ -207,12 +208,13 @@ a.btn::after
         content: attr(data-close-text)
       &::after
         transform: rotate(180deg)
-    & ~ .dropdown-text-content
-      // display: block
-      max-height: 100%
-      transition: all 0.25s ease-in-out
-      opacity: 1
-      transform: translate(0, 0)
+    & ~ .dropdown-text-content,
+    & ~ .dropdown-text-content > *
+      display: block
+      // max-height: 100%
+      // transition: all 0.25s ease-in-out
+      // opacity: 1
+      // transform: translate(0, 0)
   &--more-btn
     margin: 20px auto 0
     padding: 10px
