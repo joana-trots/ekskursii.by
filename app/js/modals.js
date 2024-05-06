@@ -1,13 +1,19 @@
 let modal          = document.querySelectorAll('.modal'),
 
-    contactsModal  = document.querySelector('.contacts-modal'),
-    filtersModal   = document.querySelector('.filters-modal'),
-    searchModal    = document.querySelector('.search-modal'),
-    bookingModal   = document.querySelector('.booking-modal'),
+    contactsModal   = document.querySelector('.contacts-modal'),
+    filtersModal    = document.querySelector('.filters-modal'),
+    searchModal     = document.querySelector('.search-modal'),
+    bookingModal    = document.querySelector('.booking-modal'),
     validationModal = document.querySelector('.validation-modal'),
+    pwaModal        = document.querySelector('.pwa-window'),
 
     modalOpenBtn   = document.querySelectorAll('.modal-open'),
     modalClose     = document.querySelectorAll('.modal-close');
+
+document.addEventListener('DOMContentLoaded', function(){ 
+  pwaModal.style.display = "flex";
+});
+    
 
 let isModalFilter = false;
 
@@ -26,6 +32,7 @@ modalOpenBtn.forEach((item) => {
     if (item.classList.contains('booking-form__submit-btn') || item.classList.contains('booking-price')) {
       validationModal.style.display = "flex";
     }
+    
     document.body.classList.toggle('overflow-hidden');
   }
 });
