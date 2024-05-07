@@ -1,19 +1,54 @@
 .pwa-window
-    position: fixed
-    width: 100%
-    max-width: 100%
-    bottom: 0
-    // margin-left: auto
-    // margin-right: auto
-    // left: 0
-    // right: 0
-    z-index: 100
-    background: $white
-    box-shadow: $shadow-gray
-    padding: 1rem
-    display: flex
-    justify-content: space-between
-    gap: 1rem
-    align-items: center
-    border-top-left-radius: 12px
-    border-top-right-radius: 12px
+    display: none
+    &.active
+        position: fixed
+        width: 100%
+        height: fit-content
+        max-width: 100%
+        top: auto
+        bottom: 0
+        z-index: 100
+        background: $white
+        box-shadow: $shadow-gray
+        padding: 1rem
+
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        gap: 1rem
+        align-items: center
+        border-top-left-radius: 12px
+        border-top-right-radius: 12px
+        font-size: 16px
+    & > p
+        font-weight: 800
+    .pwa-window__content-wp
+        display: flex
+        flex-direction: column
+        gap: 16px
+        width: 100%
+        max-width: 430px
+    .pwa-window__btn-wp
+        display: flex
+        justify-content: space-between
+        align-items: center
+        div
+            display: flex
+            align-items: center
+            gap: 12px
+    .pwa-window__icon-wp
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 60px
+        height: 60px
+        background-color: $white
+        box-shadow: $shadow-gray
+        border-radius: 12px
+        img
+            width: auto
+            height: 100%
+            padding: 12px
+    .btn#pwa-btn-yes
+        background-color: $black
+        color: $white

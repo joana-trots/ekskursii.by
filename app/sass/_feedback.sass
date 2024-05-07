@@ -40,6 +40,8 @@
     justify-content: flex-start
     flex-wrap: wrap
     gap: 10px
+    .hint-gray
+        margin-top: 0
 .feedback__userinfo--name,
 .feedback__userinfo--city
     @extend %flex-center
@@ -92,11 +94,13 @@
 .feedback-footer
     display: flex
     flex-direction: column
-    gap: 16px
+    gap: 12px
     padding-bottom: 16px
     border-bottom: 1px solid $additional-gray
     .simple-btn 
         align-self: flex-end
+.feedback-footer
+    gap: 16px
 .feedback-wrapper:nth-last-child(-n+2)
     padding-bottom: 0
     border-bottom: 0

@@ -26,7 +26,6 @@ flatpickr('[id*="-date"]', {
 });
 
 
-
 function onlyOne(checkbox) {
   let checkboxes  = document.querySelectorAll('.attractions input[id*="filters-item"]:not(.filters-item__input--all)');
   checkboxes.forEach((item) => {
@@ -44,3 +43,27 @@ if (feedbackSlide) {
     : feedbackText.classList.add('feedback__text--long');
   });
 }
+
+
+
+/* PWA WINDOW */
+document.addEventListener("DOMContentLoaded", () => {
+  let pwaModal = document.querySelector('.pwa-window'),
+      pwaBttns = document.querySelectorAll('.pwa-window .btn');
+
+  pwaModal.classList.add('active');
+  document.body.classList.add('overlay', 'overflow-hidden');
+  
+  pwaBttns.forEach((item) => {
+    item.onclick = function() {
+      pwaModal.classList.remove('active');
+      document.body.classList.remove('overlay', 'overflow-hidden');
+    }
+  });
+  if (document.body.classList.contains('overlay') === true) {
+    document.body.onclick = function() {
+      pwaModal.classList.remove('active');
+      document.body.classList.remove('overlay', 'overflow-hidden');
+    }
+  }
+});
