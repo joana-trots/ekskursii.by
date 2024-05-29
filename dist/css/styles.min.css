@@ -4102,6 +4102,10 @@ ul.card-item__price-include li::before {
   gap: 12px;
 }
 
+input[type=checkbox] {
+  width: 40px;
+}
+
 .booking-form__form-field:has([required]:not([type=radio])) label::before {
   content: "* ";
 }
@@ -4152,6 +4156,10 @@ ul.card-item__price-include li::before {
 /* validation */
 .booking-form__form-field:has(input:user-invalid) .booking-form__form-field--input, .booking-form__form-field:has(select.invalid) .booking-form__form-field--input, .booking-form__form-field:has(textarea:user-invalid) .booking-form__form-field--input {
   border: 1px solid #F96868;
+}
+.booking-form__form-field:has(input:user-invalid)::before, .booking-form__form-field:has(select.invalid)::before, .booking-form__form-field:has(textarea:user-invalid)::before {
+  top: -20px;
+  left: 0;
 }
 .booking-form__form-field:has(.booking-form__form-field--radio):has(input:user-invalid)::before {
   display: none;
