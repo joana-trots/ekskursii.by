@@ -1,1184 +1,47 @@
-@charset "UTF-8";
-.splide__container {
-  box-sizing: border-box;
-  position: relative;
-}
-
-.splide__list {
-  backface-visibility: hidden;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.splide.is-initialized:not(.is-active) .splide__list {
-  display: block;
-}
-
-.splide__pagination {
-  -ms-flex-align: center;
-  align-items: center;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 0;
-  pointer-events: none;
-}
-
-.splide__pagination li {
-  display: inline-block;
-  line-height: 1;
-  list-style-type: none;
-  margin: 0;
-  pointer-events: auto;
-}
-
-.splide:not(.is-overflow) .splide__pagination {
-  display: none;
-}
-
-.splide__progress__bar {
-  width: 0;
-}
-
-.splide {
-  position: relative;
-  visibility: hidden;
-}
-
-.splide.is-initialized, .splide.is-rendered {
-  visibility: visible;
-}
-
-.splide__slide {
-  backface-visibility: hidden;
-  box-sizing: border-box;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  list-style-type: none !important;
-  margin: 0;
-  position: relative;
-}
-
-.splide__slide img {
-  vertical-align: bottom;
-}
-
-.splide__spinner {
-  animation: splide-loading 1s linear infinite;
-  border: 2px solid #999;
-  border-left-color: transparent;
-  border-radius: 50%;
-  bottom: 0;
-  contain: strict;
-  display: inline-block;
-  height: 20px;
-  left: 0;
-  margin: auto;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 20px;
-}
-
-.splide__sr {
-  clip: rect(0 0 0 0);
-  border: 0;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.splide__toggle.is-active .splide__toggle__play, .splide__toggle__pause {
-  display: none;
-}
-
-.splide__toggle.is-active .splide__toggle__pause {
-  display: inline;
-}
-
-.splide__track {
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
-}
-
-@keyframes splide-loading {
-  0% {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-.splide__track--draggable {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.splide__track--fade > .splide__list > .splide__slide {
-  margin: 0 !important;
-  opacity: 0;
-  z-index: 0;
-}
-
-.splide__track--fade > .splide__list > .splide__slide.is-active {
-  opacity: 1;
-  z-index: 1;
-}
-
-.splide--rtl {
-  direction: rtl;
-}
-
-.splide__track--ttb > .splide__list {
-  display: block;
-}
-
-.splide__arrow {
-  -ms-flex-align: center;
-  align-items: center;
-  background: #ccc;
-  border: 0;
-  border-radius: 50%;
-  cursor: pointer;
-  display: -ms-flexbox;
-  display: flex;
-  height: 2em;
-  -ms-flex-pack: center;
-  justify-content: center;
-  opacity: 0.7;
-  padding: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2em;
-  z-index: 1;
-}
-
-.splide__arrow svg {
-  fill: #000;
-  height: 1.2em;
-  width: 1.2em;
-}
-
-.splide__arrow:hover:not(:disabled) {
-  opacity: 0.9;
-}
-
-.splide__arrow:disabled {
-  opacity: 0.3;
-}
-
-.splide__arrow:focus-visible {
-  outline: 3px solid #0bf;
-  outline-offset: 3px;
-}
-
-.splide__arrow--prev {
-  left: 1em;
-}
-
-.splide__arrow--prev svg {
-  transform: scaleX(-1);
-}
-
-.splide__arrow--next {
-  right: 1em;
-}
-
-.splide.is-focus-in .splide__arrow:focus {
-  outline: 3px solid #0bf;
-  outline-offset: 3px;
-}
-
-.splide__pagination {
-  bottom: 0.5em;
-  left: 0;
-  padding: 0 1em;
-  position: absolute;
-  right: 0;
-  z-index: 1;
-}
-
-.splide__pagination__page {
-  background: #ccc;
-  border: 0;
-  border-radius: 50%;
-  display: inline-block;
-  height: 8px;
-  margin: 3px;
-  opacity: 0.7;
-  padding: 0;
-  position: relative;
-  transition: transform 0.2s linear;
-  width: 8px;
-}
-
-.splide__pagination__page.is-active {
-  background: #fff;
-  transform: scale(1.4);
-  z-index: 1;
-}
-
-.splide__pagination__page:hover {
-  cursor: pointer;
-  opacity: 0.9;
-}
-
-.splide__pagination__page:focus-visible {
-  outline: 3px solid #0bf;
-  outline-offset: 3px;
-}
-
-.splide.is-focus-in .splide__pagination__page:focus {
-  outline: 3px solid #0bf;
-  outline-offset: 3px;
-}
-
-.splide__progress__bar {
-  background: #ccc;
-  height: 3px;
-}
-
-.splide__slide {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-.splide__slide:focus {
-  outline: 0;
-}
-
-@supports (outline-offset: -3px) {
-  .splide__slide:focus-visible {
-    outline: 3px solid #0bf;
-    outline-offset: -3px;
-  }
-}
-@media screen and (-ms-high-contrast: none) {
-  .splide__slide:focus-visible {
-    border: 3px solid #0bf;
-  }
-}
-@supports (outline-offset: -3px) {
-  .splide.is-focus-in .splide__slide:focus {
-    outline: 3px solid #0bf;
-    outline-offset: -3px;
-  }
-}
-@media screen and (-ms-high-contrast: none) {
-  .splide.is-focus-in .splide__slide:focus {
-    border: 3px solid #0bf;
-  }
-  .splide.is-focus-in .splide__track > .splide__list > .splide__slide:focus {
-    border-color: #0bf;
-  }
-}
-.splide__toggle {
-  cursor: pointer;
-}
-
-.splide__toggle:focus-visible {
-  outline: 3px solid #0bf;
-  outline-offset: 3px;
-}
-
-.splide.is-focus-in .splide__toggle:focus {
-  outline: 3px solid #0bf;
-  outline-offset: 3px;
-}
-
-.splide__track--nav > .splide__list > .splide__slide {
-  border: 3px solid transparent;
-  cursor: pointer;
-}
-
-.splide__track--nav > .splide__list > .splide__slide.is-active {
-  border: 3px solid #000;
-}
-
-.splide__arrows--rtl .splide__arrow--prev {
-  left: auto;
-  right: 1em;
-}
-
-.splide__arrows--rtl .splide__arrow--prev svg {
-  transform: scaleX(1);
-}
-
-.splide__arrows--rtl .splide__arrow--next {
-  left: 1em;
-  right: auto;
-}
-
-.splide__arrows--rtl .splide__arrow--next svg {
-  transform: scaleX(-1);
-}
-
-.splide__arrows--ttb .splide__arrow {
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.splide__arrows--ttb .splide__arrow--prev {
-  top: 1em;
-}
-
-.splide__arrows--ttb .splide__arrow--prev svg {
-  transform: rotate(-90deg);
-}
-
-.splide__arrows--ttb .splide__arrow--next {
-  bottom: 1em;
-  top: auto;
-}
-
-.splide__arrows--ttb .splide__arrow--next svg {
-  transform: rotate(90deg);
-}
-
-.splide__pagination--ttb {
-  bottom: 0;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  left: auto;
-  padding: 1em 0;
-  right: 0.5em;
-  top: 0;
-}
-
-.flatpickr-calendar {
-  background: transparent;
-  opacity: 0;
-  display: none;
-  text-align: center;
-  visibility: hidden;
-  padding: 0;
-  -webkit-animation: none;
-  animation: none;
-  direction: ltr;
-  border: 0;
-  font-size: 14px;
-  line-height: 24px;
-  border-radius: 5px;
-  position: absolute;
-  width: 307.875px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  background: #fff;
-  -webkit-box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0, 0, 0, 0.08);
-  box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0, 0, 0, 0.08);
-}
-
-.flatpickr-calendar.open, .flatpickr-calendar.inline {
-  opacity: 1;
-  max-height: 640px;
-  visibility: visible;
-}
-
-.flatpickr-calendar.open {
-  display: inline-block;
-  z-index: 99999;
-}
-
-.flatpickr-calendar.animate.open {
-  -webkit-animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);
-  animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.flatpickr-calendar.inline {
-  display: block;
-  position: relative;
-  top: 2px;
-}
-
-.flatpickr-calendar.static {
-  position: absolute;
-  top: calc(100% + 2px);
-}
-
-.flatpickr-calendar.static.open {
-  z-index: 999;
-  display: block;
-}
-
-.flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+1) .flatpickr-day.inRange:nth-child(7n+7) {
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-}
-
-.flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+2) .flatpickr-day.inRange:nth-child(7n+1) {
-  -webkit-box-shadow: -2px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;
-  box-shadow: -2px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;
-}
-
-.flatpickr-calendar .hasWeeks .dayContainer, .flatpickr-calendar .hasTime .dayContainer {
-  border-bottom: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.flatpickr-calendar .hasWeeks .dayContainer {
-  border-left: 0;
-}
-
-.flatpickr-calendar.hasTime .flatpickr-time {
-  height: 40px;
-  border-top: 1px solid #e6e6e6;
-}
-
-.flatpickr-calendar.noCalendar.hasTime .flatpickr-time {
-  height: auto;
-}
-
-.flatpickr-calendar:before, .flatpickr-calendar:after {
-  position: absolute;
-  display: block;
-  pointer-events: none;
-  border: solid transparent;
-  content: "";
-  height: 0;
-  width: 0;
-  left: 22px;
-}
-
-.flatpickr-calendar.rightMost:before, .flatpickr-calendar.arrowRight:before, .flatpickr-calendar.rightMost:after, .flatpickr-calendar.arrowRight:after {
-  left: auto;
-  right: 22px;
-}
-
-.flatpickr-calendar.arrowCenter:before, .flatpickr-calendar.arrowCenter:after {
-  left: 50%;
-  right: 50%;
-}
-
-.flatpickr-calendar:before {
-  border-width: 5px;
-  margin: 0 -5px;
-}
-
-.flatpickr-calendar:after {
-  border-width: 4px;
-  margin: 0 -4px;
-}
-
-.flatpickr-calendar.arrowTop:before, .flatpickr-calendar.arrowTop:after {
-  bottom: 100%;
-}
-
-.flatpickr-calendar.arrowTop:before {
-  border-bottom-color: #e6e6e6;
-}
-
-.flatpickr-calendar.arrowTop:after {
-  border-bottom-color: #fff;
-}
-
-.flatpickr-calendar.arrowBottom:before, .flatpickr-calendar.arrowBottom:after {
-  top: 100%;
-}
-
-.flatpickr-calendar.arrowBottom:before {
-  border-top-color: #e6e6e6;
-}
-
-.flatpickr-calendar.arrowBottom:after {
-  border-top-color: #fff;
-}
-
-.flatpickr-calendar:focus {
-  outline: 0;
-}
-
-.flatpickr-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.flatpickr-months {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.flatpickr-months .flatpickr-month {
-  background: transparent;
-  color: rgba(0, 0, 0, 0.9);
-  fill: rgba(0, 0, 0, 0.9);
-  height: 34px;
-  line-height: 1;
-  text-align: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  overflow: hidden;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.flatpickr-months .flatpickr-prev-month, .flatpickr-months .flatpickr-next-month {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-decoration: none;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  height: 34px;
-  padding: 10px;
-  z-index: 3;
-  color: rgba(0, 0, 0, 0.9);
-  fill: rgba(0, 0, 0, 0.9);
-}
-
-.flatpickr-months .flatpickr-prev-month.flatpickr-disabled, .flatpickr-months .flatpickr-next-month.flatpickr-disabled {
-  display: none;
-}
-
-.flatpickr-months .flatpickr-prev-month i, .flatpickr-months .flatpickr-next-month i {
-  position: relative;
-}
-
-.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month, .flatpickr-months .flatpickr-next-month.flatpickr-prev-month { /*
-/*rtl:begin:ignore*/
-  left: 0;
-} /*
-/*rtl:begin:ignore*/
-/*
-      /*rtl:end:ignore*/
-.flatpickr-months .flatpickr-prev-month.flatpickr-next-month, .flatpickr-months .flatpickr-next-month.flatpickr-next-month { /*
-/*rtl:begin:ignore*/
-  right: 0;
-} /*
-/*rtl:begin:ignore*/
-/*
-      /*rtl:end:ignore*/
-.flatpickr-months .flatpickr-prev-month:hover, .flatpickr-months .flatpickr-next-month:hover {
-  color: #959ea9;
-}
-
-.flatpickr-months .flatpickr-prev-month:hover svg, .flatpickr-months .flatpickr-next-month:hover svg {
-  fill: #f64747;
-}
-
-.flatpickr-months .flatpickr-prev-month svg, .flatpickr-months .flatpickr-next-month svg {
-  width: 14px;
-  height: 14px;
-}
-
-.flatpickr-months .flatpickr-prev-month svg path, .flatpickr-months .flatpickr-next-month svg path {
-  -webkit-transition: fill 0.1s;
-  transition: fill 0.1s;
-  fill: inherit;
-}
-
-.numInputWrapper {
-  position: relative;
-  height: auto;
-}
-
-.numInputWrapper input, .numInputWrapper span {
-  display: inline-block;
-}
-
-.numInputWrapper input {
-  width: 100%;
-}
-
-.numInputWrapper input::-ms-clear {
-  display: none;
-}
-
-.numInputWrapper input::-webkit-outer-spin-button, .numInputWrapper input::-webkit-inner-spin-button {
-  margin: 0;
-  -webkit-appearance: none;
-}
-
-.numInputWrapper span {
-  position: absolute;
-  right: 0;
-  width: 14px;
-  padding: 0 4px 0 2px;
-  height: 50%;
-  line-height: 50%;
-  opacity: 0;
-  cursor: pointer;
-  border: 1px solid rgba(57, 57, 57, 0.15);
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.numInputWrapper span:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.numInputWrapper span:active {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.numInputWrapper span:after {
-  display: block;
-  content: "";
-  position: absolute;
-}
-
-.numInputWrapper span.arrowUp {
-  top: 0;
-  border-bottom: 0;
-}
-
-.numInputWrapper span.arrowUp:after {
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 4px solid rgba(57, 57, 57, 0.6);
-  top: 26%;
-}
-
-.numInputWrapper span.arrowDown {
-  top: 50%;
-}
-
-.numInputWrapper span.arrowDown:after {
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid rgba(57, 57, 57, 0.6);
-  top: 40%;
-}
-
-.numInputWrapper span svg {
-  width: inherit;
-  height: auto;
-}
-
-.numInputWrapper span svg path {
-  fill: rgba(0, 0, 0, 0.5);
-}
-
-.numInputWrapper:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.numInputWrapper:hover span {
-  opacity: 1;
-}
-
-.flatpickr-current-month {
-  font-size: 135%;
-  line-height: inherit;
-  font-weight: 300;
-  color: inherit;
-  position: absolute;
-  width: 75%;
-  left: 12.5%;
-  padding: 7.48px 0 0 0;
-  line-height: 1;
-  height: 34px;
-  display: inline-block;
-  text-align: center;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
-.flatpickr-current-month span.cur-month {
-  font-family: inherit;
-  font-weight: 700;
-  color: inherit;
-  display: inline-block;
-  margin-left: 0.5ch;
-  padding: 0;
-}
-
-.flatpickr-current-month span.cur-month:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.flatpickr-current-month .numInputWrapper {
-  width: 6ch;
-  width: 7ch\0 ;
-  display: inline-block;
-}
-
-.flatpickr-current-month .numInputWrapper span.arrowUp:after {
-  border-bottom-color: rgba(0, 0, 0, 0.9);
-}
-
-.flatpickr-current-month .numInputWrapper span.arrowDown:after {
-  border-top-color: rgba(0, 0, 0, 0.9);
-}
-
-.flatpickr-current-month input.cur-year {
-  background: transparent;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: inherit;
-  cursor: text;
-  padding: 0 0 0 0.5ch;
-  margin: 0;
-  display: inline-block;
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: 300;
-  line-height: inherit;
-  height: auto;
-  border: 0;
-  border-radius: 0;
-  vertical-align: initial;
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
-
-.flatpickr-current-month input.cur-year:focus {
-  outline: 0;
-}
-
-.flatpickr-current-month input.cur-year[disabled], .flatpickr-current-month input.cur-year[disabled]:hover {
-  font-size: 100%;
-  color: rgba(0, 0, 0, 0.5);
-  background: transparent;
-  pointer-events: none;
-}
-
-.flatpickr-current-month .flatpickr-monthDropdown-months {
-  appearance: menulist;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-sizing: border-box;
-  color: inherit;
-  cursor: pointer;
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: 300;
-  height: auto;
-  line-height: inherit;
-  margin: -1px 0 0 0;
-  outline: none;
-  padding: 0 0 0 0.5ch;
-  position: relative;
-  vertical-align: initial;
-  -webkit-box-sizing: border-box;
-  -webkit-appearance: menulist;
-  -moz-appearance: menulist;
-  width: auto;
-}
-
-.flatpickr-current-month .flatpickr-monthDropdown-months:focus, .flatpickr-current-month .flatpickr-monthDropdown-months:active {
-  outline: none;
-}
-
-.flatpickr-current-month .flatpickr-monthDropdown-months:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
-  background-color: transparent;
-  outline: none;
-  padding: 0;
-}
-
-.flatpickr-weekdays {
-  background: transparent;
-  text-align: center;
-  overflow: hidden;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 28px;
-}
-
-.flatpickr-weekdays .flatpickr-weekdaycontainer {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-span.flatpickr-weekday {
-  cursor: default;
-  font-size: 90%;
-  background: transparent;
-  color: rgba(0, 0, 0, 0.54);
-  line-height: 1;
-  margin: 0;
-  text-align: center;
-  display: block;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  font-weight: bolder;
-}
-
-.dayContainer, .flatpickr-weeks {
-  padding: 1px 0 0 0;
-}
-
-.flatpickr-days {
-  position: relative;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  width: 307.875px;
-}
-
-.flatpickr-days:focus {
-  outline: 0;
-}
-
-.dayContainer {
-  padding: 0;
-  outline: 0;
-  text-align: left;
-  width: 307.875px;
-  min-width: 307.875px;
-  max-width: 307.875px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  opacity: 1;
-}
-
-.dayContainer + .dayContainer {
-  -webkit-box-shadow: -1px 0 0 #e6e6e6;
-  box-shadow: -1px 0 0 #e6e6e6;
-}
-
-.flatpickr-day {
-  background: none;
-  border: 1px solid transparent;
-  border-radius: 150px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #393939;
-  cursor: pointer;
-  font-weight: 400;
-  width: 14.2857143%;
-  -webkit-flex-basis: 14.2857143%;
-  -ms-flex-preferred-size: 14.2857143%;
-  flex-basis: 14.2857143%;
-  max-width: 39px;
-  height: 39px;
-  line-height: 39px;
-  margin: 0;
-  display: inline-block;
-  position: relative;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.flatpickr-day.inRange, .flatpickr-day.prevMonthDay.inRange, .flatpickr-day.nextMonthDay.inRange, .flatpickr-day.today.inRange, .flatpickr-day.prevMonthDay.today.inRange, .flatpickr-day.nextMonthDay.today.inRange, .flatpickr-day:hover, .flatpickr-day.prevMonthDay:hover, .flatpickr-day.nextMonthDay:hover, .flatpickr-day:focus, .flatpickr-day.prevMonthDay:focus, .flatpickr-day.nextMonthDay:focus {
-  cursor: pointer;
-  outline: 0;
-  background: #e6e6e6;
-  border-color: #e6e6e6;
-}
-
-.flatpickr-day.today {
-  border-color: #959ea9;
-}
-
-.flatpickr-day.today:hover, .flatpickr-day.today:focus {
-  border-color: #959ea9;
-  background: #959ea9;
-  color: #fff;
-}
-
-.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
-  background: #569ff7;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  color: #fff;
-  border-color: #569ff7;
-}
-
-.flatpickr-day.selected.startRange, .flatpickr-day.startRange.startRange, .flatpickr-day.endRange.startRange {
-  border-radius: 50px 0 0 50px;
-}
-
-.flatpickr-day.selected.endRange, .flatpickr-day.startRange.endRange, .flatpickr-day.endRange.endRange {
-  border-radius: 0 50px 50px 0;
-}
-
-.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)), .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)), .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
-  -webkit-box-shadow: -10px 0 0 #569ff7;
-  box-shadow: -10px 0 0 #569ff7;
-}
-
-.flatpickr-day.selected.startRange.endRange, .flatpickr-day.startRange.startRange.endRange, .flatpickr-day.endRange.startRange.endRange {
-  border-radius: 50px;
-}
-
-.flatpickr-day.inRange {
-  border-radius: 0;
-  -webkit-box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;
-  box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;
-}
-
-.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover, .flatpickr-day.prevMonthDay, .flatpickr-day.nextMonthDay, .flatpickr-day.notAllowed, .flatpickr-day.notAllowed.prevMonthDay, .flatpickr-day.notAllowed.nextMonthDay {
-  color: rgba(57, 57, 57, 0.3);
-  background: transparent;
-  border-color: transparent;
-  cursor: default;
-}
-
-.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover {
-  cursor: not-allowed;
-  color: rgba(57, 57, 57, 0.1);
-}
-
-.flatpickr-day.week.selected {
-  border-radius: 0;
-  -webkit-box-shadow: -5px 0 0 #569ff7, 5px 0 0 #569ff7;
-  box-shadow: -5px 0 0 #569ff7, 5px 0 0 #569ff7;
-}
-
-.flatpickr-day.hidden {
-  visibility: hidden;
-}
-
-.rangeMode .flatpickr-day {
-  margin-top: 1px;
-}
-
-.flatpickr-weekwrapper {
-  float: left;
-}
-
-.flatpickr-weekwrapper .flatpickr-weeks {
-  padding: 0 12px;
-  -webkit-box-shadow: 1px 0 0 #e6e6e6;
-  box-shadow: 1px 0 0 #e6e6e6;
-}
-
-.flatpickr-weekwrapper .flatpickr-weekday {
-  float: none;
-  width: 100%;
-  line-height: 28px;
-}
-
-.flatpickr-weekwrapper span.flatpickr-day, .flatpickr-weekwrapper span.flatpickr-day:hover {
-  display: block;
-  width: 100%;
-  max-width: none;
-  color: rgba(57, 57, 57, 0.3);
-  background: transparent;
-  cursor: default;
-  border: none;
-}
-
-.flatpickr-innerContainer {
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.flatpickr-rContainer {
-  display: inline-block;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.flatpickr-time {
-  text-align: center;
-  outline: 0;
-  display: block;
-  height: 0;
-  line-height: 40px;
-  max-height: 40px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.flatpickr-time:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.flatpickr-time .numInputWrapper {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 40%;
-  height: 40px;
-  float: left;
-}
-
-.flatpickr-time .numInputWrapper span.arrowUp:after {
-  border-bottom-color: #393939;
-}
-
-.flatpickr-time .numInputWrapper span.arrowDown:after {
-  border-top-color: #393939;
-}
-
-.flatpickr-time.hasSeconds .numInputWrapper {
-  width: 26%;
-}
-
-.flatpickr-time.time24hr .numInputWrapper {
-  width: 49%;
-}
-
-.flatpickr-time input {
-  background: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border: 0;
-  border-radius: 0;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  height: inherit;
-  line-height: inherit;
-  color: #393939;
-  font-size: 14px;
-  position: relative;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
-
-.flatpickr-time input.flatpickr-hour {
-  font-weight: bold;
-}
-
-.flatpickr-time input.flatpickr-minute, .flatpickr-time input.flatpickr-second {
-  font-weight: 400;
-}
-
-.flatpickr-time input:focus {
-  outline: 0;
-  border: 0;
-}
-
-.flatpickr-time .flatpickr-time-separator, .flatpickr-time .flatpickr-am-pm {
-  height: inherit;
-  float: left;
-  line-height: inherit;
-  color: #393939;
-  font-weight: bold;
-  width: 2%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.flatpickr-time .flatpickr-am-pm {
-  outline: 0;
-  width: 18%;
-  cursor: pointer;
-  text-align: center;
-  font-weight: 400;
-}
-
-.flatpickr-time input:hover, .flatpickr-time .flatpickr-am-pm:hover, .flatpickr-time input:focus, .flatpickr-time .flatpickr-am-pm:focus {
-  background: #eee;
-}
-
-.flatpickr-input[readonly] {
-  cursor: pointer;
-}
-
-@-webkit-keyframes fpFadeInDown {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -20px, 0);
-    transform: translate3d(0, -20px, 0);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes fpFadeInDown {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -20px, 0);
-    transform: translate3d(0, -20px, 0);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-.feedback__rateinfo--rate, .feedback__userinfo--name,
-.feedback__userinfo--city, .feedback__rateinfo, .feedback__inner--header,
-.feedback__userinfo, .schedule__tabs .tabs-list,
+<!DOCTYPE html>
+<html amp lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <!-- <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
+    <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project"> -->
+
+    <title>Обзорная экскурсия по Минску</title>
+    <link rel="canonical" href="https://pda.ekskursii.by/?Minsk_city_tour">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-1.0.js"></script> 
+    <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
+      
+    
+    
+    
+    <style amp-custom>
+      
+
+.feedback__rateinfo--rate, 
+.feedback__userinfo--name,
+.feedback__userinfo--city, 
+.feedback__rateinfo, 
+.feedback__inner--header,
+.feedback__userinfo, 
+.schedule__tabs .tabs-list,
 .booking__tabs .tabs-list,
-.price__tabs .tabs-list, .cta-primary, .booking-form__submit-btn, .card-item__cta, .booking-tabs [class$=form__submit-btn], .intro__btn--primary, [class$=form__submit-btn], .all-btn, .cta-secondary, .schedule__options-item, .intro__btn--secondary, .menu__primary-list--item.dropdown-item, .btn-up {
+.price__tabs .tabs-list, 
+.cta-primary, .booking-form__submit-btn, 
+.card-item__cta, 
+.booking-tabs [class$=form__submit-btn], 
+.intro__btn--primary, 
+[class$=form__submit-btn], 
+.all-btn, 
+.cta-secondary, .schedule__options-item, 
+.intro__btn--secondary, 
+.menu__primary-list--item.dropdown-item, 
+.btn-up {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1208,7 +71,8 @@ textarea:not(.no-icon)::before, .all-btn.arrow-btn::before {
   flex: 0 0 20px;
 }
 
-.menu__primary-list--item.phone-item .menu__primary-list--link::after, .custom-select .select-selected::after {
+.menu__primary-list--item.phone-item .menu__primary-list--link::after, 
+.custom-select .select-selected::after {
   content: "";
   display: block;
   width: 18px;
@@ -1217,21 +81,14 @@ textarea:not(.no-icon)::before, .all-btn.arrow-btn::before {
   background-position: center;
 }
 
-.splide__slide {
-  position: relative;
-  height: auto;
-  width: 100%;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px 0 rgba(47, 47, 47, 0.1);
-}
-
-.card-item__dropdown-btn:has([type=checkbox]:checked)::before, .custom-select .select-selected::after {
+.card-item__dropdown-btn:has([type=checkbox]:checked)::before, 
+.custom-select .select-selected::after {
   transform: rotate(360deg);
   transition: transform 0.3s;
 }
 
-.card-item__dropdown-btn::before, .custom-select .select-selected.select-arrow-active::after {
+.card-item__dropdown-btn::before, 
+.custom-select .select-selected.select-arrow-active::after {
   transform: rotate(180deg);
   transition: transform 0.3s;
 }
@@ -1269,7 +126,7 @@ a:hover {
 }
 
 ul, li {
-  list-style: none !important;
+  list-style: none;
 }
 
 label,
@@ -1400,24 +257,9 @@ body {
   background-color: #FFFFFF;
 }
 
-.wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
-
 .header {
   position: sticky;
   top: 0;
-}
-
-.main {
-  flex: 1 0 auto;
-}
-
-.footer {
-  flex: 1 0 auto;
 }
 
 section,
@@ -1475,28 +317,6 @@ section,
   line-height: 0;
   content: "";
   clear: both;
-}
-
-[class*=separator-] {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.separator-left::before {
-  content: "";
-  width: 4px;
-  height: 4px;
-  background-color: #898989;
-  border-radius: 5px;
-}
-
-.separator-right::after {
-  content: "";
-  width: 4px;
-  height: 4px;
-  background-color: #898989;
-  border-radius: 5px;
 }
 
 [class$=hint-text] p {
@@ -1609,12 +429,20 @@ a.menu__primary-list--item.dropdown-item::after {
   }
 }
 
-.cta-secondary, .schedule__options-item, .intro__btn--secondary, .menu__primary-list--item.dropdown-item, .btn-up {
+.cta-secondary, 
+.schedule__options-item, 
+.intro__btn--secondary, 
+.menu__primary-list--item.dropdown-item, 
+.btn-up {
   background-color: #FFFFFF;
   border: 1px solid #FFFFFF;
   box-shadow: 0 0 15px 0 rgba(47, 47, 47, 0.1);
 }
-.cta-secondary:hover, .schedule__options-item:hover, .intro__btn--secondary:hover, .menu__primary-list--item.dropdown-item:hover, .btn-up:hover {
+.cta-secondary:hover, 
+.schedule__options-item:hover, 
+.intro__btn--secondary:hover, 
+.menu__primary-list--item.dropdown-item:hover, 
+.btn-up:hover {
   border: 1px solid #2F2F2F;
   box-shadow: none;
 }
@@ -1654,14 +482,7 @@ a.menu__primary-list--item.dropdown-item::after {
     padding: 8px 10px;
   }
 }
-.more-btn--slider {
-  position: absolute;
-  top: 142px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.7019607843) !important;
-  font-size: 13px !important;
-}
+
 
 .simple-btn, .simple-secondary-btn {
   display: inline-flex;
@@ -1707,7 +528,10 @@ a.menu__primary-list--item.dropdown-item::after {
   background-image: url(../images/sprite.svg#icons--arrow-right);
 }
 
-.sticky-btn, .dropdown-text-btn--more-btn:has(input:checked), .dropdown-text-btn:has(input:checked) {
+.sticky-btn, 
+.booking-form__submit-btn, 
+.dropdown-text-btn--more-btn:has(input:checked), 
+.dropdown-text-btn:has(input:checked) {
   margin: 20px auto 0;
   position: sticky;
   bottom: 20px;
@@ -1715,7 +539,14 @@ a.menu__primary-list--item.dropdown-item::after {
   box-shadow: 0 0 15px 0 rgba(47, 47, 47, 0.1);
   z-index: 5;
 }
-
+.more-btn--slider {
+  position: absolute;
+  top: 116px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
 .btn-up {
   position: fixed;
   right: 26px;
@@ -1839,75 +670,16 @@ a.menu__primary-list--item.dropdown-item::after {
   cursor: pointer;
 }
 .custom-select select {
-  display: none;
   cursor: pointer;
 }
-.custom-select .select-selected {
-  position: absolute;
-  display: flex;
-  align-items: center;
+.custom-select.lang-item,
+.custom-select.schedule__options-item--currency {
   padding: 10px;
-  width: 100%;
-  height: 40px;
-  z-index: 2;
 }
-.custom-select .select-selected::after {
-  position: absolute;
-  right: 10px;
-  background-image: url(../images/sprite.svg#icons--dropdown-arrow_black);
-}
-.custom-select .select-items {
-  position: absolute;
-  top: calc(100% - 21px);
-  left: 0;
-  right: 0;
-  margin-top: 20px;
-  border-radius: 0 0 8px 8px;
-  background-color: #FFFFFF;
-  box-shadow: 0px 5px 12px -8px rgba(47, 47, 47, 0.24);
-  z-index: 1;
-  max-height: 221px;
-  overflow: auto;
-}
-.custom-select .select-items a, .custom-select .select-items div {
-  display: block;
-  padding: 8px;
-  border-top: 1px solid #F3F3F3;
-  cursor: pointer;
-}
-.custom-select .select-items a:hover,
-.custom-select .select-items div:hover,
-.custom-select .same-as-selected {
-  background-color: #FFD966;
-}
-.custom-select .select-items a:last-child {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-.custom-select:has(.select-arrow-active)::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: 0;
-  display: block;
-  background-color: #FFFFFF;
-  height: 30px;
-  width: 100%;
-}
-
-[class$=options-item--sort].custom-select {
-  justify-content: center;
-}
-[class$=options-item--sort].custom-select::before {
-  position: relative;
-  z-index: 1;
-}
-[class$=options-item--sort].custom-select .select-selected {
-  opacity: 0;
-}
-[class$=options-item--sort].custom-select .select-items {
-  width: max-content;
-  text-transform: lowercase;
+.custom-select.lang-item {
+  height: 100%;
+  border: 0;
+  box-shadow: none;
 }
 
 [class$=form-field--input],
@@ -2160,146 +932,6 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   text-align: center;
 }
 
-#panel-1-ctrl:checked ~ .panels .panel-1 .panel__content {
-  max-height: initial;
-  opacity: 1;
-}
-
-#panel-1-ctrl:checked ~ .tabs-list #li-for-panel-1 {
-  pointer-events: none;
-  cursor: default;
-}
-#panel-1-ctrl:checked ~ .tabs-list #li-for-panel-1 label.panel-label {
-  background-color: #FFD966;
-  color: #2F2F2F;
-}
-
-#panel-2-ctrl:checked ~ .panels .panel-2 .panel__content {
-  max-height: initial;
-  opacity: 1;
-}
-
-#panel-2-ctrl:checked ~ .tabs-list #li-for-panel-2 {
-  pointer-events: none;
-  cursor: default;
-}
-#panel-2-ctrl:checked ~ .tabs-list #li-for-panel-2 label.panel-label {
-  background-color: #FFD966;
-  color: #2F2F2F;
-}
-
-#panel-3-ctrl:checked ~ .panels .panel-3 .panel__content {
-  max-height: initial;
-  opacity: 1;
-}
-
-#panel-3-ctrl:checked ~ .tabs-list #li-for-panel-3 {
-  pointer-events: none;
-  cursor: default;
-}
-#panel-3-ctrl:checked ~ .tabs-list #li-for-panel-3 label.panel-label {
-  background-color: #FFD966;
-  color: #2F2F2F;
-}
-
-#panel-4-ctrl:checked ~ .panels .panel-4 .panel__content {
-  max-height: initial;
-  opacity: 1;
-}
-
-#panel-4-ctrl:checked ~ .tabs-list #li-for-panel-4 {
-  pointer-events: none;
-  cursor: default;
-}
-#panel-4-ctrl:checked ~ .tabs-list #li-for-panel-4 label.panel-label {
-  background-color: #FFD966;
-  color: #2F2F2F;
-}
-
-#panel-5-ctrl:checked ~ .panels .panel-5 .panel__content {
-  max-height: initial;
-  opacity: 1;
-}
-
-#panel-5-ctrl:checked ~ .tabs-list #li-for-panel-5 {
-  pointer-events: none;
-  cursor: default;
-}
-#panel-5-ctrl:checked ~ .tabs-list #li-for-panel-5 label.panel-label {
-  background-color: #FFD966;
-  color: #2F2F2F;
-}
-
-#panel-6-ctrl:checked ~ .panels .panel-6 .panel__content {
-  max-height: initial;
-  opacity: 1;
-}
-
-#panel-6-ctrl:checked ~ .tabs-list #li-for-panel-6 {
-  pointer-events: none;
-  cursor: default;
-}
-#panel-6-ctrl:checked ~ .tabs-list #li-for-panel-6 label.panel-label {
-  background-color: #FFD966;
-  color: #2F2F2F;
-}
-
-#panel-7-ctrl:checked ~ .panels .panel-7 .panel__content {
-  max-height: initial;
-  opacity: 1;
-}
-
-#panel-7-ctrl:checked ~ .tabs-list #li-for-panel-7 {
-  pointer-events: none;
-  cursor: default;
-}
-#panel-7-ctrl:checked ~ .tabs-list #li-for-panel-7 label.panel-label {
-  background-color: #FFD966;
-  color: #2F2F2F;
-}
-
-#panel-8-ctrl:checked ~ .panels .panel-8 .panel__content {
-  max-height: initial;
-  opacity: 1;
-}
-
-#panel-8-ctrl:checked ~ .tabs-list #li-for-panel-8 {
-  pointer-events: none;
-  cursor: default;
-}
-#panel-8-ctrl:checked ~ .tabs-list #li-for-panel-8 label.panel-label {
-  background-color: #FFD966;
-  color: #2F2F2F;
-}
-
-#panel-9-ctrl:checked ~ .panels .panel-9 .panel__content {
-  max-height: initial;
-  opacity: 1;
-}
-
-#panel-9-ctrl:checked ~ .tabs-list #li-for-panel-9 {
-  pointer-events: none;
-  cursor: default;
-}
-#panel-9-ctrl:checked ~ .tabs-list #li-for-panel-9 label.panel-label {
-  background-color: #FFD966;
-  color: #2F2F2F;
-}
-
-#panel-10-ctrl:checked ~ .panels .panel-10 .panel__content {
-  max-height: initial;
-  opacity: 1;
-}
-
-#panel-10-ctrl:checked ~ .tabs-list #li-for-panel-10 {
-  pointer-events: none;
-  cursor: default;
-}
-#panel-10-ctrl:checked ~ .tabs-list #li-for-panel-10 label.panel-label {
-  background-color: #FFD966;
-  color: #2F2F2F;
-}
-
 .booking__tabs #li-for-panel-1,
 .price__tabs #li-for-panel-1 {
   max-width: 134px;
@@ -2430,7 +1062,7 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
 }
 
 .selected-filters-item__label {
-  font-size: 14px !important;
+  font-size: 14px;
 }
 .selected-filters-item__label::after {
   display: inline-block;
@@ -2470,11 +1102,8 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   min-width: 118px;
   max-width: 145px;
 }
-@media screen and (max-width: 1200px) {
-  .header__logo {
-    max-width: 100%;
-    flex: 1 0 0;
-  }
+.header__logo img {
+  object-fit: cover;
 }
 @media screen and (max-width: 540px) {
   .header__logo {
@@ -2482,13 +1111,6 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
     max-height: 40px;
   }
 }
-.header__logo img {
-  height: 40px;
-  width: 100%;
-  max-width: 145px;
-  object-fit: cover;
-}
-
 .menu__primary {
   display: flex;
   justify-content: space-between;
@@ -2496,16 +1118,10 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
 }
 @media screen and (max-width: 1200px) and (min-width: 541px) {
   .menu__primary {
-    justify-content: flex-start;
     gap: 10px;
   }
   .menu__primary a {
     flex: 1 0 0;
-  }
-}
-@media screen and (max-width: 540px) {
-  .menu__primary {
-    gap: 10px;
   }
 }
 
@@ -2548,7 +1164,7 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
 }
 .menu__primary-list--item.desktop-item .menu__primary-list--link {
   width: 40px;
-  padding: 0 11px !important;
+  padding: 0 11px;
 }
 .menu__primary-list--item.desktop-item .menu__primary-list--link::before {
   background-image: url(../images/sprite.svg#icons--desktop);
@@ -2559,20 +1175,16 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
 .menu__primary-list--item.phone-item .menu__primary-list--link::after {
   background-image: url(../images/sprite.svg#icons--dropdown-arrow_black);
 }
-@media screen and (max-width: 1200px) {
-  .menu__primary-list--item.phone-item img {
-    display: none;
-  }
-}
 @media screen and (max-width: 584px) {
-  .menu__primary-list--item.phone-item .menu__primary-list--link::after, .menu__primary-list--item.phone-item img, .menu__primary-list--item.phone-item span {
+  .menu__primary-list--item.phone-item .menu__primary-list--link::after, 
+  .menu__primary-list--item.phone-item img, .menu__primary-list--item.phone-item span {
     display: none;
   }
 }
-.menu__primary-list--item.account-item .menu__primary-list--link::before {
+/* .menu__primary-list--item.account-item .menu__primary-list--link::before {
   background-image: url(../images/sprite.svg#icons--user);
-}
-.menu__primary-list--item.dropdown-item {
+} */
+/* .menu__primary-list--item.dropdown-item {
   align-items: center;
   padding: 0;
   height: 100%;
@@ -2580,7 +1192,7 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   font-weight: 600;
   text-align: left;
   box-shadow: none;
-}
+} */
 .menu__primary-list--item.dropdown-item:hover {
   border: 0;
   box-shadow: 0 0 15px 0 rgba(47, 47, 47, 0.1);
@@ -2602,19 +1214,6 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
 @media screen and (max-width: 1200px) {
   .menu__primary-list--item:nth-child(4), .menu__primary-list--item:nth-child(5), .menu__primary-list--item:nth-child(7) {
     display: none;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .lang-item.custom-select {
-    width: 64px;
-  }
-  .lang-item .select-selected {
-    font-size: 12px;
-  }
-  .lang-item .select-selected::after {
-    width: 16px;
-    height: 16px;
   }
 }
 /* secondary nav */
@@ -2666,7 +1265,6 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
 .burger span:nth-of-type(3) {
   width: 45%;
 }
-
 .burger.active span:nth-of-type(1) {
   width: 28.75px;
   transform: rotate(45deg) translate(2px, 4px);
@@ -2679,104 +1277,24 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   display: none;
 }
 
-.header__container--mobile {
-  position: absolute;
-  top: 68px;
-  left: 0;
-  height: 0;
-  width: 100%;
-  opacity: 0;
-  transition: all 0.5s ease-out;
-  z-index: -1;
-}
-.header__container--mobile.container, .header__container--mobile.quicknav__navbar {
-  max-width: 100%;
-}
+
 .header__container--mobile ul.menu__mobile-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  height: 0;
   margin-top: 20px;
-}
-.header__container--mobile li.menu__mobile-list--item {
-  height: 0;
-  width: 0;
-  font-size: 16px;
-  opacity: 0;
-  transform: scale(1.15) translateY(-30px);
-  transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-}
-.header__container--mobile li.menu__mobile-list--item a {
-  display: none;
-  height: 0;
-  width: 0;
-}
-.header__container--mobile li.menu__mobile-list--item .cta-primary, .header__container--mobile li.menu__mobile-list--item .booking-form__submit-btn, .header__container--mobile li.menu__mobile-list--item .card-item__cta, .header__container--mobile li.menu__mobile-list--item .intro__btn--primary, .header__container--mobile li.menu__mobile-list--item .cta-secondary, .header__container--mobile li.menu__mobile-list--item .schedule__options-item, .header__container--mobile li.menu__mobile-list--item .intro__btn--secondary, .header__container--mobile li.menu__mobile-list--item .all-btn, .header__container--mobile li.menu__mobile-list--item .btn-up, .header__container--mobile li.menu__mobile-list--item [class$=form__submit-btn], .header__container--mobile li.menu__mobile-list--item .menu__primary-list--item.dropdown-item {
-  font-size: 14px;
-  padding: 14px;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(1) {
-  transition-delay: 0.77s;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(2) {
-  transition-delay: 0.7s;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(3) {
-  transition-delay: 0.63s;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(4) {
-  transition-delay: 0.56s;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(5) {
-  transition-delay: 0.49s;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(6) {
-  transition-delay: 0.42s;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(7) {
-  transition-delay: 0.35s;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(8) {
-  transition-delay: 0.28s;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(9) {
-  transition-delay: 0.21s;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(10) {
-  transition-delay: 0.14s;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(11) {
-  transition-delay: 0.07s;
-}
-.header__container--mobile li.menu__mobile-list--item:nth-child(12) {
-  transition-delay: 0s;
 }
 .header__container--mobile.menu-opened {
   height: 100dvh;
+  width: 100%;
   background-color: #FFFFFF;
-  opacity: 1;
-  transition: all 0.3s ease;
   overflow: auto;
-}
-.header__container--mobile.menu-opened .burger {
-  transform: rotate(90deg);
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item {
-  height: auto;
-  width: auto;
-  transform: scale(1) translateY(0px);
-  opacity: 1;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item img {
-  object-fit: cover;
-  width: 52px;
-  height: 52px;
 }
 .header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item a {
   display: inline-block;
   height: auto;
   width: auto;
+  font-size: 16px;
 }
 .header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:last-child {
   padding-bottom: 22px;
@@ -2785,43 +1303,9 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   display: flex;
   gap: 6px;
 }
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(1) {
-  transition-delay: 0.27s;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(2) {
-  transition-delay: 0.34s;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(3) {
-  transition-delay: 0.41s;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(4) {
-  transition-delay: 0.48s;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(5) {
-  transition-delay: 0.55s;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(6) {
-  transition-delay: 0.62s;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(7) {
-  transition-delay: 0.69s;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(8) {
-  transition-delay: 0.76s;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(9) {
-  transition-delay: 0.83s;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(10) {
-  transition-delay: 0.9s;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(11) {
-  transition-delay: 0.97s;
-}
-.header__container--mobile.menu-opened ul.menu__mobile-list li.menu__mobile-list--item:nth-child(12) {
-  transition-delay: 1.04s;
-}
 .header__container--mobile .divided-item {
+  display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid #F3F3F3;
   padding-bottom: 14px;
 }
@@ -2873,7 +1357,7 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
 .main-search {
   min-height: 30px;
 }
-.main-search .container, .main-search .quicknav__navbar {
+.main-search .container {
   margin: 16px;
   padding-top: 16px;
   padding-bottom: 20px;
@@ -2881,7 +1365,7 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   border-radius: 10px;
 }
 @media screen and (min-width: 1400px) {
-  .main-search .container, .main-search .quicknav__navbar {
+  .main-search .container{
     margin: 16px auto;
   }
 }
@@ -2991,23 +1475,23 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   padding: 13px 18px;
   font-size: 16px;
 }
-.main-search .search-form__form-field--input.custom-select .select-selected {
+/* .main-search .search-form__form-field--input.custom-select .select-selected {
   width: calc(100% - 30px);
   padding: 0 0 0 28px;
   text-transform: initial;
   z-index: 2;
-}
+} */
 .main-search .search-form__form-field--input.custom-select::before {
   z-index: 2;
 }
-.main-search .search-form__form-field--input.custom-select .select-items {
+/* .main-search .search-form__form-field--input.custom-select .select-items {
   text-transform: initial;
   z-index: 1;
-}
+} */
 .main-search.search-header {
   margin-top: 0;
 }
-.main-search.search-header .container, .main-search.search-header .quicknav__navbar {
+.main-search.search-header .container{
   margin: 0 auto;
   border-radius: 0;
 }
@@ -3040,88 +1524,6 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   left: -1px;
   width: calc(100% + 2px);
   border: 1px solid #898989;
-}
-
-.gallery-slider .container, .gallery-slider .quicknav__navbar,
-.employees-slider .container,
-.employees-slider .quicknav__navbar {
-  padding: 0;
-}
-.gallery-slider .splide__slide img,
-.employees-slider .splide__slide img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 178px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.gallery-slider .splide__slide .promo__text-block,
-.employees-slider .splide__slide .promo__text-block {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  height: 100%;
-}
-.gallery-slider .splide__slide .promo__text-block .h3,
-.employees-slider .splide__slide .promo__text-block .h3 {
-  color: #FFFFFF;
-  text-align: center;
-}
-
-.gallery-slider,
-.employees-slider {
-  margin-top: 10px;
-}
-
-.employees-slider .splide__slide {
-  min-height: 150px;
-  max-width: 150px;
-}
-.employees-slider .splide__slide img {
-  min-height: 150px;
-  width: 150px;
-}
-
-.section.promo {
-  margin-top: 16px;
-}
-.section.promo .section__inner {
-  margin-top: 12px;
-}
-
-.promo__wrapper {
-  position: relative;
-  min-height: 178px;
-}
-.promo__wrapper img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 178px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.promo__wrapper .promo__text-block {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  height: 100%;
-  min-height: 178px;
-}
-.promo__wrapper .promo__text-block .h3 {
-  color: #FFFFFF;
-  text-align: center;
 }
 
 .schedule__wrapper-cards {
@@ -3187,7 +1589,7 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   display: none;
 }
 
-.schedule__options-item--sort.custom-select {
+/* .schedule__options-item--sort.custom-select {
   justify-content: center;
 }
 .schedule__options-item--sort.custom-select::before {
@@ -3200,7 +1602,7 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
 .schedule__options-item--sort.custom-select .select-items {
   width: max-content;
   text-transform: lowercase;
-}
+} */
 
 .schedule__card-item, .attractions .attractions__card-item {
   position: relative;
@@ -3222,7 +1624,7 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   clip-path: border-box;
   z-index: 0;
 }
-.card-item__image img,
+.card-item__image amp-img,
 .card-item__image .card-item__image--overlay {
   position: absolute;
   width: 100%;
@@ -3317,26 +1719,6 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
     order: 3;
   }
 }
-.card-item__dropdown-btn {
-  position: absolute !important;
-  top: 118px;
-  padding: 0;
-  height: 32px;
-  width: 32px;
-}
-.card-item__dropdown-btn::before {
-  height: 8px;
-  width: 16px;
-  background-image: url(../images/sprite.svg#icons--dropdown-arrow_black);
-}
-.card-item__dropdown-info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-height: 800px;
-  margin-bottom: 12px;
-}
-
 @media screen and (max-width: 540px) {
   .card-item__additional-info p {
     font-size: 13px;
@@ -3426,7 +1808,8 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   background-image: url(../images/sprite.svg#icons--comments);
 }
 
-.card-item__cta, .booking-tabs [class$=form__submit-btn] {
+.card-item__cta, 
+.booking-tabs [class$=form__submit-btn] {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.92px;
@@ -3488,14 +1871,7 @@ ul.card-item__price-include li::before {
 .schedule__display--table .schedule__wrapper-cards {
   gap: 0;
 }
-.schedule__display--table .card-item__image,
-.schedule__display--table .card-item__dropdown-btn,
-.schedule__display--table .separator-right::after,
-.schedule__display--table .separator-left::before,
-.schedule__display--table .card-item__dropdown-info {
-  display: none;
-}
-.schedule__display--table .schedule__card-item, .schedule__display--table .attractions .attractions__card-item, .attractions .schedule__display--table .attractions__card-item {
+.schedule__display--table .schedule__card-item{
   flex-direction: row;
   align-items: flex-start;
   padding: 12px;
@@ -3527,17 +1903,21 @@ ul.card-item__price-include li::before {
 .schedule__display--table .card-item__price span {
   display: none;
 }
-.schedule__display--table .card-item__cta, .schedule__display--table .booking-tabs [class$=form__submit-btn], .booking-tabs .schedule__display--table [class$=form__submit-btn] {
+.schedule__display--table .card-item__cta, 
+.schedule__display--table .booking-tabs [class$=form__submit-btn], 
+.booking-tabs .schedule__display--table [class$=form__submit-btn] {
   width: 36px;
   height: 36px;
 }
-.schedule__display--table .card-item__cta::after, .schedule__display--table .booking-tabs [class$=form__submit-btn]::after, .booking-tabs .schedule__display--table [class$=form__submit-btn]::after {
+.schedule__display--table .card-item__cta::after, 
+.schedule__display--table .booking-tabs [class$=form__submit-btn]::after, 
+.booking-tabs .schedule__display--table [class$=form__submit-btn]::after {
   content: "";
   width: 24px;
   height: 24px;
   background-image: url(../images/sprite.svg#icons--arrow-right);
 }
-.schedule__display--table .schedule__card-item--header, .schedule__display--table .attractions .attractions__card-item--header, .attractions .schedule__display--table .attractions__card-item--header {
+.schedule__display--table .schedule__card-item--header {
   max-width: 202px;
   flex-direction: row;
   gap: 10px;
@@ -3656,48 +2036,30 @@ ul.card-item__price-include li::before {
   display: none;
 }
 
+.section__inner--feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .feedback {
   z-index: 1;
 }
-.feedback > .container, .feedback > .quicknav__navbar {
+.feedback > .container{
   padding: 0;
-}
-.feedback .splide__slide {
-  border-radius: 24px;
-}
-.feedback .splide__slide .feedback__text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  line-clamp: 4;
-  box-orient: vertical;
-}
-.feedback .splide__slide .feedback__text p {
-  margin-top: 0;
-}
-.feedback .splide__slide .feedback__text a {
-  display: none;
-}
-.feedback .splide__slide .feedback__text.feedback__text--long {
-  margin-bottom: 30px;
-}
-.feedback .splide__slide .feedback__text.feedback__text--long a {
-  display: flex;
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
 }
 .feedback .splide__slide--wrapper {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-height: 178px;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 0 15px 0 rgba(47, 47, 47, 0.1);
+  margin: 22px 10px;
 }
-.feedback .splide {
-  margin-top: 12px;
+.feedback .i-amphtml-carousel-scroll {
+  display: flex;
+  align-items: stretch;
 }
 
 .feedback__inner--header,
@@ -3772,11 +2134,28 @@ ul.card-item__price-include li::before {
   background-image: url(../images/sprite.svg#icons--like-green);
   flex: 0 0 24px;
 }
-
-.section__inner--feedback {
+.feedback .splide__slide .feedback__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  box-orient: vertical;
+}
+.feedback .splide__slide .feedback__text a {
+  display: none;
+}
+.feedback .splide__slide .feedback__text.feedback__text--long {
+  margin-bottom: 30px;
+}
+.feedback .splide__slide .feedback__text.feedback__text--long a {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 
 .feedback-wrapper,
@@ -3787,7 +2166,8 @@ ul.card-item__price-include li::before {
   padding-bottom: 16px;
   border-bottom: 1px solid #D9D9D9;
 }
-.feedback-wrapper .simple-btn, .feedback-wrapper .simple-secondary-btn,
+.feedback-wrapper .simple-btn, 
+.feedback-wrapper .simple-secondary-btn,
 .feedback-footer .simple-btn,
 .feedback-footer .simple-secondary-btn {
   align-self: flex-end;
@@ -3797,10 +2177,7 @@ ul.card-item__price-include li::before {
   gap: 16px;
 }
 
-.feedback-wrapper:nth-last-child(-n+2) {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
+
 
 .section__inner--contacts {
   display: flex;
@@ -3845,7 +2222,7 @@ ul.card-item__price-include li::before {
   width: 40px;
   height: 40px;
 }
-.contacts__socials--items img {
+.contacts__socials--items amp-img {
   object-fit: cover;
 }
 
@@ -3860,7 +2237,7 @@ ul.card-item__price-include li::before {
   display: flex;
   gap: 12px;
 }
-.contacts__social-media img {
+.contacts__social-media amp-img {
   width: 42px;
   height: 42px;
   object-fit: cover;
@@ -3931,7 +2308,7 @@ ul.card-item__price-include li::before {
     min-width: auto;
   }
 }
-.section__contact-form .contact-form__form .container, .section__contact-form .contact-form__form .quicknav__navbar {
+.section__contact-form .contact-form__form .container{
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -3950,7 +2327,7 @@ ul.card-item__price-include li::before {
     font-size: 12px;
   }
 }
-.section__contact-form img {
+.section__contact-form amp-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -3979,10 +2356,12 @@ ul.card-item__price-include li::before {
   display: flex;
   align-items: flex-start;
   gap: 4px;
+  color: #898989;
 }
 
-.booking-info__about--place a {
-  text-decoration: underline;
+.booking-info__about--time p::before,
+.booking-info__about--place p::before {
+  opacity: 0.8;
 }
 
 .booking-info__about--time p::before {
@@ -4024,20 +2403,8 @@ ul.card-item__price-include li::before {
 .booking-form__form-field:has(.dropdown-btn) .dropdown-btn:has([type=checkbox]:checked) p::after {
   transform: rotate(0deg);
 }
-.booking-form__form-field:has(.dropdown-btn) label.h6, .booking-form__form-field:has(.dropdown-btn) .filters-modal label.filters-item__title, .filters-modal .booking-form__form-field:has(.dropdown-btn) label.filters-item__title,
-.booking-form__form-field:has(.dropdown-btn) p.h6,
-.booking-form__form-field:has(.dropdown-btn) .filters-modal p.filters-item__title,
-.filters-modal .booking-form__form-field:has(.dropdown-btn) p.filters-item__title {
-  color: #2F2F2F;
-}
-.booking-form__form-field label.h6, .booking-form__form-field .filters-modal label.filters-item__title, .filters-modal .booking-form__form-field label.filters-item__title,
-.booking-form__form-field p.h6,
-.booking-form__form-field .filters-modal p.filters-item__title,
-.filters-modal .booking-form__form-field p.filters-item__title {
-  color: #2F2F2F;
-}
 
-.booking-form__form-field--input .select-selected {
+/* .booking-form__form-field--input .select-selected {
   width: calc(100% - 30px);
   font-size: 16px;
   text-transform: lowercase;
@@ -4046,36 +2413,45 @@ ul.card-item__price-include li::before {
 .booking-form__form-field--input .select-items {
   font-size: 16px;
   text-transform: lowercase;
-}
-.booking-form__form-field--input:has([id*=people-amount]) .select-selected, .booking-form__form-field--input:has([id*=people-amount])::before {
+} */
+/* .booking-form__form-field--input:has([id*=people-amount]) .select-selected,  */
+/* .booking-form__form-field--input:has([id*=people-amount])::before {
   z-index: 8;
-}
-.booking-form__form-field--input:has([id*=people-amount]) .select-items {
+} */
+/* .booking-form__form-field--input:has([id*=people-amount]) .select-items {
   z-index: 7;
-}
-.booking-form__form-field--input:has([id*=kids-amount]) .select-selected, .booking-form__form-field--input:has([id*=kids-amount])::before {
+} */
+/* .booking-form__form-field--input:has([id*=kids-amount]) .select-selected, 
+.booking-form__form-field--input:has([id*=kids-amount])::before {
   z-index: 6;
 }
 .booking-form__form-field--input:has([id*=kids-amount]) .select-items {
   z-index: 5;
-}
-.booking-form__form-field--input:has([id*=country]) .select-items,
-.booking-form__form-field--input:has([id*=country]) .select-selected, .booking-form__form-field--input:has([id*=city]) .select-items,
+} */
+/* .booking-form__form-field--input:has([id*=country]) .select-items,
+.booking-form__form-field--input:has([id*=country]) .select-selected, 
+.booking-form__form-field--input:has([id*=city]) .select-items,
 .booking-form__form-field--input:has([id*=city]) .select-selected {
   text-transform: initial;
-}
-.booking-form__form-field--input:has([id*=country]) .select-items div:first-child, .booking-form__form-field--input:has([id*=city]) .select-items div:first-child {
+} */
+.booking-form__form-field--input:has([id*=country]) .select-items div:first-child, 
+.booking-form__form-field--input:has([id*=city]) .select-items div:first-child {
   color: #898989;
   background-color: #F3F3F3;
   cursor: disabled;
 }
-.booking-form__form-field--input:has([id*=country]) .select-selected, .booking-form__form-field--input:has([id*=country])::before, .booking-form__form-field--input:has([id*=city]) .select-selected, .booking-form__form-field--input:has([id*=city])::before {
+.booking-form__form-field--input:has([id*=country]) .select-selected, 
+.booking-form__form-field--input:has([id*=country])::before, 
+.booking-form__form-field--input:has([id*=city]) .select-selected, 
+.booking-form__form-field--input:has([id*=city])::before {
   z-index: 4;
 }
-.booking-form__form-field--input:has([id*=country]) .select-items, .booking-form__form-field--input:has([id*=city]) .select-items {
+.booking-form__form-field--input:has([id*=country]) .select-items, 
+.booking-form__form-field--input:has([id*=city]) .select-items {
   z-index: 3;
 }
-.booking-form__form-field--input:has([id*=city]) .select-selected, .booking-form__form-field--input:has([id*=city])::before {
+.booking-form__form-field--input:has([id*=city]) .select-selected, 
+.booking-form__form-field--input:has([id*=city])::before {
   z-index: 2;
 }
 .booking-form__form-field--input:has([id*=city]) .select-items {
@@ -4092,7 +2468,9 @@ ul.card-item__price-include li::before {
 .booking-form__form-field--input:has([id*=promocode]) input {
   text-transform: uppercase;
 }
-.booking-form__form-field--input:has([id*=promocode]) input::placeholder, .booking-form__form-field--input:has([id*=promocode]) .booking-form__form-field--input:has([id*=country]):has(.select-items .same-as-selected:first-child) input.select-selected, .booking-form__form-field--input:has([id*=country]):has(.select-items .same-as-selected:first-child) .booking-form__form-field--input:has([id*=promocode]) input.select-selected,
+.booking-form__form-field--input:has([id*=promocode]) input::placeholder, 
+.booking-form__form-field--input:has([id*=promocode]) .booking-form__form-field--input:has([id*=country]):has(.select-items .same-as-selected:first-child) input.select-selected, 
+.booking-form__form-field--input:has([id*=country]):has(.select-items .same-as-selected:first-child) .booking-form__form-field--input:has([id*=promocode]) input.select-selected,
 .booking-form__form-field--input:has([id*=promocode]) .booking-form__form-field--input:has([id*=city]):has(.select-items .same-as-selected:first-child) input.select-selected,
 .booking-form__form-field--input:has([id*=city]):has(.select-items .same-as-selected:first-child) .booking-form__form-field--input:has([id*=promocode]) input.select-selected {
   text-transform: initial;
@@ -4171,25 +2549,7 @@ ul.card-item__price-include li::before {
     padding: 0 60px;
   }
 }
-.quicknav__navbar.onscroll {
-  position: sticky;
-  top: 30px;
-  padding: 16px;
-  box-shadow: 0 0 15px 0 rgba(47, 47, 47, 0.1);
-}
-@media screen and (min-width: 541px) {
-  .quicknav__navbar.onscroll {
-    padding: 16px 60px;
-  }
-}
-.quicknav__navbar.onscroll .tags-group__link {
-  padding: 7px 10px;
-  font-size: 14px;
-}
-.quicknav__navbar .tags-group__link--active {
-  background-color: #FFD966;
-  border-color: #FFD966;
-}
+
 
 .section__quicknav .route__map,
 .section__quicknav .video-wrapper {
@@ -4265,17 +2625,34 @@ ul.card-item__price-include li::before {
 .about__schedule .schedule__wrapper-cards {
   gap: 0;
 }
-.about__schedule .schedule__card-item--header, .about__schedule .attractions .attractions__card-item--header, .attractions .about__schedule .attractions__card-item--header,
+.about__schedule .schedule__card-item--header, 
+.about__schedule .attractions .attractions__card-item--header, 
+.attractions .about__schedule .attractions__card-item--header,
 .about__schedule .schedule__display--table-header p:nth-child(1) {
   flex: 0 0 120px;
 }
-.about__schedule .card-item__cta.btn, .about__schedule .booking-tabs .btn[class$=form__submit-btn], .booking-tabs .about__schedule .btn[class$=form__submit-btn], .about__schedule .card-item__cta.menu__primary-list--item.dropdown-item, .about__schedule .booking-tabs [class$=form__submit-btn].menu__primary-list--item.dropdown-item, .booking-tabs .about__schedule [class$=form__submit-btn].menu__primary-list--item.dropdown-item, .about__schedule .card-item__cta.schedule__options-item, .about__schedule .booking-tabs [class$=form__submit-btn].schedule__options-item, .booking-tabs .about__schedule [class$=form__submit-btn].schedule__options-item, .about__schedule .card-item__cta.booking-form__submit-btn, .about__schedule .booking-tabs [class$=form__submit-btn].booking-form__submit-btn, .booking-tabs .about__schedule [class$=form__submit-btn].booking-form__submit-btn {
+.about__schedule .card-item__cta.btn, 
+.about__schedule .booking-tabs .btn[class$=form__submit-btn], 
+.booking-tabs .about__schedule .btn[class$=form__submit-btn], 
+.about__schedule .card-item__cta.menu__primary-list--item.dropdown-item, 
+.about__schedule .booking-tabs [class$=form__submit-btn].menu__primary-list--item.dropdown-item, 
+.booking-tabs .about__schedule [class$=form__submit-btn].menu__primary-list--item.dropdown-item, 
+.about__schedule .card-item__cta.schedule__options-item, 
+.about__schedule .booking-tabs [class$=form__submit-btn].schedule__options-item, 
+.booking-tabs .about__schedule [class$=form__submit-btn].schedule__options-item, 
+.about__schedule .card-item__cta.booking-form__submit-btn, 
+.about__schedule .booking-tabs [class$=form__submit-btn].booking-form__submit-btn, 
+.booking-tabs .about__schedule [class$=form__submit-btn].booking-form__submit-btn {
   width: auto;
   padding: 10px;
   text-transform: initial;
   letter-spacing: 0;
 }
-.about__schedule .card-item__cta.btn::after, .about__schedule .booking-tabs .btn[class$=form__submit-btn]::after, .booking-tabs .about__schedule .btn[class$=form__submit-btn]::after, .about__schedule .card-item__cta.menu__primary-list--item.dropdown-item::after, .about__schedule .booking-tabs [class$=form__submit-btn].menu__primary-list--item.dropdown-item::after, .booking-tabs .about__schedule [class$=form__submit-btn].menu__primary-list--item.dropdown-item::after, .about__schedule .card-item__cta.schedule__options-item::after, .about__schedule .booking-tabs [class$=form__submit-btn].schedule__options-item::after, .booking-tabs .about__schedule [class$=form__submit-btn].schedule__options-item::after, .about__schedule .card-item__cta.booking-form__submit-btn::after, .about__schedule .booking-tabs [class$=form__submit-btn].booking-form__submit-btn::after, .booking-tabs .about__schedule [class$=form__submit-btn].booking-form__submit-btn::after {
+.about__schedule .card-item__cta.btn::after, 
+.about__schedule .booking-tabs .btn[class$=form__submit-btn]::after, 
+.booking-tabs .about__schedule .btn[class$=form__submit-btn]::after, 
+.about__schedule .card-item__cta.menu__primary-list--item.dropdown-item::after, 
+.about__schedule .booking-tabs [class$=form__submit-btn].menu__primary-list--item.dropdown-item::after, .booking-tabs .about__schedule [class$=form__submit-btn].menu__primary-list--item.dropdown-item::after, .about__schedule .card-item__cta.schedule__options-item::after, .about__schedule .booking-tabs [class$=form__submit-btn].schedule__options-item::after, .booking-tabs .about__schedule [class$=form__submit-btn].schedule__options-item::after, .about__schedule .card-item__cta.booking-form__submit-btn::after, .about__schedule .booking-tabs [class$=form__submit-btn].booking-form__submit-btn::after, .booking-tabs .about__schedule [class$=form__submit-btn].booking-form__submit-btn::after {
   content: "Забронировать";
   width: auto;
   height: auto;
@@ -4407,56 +2784,6 @@ ul.card-item__price-include li::before {
   font-weight: 600;
 }
 
-.section__about-company img {
-  position: relative;
-  border-radius: 10px;
-  margin: 12px 12px 10px 0;
-  z-index: 0;
-}
-@media screen and (min-width: 541px) {
-  .section__about-company img {
-    float: left;
-    margin: 12px 12px 12px 0;
-  }
-}
-@media screen and (max-width: 540px) {
-  .section__about-company .par-wrapper {
-    position: relative;
-    box-shadow: 0 0 15px 0 rgba(47, 47, 47, 0.1);
-    padding: 0.1px 12px 12px;
-    border-radius: 10px;
-    margin: -50px 0 0 16px;
-    background-color: #FFFFFF;
-    z-index: 1;
-  }
-}
-
-.attractions .attractions__card-item {
-  height: 100%;
-  border-radius: 10px;
-}
-.attractions .splide__slide {
-  padding: 0;
-}
-.attractions .attractions__card-item--header {
-  flex: 1;
-}
-.attractions .card-item__info--type p {
-  align-items: flex-start;
-}
-.attractions ul.list li, .attractions ul.card-item__price-include li {
-  display: inline;
-}
-.attractions ul.list a, .attractions ul.card-item__price-include a {
-  border-bottom: 1px solid #2F2F2F;
-}
-.attractions ul.list .list-item--bold, .attractions ul.card-item__price-include .list-item--bold {
-  font-weight: 800;
-}
-.attractions .filters-item__label, .attractions .selected-filters-item__label {
-  background-color: #F3F3F3;
-}
-
 /* display first 4 tags, then 4 more */
 .filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .filters-item__list--item, .selected-filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .filters-item__list--item, .filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .selected-filters-item__list--item, .selected-filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .selected-filters-item__list--item {
   display: none;
@@ -4481,69 +2808,6 @@ ul.card-item__price-include li::before {
   order: 1000;
 }
 
-.section__cities .section__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-.section__cities .section__header img {
-  width: 196px;
-  height: auto;
-  order: 1;
-}
-.section__cities #brest img {
-  width: 148px;
-}
-.section__cities #brest img .h2 {
-  order: 2;
-}
-.section__cities ul.list, .section__cities ul.card-item__price-include {
-  display: block;
-  column-count: 3;
-}
-.section__cities ul.list li, .section__cities ul.card-item__price-include li {
-  display: block;
-  margin-bottom: 12px;
-}
-
-.city-item__card-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-top: 16px;
-}
-.city-item__card-wrapper .city-item__card {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: #FFFFFF;
-  border-radius: 24px;
-  box-shadow: 0 0 15px 0 rgba(47, 47, 47, 0.1);
-}
-.city-item__card-wrapper .city-item__card img {
-  width: 100%;
-  height: 100%;
-  max-height: 120px;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-  object-fit: cover;
-}
-.city-item__card-wrapper .city-item__card div:has(a) {
-  padding: 8px 18px 18px;
-}
-.city-item__card:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .city-item__card {
-  display: none;
-}
-
-.city-item__card-wrapper:has(.more-btn [type=checkbox]:checked) .city-item__card:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .city-item__card {
-  display: flex;
-}
-.city-item__card-wrapper:has(.more-btn [type=checkbox]:checked) .more-btn {
-  display: none;
-}
-
 .dropdown-content .list li, .dropdown-content ul.card-item__price-include li {
   display: block;
 }
@@ -4560,7 +2824,7 @@ ul.card-item__price-include li::before {
 .footer {
   margin-top: 30px;
 }
-.footer .container:first-child, .footer .quicknav__navbar:first-child {
+.footer .container:first-child {
   background-color: #F3F3F3;
 }
 
@@ -4758,28 +3022,7 @@ ul.card-item__price-include li::before {
     opacity: 1;
   }
 }
-.splide__slide {
-  min-height: 178px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 
-.splide__pagination {
-  position: relative;
-  bottom: 0;
-}
-.splide__pagination .splide__pagination__page {
-  height: 10px;
-  width: 10px;
-  margin: 0 6px;
-  background-color: #D9D9D9;
-  transform: none;
-  opacity: 1;
-}
-.splide__pagination .is-active {
-  background-color: #FFD966;
-  transform: none;
-}
 
 .modal {
   display: none;
@@ -4992,97 +3235,6 @@ ul.card-item__price-include li::before {
   background-image: url(../images/sprite.svg#icons--success);
 }
 
-.multi-range {
-  position: relative;
-  width: 100%;
-  height: 30px;
-  max-width: 700px;
-}
-
-.multi-range__track {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  height: 8px;
-  width: 100%;
-  background-color: transparent;
-  transform: translateY(-50%);
-  border-radius: 6px;
-}
-
-.multi-range__track-bg {
-  position: absolute;
-  top: 0;
-  left: 2.5%;
-  height: 100%;
-  width: 95%;
-  border-radius: 6px;
-  background-color: #F3F3F3;
-}
-
-.multi-range__fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #D9D9D9;
-}
-
-.multi-range__handle {
-  position: absolute;
-  top: 50%;
-  height: 26px;
-  width: 26px;
-  cursor: grab;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  border: 9px solid #FFD966;
-  transform: translateY(-50%);
-  box-shadow: 0 0 15px 0 rgba(166, 125, 0, 0.25);
-}
-.multi-range__handle:focus:first-child, .multi-range__handle:focus:last-child, .multi-range__handle:hover:first-child, .multi-range__handle:hover:last-child {
-  border: 10px solid #898989;
-}
-
-.multi-range__ticks {
-  height: 100%;
-  width: 95%;
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 2.5%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.multi-range__labels {
-  font-size: 14px;
-  position: absolute;
-  left: 2.5%;
-  min-width: 100%;
-  overflow: visible;
-  top: calc(100% + 0.5em);
-}
-.multi-range__labels > .label {
-  position: absolute;
-  display: none;
-  transform: translateX(-50%);
-}
-
-.range-slider-output {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 8px 12px;
-  font-size: 16px;
-  font-weight: 700;
-}
-.range-slider-output div {
-  display: flex;
-  gap: 6px;
-}
-
 .pwa-window {
   display: none;
 }
@@ -5145,27 +3297,1028 @@ ul.card-item__price-include li::before {
   background-color: #2F2F2F;
   color: #FFFFFF;
 }
-
-@media screen and (max-width: 540px) {
-  .section__factories .card-item__info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-  }
-  .section__factories .card-item__seats {
-    margin-top: 0;
-  }
-  .section__factories .card-item__info--time p {
-    align-items: flex-start;
-  }
-  .section__factories .card-item__dropdown-info {
-    margin-bottom: 0;
-  }
-  .section__factories .card-item__dropdown-info p {
-    margin-top: 0;
-  }
-  .attractions .attractions__card-item--header,
-  .attractions .card-item__info {
-    gap: 0;
-  }
+.i-amphtml-carousel-scroll[horizontal=true] {
+  padding-bottom: 0 !important;
 }
+    </style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    
+  </head>
+  <body>
+   
+      <header class="header">
+        <div class="container header__container--primary">
+          <nav class="menu__primary">
+            <a class="header__logo" href="/ekskursii.by/" title="Ekskursii.by">
+              <amp-img src="https://pda.ekskursii.by/images/sprite.svg#logo" height="40" layout="fixed-height" alt="logo"></amp-img>
+            </a>
+            <ul class="menu__primary-list">
+              <li class="menu__primary-list--item desktop-item">
+                <a href="#" class="menu__primary-list--link" title="Полная версия сайта"></a>
+              </li>
+              <li class="menu__primary-list--item phone-item modal-open">
+                <div class="menu__primary-list--link" id="phone-item">
+                  <amp-img src="images/sprite.svg#icons--socials--messengers" height="16" width="82" layout="intrinsic" alt="messengers" media="(min-width: 1201px)"></amp-img>
+                  <span>+375 29-756-66-65</span>
+                </div>
+              </li>
+              <li class="menu__primary-list--item dropdown-item lang-item custom-select">
+                <select class="menu__primary-list--link" id="lang-item" name="lang-item">
+                  <option value="ru">РУС</option>
+                  <option value="by">БЕЛ</option>
+                  <option value="en">EN</option>
+                </select>
+              </li>
+              <li class="menu__primary-list--item dropdown-item currency-item custom-select">
+                <select class="menu__primary-list--link" id="currency-item" name="currency-item">
+                  <option value="byn">BYN</option>
+                  <option value="rub">₽</option>
+                  <option value="euro">€</option>
+                </select>
+              </li>
+            </ul>
+        
+            <div class="burger" on="tap:sidebar.toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+
+      <amp-sidebar id="sidebar" layout="nodisplay" side="left" class="container header__container--mobile menu-opened">
+        <ul class="menu__mobile-list">
+          <li class="menu__mobile-list--item divided-item">
+            <a class="btn cta-primary modal-open" href="#" title="Оставить заявку"></a>
+            <div class="burger active" on="tap:sidebar.toggle" data-close-button-aria-label on="tap:sidebar.toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </li>
+          <li class="menu__mobile-list--item divided-item">
+            <a class="menu__mobile-list--link" href="#">Личный кабинет</a>
+          </li>
+          <li class="menu__mobile-list--item divided-item">
+            <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">График экскурсий</a>
+          </li>
+          <li class="menu__mobile-list--item">
+            <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Групповые экскурсии</a>
+          </li>
+          <li class="menu__mobile-list--item">
+            <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Индивидуальные экскурсии</a>
+          </li>
+          <li class="menu__mobile-list--item">
+            <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Корпоративные экскурсии</a>
+          </li>
+          <li class="menu__mobile-list--item divided-item">
+            <a class="menu__mobile-list--link" href="/ekskursii.by/schedule.html">Все экскурсии</a>
+          </li>
+          <li class="menu__mobile-list--item">
+            <a class="menu__mobile-list--link" href="#">Как заказать?</a>
+          </li>
+          <li class="menu__mobile-list--item">
+            <a class="menu__mobile-list--link" href="#">Частые вопросы</a>
+          </li>
+          <li class="menu__mobile-list--item divided-item">
+            <a class="menu__mobile-list--link" href="#">Все об экскурсиях</a>
+          </li>
+          <li class="menu__mobile-list--item">
+            <a class="menu__mobile-list--link" href="/ekskursii.by/contacts.html">Контакты</a>
+          </li>
+          <li class="menu__mobile-list--item">
+            <ul>
+              <li>
+                <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                  <amp-img src="images/sprite.svg#icons--socials--whatsapp" height="52" width="52" layout="fixed" alt="whatsapp"></amp-img>
+                </a>
+                <a href="https://telegram.me/ekskursii" title="telegram">
+                  <amp-img src="images/sprite.svg#icons--socials--telegram" height="52" width="52" layout="fixed" alt="telegram"></amp-img>
+                </a>
+                <a href="viber://add?number=375297566665" title="viber">
+                  <amp-img src="images/sprite.svg#icons--socials--viber" height="52" width="52" layout="fixed" alt="viber"></amp-img>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+       
+        
+      </amp-sidebar>
+
+      <div class="booking-modal modal">
+        <div class="modal-content">
+          <div class="modal__header">
+            <h2 class="h2">Быстрая заявка</h2>
+            <button class="btn modal-close">
+              <amp-img src="images/sprite.svg#icons--cross" alt="close" height="52" width="52" layout="fixed"></amp-img>
+            </button>
+          </div>
+          
+          <form class="booking-form" id="booking-group">
+            <div class="booking-info booking-info__profile">
+              <div class="booking-form__form-field" data-error-title="Введите ваше ФИО">
+                <label class="h6 hidden-label" for="name">ФИО</label>
+                <span class="booking-form__form-field--input">
+                  <input class="no-icon" type="text" name="name" id="name" placeholder="Введите ваше ФИО" required>
+                </span>
+              </div>
+              <div class="booking-form__form-field" data-error-title="Введите email или телефон">
+                <label class="h6 hidden-label" for="phone">Email или телефон</label>
+                <span class="booking-form__form-field--input">
+                  <input class="no-icon" type="text" name="phone" id="phone" placeholder="Email или телефон" required>
+                </span>
+              </div>
+              <div class="booking-form__form-field" data-error-title="Напишите пожелания по маршруту, программе, питанию...">
+                <label class="h6 hidden-label" for="question">Пожелания по маршруту, программе, питанию...</label>
+                <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="Пожелания по экскурсии" required></textarea>
+              </div>
+            </div>
+          
+            <div class="booking-info booking-info__rules" data-error-title="Поле должно быть отмечено">
+              <div class="booking-form__form-field hint-text">
+                <p>Нажимая кнопку «Отправить» Вы соглашаетесь с <a href="https://ekskursii.by/?Politika_konfidencialinosti" target="_blank">Политикой обработки персональных данных</a>.</p>
+              </div>
+            </div>
+          
+            <button class="btn booking-form__submit-btn" type="submit" value="Отправить"></button>
+        
+          </form>
+      
+        </div>
+      </div>
+      <div class="contacts-modal modal">
+        <div class="modal-content">
+          <div class="modal__header">
+            <h2 class="h2">Телефоны</h2>
+            <button class="btn modal-close">
+              <amp-img src="images/sprite.svg#icons--cross" alt="close" height="52" width="52" layout="fixed"></amp-img>
+            </button>
+          </div>
+          <div class="modal__main">
+            <a href="tel:+375173944913">+375 (17) 394-49-13</a>
+            <a href="tel:+375291903216">+375 (29) 190-32-16 (А1)</a>
+            <a href="tel:+375297566665">+375 (29) 756-66-65 (МТС)</a>
+          </div>
+          <div class="modal__footer">
+            <p>Мы в мессенджерах</p>
+            <div class="modal__footer--social-icons">
+              <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                <amp-img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp" height="52" width="52" layout="fixed"></amp-img>
+              </a>
+              <a href="https://telegram.me/ekskursii" title="telegram">
+                <amp-img src="images/sprite.svg#icons--socials--telegram" alt="telegram" height="52" width="52" layout="fixed"></amp-img>
+              </a>
+              <a href="viber://add?number=375297566665" title="viber">
+                <amp-img src="images/sprite.svg#icons--socials--viber" alt="viber" height="52" width="52" layout="fixed"></amp-img>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="validation-modal validation-modal--error modal">
+        <div class="modal-content">
+          <div class="modal__header">
+            <h2 class="h2">Заголовок</h2>
+            <button class="btn modal-close">
+              <amp-img src="images/sprite.svg#icons--cross" alt="close" height="52" width="52" layout="fixed"></amp-img>
+            </button>
+          </div>
+          <div class="modal__main">
+            Сообщение
+          </div>
+        </div>
+      </div>
+      <main class="main about">
+        <section class="main-search search-header">
+          <div class="container">
+            <div class="main-search__inner">
+              <input class="main-search__dropdown-btn" id="main-search__dropdown-btn" type="checkbox" checked>
+              <h2 class="h2">Поиск</h2>
+              <span class="main-search__dropdown-arrow" data-open-text="раскрыть" data-close-text="свернуть"></span>
+              <form class="search-form" id="search-form">
+                <div class="search-form__form-field">
+                  <label class="hidden-label" for="header-search-place">Место</label>
+                  <span class="search-form__form-field--input">
+                    <input type="text" name="place" id="header-search-place" placeholder="Место">
+                  </span>
+                </div>
+                <div class="search-form__form-field">
+                  <div class="search-form__form-field--date">
+                    <label class="hidden-label" for="header-search-date">Выберите дату</label>
+                    <span class="search-form__form-field--input">
+                      <input type="text" name="date" id="header-search-date" placeholder="Выберите дату">
+                    </span>
+                  </div>
+                </div>
+                <div class="search-form__form-field">
+                  <label class="hidden-label" for="header-search-types">Виды экскурсий</label>
+                  <span class="custom-select search-form__form-field--input">
+                    <select name="types" id="header-search-types">
+                      <option value="0">Групповые</option>
+                      <option value="1">Индивидуальные</option>
+                    </select>
+                  </span>
+                </div>
+                <button class="btn search-form__submit-btn">Искать</button>
+              </form>
+            </div>
+          </div>
+        </section>
+        <div class="search-modal modal">
+          <div class="modal-content">
+        
+            <button class="btn modal-close">
+              <amp-img src="images/sprite.svg#icons--cross" alt="close" height="52" width="52" layout="fixed"></amp-img>
+            </button>
+        
+            <form class="search-form" id="search-form_modal">
+              <div class="search-form__form-field">
+                <label class="hidden-label" for="main-search-place_modal">Место</label>
+                <span class="search-form__form-field--input">
+                  <input type="text" name="place" id="main-search-place_modal" minlength="3" placeholder="Место" required>
+                </span>
+              </div>
+              <a class="btn simple-btn arrow-btn modal-close" href="#" title=""></a>
+              <button class="btn search-form__submit-btn" value="Искать"></button>
+            </form>
+        
+            <div class="search-results">
+              <ul>
+                <li class="h6 search-results__item--header">Групповые экскурсии</li>
+                
+                <li class="search-results__item--info">
+                  <a href="https://pda.ekskursii.by/?Brest_Belovezhskaya_puscha_Mir_Minsk_2_dnya">
+                    <p class="h5"><span>Минск</span> вечерний</p>
+                    <div class="hint-text">
+                      <p class="hint-gray">
+                        Ближайшая: 18:00 05-Марта-2024 <br>
+                        Цена за человека 50 BYN
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li class="search-results__item--info">
+                  <a href="https://pda.ekskursii.by/?Brest_Belovezhskaya_puscha_Mir_Minsk_2_dnya">
+                    <p class="h5">Обзорная экскурсия по <span>Минск</span>у</p>
+                    <div class="hint-text">
+                      <p class="hint-gray">
+                        Ближайшая: 18:00 05-Марта-2024 <br>
+                        Цена за человека 50 BYN
+                      </p>
+                    </div>
+                  </a>
+                </li>
+        
+                <li class="h6 search-results__item--header">Все экскурсии</li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <section class="intro">
+          <div class="container">
+            <div class="intro__inner">
+              <h1 class="h2">Брестская крепость - Беловежская пуща</h1>
+              <h6 class="h6">Описание экскурсии</h6>
+            </div>
+          </div>
+        </section>
+        <section class="section__inner about__short-info">
+          <div class="container">
+            <div class="gallery-slider">
+              <amp-base-carousel height="172" layout="fixed-height">
+                <amp-img src="images/promo_slider_1.webp" height="172" layout="fixed-height"></amp-img>
+                <amp-img src="images/promo_slider_2.webp" height="172" layout="fixed-height"></amp-img>
+                <amp-img src="images/promo_slider_1.webp" height="172" layout="fixed-height"></amp-img>
+              </amp-base-carousel>
+          
+            </div>
+
+
+
+            <div class="short-info__inner">
+              <div class="card-item__info">
+                <div class="card-item__info--date">
+                  <p>21.02.2024<span>(ср)</span></p>
+                </div>
+                <div class="card-item__info--time">
+                  <p>10:00</p>
+                </div>
+                <div class="card-item__info--duration">
+                  <p>4 ч 30 мин</p>
+                </div>
+              </div>
+              <div class="card-item__additional-info">
+                <div class="card-item__additional-info--pickup-point">
+                  <p>Выезд: <a href="https://maps.app.goo.gl/WruWwwoDQ3f7eXnF8">Минск</a></p>
+                </div>
+              </div>
+              <a class="card-item__cta btn" href="#" title="Забронировать"></a>
+            </div>
+          </div>
+        
+          <div class="btn more-btn--slider more-btn simple-btn">+100 фото</div>
+        </section>
+        <section class="section section__quicknav section__about" id="qsection">
+          <div class="quicknav__navbar" id="qnavbar">
+            <h6 class="h6">Быстрая навигация</h6>
+            <ul class="quicknav__tags-group">
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#price" title="Цена">Цена</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#schedule" title="Цена">График</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#description" title="Цена">Описание</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#program" title="Цена">Программа</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#route" title="Цена">Маршрут</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#feedback" title="Цена">Отзывы</a>
+              </li>
+            </ul>
+          </div>
+        
+          <div class="container">
+            <div class="section__inner">
+              <section class="quicknav__section about__price" id="price">
+                <div class="price__header">
+                  <div>
+                    <h2 class="h2">Цена</h2>
+                    <p class="hint-text">
+                      <span class="hint-gray">за одного человека</span>
+                    </p>
+                  </div>
+                  
+                  <div class="schedule__options-item schedule__options-item--currency custom-select">
+                    <select id="currency" name="currency">
+                      <option value="byn">BYN</option>
+                      <option value="rub">₽</option>
+                      <option value="euro">€</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="price__tabs">
+                  <input id="panel-1-ctrl" class="panel-radios" type="radio" name="tab-radios" checked>
+                  <input id="panel-2-ctrl" class="panel-radios" type="radio" name="tab-radios">
+                  <ul class="tabs-list">
+                    <li id="li-for-panel-1">
+                      <label class="panel-label" for="panel-1-ctrl">Групповая</label>
+                    </li>
+                    <li id="li-for-panel-2">
+                      <label class="panel-label" for="panel-2-ctrl">Индивидуальная / Корпоративная</label>
+                    </li>
+                  </ul>
+                  <!-- THE PANELS -->
+                  <div class="panels">
+                    <div class="panels-wrapper">
+                      <div class="panel-1">
+                        <div class="panel__content">
+                          <div class="schedule__display schedule__display--table">
+                            <div class="schedule__card-item">
+                              <div class="schedule__card-item--header">
+                                <div class="card-item__info">
+                                  цена для взрослых
+                                </div>
+                              </div>
+                              <div class="card-item__price">
+                                <p>160 BYN</p>
+                              </div>
+                            </div>
+                            <div class="schedule__card-item">
+                              <div class="schedule__card-item--header">
+                                <div class="card-item__info">
+                                  цена для детей младше 18 лет
+                                </div>
+                              </div>
+                              <div class="card-item__price">
+                                <p>140 BYN</p>
+                              </div>
+                            </div>
+                          </div>
+        
+                          <div class="hint-text">
+                            <p class="hint-gray">
+                              Стоимость экскурсий утверждена в&nbsp;белорусских рублях и&nbsp;при оплате в&nbsp;других валютах итоговая стоимость может отличаться от&nbsp;указанной на&nbsp;сайте в&nbsp;зависимости от&nbsp;курса банка-эмитента карты (МИР, Visa, Mastercard).
+                            </p>
+                          </div>
+        
+                          <div class="price__price-include">
+                            <p class="h5">В стоимость групповой экскурсии включено:</p>
+                            <ul class="list">
+                              <li>услуги сопровождающего гида</li>
+                              <li>входные билеты по программе: Музей в Брестской крепости, обзорная экскурсия по Пуще с выходами, вольеры с дикими животными</li>
+                              <li>питание (комплексный обед)</li>
+                              <li>транспорт (автобус/микроавтобус тур. класса)</li>
+                              <li>экскурсионное обслуживание по программе</li>
+                            </ul>
+                          </div>
+        
+                        </div>
+                      </div>
+                      <div class="panel-2">
+                        <div class="panel__content">
+                          <div class="schedule__display schedule__display--table">
+                            <div class="schedule__card-item">
+                              <div class="schedule__card-item--header">
+                                <div class="card-item__info">
+                                  * цена <b>индивидуальной экскурсии</b> в&nbsp;группе 7&nbsp;человек
+                                </div>
+                              </div>
+                              <div class="card-item__price">
+                                <p>160 BYN</p>
+                              </div>
+                            </div>
+                            <div class="schedule__card-item">
+                              <div class="schedule__card-item--header">
+                                <div class="card-item__info">
+                                  * цена <b>корпоративной экскурсии</b> в&nbsp;группе 35&nbsp;человек
+                                </div>
+                              </div>
+                              <div class="card-item__price">
+                                <p>140 BYN</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="hint-text">
+                            <p class="hint-gray">
+                              Стоимость экскурсий утверждена в&nbsp;белорусских рублях и&nbsp;при оплате в&nbsp;других валютах итоговая стоимость может отличаться от&nbsp;указанной на&nbsp;сайте в&nbsp;зависимости от&nbsp;курса банка-эмитента карты (МИР, Visa, Mastercard).
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+        
+              <section class="quicknav__section about__schedule" id="schedule">
+                <h2 class="h2">График проведения групповой экскурсии</h2>
+                <div class="schedule__display schedule__display--table">
+                  <div class="schedule__display--table-header">
+                    <p>Дата</p>
+                    <p>Места</p>
+                  </div>
+        
+                  <div class="schedule__wrapper-cards">
+                    <!-- ITEM -->
+                    <div class="schedule__card-item inactive">
+                      <div class="schedule__card-item--header">
+                        <div class="card-item__info">
+                          <div class="card-item__info--date">
+                            <p>01.03.2024</p>
+                          </div>
+                          <div class="card-item__info--time">
+                            <p>10:00</p>
+                          </div>
+                          <div>
+                            <p>(среда)</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-item__seats">
+                        <p>нет мест</p>
+                      </div>
+                      <a class="card-item__cta btn" href="#" title="Забронировать"></a>
+                    </div>
+                    <!-- ITEM -->
+                    <div class="schedule__card-item">
+                      <div class="schedule__card-item--header">
+                        <div class="card-item__info">
+                          <div class="card-item__info--date">
+                            <p>22.03.2024</p>
+                          </div>
+                          <div class="card-item__info--time">
+                            <p>14:30</p>
+                          </div>
+                          <div>
+                            <p>(понедельник)</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-item__seats">
+                        <p>19+</p>
+                      </div>
+                      <a class="card-item__cta btn" href="#" title="Забронировать"></a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+        
+              <section class="quicknav__section about__description" id="description">
+                <h2 class="h2">Описание</h2>
+                <p class="about__description--paragraph">Всего за один день вы побываете в двух знаковых местах Беларуси - бресткой крепости-герое и старейшем заповеднике Европы, памятнике ЮНЕСКО - Беловежской пуще. В крепости вас ожидает экскурсия по территории комплекса и музей обороны. В пуще - автобусная экскурсия с остановками по древнему заповедному лесу, а также знакомство с дикими обитателями здешних мест в вольерах с животными.</p>
+                <div class="about__description--short-info">
+                  <div>
+                    <p>Маршрут</p>
+                    <p><a href="" title="">Минск</a> - <a href="" title="">Брест</a> - <a href="" title="">Каменюки Беловежская пуща</a> - <a href="" title="">Минск</a></p>
+                  </div>
+                  <div>
+                    <p>Протяженность</p>
+                    <p>800 км</p>
+                  </div>
+                  <div>
+                    <p>Длительность</p>
+                    <p>~ 16 ч 30 мин</p>
+                  </div>
+                  <div>
+                    <p>Протяженность</p>
+                    <p>800 км</p>
+                  </div>
+                  <div>
+                    <p>Язык</p>
+                    <p>русский</p>
+                  </div>
+                  <div>
+                    <p>Тематика</p>
+                    <p>
+                      <a href="" title="">Экологические</a>, 
+                      <a href="" title="">Для школьников</a>, 
+                      <a href="" title=""> Военно-патриотические</a>
+                    </p>
+                  </div>
+                  <div>
+                    <p>Вид</p>
+                    <p>Автобусно-пешеходная</p>
+                  </div>
+                </div>
+              </section>
+        
+              <section class="quicknav__section about__program" id="program">
+                <h2 class="h2">Программа</h2>
+        
+                <p class="h6">День 1</p>
+                <div class="program__wrapper">
+                  <div class="program__item">
+                    <p class="program__item--title">Сбор группы</p>
+                    <p><a href="" title="">Беларусь, г. Минск, ж/д вокзал, 1 этаж, центральный эскалатор, (ст. метро Площадь Ленина)</a></p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Переезд в Брест <span>(350 км)</span></p>
+                  </div>
+                  <div class="program__item">
+                    <div class="dropdown-btn">
+                      <p class="program__item--title">Брестский кафедральный собор Св.Симеона  (внешний осмотр)</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
+                    </div>
+                    <div class="dropdown-content">
+                      <p>Главный православный храм города, который является его настоящим украшением и гордостью. Построенный в 1865 году в псевдорусском стиле собор особенно величественно выглядит вечером в лучах ночной подсветки. Одной из главных святынь храма являются мощи преподобного мученика Афанасия, игумена Брестского, который несмотря на пытки и мучения не отрекся от православия. Сегодня памятник Афанасию Брестскому установлен возле кафедрального собора.</p>
+                      <a class="btn simple-secondary-btn arrow-btn modal-close" href="https://ekskursii.by/?dostoprimechatelnosti=16405_Brestskiy_kafedralnyy_sobor_Sv_Simeona" title="Подробнее"></a>
+                    </div>
+                  </div>
+                  <div class="program__item">
+                    <div class="dropdown-btn">
+                      <p class="program__item--title">Брестская крепость-герой</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
+                    </div>
+                    <div class="dropdown-content">
+                      <p>В ходе экскурсии перед Вами откроются страницы истории страшных дней начала войны, когда на рассвете 22 июня 1941 года гарнизон Брестской крепости первым принял на себя удары немецко-фашистских захватчиков и более месяца держал оборону в полном окружении. Уже на входе Вас встретит пронзительный голос Ю.Левитана с правительственным сообщением о нападении на Советский Союз войск немецко-фашистской Германии и песня А.Александрова «Священная война», ставшая гимном тех лет. 8 мая 1965 года крепости присвоено звание «крепость-герой».</p>
+                      <a class="btn simple-secondary-btn arrow-btn modal-close" href="https://ekskursii.by/?dostoprimechatelnosti=16369_Brestskaya_krepost_geroy" title="Подробнее"></a>
+                    </div>
+                  </div>
+                  <div class="program__item">
+                    <div class="dropdown-btn">
+                      <p class="program__item--title">Музей обороны Брестской крепости</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
+                    </div>
+                    <div class="dropdown-content">
+                      <p>Музей, экспозиция которого отражает не только военные действия 1941 года на территории крепости, но и историю ее строительства, а также крупнейшие сражения Великой отечественной войны и освобождение Беларуси от немецко-фашистских захватчиков. Музей обороны был открыт в 1956 году, с тех пор его площадь и экспозиция расширились в 2,5 раза, здесь представлены предметы из раскопок, произведения искусства, военные документы, фотографии. Наибольшую ценность среди всех предметов экспозиции имеют записи С.С. Смирнова с воспоминаниями участников обороны Брестской крепости.</p>
+                      <a class="btn simple-secondary-btn arrow-btn modal-close" href="https://ekskursii.by/?muzei=102007_Muzey_oborony_Brestskoy_kreposti" title="Подробнее"></a>
+                    </div>
+                  </div>
+                  <div class="program__item">
+                    <div class="dropdown-btn">
+                      <p class="program__item--title">Брестская церковь Св. Николая</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
+                    </div>
+                    <div class="dropdown-content">
+                      <p>Великолепный образец храма в ретроспективно-русском стиле, первое упоминание о котором относится еще к 1390 году. По легенде, церковь была построена на средства купца, который, увязнув в реке, смог освободиться, только дав обет построить храм в Бресте во имя Св. Николая. Церковь имела свою собственную длинную историю - так, здесь находилось одно из старейших в Беларуси кафедральных братств, действовал госпиталь.</p>
+                      <a class="btn simple-secondary-btn arrow-btn modal-close" href="https://ekskursii.by/?dostoprimechatelnosti=16406_Brestskaya_cerkov_Sv_Nikolaya" title="Подробнее"></a>
+                    </div>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Обед</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Переезд в Каменюки Беловежская пуща <span>(57&nbsp;км)</span></p>
+                  </div>
+                  <div class="program__item">
+                    <div class="dropdown-btn">
+                      <p class="program__item--title">Национальный парк «Беловежская пуща»</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
+                    </div>
+                    <div class="dropdown-content">
+                      <p>Один из крупнейших туристических центров Республики Беларусь. Он считается одним из старейших заповедников в мире, история которого насчитывает не одно столетие.</p>
+                      <p>Беловежская пуща является настоящим чудом света. Очутившись там, ни один человек не остается равнодушным. Старинные леса, огромное разнообразие животных, а также символ Беловежской пущи - зубры. По числу видов растений и животных национальный парк не имеет себе равных в Европе.</p>
+                      <p>Обзорная экскурсия по Беловежской пуще проводятся с остановками на маршруте для более подробного знакомства с отдельными объектами Национального парка. Продолжительность экскурсии около 1-1,5 часов. Во время экскурсии посетители знакомятся, в первую очередь, с особенностями первобытного леса, его растительным миром, могут полюбоваться различными ландшафтами, увидеть 600-летний дуб, 350-летнюю сосну, дуб-отшельник, место отдыха «Царская поляна», д. Лядские и многое другое.</p>
+                      <a class="btn simple-secondary-btn arrow-btn modal-close" href="https://ekskursii.by/?dostoprimechatelnosti=17958_Nacionalnyy_park_Belovezhskaya_puscha" title="Подробнее"></a>
+                    </div>
+                  </div>
+                  <div class="program__item">
+                    <div class="dropdown-btn">
+                      <p class="program__item--title">Демонстрационные вольеры с дикими животными</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
+                    </div>
+                    <div class="dropdown-content">
+                      <p>Демонстрационные вольеры расположены вблизи Музея природы Беловежской пущи. На площади около 20 га Вы увидите основные виды животных, обитающих в Беловежской пуще. Здесь вблизи можно увидеть и лесных жителей, угостить кусочком хлеба, яблоком или веточкой привыкших к посетителям зубров, лосей, кабанов, тарпановидную лошадь или медведя.</p>
+                      <a class="btn simple-secondary-btn arrow-btn modal-close" href="https://ekskursii.by/?dostoprimechatelnosti=16024_Demonstracionnye_volery_s_dikimi_zhivotnymi" title="Подробнее"></a>
+                    </div>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Переезд в Минск <span>(360&nbsp;км)</span></p>
+                  </div>
+        
+                </div>
+        
+                <p class="h6">День 2</p>
+                <div class="program__wrapper">
+                  <div class="program__item">
+                    <div class="dropdown-btn">
+                      <p class="program__item--title">Музей обороны Брестской крепости</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
+                    </div>
+                    <div class="dropdown-content">
+                      <p>Музей, экспозиция которого отражает не только военные действия 1941 года на территории крепости, но и историю ее строительства, а также крупнейшие сражения Великой отечественной войны и освобождение Беларуси от немецко-фашистских захватчиков. Музей обороны был открыт в 1956 году, с тех пор его площадь и экспозиция расширились в 2,5 раза, здесь представлены предметы из раскопок, произведения искусства, военные документы, фотографии. Наибольшую ценность среди всех предметов экспозиции имеют записи С.С. Смирнова с воспоминаниями участников обороны Брестской крепости.</p>
+                      <a class="btn simple-secondary-btn arrow-btn modal-close" href="https://ekskursii.by/?muzei=102007_Muzey_oborony_Brestskoy_kreposti" title="Подробнее"></a>
+                    </div>
+                  </div>
+                  <div class="program__item">
+                    <div class="dropdown-btn">
+                      <p class="program__item--title">Брестская церковь Св. Николая</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
+                    </div>
+                    <div class="dropdown-content">
+                      <p>Великолепный образец храма в ретроспективно-русском стиле, первое упоминание о котором относится еще к 1390 году. По легенде, церковь была построена на средства купца, который, увязнув в реке, смог освободиться, только дав обет построить храм в Бресте во имя Св. Николая. Церковь имела свою собственную длинную историю - так, здесь находилось одно из старейших в Беларуси кафедральных братств, действовал госпиталь.</p>
+                      <a class="btn simple-secondary-btn arrow-btn modal-close" href="https://ekskursii.by/?dostoprimechatelnosti=16406_Brestskaya_cerkov_Sv_Nikolaya" title="Подробнее"></a>
+                    </div>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Обед</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Переезд в Каменюки Беловежская пуща <span>(57&nbsp;км)</span></p>
+                  </div>
+                  <div class="program__item">
+                    <div class="dropdown-btn">
+                      <p class="program__item--title">Национальный парк «Беловежская пуща»</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
+                    </div>
+                    <div class="dropdown-content">
+                      <p>Один из крупнейших туристических центров Республики Беларусь. Он считается одним из старейших заповедников в мире, история которого насчитывает не одно столетие.</p>
+                      <p>Беловежская пуща является настоящим чудом света. Очутившись там, ни один человек не остается равнодушным. Старинные леса, огромное разнообразие животных, а также символ Беловежской пущи - зубры. По числу видов растений и животных национальный парк не имеет себе равных в Европе.</p>
+                      <p>Обзорная экскурсия по Беловежской пуще проводятся с остановками на маршруте для более подробного знакомства с отдельными объектами Национального парка. Продолжительность экскурсии около 1-1,5 часов. Во время экскурсии посетители знакомятся, в первую очередь, с особенностями первобытного леса, его растительным миром, могут полюбоваться различными ландшафтами, увидеть 600-летний дуб, 350-летнюю сосну, дуб-отшельник, место отдыха «Царская поляна», д. Лядские и многое другое.</p>
+                      <a class="btn simple-secondary-btn arrow-btn modal-close" href="https://ekskursii.by/?dostoprimechatelnosti=17958_Nacionalnyy_park_Belovezhskaya_puscha" title="Подробнее"></a>
+                    </div>
+                  </div>
+                  <div class="program__item">
+                    <div class="dropdown-btn">
+                      <p class="program__item--title">Демонстрационные вольеры с дикими животными</p>
+                      <input type="checkbox" name="dropdown-btn" readonly checked>
+                    </div>
+                    <div class="dropdown-content">
+                      <p>Демонстрационные вольеры расположены вблизи Музея природы Беловежской пущи. На площади около 20 га Вы увидите основные виды животных, обитающих в Беловежской пуще. Здесь вблизи можно увидеть и лесных жителей, угостить кусочком хлеба, яблоком или веточкой привыкших к посетителям зубров, лосей, кабанов, тарпановидную лошадь или медведя.</p>
+                      <a class="btn simple-secondary-btn arrow-btn modal-close" href="https://ekskursii.by/?dostoprimechatelnosti=16024_Demonstracionnye_volery_s_dikimi_zhivotnymi" title="Подробнее"></a>
+                    </div>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Переезд в Минск <span>(360&nbsp;км)</span></p>
+                  </div>
+        
+                </div>
+              </section>
+        
+              <section class="route" id="route">
+                <div class="route__inner">
+                  <h2 class="h2">Карта маршрута</h2>
+                  <div class="route__map">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.6724568648065!2d27.5322264!3d53.8842508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd01edd0b19d7%3A0xc0280ec2a33bc7b3!2sUlitsa%20Surazhskaya%2010%2C%20Minsk%2C%20Minskaja%20voblas%C4%87%20220089!5e0!3m2!1sen!2sby!4v1703255270678!5m2!1sen!2sby"
+                      width="100%"
+                      height="260"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                  </div>
+                </div>
+              </section>
+        
+              <a class="btn card-item__cta sticky-btn display-none" href="#" title="Забронировать"></a>
+            </div>
+          </div>
+        </section>
+
+        <section class="feedback" id="feedback">
+          <div class="container">
+            <div class="feedback__inner">
+              
+                <div class="container">
+
+                  <div class="feedback__inner--header">
+                    <h2 class="h2">Отзывы</h2>
+                    <a class="btn simple-secondary-btn arrow-btn arrow-btn" href="#" title="Все отзывы"></a>
+                  </div>
+
+                  
+
+                </div>
+
+                <amp-base-carousel height="258" layout="fixed-height" type="slides" role="region" aria-label="Carousel with arbitrary HTML content">
+                  <div class="splide__slide">
+                    <div class="splide__slide--wrapper">
+                      <div class="feedback__userinfo">
+                        <p class="feedback__userinfo--name">
+                          Яна <span class="feedback__userinfo--city separator-left">Москва</span>
+                        </p>
+                        <p class="feedback__userinfo--date">5 ноября 2023</p>
+                      </div>
+                      <div class="feedback__rateinfo">
+                        <p class="feedback__rateinfo--title">
+                          <a href="#" title="Мир - Несвиж">Беловежская пуща - Брестская крепость</a>
+                        </p>
+                        <div class="feedback__rateinfo--rate">9.0</div>
+                      </div>
+                      <div class="feedback__text">
+                        <p>
+                          Экскурсия очень понравилась, насыщенная и обширная
+                          программа, интересный маршрут, красивые замки и вся
+                          архитектура. Гид Татьяна рассказывала очень
+                          интересно, чувствовался профессионализм и полная
+                          отдача. Организация экскурсии была чёткой и
+                          слаженной.Экскурсия очень понравилась, насыщенная и обширная
+                          программа, интересный маршрут, красивые замки и вся
+                          архитектура. Гид Татьяна рассказывала очень
+                          интересно, чувствовался профессионализм и полная
+                          отдача. Организация экскурсии была чёткой и
+                          слаженной.Экскурсия очень понравилась, насыщенная и обширная
+                          программа, интересный маршрут, красивые замки и вся
+                          архитектура. Гид Татьяна рассказывала очень
+                          интересно, чувствовался профессионализм и полная
+                          отдача. Организация экскурсии была чёткой и
+                          слаженной.
+                        </p>
+                        <a class="btn simple-secondary-btn arrow-btn" href="#" title="читать отзыв"></a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="splide__slide">
+                    <div class="splide__slide--wrapper">
+                      <div class="feedback__userinfo">
+                        <p class="feedback__userinfo--name">
+                          Яна <span class="feedback__userinfo--city separator-left">Москва</span>
+                        </p>
+                        <p class="feedback__userinfo--date">5 ноября 2023</p>
+                      </div>
+                      <div class="feedback__rateinfo">
+                        <p class="feedback__rateinfo--title">
+                          <a href="#" title="Мир - Несвиж">Мир - Несвиж</a>
+                        </p>
+                        <div class="feedback__rateinfo--rate">9.0</div>
+                      </div>
+                      <div class="feedback__text">
+                        <p>
+                          Экскурсия очень понравилась, насыщенная и обширная
+                          программа.
+                        </p>
+                        <a class="btn simple-secondary-btn arrow-btn" href="#" title="читать отзыв"></a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="splide__slide">
+                    <div class="splide__slide--wrapper">
+                      <div class="feedback__userinfo">
+                        <p class="feedback__userinfo--name">
+                          Яна <span class="feedback__userinfo--city separator-left">Москва</span>
+                        </p>
+                        <p class="feedback__userinfo--date">5 ноября 2023</p>
+                      </div>
+                      <div class="feedback__rateinfo">
+                        <p class="feedback__rateinfo--title">
+                          <a href="#" title="Мир - Несвиж">Мир - Несвиж</a>
+                        </p>
+                        <div class="feedback__rateinfo--rate">9.0</div>
+                      </div>
+                      <div class="feedback__text">
+                        <p>
+                          Экскурсия очень понравилась, насыщенная и обширная
+                          программа, интересный маршрут, красивые замки и вся
+                          архитектура. Гид Татьяна рассказывала очень
+                          интересно, чувствовался профессионализм и полная
+                          отдача. Организация экскурсии была чёткой и
+                          слаженной.
+                        </p>
+                        <a class="btn simple-secondary-btn arrow-btn" href="#" title="читать отзыв"></a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                </amp-base-carousel>
+
+                
+            </div>
+
+          </div>
+
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__inner">
+            <div class="footer__main-nav">
+              <ul class="footer__nav-col">
+                <li class="footer__nav-item">
+                  <a href="#" title="Все экскурсии">Все экскурсии</a>
+                  <ul class="footer__subnav-col">
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Новогодние каникулы">Новогодние каникулы</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Групповые экскурсии">Групповые</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Индивидуальные экскурсии">Индивидуальные</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Корпоративные экскурсии">Корпоративные</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Школьные экскурсии">Школьные</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Бонусы и скидки">Бонусы и скидки</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Все об экскурсиях">Все об экскурсиях</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Города">Города</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Музеи">Музеи</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Знаковые места">Знаковые места</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Туризм в Беларуси">Туризм в Беларуси</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="О Беларуси">О Беларуси</a>
+                </li>
+              </ul>
+              <ul class="footer__nav-col">
+                <li class="footer__nav-item">
+                  <a href="#" title="Поиск">Поиск</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="График экскурсий">График экскурсий</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Личный кабинет">Личный кабинет</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Новости">Новости</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Частые вопросы">Частые вопросы</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Отзывы">Отзывы</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="О нас">О нас</a>
+                  <ul class="footer__subnav-col">
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Новогодние каникулы">Общая информация</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Награды">Награды</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Наши преимущества">Наши преимущества</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Сотрудники">Сотрудники</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Контакты">Контакты</a>
+                </li>
+                <li class="footer__nav-item">
+                  <ul class="footer__subnav-socials">
+                    <li class="footer__subnav-item">
+                      <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                        <amp-img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp" height="26" width="28" layout="fixed"></amp-img>
+                      </a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="https://telegram.me/ekskursii" title="telegram">
+                        <amp-img src="images/sprite.svg#icons--socials--telegram" alt="telegram" height="26" width="28" layout="fixed"></amp-img>
+                      </a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="viber://add?number=375297566665" title="viber">
+                        <amp-img src="images/sprite.svg#icons--socials--viber" alt="viber" height="26" width="28" layout="fixed"></amp-img>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__disclaimer">
+              <p class="footer__disclaimer--text">
+                Информация, размещенная на интернет-портале <a href="https://ekskursii.by/" title="ekskursii.by">Ekskursii.by</a>, не является предложением публичной оферты.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <a class="footer__logo" href="#">
+                <amp-img src="images/sprite.svg#logo" height="40" layout="flex-item" alt="logo"></amp-img>
+              </a>
+              <div class="footer__secondary-nav">
+                <div class="footer__secondary-nav-col">
+                  <a class="footer__secondary-nav-btn" href="#">Вход для гидов</a>
+                  <a class="footer__secondary-nav-btn" href="#">Вход для партнеров</a>
+                  <a class="footer__secondary-nav-btn--alt" href="#">Регистрация нового Агента</a>
+                </div>
+                <div class="footer__secondary-nav-col">
+                  <a class="footer__secondary-nav-link" href="https://sanatorii.by/" title="sanatorii.by" target="_blank">Санатории</a>
+                  <a class="footer__secondary-nav-link" href="https://beltur.by/" title="beltur.by" target="_blank">Базы отдыха</a>
+                  <a class="footer__secondary-nav-link" href="https://belhotel.by/" title="belhotel.by" target="_blank">Гостиницы</a>
+                  <a class="footer__secondary-nav-link" href="https://beltransfer.by/" title="beltransfer.by" target="_blank">Трансфер</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <div class="footer__payment">
+                <amp-img src="images/sprite.svg#icons--payment--master-card-secure-code" height="20" layout="fixed-height" alt="master card secure code"></amp-img>
+                <amp-img src="images/sprite.svg#icons--payment--mastercard" height="20" layout="fixed-height" alt="mastercard"></amp-img>
+                <amp-img src="images/sprite.svg#icons--payment--verified-visa" height="20" layout="fixed-height" alt="verified by visa"></amp-img>
+                <amp-img src="images/sprite.svg#icons--payment--visa" height="20" layout="fixed-height" alt="visa"></amp-img>
+                <amp-img src="images/sprite.svg#icons--payment--bepaid" height="20" layout="fixed-height" alt="bepaid"></amp-img>
+                <amp-img src="images/sprite.svg#icons--payment--erip" height="20" layout="fixed-height" alt="система ЕРИП"></amp-img>
+              </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <div class="footer__copyright">
+                <p>© Частное научно-производственное унитарное предприятие "Автоматизированные технологии туризма"</p>
+              </div>
+            </div>
+        </div>
+      </footer>
+      <a class="btn btn-up" href="#"></a>
+
+
+      
+
+
+      <amp-script width="1" height="1" layout="responsive" script="feedbackLongText"></amp-script>
+      <script type="text/plain" target="amp-script" id="feedbackLongText">
+        /* FEEDBACK LONG TEXT */
+let feedbackSlide = document.querySelectorAll('#feedback .splide__slide, .feedback .splide__slide');
+if (feedbackSlide) {
+  feedbackSlide.forEach((slide) => {
+    let feedbackText  = slide.querySelector('.feedback__text');
+    slide.offsetHeight - (feedbackText.offsetTop + feedbackText.offsetHeight) > 20
+    ? feedbackText.classList.remove('feedback__text--long')
+    : feedbackText.classList.add('feedback__text--long');
+  });
+}
+      </script>
+        
+      
+
+    
+    
+  </body>
+</html>

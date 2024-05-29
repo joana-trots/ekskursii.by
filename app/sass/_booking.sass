@@ -16,11 +16,13 @@
   display: flex
   align-items: flex-start
   gap: 4px
-  color: $dark-gray
+  // color: $dark-gray
+.booking-info__about--place a
+  text-decoration: underline
 .booking-info__about--time p::before,
 .booking-info__about--place p::before
   @extend %button-icon-20
-  opacity: 0.8
+  // opacity: 0.8
 .booking-info__about--time p::before
   background-image: $icon_time
 .booking-info__about--place p::before
@@ -53,7 +55,12 @@
       &:has([type="checkbox"]:checked) 
         p::after
           transform: rotate(0deg)
-
+    label.h6,
+    p.h6
+      color: $black
+  label.h6,
+  p.h6
+    color: $black
 .booking-form__form-field--input
   .select-selected
     width: calc(100% - 30px)
@@ -152,7 +159,6 @@
 .booking-form__submit-btn
   @extend .btn
   @extend .cta-primary
-  @extend .sticky-btn
   margin: 0 auto 30px
 
 .booking-form__form-field--pay

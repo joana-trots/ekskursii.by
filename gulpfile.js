@@ -59,7 +59,8 @@ function styles() {
         .pipe(autoprefixer({ 
             overrideBrowserslist: ['last 10 version']
         }))
-        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(sass({ outputStyle: 'expanded' }))
+        // compressed
         .pipe(concat('styles.min.css'))
         .pipe(dest('app/css'))
         .pipe(browserSync.stream())
