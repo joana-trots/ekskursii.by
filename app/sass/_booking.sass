@@ -194,8 +194,6 @@ input[type="checkbox"]
       border: 1px solid $red
     &::before
       @extend %error-message
-      top: -20px
-      left: 0
   &:has(.booking-form__form-field--radio):has(input:user-invalid)
     &::before
       display: none
@@ -204,3 +202,7 @@ input[type="checkbox"]
       gap: 12px
       &::after
         @extend %error-message
+  &:has([type="checkbox"]:user-invalid)
+    &::before
+      top: -20px
+      left: 0
