@@ -4367,13 +4367,9 @@ input[type=checkbox] {
 }
 .about__program .program__item .dropdown-content ul.list, .about__program .program__item .dropdown-content ul.card-item__price-include {
   padding-top: 12px;
-  color: #898989;
 }
 .about__program .program__item .dropdown-content ul.list b, .about__program .program__item .dropdown-content ul.card-item__price-include b {
   color: #2F2F2F;
-}
-.about__program .program__item .dropdown-content p {
-  color: #898989;
 }
 .about__program .program__item .dropdown-content p b {
   color: #2F2F2F;

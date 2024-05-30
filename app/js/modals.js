@@ -20,7 +20,7 @@ modalOpenBtn.forEach((item) => {
       filtersModal.style.display = "flex";
       !isModalFilter && (isModalFilter = true) && multiRange();
     }
-    if (item.classList.contains('intro__btn--primary')) {
+    if (item.classList.contains('intro__btn--primary') || item.classList.contains('cta-primary')) {
       bookingModal.style.display = "flex";
     }
     if (item.classList.contains('booking-form__submit-btn') || item.classList.contains('booking-price')) {
