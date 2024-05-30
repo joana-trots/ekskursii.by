@@ -46,24 +46,24 @@ if (feedbackSlide) {
 
 
 
-/* PWA WINDOW */
-document.addEventListener("DOMContentLoaded", () => {
-  let pwaModal = document.querySelector('.pwa-window'),
-      pwaBttns = document.querySelectorAll('.pwa-window .btn');
+// /* PWA WINDOW */
+// document.addEventListener("DOMContentLoaded", () => {
+//   let pwaModal = document.querySelector('.pwa-window'),
+//       pwaBttns = document.querySelectorAll('.pwa-window .btn');
 
-  pwaModal.classList.add('active');
-  document.body.classList.add('overlay', 'overflow-hidden');
+//   pwaModal.classList.add('active');
+//   document.body.classList.add('overlay', 'overflow-hidden');
   
-  pwaBttns.forEach((item) => {
-    item.onclick = function() {
-      pwaModal.classList.remove('active');
-      document.body.classList.remove('overlay', 'overflow-hidden');
-    }
-  });
-  if (document.body.classList.contains('overlay') === true) {
-    document.body.onclick = function() {
-      pwaModal.classList.remove('active');
-      document.body.classList.remove('overlay', 'overflow-hidden');
-    }
-  }
-});
+//   pwaBttns.forEach((item) => {
+//     item.onclick = function() {
+//       pwaModal.classList.remove('active');
+//       document.body.classList.remove('overlay', 'overflow-hidden');
+//     }
+//   });
+//   if (document.body.classList.contains('overlay') === true) {
+//     document.body.onclick = function() {
+//       pwaModal.classList.remove('active');
+//       document.body.classList.remove('overlay', 'overflow-hidden');
+//     }
+//   }
+// });
