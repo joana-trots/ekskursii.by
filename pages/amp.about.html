@@ -2140,15 +2140,8 @@ ul.card-item__price-include li::before {
   flex: 0 0 24px;
 }
 .feedback__text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  line-clamp: 4;
-  box-orient: vertical;
+  overflow: auto;
+  
 }
 .feedback__text a {
   display: none;
@@ -2788,23 +2781,24 @@ ul.card-item__price-include li::before {
   font-weight: 600;
 }
 
-/* display first 4 tags, then 4 more */
-.filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .filters-item__list--item, .selected-filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .filters-item__list--item, .filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .selected-filters-item__list--item, .selected-filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .selected-filters-item__list--item {
+
+
+.quicknav__section.about__schedule .schedule__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, 
+.quicknav__section.about__schedule .attractions .attractions__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, 
+.attractions .quicknav__section.about__schedule .attractions__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, 
+.quicknav__section.about__schedule .attractions .schedule__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, 
+.attractions .quicknav__section.about__schedule .schedule__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, 
+.quicknav__section.about__schedule .attractions .attractions__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, 
+.attractions .quicknav__section.about__schedule .attractions__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item {
   display: none;
 }
-
-.filters-item__list:has(.more-btn [type=checkbox]:checked) .filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .filters-item__list--item, .selected-filters-item__list:has(.more-btn [type=checkbox]:checked) .filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .filters-item__list--item, .filters-item__list:has(.more-btn [type=checkbox]:checked) .selected-filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .filters-item__list--item, .selected-filters-item__list:has(.more-btn [type=checkbox]:checked) .selected-filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .filters-item__list--item, .filters-item__list:has(.more-btn [type=checkbox]:checked) .filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .selected-filters-item__list--item, .selected-filters-item__list:has(.more-btn [type=checkbox]:checked) .filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .selected-filters-item__list--item, .filters-item__list:has(.more-btn [type=checkbox]:checked) .selected-filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .selected-filters-item__list--item, .selected-filters-item__list:has(.more-btn [type=checkbox]:checked) .selected-filters-item__list--item:has(+ .more-btn, + [class$=tags-group] [class$=tags-group--tag].more-btn) ~ .selected-filters-item__list--item {
-  display: flex;
-}
-.filters-item__list:has(.more-btn [type=checkbox]:checked) .more-btn, .selected-filters-item__list:has(.more-btn [type=checkbox]:checked) .more-btn {
-  display: none;
-}
-
-.quicknav__section.about__schedule .schedule__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, .quicknav__section.about__schedule .attractions .attractions__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, .attractions .quicknav__section.about__schedule .attractions__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, .quicknav__section.about__schedule .attractions .schedule__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, .attractions .quicknav__section.about__schedule .schedule__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, .quicknav__section.about__schedule .attractions .attractions__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, .attractions .quicknav__section.about__schedule .attractions__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item {
-  display: none;
-}
-
-.quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .schedule__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, .quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .attractions .attractions__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, .attractions .quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .attractions__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, .quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .attractions .schedule__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, .attractions .quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .schedule__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, .quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .attractions .attractions__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, .attractions .quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .attractions__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item {
+.quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .schedule__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, 
+.quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .attractions .attractions__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, 
+.attractions .quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .attractions__card-item:has(+ .dropdown-text-btn) ~ .schedule__card-item, 
+.quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .attractions .schedule__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, 
+.attractions .quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .schedule__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, 
+.quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .attractions .attractions__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item, 
+.attractions .quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .attractions__card-item:has(+ .dropdown-text-btn) ~ .attractions__card-item {
   display: flex;
 }
 .quicknav__section.about__schedule:has(.dropdown-text-btn [type=checkbox]:checked) .more-btn {
@@ -2812,7 +2806,8 @@ ul.card-item__price-include li::before {
   order: 1000;
 }
 
-.dropdown-content .list li, .dropdown-content ul.card-item__price-include li {
+.dropdown-content .list li, 
+.dropdown-content ul.card-item__price-include li {
   display: block;
 }
 .dropdown-content .phone-item .menu__primary-list--link::after {
@@ -4045,7 +4040,7 @@ ul.card-item__price-include li::before {
 
                 </div>
 
-                <amp-base-carousel height="" layout="fixed-height" type="slides" role="region" aria-label="Carousel with arbitrary HTML content">
+                <amp-base-carousel height="258" layout="fixed-height" type="slides" role="region" aria-label="Carousel with arbitrary HTML content">
                   <div class="splide__slide">
                     <div class="splide__slide--wrapper">
                       <div class="feedback__userinfo">
@@ -4305,7 +4300,7 @@ ul.card-item__price-include li::before {
 
 
       <amp-script width="1" height="1" layout="responsive" script="feedbackLongText"></amp-script>
-      <script  target="amp-script" id="feedbackLongText"> 
+      <!-- <script  target="amp-script" id="feedbackLongText"> 
         let feedbackSlide = document.querySelectorAll('.feedback .splide__slide');
         if (feedbackSlide) {
           feedbackSlide.forEach((slide) => {
@@ -4315,7 +4310,7 @@ ul.card-item__price-include li::before {
             : feedbackText.classList.add('feedback__text--long');
           });
         }
-      </script>
+      </script> -->
         
       
 
