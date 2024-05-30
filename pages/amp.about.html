@@ -1143,6 +1143,7 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   display: flex;
   height: 40px;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 0 16px;
   background-color: rgba(243, 243, 243, 0.6);
@@ -2047,21 +2048,25 @@ ul.card-item__price-include li::before {
 .feedback > .container{
   padding: 0;
 }
+.feedback .splide__slide {
+  position: relative;
+  height: auto;
+  min-height: 178px;
+}
 .feedback .splide__slide--wrapper {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  min-height: 178px;
   border-radius: 24px;
+  margin: 10px 20px;
   padding: 20px;
   box-shadow: 0 0 15px 0 rgba(47, 47, 47, 0.1);
-  margin: 22px 10px;
+  height: calc(100% - 20px);
 }
 .feedback .i-amphtml-carousel-scroll {
   display: flex;
   align-items: stretch;
 }
-
 .feedback__inner--header,
 .feedback__userinfo {
   justify-content: space-between;
@@ -2134,7 +2139,7 @@ ul.card-item__price-include li::before {
   background-image: url(../images/sprite.svg#icons--like-green);
   flex: 0 0 24px;
 }
-.feedback .splide__slide .feedback__text {
+.feedback__text {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -moz-box;
@@ -2145,13 +2150,13 @@ ul.card-item__price-include li::before {
   line-clamp: 4;
   box-orient: vertical;
 }
-.feedback .splide__slide .feedback__text a {
+.feedback__text a {
   display: none;
 }
-.feedback .splide__slide .feedback__text.feedback__text--long {
+.feedback__text--long {
   margin-bottom: 30px;
 }
-.feedback .splide__slide .feedback__text.feedback__text--long a {
+.feedback__text--long a {
   display: flex;
   position: absolute;
   right: 20px;
@@ -2733,15 +2738,14 @@ ul.card-item__price-include li::before {
   display: flex;
   margin: 10px 0 10px auto;
 }
-.about__program .program__item .dropdown-content ul.list, .about__program .program__item .dropdown-content ul.card-item__price-include {
+.about__program .program__item .dropdown-content ul.list, 
+.about__program .program__item .dropdown-content ul.card-item__price-include {
   padding-top: 12px;
-  color: #898989;
+  /* color: #898989; */
 }
-.about__program .program__item .dropdown-content ul.list b, .about__program .program__item .dropdown-content ul.card-item__price-include b {
+.about__program .program__item .dropdown-content ul.list b, 
+.about__program .program__item .dropdown-content ul.card-item__price-include b {
   color: #2F2F2F;
-}
-.about__program .program__item .dropdown-content p {
-  color: #898989;
 }
 .about__program .program__item .dropdown-content p b {
   color: #2F2F2F;
@@ -4041,7 +4045,7 @@ ul.card-item__price-include li::before {
 
                 </div>
 
-                <amp-base-carousel height="258" layout="fixed-height" type="slides" role="region" aria-label="Carousel with arbitrary HTML content">
+                <amp-base-carousel height="" layout="fixed-height" type="slides" role="region" aria-label="Carousel with arbitrary HTML content">
                   <div class="splide__slide">
                     <div class="splide__slide--wrapper">
                       <div class="feedback__userinfo">
@@ -4131,8 +4135,6 @@ ul.card-item__price-include li::before {
                       </div>
                     </div>
                   </div>
-                  
-                  
                 </amp-base-carousel>
 
                 
@@ -4303,17 +4305,16 @@ ul.card-item__price-include li::before {
 
 
       <amp-script width="1" height="1" layout="responsive" script="feedbackLongText"></amp-script>
-      <script type="text/plain" target="amp-script" id="feedbackLongText">
-        /* FEEDBACK LONG TEXT */
-let feedbackSlide = document.querySelectorAll('#feedback .splide__slide, .feedback .splide__slide');
-if (feedbackSlide) {
-  feedbackSlide.forEach((slide) => {
-    let feedbackText  = slide.querySelector('.feedback__text');
-    slide.offsetHeight - (feedbackText.offsetTop + feedbackText.offsetHeight) > 20
-    ? feedbackText.classList.remove('feedback__text--long')
-    : feedbackText.classList.add('feedback__text--long');
-  });
-}
+      <script  target="amp-script" id="feedbackLongText"> 
+        let feedbackSlide = document.querySelectorAll('.feedback .splide__slide');
+        if (feedbackSlide) {
+          feedbackSlide.forEach((slide) => {
+            let feedbackText  = slide.querySelector('.feedback__text');
+            slide.offsetHeight - (feedbackText.offsetTop + feedbackText.offsetHeight) > 20
+            ? feedbackText.classList.remove('feedback__text--long')
+            : feedbackText.classList.add('feedback__text--long');
+          });
+        }
       </script>
         
       
