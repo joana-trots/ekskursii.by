@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search-select</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.min.css">
 </head>
 
 <body>
@@ -12,7 +16,7 @@
     <div class="form-select-chosen">
         <input class="form-select-chosen__input" type="hidden" name="" value="0" readonly>
         <div class="form-select-chosen__output-wrap">
-            <div class="form-select-chosen__output">...</div>
+            <div class="form-select-chosen__output">Страна</div>
         </div>
         <div class="form-select-chosen__search">
             <input class="form-select-chosen__search-input" type="text">
@@ -98,150 +102,7 @@
         </div>
     </div>
 
-    <script>
-        document.querySelectorAll('.form-select-chosen').forEach(element => {
-            try {
-                let isVisible = isSync = false;
-
-                const input = element.querySelector('.form-select-chosen__input');
-                const output = element.querySelector('.form-select-chosen__output');
-                const outputWrap = element.querySelector('.form-select-chosen__output-wrap');
-                const blockSearch = element.querySelector('.form-select-chosen__search');
-                const inputSearch = element.querySelector('.form-select-chosen__search-input');
-                const blockOptions = element.querySelector('.form-select-chosen__options');
-
-                !input && console.error('not .form-select-chosen__input: ', element);
-                !output && console.error('not .form-select-chosen__output: ', element);
-                !outputWrap && console.error('not .form-select-chosen__output-wrap: ', element);
-                !blockSearch && console.error('not .form-select-chosen__search: ', element);
-                !inputSearch && console.error('not .form-select-chosen__search-input: ', element);
-                !blockOptions && console.error('not .form-select-chosen__options: ', element);
-
-                outputWrap.addEventListener('click', () => {
-                    blockSearch.classList.toggle('is-visible');
-                    isVisible = !isVisible;
-                    isVisible && (isSync = true);
-                });
-
-                document.onclick = function (e) {
-                    if (isVisible && !isSync && e.target.closest('.form-select-chosen__search') !== blockSearch) {
-                        isVisible = false;
-                        blockSearch.classList.remove('is-visible');
-                        inputSearch.value = '';
-                        searchValues('');
-                    };
-                    isSync = false;
-                };
-
-                inputSearch.addEventListener('input', event => {
-                    searchValues(event.target.value);
-                });
-
-                function searchValues(str) {
-                    let count = 0;
-                    blockOptions.querySelectorAll('.form-select-chosen__option').forEach(element => {
-                        if (element.textContent.toLowerCase().startsWith(str.toLowerCase())) {
-                            element.style.display = "";
-                            count++;
-                        } else {
-                            element.style.display = "none";
-                        }
-                    });
-
-                    count ? blockOptions.classList.remove('is-empty') : blockOptions.classList.add('is-empty');
-                }
-
-                function addEvent(element) {
-                    element.classList.contains('form-select-chosen__option') && element.addEventListener('click', function (event) {
-                        isVisible = false;
-                        blockSearch.classList.remove('is-visible');
-                        input.value = element.getAttribute('data-value');
-                        output.textContent = element.textContent;
-                        blockOptions.querySelectorAll('.form-select-chosen__option').forEach(element => element.classList.remove('is-selected'));
-                        element.classList.add('is-selected');
-
-                        inputSearch.value = '';
-                        searchValues('');
-
-                        input.dispatchEvent(new Event('change'));
-                    });
-                }
-
-                blockOptions.querySelectorAll('.form-select-chosen__option').forEach(element => addEvent(element));
-
-                (new MutationObserver(function (mutationsList, observer) {
-                    for (let mutation of mutationsList) {
-                        if (mutation.type === 'childList') {
-                            mutation.addedNodes.forEach(element => addEvent(element));
-                            input.value = 0;
-                            output.textContent = '...';
-                        }
-                    }
-                })).observe(blockOptions, { childList: true });
-            } catch (err) {
-                console.log(err);
-            }
-        });
-    </script>
-
-    <style>
-        .form-select-chosen {
-            position: relative;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .form-select-chosen__output-wrap {
-            border: 1px solid;
-        }
-
-        .form-select-chosen__output-wrap:has(+ .form-select-chosen__search.is-visible) {
-            border-bottom: none;
-        }
-
-        .form-select-chosen__output {}
-
-        .form-select-chosen__search {
-            box-sizing: border-box;
-            position: absolute;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            padding: .25rem;
-            border: 1px solid;
-            border-top: none;
-            background-color: white;
-            gap: .25rem;
-        }
-
-        .form-select-chosen__search:not(.is-visible) {
-            display: none;
-        }
-
-        .form-select-chosen__search-input {
-            /* width: max-content; */
-        }
-
-        .form-select-chosen__options {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            max-height: 20rem;
-            overflow: overlay;
-        }
-
-        .form-select-chosen__option {}
-
-        .form-select-chosen__option:hover {
-            background-color: rgb(37, 85, 85);
-            color: white;
-        }
-
-        .form-select-chosen__option.is-selected {
-            background-color: rgb(21, 43, 43);
-            color: white;
-        }
-    </style>
+<script src="js/main.min.js"></script>
 </body>
 
 </html>

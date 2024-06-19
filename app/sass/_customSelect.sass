@@ -75,3 +75,270 @@
     .select-items
         width: max-content
         text-transform: lowercase
+
+
+
+.form-select 
+    position: relative
+    cursor: pointer
+    user-select: none
+.form-select__output-wrap 
+    box-sizing: border-box
+    border: 0
+    background-color: #FFFFFF
+.form-select__output-wrap::after 
+    position: absolute
+    content: ""
+    display: inline
+    width: 18px
+    height: 18px
+    background-repeat: no-repeat
+    background-position: center
+    right: 18px
+    top: 14px
+    background-image: url('https://pda.ekskursii.by/pda/images/sprite.svg#icons--dropdown-arrow_black')
+    transform: rotate(360deg)
+    transition: transform 0.3s
+.form-select__output-wrap:has(+ .form-select__options.is-visible)::after 
+    transform: rotate(180deg)
+    transition: transform 0.3s
+.form-select__output-wrap:has(+ .form-select-chosen__search.is-visible) 
+    border-bottom: 0
+.form-select__output 
+    box-sizing: border-box
+    width: 100%
+    height: 100%
+    border: 1px solid #898989
+    border-radius: 24px
+    padding: 14px 18px
+    outline: 0
+    font-family: "Mulish", sans-serif
+    font-size: 16px
+    color: #2F2F2F
+.form-select__output-wrap:has(+ .form-select__options.is-visible) .form-select__output 
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+.form-select__options 
+    box-sizing: border-box
+    position: absolute
+    width: 100%
+    max-height: 400px
+    display: flex
+    flex-direction: column
+    margin-top: -1px
+    padding: 0
+    list-style: none
+    border: 1px solid #898989
+    border-bottom-left-radius: 12px
+    border-bottom-right-radius: 12px
+    background-color: #fff  
+    font-family: "Mulish", sans-serif
+    font-size: 16px
+    color: #2F2F2F
+    clip-path: stroke-box
+    overflow: auto
+.form-select__options:not(.is-visible) 
+    display: none
+.form-select__option 
+    padding: 8px
+    border-top: 1px solid #F3F3F3
+    background-color: #fff
+    border-bottom-left-radius: 12px
+    border-bottom-right-radius: 12px
+.form-select__option:hover 
+    background-color: #FFD966
+    color: #2F2F2F
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+.form-select__option.is-selected 
+    background-color: #FFD966
+    color: #2F2F2F
+    border-radius: 0
+.form-select__option.default 
+    background-color: #f3f3f3
+    color: #898989
+    border-radius: 0
+    cursor: default
+
+
+
+.form-select-chosen 
+    position: relative
+    cursor: pointer
+    user-select: none
+.form-select-chosen__output-wrap 
+    box-sizing: border-box
+    padding: 14px 18px
+    border: 1px solid #898989
+    border-radius: 24px
+    background-color: #FFFFFF
+.form-select-chosen__output-wrap:has(+ .form-select-chosen__search.is-visible) 
+    position: relative
+    margin-bottom: -20px
+    z-index: 1
+.form-select-chosen__output 
+    font-family: "Mulish", sans-serif
+    font-size: 16px
+    color: #2F2F2F
+.form-select-chosen__output::after 
+    position: absolute
+    content: ""
+    display: inline
+    width: 18px
+    height: 18px
+    background-repeat: no-repeat
+    background-position: center
+    right: 18px
+    background-image: url('https://pda.ekskursii.by/pda/images/sprite.svg#icons--dropdown-arrow_black')
+    transform: rotate(360deg)
+    transition: transform 0.3s
+.form-select-chosen__output-wrap:has(+ .form-select-chosen__search.is-visible) .form-select-chosen__output::after 
+    transform: rotate(180deg)
+    transition: transform 0.3s
+.form-select-chosen__search 
+    box-sizing: border-box
+    position: absolute
+    width: 100%
+    max-height: 400px
+    display: flex
+    flex-direction: column
+    border: 1px solid #898989
+    border-top: none
+    border-bottom-left-radius: 12px
+    border-bottom-right-radius: 12px
+    background-color: #fff
+    clip-path: stroke-box
+    overflow: auto
+    z-index: -1
+.form-select-chosen__search::before 
+    content: ""
+    position: absolute
+    left: 18px
+    top: 35px
+    display: block
+    width: 18px
+    height: 18px
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    background-image: url('https://pda.ekskursii.by/pda/images/sprite.svg#icons--search')
+    z-index: 1
+.form-select-chosen__search:not(.is-visible) 
+    display: none
+.form-select-chosen__search-input 
+    position: relative
+    padding: 8px 8px 8px 32px
+    margin: 28px 8px 8px
+    border: 1px solid #f3f3f3
+    outline: none
+    border-radius: 24px
+    width: auto
+.form-select-chosen__search-input:focus 
+    border: 1px solid #898989
+.form-select-chosen__options 
+    margin: 0
+    padding: 0
+    list-style-type: none
+    overflow: overlay
+    font-family: "Mulish", sans-serif
+    font-size: 16px
+.form-select-chosen__option 
+    padding: 8px
+    border-top: 1px solid #F3F3F3
+    border-bottom-left-radius: 12px
+    border-bottom-right-radius: 12px
+.form-select-chosen__option:hover 
+    background-color: #FFD966
+    color: #2F2F2F
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+.form-select-chosen__option.is-selected 
+    background-color: #FFD966
+    color: #2F2F2F
+    border-radius: 0
+
+
+
+
+.form-select-search 
+    position: relative
+    cursor: pointer
+    user-select: none
+.form-select__output-wrap 
+    box-sizing: border-box
+    border: 0
+    background-color: #FFFFFF
+.form-select__output-wrap::after 
+    position: absolute
+    content: ""
+    display: inline
+    width: 18px
+    height: 18px
+    background-repeat: no-repeat
+    background-position: center
+    right: 18px
+    top: 14px
+    background-image: url('https://pda.ekskursii.by/pda/images/sprite.svg#icons--dropdown-arrow_black')
+    transform: rotate(360deg)
+    transition: transform 0.3s
+.form-select__output-wrap:has(+ .form-select__options.is-visible)::after 
+    transform: rotate(180deg)
+    transition: transform 0.3s
+.form-select__output-wrap:has(+ .form-select__options.is-visible) 
+    border-bottom: 0
+.form-select__output-wrap:has(+ .form-select__options.is-visible) .form-select__output-seacrh 
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+.form-select__output-wrap:has(+ .form-select__options.is-visible.is-empty) .form-select__output-seacrh 
+    border-bottom-left-radius: 22px
+    border-bottom-right-radius: 22px
+.form-select__output-seacrh 
+    box-sizing: border-box
+    width: 100%
+    height: 100%
+    border: 1px solid #898989
+    border-radius: 24px
+    padding: 14px 18px
+    outline: 0
+    font-family: "Mulish", sans-serif
+    font-size: 16px
+    color: #2F2F2F
+.form-select__output-seacrh:hover 
+    cursor: pointer
+.form-select__options 
+    box-sizing: border-box
+    position: absolute
+    width: 100%
+    display: flex
+    flex-direction: column
+    margin-top: -1px
+    padding: 0
+    list-style: none
+    border: 1px solid #898989
+    border-bottom-left-radius: 12px
+    border-bottom-right-radius: 12px
+    background-color: #fff
+    font-family: "Mulish", sans-serif
+    font-size: 16px
+    color: #2F2F2F
+    clip-path: stroke-box
+.form-select__options:not(.is-visible) 
+    display: none
+.form-select__options.is-visible.is-empty 
+    margin: 0
+    border: 0  
+.form-select__option 
+    padding: 8px
+    border-top: 1px solid #F3F3F3
+    background-color: #fff
+    border-bottom-left-radius: 12px
+    border-bottom-right-radius: 12px
+.form-select__option:hover 
+    background-color: #FFD966
+    color: #2F2F2F
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+.form-select__option.is-selected 
+    background-color: #FFD966
+    color: #2F2F2F
+    border-radius: 0
