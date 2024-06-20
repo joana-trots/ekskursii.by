@@ -84,6 +84,8 @@
     position: relative
     cursor: pointer
     user-select: none
+.form-select-chosen__input
+    display: none
 .form-select__output-wrap 
     box-sizing: border-box
     border: 0
@@ -130,7 +132,7 @@
     list-style: none
 .form-select-chosen__search
     border-top: none
-    z-index: -1
+    z-index: 2
 .form-select__options:not(.is-visible),
 .form-select-chosen__search:not(.is-visible)
     display: none
@@ -170,11 +172,14 @@
 .form-select-chosen__output-wrap:has(+ .form-select-chosen__search.is-visible) 
     position: relative
     margin-bottom: -20px
-    z-index: 1
+    z-index: 3
 .form-select-chosen__output 
     font-family: "Mulish", sans-serif
     font-size: 16px
     color: #2F2F2F
+.form-select-chosen__output:empty::before
+    content: attr(data-placeholder)
+    color: #898989
 .form-select-chosen__search::before 
     content: ""
     position: absolute
@@ -187,7 +192,7 @@
     background-position: center
     background-size: cover
     background-image: url('https://pda.ekskursii.by/pda/images/sprite.svg#icons--search')
-    z-index: 1
+    z-index: 2
 .form-select-chosen__search-input 
     position: relative
     padding: 8px 8px 8px 32px
@@ -201,6 +206,7 @@
 .form-select-chosen__options 
     margin: 0
     padding: 0
+    max-height: 400px
     list-style-type: none
     overflow: auto
     font-family: "Mulish", sans-serif
