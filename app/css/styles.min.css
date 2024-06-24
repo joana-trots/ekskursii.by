@@ -2262,8 +2262,12 @@ textarea textarea.no-icon {
 }
 [class$=__form-field--radio] input[id=payment_rules] ~ label,
 [class$=__form-field--radio] input[id=privacy_policy] ~ label,
+[class$=__form-field--radio] input[id=payment_rules_2] ~ label,
+[class$=__form-field--radio] input[id=privacy_policy_2] ~ label,
 [class$=__form-field--checkbox] input[id=payment_rules] ~ label,
-[class$=__form-field--checkbox] input[id=privacy_policy] ~ label {
+[class$=__form-field--checkbox] input[id=privacy_policy] ~ label,
+[class$=__form-field--checkbox] input[id=payment_rules_2] ~ label,
+[class$=__form-field--checkbox] input[id=privacy_policy_2] ~ label {
   font-size: 13px;
   font-weight: 600;
   color: #2F2F2F;
@@ -2272,8 +2276,12 @@ textarea textarea.no-icon {
 }
 [class$=__form-field--radio] input[id=payment_rules] ~ label a,
 [class$=__form-field--radio] input[id=privacy_policy] ~ label a,
+[class$=__form-field--radio] input[id=payment_rules_2] ~ label a,
+[class$=__form-field--radio] input[id=privacy_policy_2] ~ label a,
 [class$=__form-field--checkbox] input[id=payment_rules] ~ label a,
-[class$=__form-field--checkbox] input[id=privacy_policy] ~ label a {
+[class$=__form-field--checkbox] input[id=privacy_policy] ~ label a,
+[class$=__form-field--checkbox] input[id=payment_rules_2] ~ label a,
+[class$=__form-field--checkbox] input[id=privacy_policy_2] ~ label a {
   text-decoration: underline;
 }
 
@@ -4321,7 +4329,7 @@ ul.card-item__price-include li::before {
   gap: 12px;
 }
 
-input[type=checkbox]:not(#text__dropdown-btn) {
+input[type=checkbox]:not(#text__dropdown-btn):not([name=dropdown-btn]) {
   width: 40px;
 }
 
