@@ -144,7 +144,7 @@
 
 .booking-form__form-field:has([class$='--checkbox'])
   gap: 12px
-input[type="checkbox"]
+input[type="checkbox"]:not(#text__dropdown-btn)
   width: 40px
 .booking-form__form-field--input:has([id*='country']):has(.select-items .same-as-selected:first-child) .select-selected,
 .booking-form__form-field--input:has([id*='city']):has(.select-items .same-as-selected:first-child) .select-selected
@@ -194,8 +194,8 @@ input[type="checkbox"]
       border: 1px solid $red
     &::before
       @extend %error-message
-     .form-select-chosen__output-wrap
-        border: 1px solid #F96868
+    .form-select-chosen__output-wrap
+      border: 1px solid #F96868
   &:has(.booking-form__form-field--radio):has(input:user-invalid)
     &::before
       display: none
