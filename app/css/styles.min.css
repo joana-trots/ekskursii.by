@@ -4328,8 +4328,7 @@ ul.card-item__price-include li::before {
 .booking-form__form-field:has([class$="--checkbox"]) {
   gap: 12px;
 }
-
-input[type=checkbox]:not(#text__dropdown-btn):not([name=dropdown-btn]) {
+.booking-form__form-field:has([class$="--checkbox"]) input[type=checkbox] {
   width: 40px;
 }
 
