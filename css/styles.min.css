@@ -3929,6 +3929,7 @@ ul.card-item__price-include li::before {
 
 .feedback__inner--header,
 .feedback__userinfo {
+  flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
@@ -4517,6 +4518,7 @@ ul.card-item__price-include li::before {
 .about__schedule .card-item__info {
   display: flex;
   gap: 4px;
+  display: -webkit-box;
 }
 .about__schedule .card-item__info--date p {
   gap: 0;
