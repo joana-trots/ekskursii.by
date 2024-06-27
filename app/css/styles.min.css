@@ -4078,6 +4078,7 @@ ul.card-item__price-include li::before {
 }
 
 .contacts__map {
+  margin-top: 12px;
   flex: 1;
 }
 .contacts__map iframe {
@@ -5395,8 +5396,7 @@ ul.card-item__price-include li::before {
   .section__factories .card-item__dropdown-info p {
     margin-top: 0;
   }
-  .attractions .attractions__card-item--header,
-  .attractions .card-item__info {
+  .attractions .attractions__card-item--header {
     gap: 0;
   }
 }
