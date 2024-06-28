@@ -4084,6 +4084,9 @@ ul.card-item__price-include li::before {
 .contacts__map iframe {
   width: 100%;
 }
+.contacts__map div {
+  height: 240px;
+}
 
 .contacts__social-media {
   display: flex;

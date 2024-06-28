@@ -5,9 +5,9 @@ var gallerySlider = document.querySelectorAll('.gallery-slider');
 slider && slider.forEach((item) => {
   new Splide(item, {
     // type: 'loop',
+    // padding: { left: 30, right: 30 },
     perPage: 1,
     arrows: false,
-    padding: { left: 30, right: 30 },
     gap: 15,
     mediaQuery: 'min',
     breakpoints: {
@@ -21,9 +21,9 @@ slider && slider.forEach((item) => {
 gallerySlider && gallerySlider.forEach((item) => {
   new Splide(item, {
     // type: 'loop',
+    // padding: { left: 30, right: 30 },
     perPage: 1,
     arrows: false,
-    padding: { left: 30, right: 30 },
     gap: 15,
     mediaQuery: 'min',
     breakpoints: {
