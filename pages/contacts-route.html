@@ -83,15 +83,7 @@
                 </div>
                 <div class="dropdown-content">
                   <div class="contacts__map">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.6724568648065!2d27.5322264!3d53.8842508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd01edd0b19d7%3A0xc0280ec2a33bc7b3!2sUlitsa%20Surazhskaya%2010%2C%20Minsk%2C%20Minskaja%20voblas%C4%87%20220089!5e0!3m2!1sen!2sby!4v1703255270678!5m2!1sen!2sby"
-                      width="100%"
-                      height="100%"
-                      style="border: 0"
-                      allowfullscreen=""
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <div id="map1"></div>
                   </div>
                 </div>
               </div>
@@ -116,15 +108,7 @@
                 </div>
                 <div class="dropdown-content">
                   <div class="contacts__map">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.6724568648065!2d27.5322264!3d53.8842508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd01edd0b19d7%3A0xc0280ec2a33bc7b3!2sUlitsa%20Surazhskaya%2010%2C%20Minsk%2C%20Minskaja%20voblas%C4%87%20220089!5e0!3m2!1sen!2sby!4v1703255270678!5m2!1sen!2sby"
-                      width="100%"
-                      height="100%"
-                      style="border: 0"
-                      allowfullscreen=""
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <div id="map2"></div>
                   </div>
                 </div>
               </div>
@@ -134,6 +118,725 @@
           
 
         </section>
+
+
+<script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=60445215-6d3a-4f88-87fe-8d52b72e5bc9"></script>
+
+
+
+<!-- <script src="//static.att.by/js/nav_road_map.js"></script> -->
+
+<script>
+ymaps.ready(['AnimatedLine']).then(init);
+
+function init(ymaps) {
+    // Создаем карту.
+    var myMap = new ymaps.Map("map1", {
+        center: [53.891358, 27.549707],
+        zoom: 17
+    }, {
+        searchControlProvider: 'yandex#search'
+    });
+    // Создаем ломаные линии.
+    var firstAnimatedLine = new ymaps.AnimatedLine([
+        [53.891396, 27.548514],
+        [53.891286, 27.549304],
+        [53.891341, 27.549911],
+        [53.891156, 27.551041],
+        [53.891007, 27.550966]
+    ], {}, {
+        // Задаем цвет.
+        strokeColor: "#ED4543",
+        // Задаем ширину линии.
+        strokeWidth: 5,
+        // Задаем длительность анимации.
+        animationTime: 4000
+    });
+    var secondAnimatedLine = new ymaps.AnimatedLine([
+        [55.761223661714205, 37.57854299428123],
+        [55.76129474190374, 37.57836060406823],
+        [55.76149285834102, 37.57855640532632],
+        [55.76173267134118, 37.57864573959325],
+        [55.761782872763874, 37.578559582240004],
+        [55.7622647306412, 37.57857741008619],
+        [55.76247342821094, 37.57840038429122],
+        [55.762818964832924, 37.57765342764373],
+        [55.76292179998886, 37.57748713068481],
+        [55.762890042102114, 37.577167947812036],
+        [55.76292179998886, 37.576878269238435],
+        [55.763076052212064, 37.57669587902541],
+        [55.76309672830313, 37.57723949881904]
+    ], {}, {
+        strokeColor: "#1E98FF",
+        strokeWidth: 5,
+        animationTime: 4000
+    });
+    // Добавляем линии на карту.
+    myMap.geoObjects.add(firstAnimatedLine);
+    // Создаем метки.
+    var firstPoint = new ymaps.Placemark([53.891396, 27.548514], {
+        hintContent: "Станция метро Площадь Ленина"
+    }, {
+        preset: 'islands#redRapidTransitCircleIcon'  
+  });
+    var secondPoint = new ymaps.Placemark([53.891007, 27.550966],  {
+        hintContent: "Ж/д вокзал"
+    }, {
+        preset: 'islands#blueRailwayCircleIcon'
+    });
+
+    // Функция анимации пути.
+    function playAnimation() {
+        // Убираем вторую линию.
+        secondAnimatedLine.reset();
+        // Добавляем первую метку на карту.
+        myMap.geoObjects.add(firstPoint);
+        // Анимируем первую линию.
+        firstAnimatedLine.animate()
+            // После окончания анимации первой линии добавляем вторую метку на карту и анимируем вторую линию.
+            .then(function() {
+                myMap.geoObjects.add(secondPoint);
+                return secondAnimatedLine.animate();
+            })
+            // После окончания анимации второй линии добавляем третью метку на карту.
+            .then(function() {
+                return ymaps.vow.delay(null, 10);
+            })
+            // После паузы перезапускаем анимацию.
+            .then(function() {
+                // Удаляем метки с карты.
+                myMap.geoObjects.remove(firstPoint);
+                myMap.geoObjects.remove(secondPoint);
+                // Убираем вторую линию.
+                secondAnimatedLine.reset();
+                // Перезапускаем анимацию.
+                playAnimation();
+            });
+    }
+    // Запускаем анимацию пути.
+    playAnimation();
+}
+
+
+ymaps.modules.define('AnimatedLine', [
+    'util.defineClass',
+    'Polyline',
+    'vow'
+], function(provide, defineClass, Polyline, vow) {
+    /**
+     * @fileOverview Анимированная линия.
+     */
+    /**
+     * Создает экземпляр анимированной линии.
+     * @class AnimatedLine. Представляет собой геообъект с геометрией geometry.LineString.
+     * @param {Boolean} [options.animationTime = 4000] Длительность анимации.
+     **/
+    function AnimatedLine(geometry, properties, options) {
+        AnimatedLine.superclass.constructor.call(this, geometry, properties, options);
+        this._loopTime = 50;
+        this._animationTime = this.options.get('animationTime', 4000);
+        // Вычислим длину переданной линии.
+        var distance = 0;
+        var previousElem = geometry[0];
+        this.geometry.getCoordinates().forEach(function(elem) {
+            distance += getDistance(elem, previousElem);
+            previousElem = elem;
+        });
+        // Вычислим минимальный интервал отрисовки.
+        this._animationInterval = distance / this._animationTime * this._loopTime;
+        // Создадим массив с более частым расположением промежуточных точек.
+        this._smoothCoords = generateSmoothCoords(geometry, this._animationInterval);
+    }
+    defineClass(AnimatedLine, Polyline, {
+        // Анимировать линию.
+        start: function() {
+            var value = 0;
+            var coords = this._smoothCoords;
+            var line = this;
+            var loopTime = this._loopTime;
+            // Будем добавлять по одной точке каждые 50 мс.
+            function loop(value, currentTime, previousTime) {
+                if (value < coords.length) {
+                    if (!currentTime || (currentTime - previousTime) > loopTime) {
+                        line.geometry.set(value, coords[value]);
+                        value++;
+                        previousTime = currentTime;
+                    }
+                    requestAnimationFrame(function(time) {
+                        loop(value, time, previousTime || time)
+                    });
+                } else {
+                    // Бросаем событие окончания отрисовки линии.
+                    line.events.fire('animationfinished');
+                }
+            }
+
+            loop(value);
+        },
+        // Убрать отрисованную линию.
+        reset: function() {
+            this.geometry.setCoordinates([]);
+        },
+        // Запустить полный цикл анимации.
+        animate: function() {
+            this.reset();
+            this.start();
+            var deferred = vow.defer();
+            this.events.once('animationfinished', function() {
+                deferred.resolve();
+            });
+            return deferred.promise();
+        }
+
+    });
+    // Функция генерации частых координат по заданной линии.
+    function generateSmoothCoords(coords, interval) {
+        var smoothCoords = [];
+        smoothCoords.push(coords[0]);
+        for (var i = 1; i < coords.length; i++) {
+            var difference = [coords[i][0] - coords[i - 1][0], coords[i][1] - coords[i - 1][1]];
+            var maxAmount = Math.max(Math.abs(difference[0] / interval), Math.abs(difference[1] / interval));
+            var minDifference = [difference[0] / maxAmount, difference[1] / maxAmount];
+            var lastCoord = coords[i - 1];
+            while (maxAmount > 1) {
+                lastCoord = [lastCoord[0] + minDifference[0], lastCoord[1] + minDifference[1]];
+                smoothCoords.push(lastCoord);
+                maxAmount--;
+            }
+            smoothCoords.push(coords[i])
+        }
+        return smoothCoords;
+    }
+    // Функция нахождения расстояния между двумя точками на плоскости.
+    function getDistance(point1, point2) {
+        return Math.sqrt(
+            Math.pow((point2[0] - point1[0]), 2) +
+            Math.pow((point2[1] - point1[1]), 2)
+        );
+    }
+    provide(AnimatedLine);
+});</script>
+
+
+
+
+<script>ymaps.ready(['AnimatedLine']).then(init);
+
+function init(ymaps) {
+    // Создаем карту.
+    var myMap = new ymaps.Map("map2", {
+        center: [53.891027, 27.553088],
+        zoom: 16
+    }, {
+        searchControlProvider: 'yandex#search'
+    });
+    // Создаем ломаные линии.
+    var firstAnimatedLine = new ymaps.AnimatedLine([
+        [53.889940, 27.556129],
+        [53.890001, 27.556151],
+        [53.890537, 27.554233],
+        [53.890686, 27.553447],
+        [53.891145, 27.551046],
+        [53.890995, 27.550947]
+    ], {}, {
+        // Задаем цвет.
+        strokeColor: "#ED4543",
+        // Задаем ширину линии.
+        strokeWidth: 5,
+        // Задаем длительность анимации.
+        animationTime: 4000
+    });
+
+    // Добавляем линии на карту.
+    myMap.geoObjects.add(firstAnimatedLine);
+    // Создаем метки.
+    var firstPoint = new ymaps.Placemark([53.889940, 27.556129], {
+        hintContent: "Автовокзал Центральный"
+    }, {
+        preset: 'islands#redMassTransitCircleIcon'
+    });
+    var secondPoint = new ymaps.Placemark([53.890995, 27.550947], {
+        hintContent: "Ж/д вокзал"
+    }, {
+        preset: 'islands#blueRailwayIcon'
+    });
+    // Функция анимации пути.
+    function playAnimation() {
+        // Убираем вторую линию.
+        // Добавляем первую метку на карту.
+        myMap.geoObjects.add(firstPoint);
+        // Анимируем первую линию.
+        firstAnimatedLine.animate()
+            // После окончания анимации первой линии добавляем вторую метку на карту и анимируем вторую линию.
+            .then(function() {
+                myMap.geoObjects.add(secondPoint);
+            })
+            // После окончания анимации второй линии добавляем третью метку на карту.
+            .then(function() {
+                // Добавляем паузу после анимации.
+                return ymaps.vow.delay(null, 2000);
+            })
+            // После паузы перезапускаем анимацию.
+            .then(function() {
+                // Удаляем метки с карты.
+                myMap.geoObjects.remove(firstPoint);
+                myMap.geoObjects.remove(secondPoint);
+                // Убираем вторую линию.
+                firstAnimatedLine.reset();
+                // Перезапускаем анимацию.
+                playAnimation();
+            });
+    }
+    // Запускаем анимацию пути.
+    playAnimation();
+}
+
+
+ymaps.modules.define('AnimatedLine', [
+    'util.defineClass',
+    'Polyline',
+    'vow'
+], function(provide, defineClass, Polyline, vow) {
+    /**
+     * @fileOverview Анимированная линия.
+     */
+    /**
+     * Создает экземпляр анимированной линии.
+     * @class AnimatedLine. Представляет собой геообъект с геометрией geometry.LineString.
+     * @param {Boolean} [options.animationTime = 4000] Длительность анимации.
+     **/
+    function AnimatedLine(geometry, properties, options) {
+        AnimatedLine.superclass.constructor.call(this, geometry, properties, options);
+        this._loopTime = 50;
+        this._animationTime = this.options.get('animationTime', 4000);
+        // Вычислим длину переданной линии.
+        var distance = 0;
+        var previousElem = geometry[0];
+        this.geometry.getCoordinates().forEach(function(elem) {
+            distance += getDistance(elem, previousElem);
+            previousElem = elem;
+        });
+        // Вычислим минимальный интервал отрисовки.
+        this._animationInterval = distance / this._animationTime * this._loopTime;
+        // Создадим массив с более частым расположением промежуточных точек.
+        this._smoothCoords = generateSmoothCoords(geometry, this._animationInterval);
+    }
+    defineClass(AnimatedLine, Polyline, {
+        // Анимировать линию.
+        start: function() {
+            var value = 0;
+            var coords = this._smoothCoords;
+            var line = this;
+            var loopTime = this._loopTime;
+            // Будем добавлять по одной точке каждые 50 мс.
+            function loop(value, currentTime, previousTime) {
+                if (value < coords.length) {
+                    if (!currentTime || (currentTime - previousTime) > loopTime) {
+                        line.geometry.set(value, coords[value]);
+                        value++;
+                        previousTime = currentTime;
+                    }
+                    requestAnimationFrame(function(time) {
+                        loop(value, time, previousTime || time)
+                    });
+                } else {
+                    // Бросаем событие окончания отрисовки линии.
+                    line.events.fire('animationfinished');
+                }
+            }
+
+            loop(value);
+        },
+        // Убрать отрисованную линию.
+        reset: function() {
+            this.geometry.setCoordinates([]);
+        },
+        // Запустить полный цикл анимации.
+        animate: function() {
+            this.reset();
+            this.start();
+            var deferred = vow.defer();
+            this.events.once('animationfinished', function() {
+                deferred.resolve();
+            });
+            return deferred.promise();
+        }
+
+    });
+    // Функция генерации частых координат по заданной линии.
+    function generateSmoothCoords(coords, interval) {
+        var smoothCoords = [];
+        smoothCoords.push(coords[0]);
+        for (var i = 1; i < coords.length; i++) {
+            var difference = [coords[i][0] - coords[i - 1][0], coords[i][1] - coords[i - 1][1]];
+            var maxAmount = Math.max(Math.abs(difference[0] / interval), Math.abs(difference[1] / interval));
+            var minDifference = [difference[0] / maxAmount, difference[1] / maxAmount];
+            var lastCoord = coords[i - 1];
+            while (maxAmount > 1) {
+                lastCoord = [lastCoord[0] + minDifference[0], lastCoord[1] + minDifference[1]];
+                smoothCoords.push(lastCoord);
+                maxAmount--;
+            }s
+            smoothCoords.push(coords[i])
+        }
+        return smoothCoords;
+    }
+    // Функция нахождения расстояния между двумя точками на плоскости.
+    function getDistance(point1, point2) {
+        return Math.sqrt(
+            Math.pow((point2[0] - point1[0]), 2) +
+            Math.pow((point2[1] - point1[1]), 2)
+        );
+    }
+    provide(AnimatedLine);
+});</script>
+
+<script>ymaps.ready(['AnimatedLine']).then(init);
+
+function init(ymaps) {
+    // Создаем карту.
+    var myMap = new ymaps.Map("map3", {
+        center: [52.099988, 23.682503],
+        zoom: 15
+    }, {
+        searchControlProvider: 'yandex#search'
+    });
+    // Создаем ломаные линии.
+    var firstAnimatedLine = new ymaps.AnimatedLine([
+        [52.100379, 23.680480],
+        [52.100126, 23.680650],
+        [52.100803, 23.682457],
+        [52.098974, 23.684355],
+        [52.099013, 23.684492],
+        [52.098455, 23.685028]
+    ], {}, {
+        // Задаем цвет.
+        strokeColor: "#ED4543",
+        // Задаем ширину линии.
+        strokeWidth: 5,
+        // Задаем длительность анимации.
+        animationTime: 4000
+    });
+    // Добавляем линии на карту.
+    myMap.geoObjects.add(firstAnimatedLine);
+    // Создаем метки.
+    var firstPoint = new ymaps.Placemark([52.100440, 23.680280],{
+        hintContent: "Ж/д вокзал"
+    }, {
+        preset: 'islands#blueRailwayCircleIcon'
+    });
+    var secondPoint = new ymaps.Placemark([52.098455, 23.685028], {
+        hintContent: "Гостиница Молодежная"
+    }, {
+        preset: 'islands#blueHotelIcon'
+    });
+
+    // Функция анимации пути.
+    function playAnimation() {
+        // Убираем вторую линию.
+        // Добавляем первую метку на карту.
+        myMap.geoObjects.add(firstPoint);
+        // Анимируем первую линию.
+        firstAnimatedLine.animate()
+            // После окончания анимации первой линии добавляем вторую метку на карту и анимируем вторую линию.
+            .then(function() {
+                myMap.geoObjects.add(secondPoint);
+            })
+            // После окончания анимации второй линии добавляем третью метку на карту.
+            .then(function() {
+                // Добавляем паузу после анимации.
+                return ymaps.vow.delay(null, 2000);
+            })
+            // После паузы перезапускаем анимацию.
+            .then(function() {
+                // Удаляем метки с карты.
+                myMap.geoObjects.remove(firstPoint);
+                myMap.geoObjects.remove(secondPoint);
+                // Убираем вторую линию.
+                firstAnimatedLine.reset();
+                // Перезапускаем анимацию.
+                playAnimation();
+            });
+    }
+    // Запускаем анимацию пути.
+    playAnimation();
+}
+
+
+ymaps.modules.define('AnimatedLine', [
+    'util.defineClass',
+    'Polyline',
+    'vow'
+], function(provide, defineClass, Polyline, vow) {
+    /**
+     * @fileOverview Анимированная линия.
+     */
+    /**
+     * Создает экземпляр анимированной линии.
+     * @class AnimatedLine. Представляет собой геообъект с геометрией geometry.LineString.
+     * @param {Boolean} [options.animationTime = 4000] Длительность анимации.
+     **/
+    function AnimatedLine(geometry, properties, options) {
+        AnimatedLine.superclass.constructor.call(this, geometry, properties, options);
+        this._loopTime = 50;
+        this._animationTime = this.options.get('animationTime', 4000);
+        // Вычислим длину переданной линии.
+        var distance = 0;
+        var previousElem = geometry[0];
+        this.geometry.getCoordinates().forEach(function(elem) {
+            distance += getDistance(elem, previousElem);
+            previousElem = elem;
+        });
+        // Вычислим минимальный интервал отрисовки.
+        this._animationInterval = distance / this._animationTime * this._loopTime;
+        // Создадим массив с более частым расположением промежуточных точек.
+        this._smoothCoords = generateSmoothCoords(geometry, this._animationInterval);
+    }
+    defineClass(AnimatedLine, Polyline, {
+        // Анимировать линию.
+        start: function() {
+            var value = 0;
+            var coords = this._smoothCoords;
+            var line = this;
+            var loopTime = this._loopTime;
+            // Будем добавлять по одной точке каждые 50 мс.
+            function loop(value, currentTime, previousTime) {
+                if (value < coords.length) {
+                    if (!currentTime || (currentTime - previousTime) > loopTime) {
+                        line.geometry.set(value, coords[value]);
+                        value++;
+                        previousTime = currentTime;
+                    }
+                    requestAnimationFrame(function(time) {
+                        loop(value, time, previousTime || time)
+                    });
+                } else {
+                    // Бросаем событие окончания отрисовки линии.
+                    line.events.fire('animationfinished');
+                }
+            }
+
+            loop(value);
+        },
+        // Убрать отрисованную линию.
+        reset: function() {
+            this.geometry.setCoordinates([]);
+        },
+        // Запустить полный цикл анимации.
+        animate: function() {
+            this.reset();
+            this.start();
+            var deferred = vow.defer();
+            this.events.once('animationfinished', function() {
+                deferred.resolve();
+            });
+            return deferred.promise();
+        }
+
+    });
+    // Функция генерации частых координат по заданной линии.
+    function generateSmoothCoords(coords, interval) {
+        var smoothCoords = [];
+        smoothCoords.push(coords[0]);
+        for (var i = 1; i < coords.length; i++) {
+            var difference = [coords[i][0] - coords[i - 1][0], coords[i][1] - coords[i - 1][1]];
+            var maxAmount = Math.max(Math.abs(difference[0] / interval), Math.abs(difference[1] / interval));
+            var minDifference = [difference[0] / maxAmount, difference[1] / maxAmount];
+            var lastCoord = coords[i - 1];
+            while (maxAmount > 1) {
+                lastCoord = [lastCoord[0] + minDifference[0], lastCoord[1] + minDifference[1]];
+                smoothCoords.push(lastCoord);
+                maxAmount--;
+            }
+            smoothCoords.push(coords[i])
+        }
+        return smoothCoords;
+    }
+    // Функция нахождения расстояния между двумя точками на плоскости.
+    function getDistance(point1, point2) {
+        return Math.sqrt(
+            Math.pow((point2[0] - point1[0]), 2) +
+            Math.pow((point2[1] - point1[1]), 2)
+        );
+    }
+    provide(AnimatedLine);
+});</script>
+
+<script>ymaps.ready(['AnimatedLine']).then(init);
+
+function init(ymaps) {
+    // Создаем карту.
+    var myMap = new ymaps.Map("map4", {
+        center: [52.099988, 23.682503],
+        zoom: 15
+    }, {
+        searchControlProvider: 'yandex#search'
+    });
+    // Создаем ломаные линии.
+    var firstAnimatedLine = new ymaps.AnimatedLine([
+        [52.098879, 23.681549],
+        [52.098838, 23.681609],
+        [52.099241, 23.682712],
+        [52.099111, 23.683594],
+        [52.099254, 23.684039],
+        [52.099165, 23.684155],
+        [52.099224, 23.684305],
+        [52.098455, 23.685028]
+    ], {}, {
+        // Задаем цвет.
+        strokeColor: "#ED4543",
+        // Задаем ширину линии.
+        strokeWidth: 5,
+        // Задаем длительность анимации.
+        animationTime: 4000
+    });
+
+    // Добавляем линии на карту.
+    myMap.geoObjects.add(firstAnimatedLine);
+    // Создаем метки.
+    var firstPoint = new ymaps.Placemark([52.098879, 23.681549], {
+        hintContent: "Автовокзал Брест"
+    }, {preset: 'islands#blueMassTransitIcon'
+    });
+    var secondPoint = new ymaps.Placemark([52.098455, 23.685028], {
+        hintContent: "Гостиница Молодежная"
+    }, {
+        preset: 'islands#blueHotelIcon'
+    });
+    // Функция анимации пути.
+    function playAnimation() {
+        // Убираем вторую линию.
+        // Добавляем первую метку на карту.
+        myMap.geoObjects.add(firstPoint);
+        // Анимируем первую линию.
+        firstAnimatedLine.animate()
+            // После окончания анимации первой линии добавляем вторую метку на карту и анимируем вторую линию.
+            .then(function() {
+                myMap.geoObjects.add(secondPoint);
+            })
+            // После окончания анимации второй линии добавляем третью метку на карту.
+            .then(function() {
+                // Добавляем паузу после анимации.
+                return ymaps.vow.delay(null, 2000);
+            })
+            // После паузы перезапускаем анимацию.
+            .then(function() {
+                // Удаляем метки с карты.
+                myMap.geoObjects.remove(firstPoint);
+                myMap.geoObjects.remove(secondPoint);
+                // Убираем вторую линию.
+                firstAnimatedLine.reset();
+                // Перезапускаем анимацию.
+                playAnimation();
+            });
+    }
+    // Запускаем анимацию пути.
+    playAnimation();
+}
+
+
+ymaps.modules.define('AnimatedLine', [
+    'util.defineClass',
+    'Polyline',
+    'vow'
+], function(provide, defineClass, Polyline, vow) {
+    /**
+     * @fileOverview Анимированная линия.
+     */
+    /**
+     * Создает экземпляр анимированной линии.
+     * @class AnimatedLine. Представляет собой геообъект с геометрией geometry.LineString.
+     * @param {Boolean} [options.animationTime = 4000] Длительность анимации.
+     **/
+    function AnimatedLine(geometry, properties, options) {
+        AnimatedLine.superclass.constructor.call(this, geometry, properties, options);
+        this._loopTime = 50;
+        this._animationTime = this.options.get('animationTime', 4000);
+        // Вычислим длину переданной линии.
+        var distance = 0;
+        var previousElem = geometry[0];
+        this.geometry.getCoordinates().forEach(function(elem) {
+            distance += getDistance(elem, previousElem);
+            previousElem = elem;
+        });
+        // Вычислим минимальный интервал отрисовки.
+        this._animationInterval = distance / this._animationTime * this._loopTime;
+        // Создадим массив с более частым расположением промежуточных точек.
+        this._smoothCoords = generateSmoothCoords(geometry, this._animationInterval);
+    }
+    defineClass(AnimatedLine, Polyline, {
+        // Анимировать линию.
+        start: function() {
+            var value = 0;
+            var coords = this._smoothCoords;
+            var line = this;
+            var loopTime = this._loopTime;
+            // Будем добавлять по одной точке каждые 50 мс.
+            function loop(value, currentTime, previousTime) {
+                if (value < coords.length) {
+                    if (!currentTime || (currentTime - previousTime) > loopTime) {
+                        line.geometry.set(value, coords[value]);
+                        value++;
+                        previousTime = currentTime;
+                    }
+                    requestAnimationFrame(function(time) {
+                        loop(value, time, previousTime || time)
+                    });
+                } else {
+                    // Бросаем событие окончания отрисовки линии.
+                    line.events.fire('animationfinished');
+                }
+            }
+
+            loop(value);
+        },
+        // Убрать отрисованную линию.
+        reset: function() {
+            this.geometry.setCoordinates([]);
+        },
+        // Запустить полный цикл анимации.
+        animate: function() {
+            this.reset();
+            this.start();
+            var deferred = vow.defer();
+            this.events.once('animationfinished', function() {
+                deferred.resolve();
+            });
+            return deferred.promise();
+        }
+
+    });
+    // Функция генерации частых координат по заданной линии.
+    function generateSmoothCoords(coords, interval) {
+        var smoothCoords = [];
+        smoothCoords.push(coords[0]);
+        for (var i = 1; i < coords.length; i++) {
+            var difference = [coords[i][0] - coords[i - 1][0], coords[i][1] - coords[i - 1][1]];
+            var maxAmount = Math.max(Math.abs(difference[0] / interval), Math.abs(difference[1] / interval));
+            var minDifference = [difference[0] / maxAmount, difference[1] / maxAmount];
+            var lastCoord = coords[i - 1];
+            while (maxAmount > 1) {
+                lastCoord = [lastCoord[0] + minDifference[0], lastCoord[1] + minDifference[1]];
+                smoothCoords.push(lastCoord);
+                maxAmount--;
+            }
+            smoothCoords.push(coords[i])
+        }
+        return smoothCoords;
+    }
+    // Функция нахождения расстояния между двумя точками на плоскости.
+    function getDistance(point1, point2) {
+        return Math.sqrt(
+            Math.pow((point2[0] - point1[0]), 2) +
+            Math.pow((point2[1] - point1[1]), 2)
+        );
+    }
+    provide(AnimatedLine);
+});</script>
+
+<!-- <script src="//static.att.by/css/new/navigation.js"></script> -->
+
+
       </main>
       
 <!--=include footer.html -->
