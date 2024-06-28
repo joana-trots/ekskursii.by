@@ -53,7 +53,7 @@ modalClose.forEach((item) => {
     modal.forEach((item) => {
       item.style.display = "none";
     });
-    pwaModal.classList.remove('active');
+    // pwaModal.classList.remove('active');
     document.body.classList.toggle('overflow-hidden');
   }
 });
