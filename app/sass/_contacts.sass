@@ -51,11 +51,13 @@
 .contacts__website a:first-child
     display: flex
     gap: 4px
+    a
+      border-bottom: 1px solid $black
+.contacts__website a:first-child
     &::before
         @extend %button-icon
         background-image: $icon-web
-    a
-        border-bottom: 1px solid $black
+    
 
 .section__employees
     display: flex

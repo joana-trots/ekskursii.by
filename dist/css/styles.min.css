@@ -1183,8 +1183,7 @@ span.flatpickr-weekday {
   justify-content: center;
 }
 
-.validation-modal .h2::before, .about__program .program__item .dropdown-btn p::after, .booking-form__form-field:has(.dropdown-btn) .dropdown-btn p::after, .contacts__website p::before,
-.contacts__website a:first-child::before, .feedback__rateinfo--rate::before, .schedule__display--table .card-item__cta::after, .schedule__display--table .booking-tabs [class$=form__submit-btn]::after, .booking-tabs .schedule__display--table [class$=form__submit-btn]::after, .card-item__feedback-btn::before, .card-item__discount::before, .card-item__more-dates-btn::before, .card-item__additional-info :not(.card-item__additional-info--kids-price) p::before, .card-item__dropdown-btn::before, .card-item__seats p::before, .card-item__info :not(.card-item__info--duration) p::before, .schedule__options-item--filters::before,
+.validation-modal .h2::before, .about__program .program__item .dropdown-btn p::after, .booking-form__form-field:has(.dropdown-btn) .dropdown-btn p::after, .contacts__website a:first-child::before, .feedback__rateinfo--rate::before, .schedule__display--table .card-item__cta::after, .schedule__display--table .booking-tabs [class$=form__submit-btn]::after, .booking-tabs .schedule__display--table [class$=form__submit-btn]::after, .card-item__feedback-btn::before, .card-item__discount::before, .card-item__more-dates-btn::before, .card-item__additional-info :not(.card-item__additional-info--kids-price) p::before, .card-item__dropdown-btn::before, .card-item__seats p::before, .card-item__info :not(.card-item__info--duration) p::before, .schedule__options-item--filters::before,
 .schedule__options-item--date::before, .main-search .main-search__dropdown-arrow::after, .intro__btn--secondary::before, .menu__primary-list--item.dropdown-item.currency-item::before, .menu__primary-list--item.account-item .menu__primary-list--link::before, .menu__primary-list--item.phone-item .menu__primary-list--link::before, .menu__primary-list--item.desktop-item .menu__primary-list--link::before, .selected-filters-item__label::after, .filters-item__input:checked ~ .filters-item__label::after, .filters-item__input:checked ~ .selected-filters-item__label::after, .selected-filters-item__input:checked ~ .filters-item__label::after, .selected-filters-item__input:checked ~ .selected-filters-item__label::after, .dropdown-text-btn input::after, .btn-up::before, .arrow-btn::before, .booking-info__about--time p::before,
 .booking-info__about--place p::before, .schedule__options-item::before, .main-search .search-form [class$=submit-btn]::before, .main-search .main-search__inner .h2::before, [class$=form-field--input]:not(.no-icon)::before,
 textarea:not(.no-icon)::before, .all-btn.arrow-btn::before {
@@ -2614,10 +2613,6 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   position: relative;
   display: flex;
   align-items: center;
-  order: 20;
-}
-.filters-item__list--item:has(:checked), .selected-filters-item__list--item:has(:checked) {
-  order: 1;
 }
 
 .filters-item__input, .selected-filters-item__input {
@@ -4109,13 +4104,13 @@ ul.card-item__price-include li::before {
   display: flex;
   gap: 4px;
 }
-.contacts__website p::before,
-.contacts__website a:first-child::before {
-  background-image: url(../images/sprite.svg#icons--web);
-}
 .contacts__website p a,
 .contacts__website a:first-child a {
   border-bottom: 1px solid #2F2F2F;
+}
+
+.contacts__website a:first-child::before {
+  background-image: url(../images/sprite.svg#icons--web);
 }
 
 .section__employees {
@@ -4448,7 +4443,7 @@ ul.card-item__price-include li::before {
 .quicknav__section ul.list, .quicknav__section ul.card-item__price-include {
   margin-top: 12px;
 }
-.quicknav__section a:not(.dropdown-text-btn):not(.btn):not(.menu__primary-list--item.dropdown-item):not(.schedule__options-item):not(.booking-form__submit-btn) {
+.quicknav__section a:not(.dropdown-text-btn):not(.btn):not(.menu__primary-list--item.dropdown-item):not(.schedule__options-item):not(.booking-form__submit-btn):not(:has(> img)) {
   border-bottom: 1px solid #2F2F2F;
 }
 
@@ -5058,6 +5053,7 @@ ul.card-item__price-include li::before {
   padding: 20px;
   animation-name: animatetop;
   animation-duration: 0.4s;
+  clip-path: border-box;
 }
 .modal-content .h2 {
   word-break: break-word;
@@ -5396,53 +5392,4 @@ ul.card-item__price-include li::before {
 .pwa-window .btn#pwa-btn-yes, .pwa-window #pwa-btn-yes.menu__primary-list--item.dropdown-item, .pwa-window #pwa-btn-yes.schedule__options-item, .pwa-window #pwa-btn-yes.booking-form__submit-btn {
   background-color: #2F2F2F;
   color: #FFFFFF;
-}
-
-.component-window-cookie {
-  position: fixed;
-  width: 100%;
-  max-width: min(100%, 36rem);
-  bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 0 15px 0 rgba(47, 47, 47, 0.24);
-  z-index: 1001;
-}
-
-.component-window-cookie__inner {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-  padding: 20px;
-}
-
-.component-window-cookie__text,
-.component-window-cookie__text a,
-.component-window-cookie__text a:hover {
-  font-size: 14px;
-}
-
-.component-window-cookie__text a {
-  border-bottom: 1px solid #333;
-}
-
-.component-window-cookie__text a:hover {
-  text-decoration: none;
-}
-
-.component-window-cookie__button {
-  padding: 10px 20px;
-  border-radius: 24px;
-  background-color: #333;
-  color: #fff;
-  font-size: 16px;
-  text-transform: capitalize;
-}
-
-.component-window-cookie__button:hover {
-  background-color: #000;
 }
