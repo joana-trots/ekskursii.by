@@ -3838,10 +3838,20 @@ ul.card-item__price-include li::before {
 .feedback > .container, .feedback > .quicknav__navbar {
   padding: 0;
 }
-.feedback .splide__slide {
+.feedback .splide__slide--wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.feedback .splide {
+  margin-top: 12px;
+}
+
+.splide__slide:has(.feedback__text) {
   border-radius: 24px;
 }
-.feedback .splide__slide .feedback__text {
+
+.feedback__text {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -moz-box;
@@ -3852,28 +3862,20 @@ ul.card-item__price-include li::before {
   line-clamp: 4;
   box-orient: vertical;
 }
-.feedback .splide__slide .feedback__text p {
+.feedback__text p {
   margin-top: 0;
 }
-.feedback .splide__slide .feedback__text a {
+.feedback__text a {
   display: none;
 }
-.feedback .splide__slide .feedback__text.feedback__text--long {
+.feedback__text.feedback__text--long {
   margin-bottom: 30px;
 }
-.feedback .splide__slide .feedback__text.feedback__text--long a {
+.feedback__text.feedback__text--long a.btn, .feedback__text.feedback__text--long a.booking-form__submit-btn, .feedback__text.feedback__text--long a.menu__primary-list--item.dropdown-item, .feedback__text.feedback__text--long a.schedule__options-item {
   display: flex;
   position: absolute;
   right: 20px;
   bottom: 20px;
-}
-.feedback .splide__slide--wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.feedback .splide {
-  margin-top: 12px;
 }
 
 .feedback__inner--header,

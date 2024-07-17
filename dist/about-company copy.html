@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekskursii.by</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container header__container--primary">
+          <nav class="menu__primary">
+            <a class="header__logo" href="/ekskursii.by/" title="Ekskursii.by">
+              <img src="images/sprite.svg#logo" alt="logo">
+            </a>
+            <ul class="menu__primary-list">
+              <li class="menu__primary-list--item desktop-item">
+                <a href="#" class="menu__primary-list--link" title="Полная версия сайта"></a>
+              </li>
+              <li class="menu__primary-list--item phone-item modal-open">
+                <div class="menu__primary-list--link" id="phone-item">
+                  <img src="images/sprite.svg#icons--socials--messengers" alt="messengers">
+                  <span>+375 29-756-66-65</span>
+                </div>
+              </li>
+              <li class="menu__primary-list--item dropdown-item lang-item custom-select">
+                <select class="menu__primary-list--link" id="lang-item" name="lang-item">
+                  <option value="byn">рус</option>
+                  <option value="rub">бел</option>
+                  <option value="euro">en</option>
+                </select>
+              </li>
+              <li class="menu__primary-list--item dropdown-item currency-item custom-select">
+                <select class="menu__primary-list--link" id="currency-item" name="currency-item">
+                  <option value="byn">BYN</option>
+                  <option value="rub">₽</option>
+                  <option value="euro">€</option>
+                </select>
+              </li>
+            </ul>
+        
+            <div class="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
+        </div>
+        <div class="container header__container--mobile">
+          <nav class="menu__mobile">
+            <ul class="menu__mobile-list">
+        
+              <li class="menu__mobile-list--item divided-item">
+                <a class="btn cta-primary modal-open" href="#" title="Оставить заявку"></a>
+              </li>
+              
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="#">Личный кабинет</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">График экскурсий</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Групповые экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Индивидуальные экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Корпоративные экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule.html">Все экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Как заказать?</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Частые вопросы</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="#">Все об экскурсиях</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/contacts.html">Контакты</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <ul>
+                  <li>
+                    <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                      <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                    </a>
+                    <a href="https://telegram.me/ekskursii" title="telegram">
+                      <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                    </a>
+                    <a href="viber://add?number=375297566665" title="viber">
+                      <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="booking-modal modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Быстрая заявка</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            
+            <form class="booking-form" id="booking-group">
+              <div class="booking-info booking-info__profile">
+                <div class="booking-form__form-field" data-error-title="Введите ваше ФИО">
+                  <label class="h6 hidden-label" for="name">ФИО</label>
+                  <span class="booking-form__form-field--input">
+                    <input class="no-icon" type="text" name="name" id="name" placeholder="Введите ваше ФИО" required>
+                  </span>
+                </div>
+                <div class="booking-form__form-field" data-error-title="Введите email или телефон">
+                  <label class="h6 hidden-label" for="phone">Email или телефон</label>
+                  <span class="booking-form__form-field--input">
+                    <input class="no-icon" type="text" name="phone" id="phone" placeholder="Email или телефон" required>
+                  </span>
+                </div>
+                <div class="booking-form__form-field" data-error-title="Напишите пожелания по маршруту, программе, питанию...">
+                  <label class="h6 hidden-label" for="question">Пожелания по маршруту, программе, питанию...</label>
+                  <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="Пожелания по экскурсии" required></textarea>
+                </div>
+              </div>
+            
+              <div class="booking-info booking-info__rules" data-error-title="Поле должно быть отмечено">
+                <div class="booking-form__form-field hint-text">
+                  <p>Нажимая кнопку «Отправить» Вы соглашаетесь с <a href="https://ekskursii.by/?Politika_konfidencialinosti" target="_blank">Политикой обработки персональных данных</a>.</p>
+                </div>
+              </div>
+            
+              <button class="btn booking-form__submit-btn" type="submit" value="Отправить"></button>
+          
+            </form>
+        
+          </div>
+        </div>
+        <div class="contacts-modal modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Телефоны</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            <div class="modal__main">
+              <a href="tel:+375173944913">+375 (17) 394-49-13</a>
+              <a href="tel:+375291903216">+375 (29) 190-32-16 (А1)</a>
+              <a href="tel:+375297566665">+375 (29) 756-66-65 (МТС)</a>
+            </div>
+            <div class="modal__footer">
+              <p>Мы в мессенджерах</p>
+              <div class="modal__footer--social-icons">
+                <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                  <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                </a>
+                <a href="https://telegram.me/ekskursii" title="telegram">
+                  <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                </a>
+                <a href="viber://add?number=375297566665" title="viber">
+                  <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="validation-modal validation-modal--error modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Заголовок</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            <div class="modal__main">
+              Сообщение
+            </div>
+          </div>
+        </div>
+        
+      </header>
+      <main class="main">
+        <section class="main-search search-header">
+          <div class="container">
+            <div class="main-search__inner">
+              <input class="main-search__dropdown-btn" id="main-search__dropdown-btn" type="checkbox" checked>
+              <h2 class="h2">Поиск</h2>
+              <span class="main-search__dropdown-arrow" data-open-text="раскрыть" data-close-text="свернуть"></span>
+              <form class="search-form" id="search-form">
+                <div class="search-form__form-field">
+                  <label class="hidden-label" for="header-search-place">Место</label>
+                  <span class="search-form__form-field--input">
+                    <input type="text" name="place" id="header-search-place" placeholder="Место">
+                  </span>
+                </div>
+                <div class="search-form__form-field">
+                  <div class="search-form__form-field--date">
+                    <label class="hidden-label" for="header-search-date">Выберите дату</label>
+                    <span class="search-form__form-field--input">
+                      <input type="text" name="date" id="header-search-date" placeholder="Выберите дату">
+                    </span>
+                  </div>
+                </div>
+                <div class="search-form__form-field">
+                  <label class="hidden-label" for="header-search-types">Виды экскурсий</label>
+                  <span class="custom-select search-form__form-field--input">
+                    <select name="types" id="header-search-types">
+                      <option value="0">Групповые</option>
+                      <option value="1">Индивидуальные</option>
+                    </select>
+                  </span>
+                </div>
+                <button class="btn search-form__submit-btn">Искать</button>
+              </form>
+            </div>
+          </div>
+        </section>
+        <div class="search-modal modal">
+          <div class="modal-content">
+        
+            <button class="btn modal-close">
+              <img src="images/sprite.svg#icons--cross" alt="close">
+            </button>
+        
+            <form class="search-form" id="search-form_modal">
+              <div class="search-form__form-field">
+                <label class="hidden-label" for="main-search-place_modal">Место</label>
+                <span class="search-form__form-field--input">
+                  <input type="text" name="place" id="main-search-place_modal" minlength="3" placeholder="Место" required>
+                </span>
+              </div>
+              <a class="btn simple-btn arrow-btn modal-close" href="#" title=""></a>
+              <button class="btn search-form__submit-btn" value="Искать"></button>
+            </form>
+        
+            <div class="search-results">
+              <ul>
+                <li class="h6 search-results__item--header">Групповые экскурсии</li>
+                
+                <li class="search-results__item--info">
+                  <a href="https://pda.ekskursii.by/?Brest_Belovezhskaya_puscha_Mir_Minsk_2_dnya">
+                    <p class="h5"><span>Минск</span> вечерний</p>
+                    <div class="hint-text">
+                      <p class="hint-gray">
+                        Ближайшая: 18:00 05-Марта-2024 <br>
+                        Цена за человека 50 BYN
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li class="search-results__item--info">
+                  <a href="https://pda.ekskursii.by/?Brest_Belovezhskaya_puscha_Mir_Minsk_2_dnya">
+                    <p class="h5">Обзорная экскурсия по <span>Минск</span>у</p>
+                    <div class="hint-text">
+                      <p class="hint-gray">
+                        Ближайшая: 18:00 05-Марта-2024 <br>
+                        Цена за человека 50 BYN
+                      </p>
+                    </div>
+                  </a>
+                </li>
+        
+                <li class="h6 search-results__item--header">Все экскурсии</li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <section class="section section__about-company">
+          <div class="container">
+            <div class="section__header">
+              <h1 class="h2">О предприятии «Автоматизированные технологии туризма»</h1>
+              <h6 class="h6">О предприятии</h6>
+            </div>
+            <div class="section__inner">
+              <div class="contacts__website">
+                <a class="card-item__description-btn simple-btn btn" title="att.by" href="https://att.by/"></a>
+                <a class="card-item__description-btn simple-btn btn" title="Контакты" href="/ekskursii.by/contacts.html"></a>
+                <!-- <a class="card-item__description-btn simple-btn btn" title="Награды" href="https://att.by/?nagrady"></a>
+                <a class="card-item__description-btn simple-btn btn" title="Сотрудники" href="https://att.by/?sotrudniki"></a> -->
+              </div>
+
+              <p>Белорусский туроператор частное научно-производственное унитарное предприятие «Автоматизированные технологии туризма» специализируется на внутреннем и въездном туризме в Республике Беларусь. Предприятие создано 9 августа 2007 года в городе Минск с целью предоставления онлайн-сервиса по бронированию туристических услуг. Удобство, скорость, актуальность информации и точность в мелочах - основные принципы работы нашей компании.</p>
+              <img src="images/photo3.jpg" alt="Марина Владимировна Гнедая, директор">
+              <div class="par-wrapper">
+                <p><strong>Миссия компании</strong> - создание национального туристического продукта, внедрение самых передовых информационных технологий в организацию отдыха в Беларуси, предоставление высокого уровня сервиса для клиентов с любым уровнем дохода.</p>
+                <p><strong>Цель компании</strong> - повышение качества и конкурентоспособности туристических услуг на рынках въездного и внутреннего туризма Республики Беларусь.</p>
+              </div>
+              <p><strong>ЧНПУП «Автоматизированные технологии туризма»</strong> - современный белорусский туроператор, который предлагает полный комплекс туристических услуг в Республике Беларусь от бронирования проживания в гостиницах до организации комбинированных туров, бизнес-конференций, деловых переговоров, спортивных мероприятий.</p>
+              <p>Высокие стандарты обслуживания клиентов, выверенные на протяжении <b>16 лет успешной работы</b>, внедрение современных интернет-технологий, применение в работе с клиентами новейших коммуникативных средств, создание удобного и интуитивного процесса бронирования туров, договорные отношения со всеми объектами отдыха на территории страны - все это дает нам возможность продвигать туристический продукт Беларуси далеко за ее пределами.</p>
+              <p>Сегодня с помощью компании «Автоматизированные технологии туризма» все многообразие синеокой Беларуси оценили граждане из более чем 100 стран мира, среди них клиенты из Российской Федерации и других членов СНГ, Европы, Америки, Австралии, Азии и Африки. Ежегодно организацию отдыха в Беларуси нам доверяют около 20 000 клиентов, которые бронируют туры в режиме онлайн с помощью 6 специализированных интернет-порталов предприятия.</p>
+            </div>
+          </div>
+        </section>
+        <section class="section section__quicknav section__about" id="qsection">
+          <div class="quicknav__navbar" id="qnavbar">
+            <h6 class="h6">Быстрая навигация</h6>
+            <ul class="quicknav__tags-group">
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#advantages" title="Преимущества">Почему мы</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#services" title="Услуги">Услуги</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#booking" title="Процесс бронирования">Бронирование</a>
+              </li>
+              <!-- <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#websites" title="Интернет-порталы">Сайты</a>
+              </li> -->
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#history" title="История">История</a>
+              </li>
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#employees" title="Сотрудники">Сотрудники</a>
+              </li>
+              <!-- <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#rewards" title="Награды">Награды</a>
+              </li> -->
+              <li class="quicknav__tags-group--tag">
+                <a class="quicknav__tags-group--tag-link" href="#contacts" title="Контакты">Контакты</a>
+              </li>
+            </ul>
+          </div>
+        
+          <div class="container">
+            <div class="section__inner">
+              <section class="quicknav__section about__program" id="advantages">
+                <h2 class="h2">Преимущества работы с ЧНПУП «Автоматизированные технологии туризма»</h2>
+                <div class="program__wrapper">
+                  <div class="program__item">
+                    <p class="program__item--title">Все виды туристических и сопутствующих услуг</p>
+                    <p>Специалисты компании забронируют любой пакет наземного обслуживания в Беларуси: путевки в санатории, туристические комплексы и базы отдыха, усадьбы, проживание в гостиницах, регулярные сборные экскурсии и индивидуальные экскурсионные туры, охотничьи туры, услуги трансфера, организуют корпоративное мероприятие или деловые переговоры.</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">6 специализированных интернет-порталов об отдыхе в Беларуси</p>
+                    <p>Все многообразие туристических возможностей Беларуси отражено в 6 специализированных интернет-порталах, каждый из которых посвящен отдельному типу отдыха. Все интернет-порталы содержат систематизированную информацию о типе отдыха, которая сопровождается обилием актуальных фотографий и видеороликов, справочной информацией и удобной системой поиска.</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Онлайн-бронирование 7 дней в неделю, 24 часа в сутки</p>
+                    <p>Современная и удобная система онлайн-бронирования туристических услуг в виде электронной заявки и личного кабинета позволяет бронировать путевки в режиме реального времени, следить за статусом заказа, в любое время суток задавать вопросы специалистам компании, вести электронный документооборот и многое другое.</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Доверие клиентов и партнеров</p>
+                    <p>Ежегодно интернет-порталы «Автоматизированные технологии туризма» посещают более 6 450 000 пользователей. За годы работы мы организовали около 240 000 туров для клиентов из разных уголков мира. Договорные отношения с партнерами, количество которых только в Республике Беларусь превышает 1 200, помогает нам создавать высококачественный туристический продукт.</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Мобильность и современные виды связи</p>
+                    <p>Для удобства бронирования туров и общения с клиентами мы располагаем группами и аккаунтами во всех социальных сетях - Вконтакте, Одноклассники, Facebook, Twitter, Instagram. Наши специалисты оперативно ответят на любой вопрос в самых популярных мобильных приложениях - Viber, WhatsApp, Skype, Telegram.</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Youtube-канал об отдыхе в Беларуси</p>
+                    <p>Наша компания располагает самым обширным в Беларуси Youtube-каналом об отдыхе в Республике. Более 6 000 видеороликов о санаториях, оздоровительных центрах, базах отдыха и усадьбах Беларуси охватывают разнообразные тематики сюжетов: от живописных пейзажей до уникальных видеороликов о методиках лечения в санаторно-курортных учреждениях и интервью врачей.</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">Экспедиции по всей Беларуси</p>
+                    <p>За десять лет работы сотрудники компании совершили более 1 000 служебных поездок по всей Республике Беларусь с целью сбора детальной информации об объектах отдыха. Сегодня на интернет-порталы предприятия загружено более 82 500 фотографий санаториев, туристических комплексов, баз отдыха, усадеб, гостиниц, достопримечательностей и музеев, а архивы насчитывают свыше 1 600 000 фотографий об отдыхе в Беларуси.</p>
+                  </div>
+                </div>
+
+                <br>
+
+                <h2 class="h2">Интернет-ресурсы предприятия</h2>
+                <ul class="list program__item">
+                  <li>
+                    <span>
+                      Санатории Беларуси:<br>
+                      <a href="http://sanatorii.by/" title="Перейти на сайт Sanatorii.by Санатории Беларуси Белоруссии">Sanatorii.by</a>&nbsp;(105 санаториев)
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      Экскурсии по Беларуси:<br>
+                      <a href="https://pda.ekskursii.by/" title="Перейти на сайт Ekskursii.by Экскурсии по Беларуси Белоруссии">Ekskursii.by</a>&nbsp;(190 экскурсий и туров)
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      Отдых в Беларуси:<br>
+                      <a href="https://beltur.by/" title="Перейти на Интернет-портал Beltur.by Отдых в Беларуси Белоруссии">Beltur.by</a>&nbsp;(191 объект отдыха)
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      Гостиницы Беларуси:<br>
+                      <a href="https://belhotel.by/" title="Перейти на Интернет-портал Belhotel.by Гостиницы Беларуси Белоруссии">Belhotel.by</a>&nbsp;(325 гостиниц)
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      Трансфер в санатории, базы отдыха, гостиницы, города Беларуси:<br>
+                      <a href="https://beltransfer.by/" title="Перейти на Интернет-портал Beltransfer.by Трансфер по Беларуси Белоруссии">Beltransfer.by</a>&nbsp;(108 городов)
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      Онлайн-сервисы для комфортной жизни:<br>
+                      <a href="https://belarus-online.by/" title="Перейти на портал Belarus-online.by Онлайн-сервисы для комфортной жизни">Belarus-online.by</a>&nbsp;(более 1 000 онлайн-сервисов)
+                    </span>
+                  </li>
+                </ul>
+                
+                
+              </section>
+
+              <!-- <section class="quicknav__section">
+                
+              </section> -->
+        
+              <section class="quicknav__section" id="services">
+                <h2 class="h2">Услуги</h2>
+                <p>Все достижения предприятия стали возможными благодаря плодотворной работе коллектива ЧНПУП «Автоматизированные технологии туризма» с клиентами, посетителями интернет-порталов и партнерами.</p>
+                <p>Предприятие занимает открытую позицию по отношению к туристическим агентствам и объектам размещения, экскурсоводам, перевозчикам и другим партнерам. Начать сотрудничать с компанией «Автоматизированные технологии туризма» просто!</p>
+                <p>ЧНПУП «Автоматизированные технологии туризма» действует на основании свидетельства о государственной регистрации от 9 августа 2007 года и предоставляет следующие услуги:</p>
+                <ul class="list">
+                  <li>061100 Услуги туроператора по организации внутреннего туризма</li>
+                  <li>061200 Услуги туроператора по организации выездного туризма</li>
+                  <li>061300 Услуги туроператора по организации въездного туризма</li>
+                  <li>061400 Услуги турагента</li>
+                </ul>
+                <p>Бронируйте онлайн оздоровительный тур в санаторий, экскурсионный тур по Беларуси, гостиничный номер в одном из белорусских городов, тур выходного дня в туристическом комплексе, сельской усадьбе, спортивный тур или деловое мероприятие. Профессиональную консультацию по бронированию и оплате туристических услуг дополнительно можно получить посредством отправки сообщений с порталов или в мобильных приложениях, обсуждений на форуме или в офисе предприятия.</p>
+              </section>
+        
+              <section class="quicknav__section about__program" id="booking">
+                <h2 class="h2">Процесс бронирования</h2>
+                <p>В 2007 году команда ЧНПУП «Автоматизированные технологии туризма» впервые в Беларуси предоставила клиентам удобный и простой процесс онлайн-бронирования путевок. Сегодня усовершенствованный онлайн процесс бронирования состоит из пяти простых этапов, прохождение которых в зависимости от сложности тура занимает не более 20 минут.</p>
+                
+                <div class="program__wrapper">
+                  <div class="program__item">
+                    <p class="program__item--title h4">1. Поиск и выбор санатория</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title h4">2. Отправка заявки</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title h4">3. Бронирование</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title h4">4. Оплата</p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title h4">5. Получение документов</p>
+                  </div>
+                </div>
+
+              </section>
+        
+              <section class="quicknav__section about__program" id="history">
+                <h2 class="h2">История предприятия</h2>
+                <p>Белорусский туроператор «Автоматизированные технологии туризма» - команда профессиональных и любящих свою работу специалистов. На протяжении 16 лет мы остаемся верными своему делу, открываем для гостей образ Беларуси как самобытной, развитой и богатой своими традициями страны. История нашего предприятия - это история успеха динамично развивающейся компании, которая за непродолжительный срок доросла до статуса национального туроператора.</p>
+                
+                <p class="h6">9 августа 2007 года</p>
+                <div class="program__wrapper">
+                  <div class="program__item">
+                    <p class="program__item--title">Запуск первого ресурса:</p>
+                    <p><a href="http://sanatorii.by/" title="Sanatorii.by">Sanatorii.by</a></p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">2 награды, 4 сотрудника</p>
+                  </div>
+                </div>
+        
+                <p class="h6">2009 год</p>
+                <div class="program__wrapper">
+                  <div class="program__item">
+                    <p class="program__item--title">Запуск новых ресурсов:</p>
+                    <p><a href="https://beltur.by/" title="Beltur.by">Beltur.by</a></p>
+                    <p><a href="https://beltransfer.by/" title="Beltransfer.by">Beltransfer.by</a></p>
+                    <p><a href="https://belhotel.by/" title="Belhotel.by">Belhotel.by</a></p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">10 наград, 15 сотрудников</p>
+                  </div>
+                </div>
+
+                <p class="h6">2011 год</p>
+                <div class="program__wrapper">
+                  <div class="program__item">
+                    <p class="program__item--title">Запуск нового ресурса:</p>
+                    <p><a href="https://ekskursii.by/" title="Ekskursii.by">Ekskursii.by</a></p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">14 наград, 1 государственная награда, 21 сотрудник</p>
+                  </div>
+                </div>
+
+                <p class="h6">2015 год</p>
+                <div class="program__wrapper">
+                  <div class="program__item">
+                    <p class="program__item--title">Запуск нового ресурса:</p>
+                    <p><a href="https://belarus-online.by/" title="Беларусь-онлайн">Belarus-online.by</a></p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">21 награда, 2 государственные награды, 25 сотрудников, собственный офис</p>
+                  </div>
+                </div>
+
+                <p class="h6">2018 год</p>
+                <div class="program__wrapper">
+                  <div class="program__item">
+                    <p class="program__item--title">Успешная работа 6 ресурсов:</p>
+                    <p><a href="http://sanatorii.by/" title="Sanatorii.by">Sanatorii.by</a></p>
+                    <p><a href="https://beltur.by/" title="Beltur.by">Beltur.by</a></p>
+                    <p><a href="https://beltransfer.by/" title="Beltransfer.by">Beltransfer.by</a></p>
+                    <p><a href="https://belhotel.by/" title="Belhotel.by">Belhotel.by</a></p>
+                    <p><a href="https://ekskursii.by/" title="Ekskursii.by">Ekskursii.by</a></p>
+                    <p><a href="https://belarus-online.by/" title="Беларусь-онлайн">Belarus-online.by</a></p>
+                  </div>
+                  <div class="program__item">
+                    <p class="program__item--title">22 награды, 3 государственные награды, собственный офис, 30 сотрудников</p>
+                  </div>
+                </div>
+
+              </section>
+
+
+              <section class="quicknav__section" id="rewards">
+                <h2 class="h2">Награды</h2>
+                <p>Награды предприятия – показатель слаженной и четкой работы всех его подразделений, признание высоких достижений и профессионализма, качества предоставляемых услуг. Белорусский туроператор – обладатель множества республиканских наград в области туризма. Мы неоднократно удостоены высших наград Республики Беларусь, а в июне 2017 года «Автоматизированные технологии туризма» занесено на Республиканскую доску Почета за достижение высоких показателей в финансово-экономической деятельности.</p>
+                <p>Со всеми наградами белорусского туроператора «Автоматизированные технологии туризма» можно познакомиться в <a title="Награды" href="https://att.by/?nagrady">соответствующем разделе</a>.</p>
+              </section>
+
+              <section class="quicknav__section" id="employees">
+                <h2 class="h2">Сотрудники</h2>
+                <p>Сегодня компания «Автоматизированные технологии туризма» - это молодая энергичная команда профессионалов с высшим туристическим образованием. Штат сотрудников компании насчитывает 30 сотрудников, объединенных в несколько профильных отделов, среди которых 3 специализированных отдела продаж туристического продукта и отдел веб-разработки и технической поддержки. Подробная информация о коллективе предприятия представлена на <a href="https://att.by/?sotrudniki" target="_blank">корпоративном интернет-портале Att.by</a>.</p>
+                <div class="employees-slider splide">
+                  <div class="splide__track">
+                    <ul class="splide__list">
+                      <li class="splide__slide">
+                        <div class="splide__slide--wrapper">
+                          <img src="images/emp1.gif" alt="photo">
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="splide__slide--wrapper">
+                          <img src="images/emp2.gif" alt="photo">
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="splide__slide--wrapper">
+                          <img src="images/emp3.gif" alt="photo">
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="splide__slide--wrapper">
+                          <img src="images/emp4.gif" alt="photo">
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="splide__slide--wrapper">
+                          <img src="images/emp1.gif" alt="photo">
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="splide__slide--wrapper">
+                          <img src="images/emp2.gif" alt="photo">
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="splide__slide--wrapper">
+                          <img src="images/emp3.gif" alt="photo">
+                        </div>
+                      </li>
+                      <li class="splide__slide">
+                        <div class="splide__slide--wrapper">
+                          <img src="images/emp4.gif" alt="photo">
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section class="quicknav__section" id="contacts">
+                <h2 class="h2">Контакты</h2>
+                <p><a class="card-item__description-btn simple-btn btn arrow-btn" title="Перейти на страницу Контакты" href="/ekskursii.by/contacts.html"></a></p>
+                <div class="section__inner section__inner--contacts">
+                  <address class="address">
+                    <div class="contacts__phones">
+                      <p class="h5">Телефоны</p>
+                      <div class="contacts__phones--numbers">
+                        <p><a href="tel:+375173944913">+375 (17) 394-49-13</a></p>
+                        <p><a href="tel:+375297566665">+375 (29) 756-66-65</a></p>
+                      </div>
+                    </div>
+                    <div class="contacts__socials">
+                      <p class="h5">Мы в мессенджерах</p>
+                      <p><a href="tel:+375297566665">+375 (29) 756-66-65</a></p>
+                      <div class="contacts__socials--items">
+                        <a href="whatsapp://send/?phone=+375297566665&amp;text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                          <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                        </a>
+                        <a href="viber://add?number=375297566665/" title="viber">
+                          <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                        </a>
+                        <a href="https://telegram.me/ekskursii" title="telegram">
+                          <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                        </a>
+                      </div>
+                    </div>
+                  </address>
+                  <div class="address">
+                    <div class="contacts__address">
+                      <p class="h5">Адрес</p>
+                      <p><a href="#">220007, Беларусь, г. Минск,<br>ул. Суражская д.10, оф.21 (5 этаж)</a></p>
+                    </div>
+                    <a class="btn simple-btn arrow-btn" href="https://pda.ekskursii.by/?Kak_projti_k_mestu_otpravlenija_na_ekskursiju" title="Как добраться"></a>
+                    <div class="contacts__socials">
+                      <p class="h5">Наши социальные сети</p>
+                      <div class="contacts__social-media">
+                        <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Вк">
+                          <img src="images/sprite.svg#icons--socials--vk" alt="Вк">
+                        </a>
+                        <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Одноклассниках">
+                          <img src="images/sprite.svg#icons--socials--ok" alt="Одноклассники">
+                        </a>
+                        <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы на YouTube">
+                          <img src="images/sprite.svg#icons--socials--youtube" alt="YouTube">
+                        </a>
+                        <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Instagram">
+                          <img src="images/sprite.svg#icons--socials--instagram" alt="Instagram">
+                        </a>
+                        <a href="https://ok.ru/group58251760369726?st._aid=ExternalGroupWidget_OpenGroup" title="Мы в Facebook">
+                          <img src="images/sprite.svg#icons--socials--fb" alt="Facebook">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </section>
+              
+            </div>
+          </div>
+        </section>
+
+        
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__inner">
+            <div class="footer__main-nav">
+              <ul class="footer__nav-col">
+                <li class="footer__nav-item">
+                  <a href="#" title="Все экскурсии">Все экскурсии</a>
+                  <ul class="footer__subnav-col">
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Новогодние каникулы">Новогодние каникулы</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Групповые экскурсии">Групповые</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Индивидуальные экскурсии">Индивидуальные</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Корпоративные экскурсии">Корпоративные</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Школьные экскурсии">Школьные</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Бонусы и скидки">Бонусы и скидки</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Все об экскурсиях">Все об экскурсиях</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Города">Города</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Музеи">Музеи</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Знаковые места">Знаковые места</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Туризм в Беларуси">Туризм в Беларуси</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="О Беларуси">О Беларуси</a>
+                </li>
+              </ul>
+              <ul class="footer__nav-col">
+                <li class="footer__nav-item">
+                  <a href="#" title="Поиск">Поиск</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="График экскурсий">График экскурсий</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Личный кабинет">Личный кабинет</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Новости">Новости</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Частые вопросы">Частые вопросы</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Отзывы">Отзывы</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="О нас">О нас</a>
+                  <ul class="footer__subnav-col">
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Новогодние каникулы">Общая информация</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Награды">Награды</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Наши преимущества">Наши преимущества</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Сотрудники">Сотрудники</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Контакты">Контакты</a>
+                </li>
+                <li class="footer__nav-item">
+                  <ul class="footer__subnav-socials">
+                    <li class="footer__subnav-item">
+                      <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                        <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                      </a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="https://telegram.me/ekskursii" title="telegram">
+                        <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                      </a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="viber://add?number=375297566665" title="viber">
+                        <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__disclaimer">
+              <p class="footer__disclaimer--text">
+                Информация, размещенная на интернет-портале <a href="https://ekskursii.by/" title="ekskursii.by">Ekskursii.by</a>, не является предложением публичной оферты.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <a class="footer__logo" href="#">
+                <img src="images/sprite.svg#logo" alt="logo">
+              </a>
+              <div class="footer__secondary-nav">
+                <div class="footer__secondary-nav-col">
+                  <a class="footer__secondary-nav-btn" href="#">Вход для гидов</a>
+                  <a class="footer__secondary-nav-btn" href="#">Вход для партнеров</a>
+                  <a class="footer__secondary-nav-btn--alt" href="#">Регистрация нового Агента</a>
+                </div>
+                <div class="footer__secondary-nav-col">
+                  <a class="footer__secondary-nav-link" href="https://sanatorii.by/" title="sanatorii.by" target="_blank">Санатории</a>
+                  <a class="footer__secondary-nav-link" href="https://beltur.by/" title="beltur.by" target="_blank">Базы отдыха</a>
+                  <a class="footer__secondary-nav-link" href="https://belhotel.by/" title="belhotel.by" target="_blank">Гостиницы</a>
+                  <a class="footer__secondary-nav-link" href="https://beltransfer.by/" title="beltransfer.by" target="_blank">Трансфер</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <div class="footer__payment">
+                <img src="images/sprite.svg#icons--payment--master-card-secure-code" alt="master card secure code">
+                <img src="images/sprite.svg#icons--payment--mastercard" alt="mastercard">
+                <img src="images/sprite.svg#icons--payment--verified-visa" alt="verified by visa">
+                <img src="images/sprite.svg#icons--payment--visa" alt="visa">
+                <img src="images/sprite.svg#icons--payment--bepaid" alt="bepaid">
+                <img src="images/sprite.svg#icons--payment--erip" alt="система ЕРИП">
+              </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <div class="footer__copyright">
+                <p>© Частное научно-производственное унитарное предприятие "Автоматизированные технологии туризма"</p>
+              </div>
+            </div>
+        </div>
+      </footer>
+      <a class="btn btn-up" href="#"></a>
+    </div>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
