@@ -3568,6 +3568,10 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   font-weight: 700;
   color: #FFD966;
 }
+.card-item__price p::before {
+  content: "BYN";
+  display: inline;
+}
 .card-item__price span {
   font-size: 14px;
   font-weight: 400;
