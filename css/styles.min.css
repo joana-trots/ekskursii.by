@@ -1808,8 +1808,12 @@ a.menu__primary-list--item.dropdown-item::after {
 .dropdown-text-btn:has(input:checked) input::after {
   transform: rotate(180deg);
 }
-.dropdown-text-btn:has(input:checked) ~ .dropdown-text-content, .dropdown-text-btn:has(input:checked) ~ .dropdown-text-content > * {
+.dropdown-text-btn:has(input:checked) ~ .dropdown-text-content, .dropdown-text-btn:has(input:checked) ~ .dropdown-text-content > *:not(strong) {
   display: block;
+}
+.dropdown-text-btn:has(input:checked) ~ .dropdown-text-content a:not(.dropdown-text-btn),
+.dropdown-text-btn:has(input:checked) ~ .dropdown-text-content strong {
+  display: inline-block;
 }
 .dropdown-text-btn:has(input:checked) ~ .dropdown-text-content ul.list, .dropdown-text-btn:has(input:checked) ~ .dropdown-text-content ul.card-item__price-include {
   display: flex;
@@ -3431,9 +3435,11 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   z-index: 1;
 }
 
-.schedule__card-item--header:has(.dropdown-text-content), .attractions .attractions__card-item--header:has(.dropdown-text-content) {
+.schedule__card-item--header:has(.dropdown-text-content) .h4, .attractions .attractions__card-item--header:has(.dropdown-text-content) .h4 {
   text-align: center;
-  gap: 0;
+}
+.schedule__card-item--header:has(.dropdown-text-content) .dropdown-text-btn, .attractions .attractions__card-item--header:has(.dropdown-text-content) .dropdown-text-btn {
+  margin-top: 0;
 }
 
 .card-item__info,
