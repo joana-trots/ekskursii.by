@@ -3431,6 +3431,11 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   z-index: 1;
 }
 
+.schedule__card-item--header:has(.dropdown-text-content), .attractions .attractions__card-item--header:has(.dropdown-text-content) {
+  text-align: center;
+  gap: 0;
+}
+
 .card-item__info,
 .card-item__additional-info,
 .card-item__seats {
