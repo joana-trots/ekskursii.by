@@ -215,14 +215,14 @@
         display: flex
         flex-direction: column
         text-align: right
-        font-size: 30px
         margin-top: 0
+    span:first-child
+        font-size: 30px
         font-weight: 700
         color: $accent-yellow
-        &::before
-            content: 'BYN'
-            display: inline
-    span
+        &::after
+            content: attr(title)
+    span:last-child
         font-size: 14px
         font-weight: 400
         color: $white
@@ -321,10 +321,11 @@ ul.card-item__price-include
         p
             display: block
             text-align: left
+        span:first-child
             font-size: 14px
             font-weight: 700
             color: $black
-        span
+        span:last-child
             display: none
     .card-item__cta
         width: 36px

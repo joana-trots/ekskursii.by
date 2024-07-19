@@ -1812,7 +1812,8 @@ a.menu__primary-list--item.dropdown-item::after {
   display: block;
 }
 .dropdown-text-btn:has(input:checked) ~ .dropdown-text-content a:not(.dropdown-text-btn),
-.dropdown-text-btn:has(input:checked) ~ .dropdown-text-content strong {
+.dropdown-text-btn:has(input:checked) ~ .dropdown-text-content strong,
+.dropdown-text-btn:has(input:checked) ~ .dropdown-text-content b {
   display: inline-block;
 }
 .dropdown-text-btn:has(input:checked) ~ .dropdown-text-content ul.list, .dropdown-text-btn:has(input:checked) ~ .dropdown-text-content ul.card-item__price-include {
@@ -3574,16 +3575,17 @@ input#panel-3-ctrl:checked ~ .panels [class^=panel-]:not(.panel-3) {
   display: flex;
   flex-direction: column;
   text-align: right;
-  font-size: 30px;
   margin-top: 0;
+}
+.card-item__price span:first-child {
+  font-size: 30px;
   font-weight: 700;
   color: #FFD966;
 }
-.card-item__price p::before {
-  content: "BYN";
-  display: inline;
+.card-item__price span:first-child::after {
+  content: attr(title);
 }
-.card-item__price span {
+.card-item__price span:last-child {
   font-size: 14px;
   font-weight: 400;
   color: #FFFFFF;
@@ -3710,11 +3712,13 @@ ul.card-item__price-include li::before {
 .schedule__display--table .card-item__price p {
   display: block;
   text-align: left;
+}
+.schedule__display--table .card-item__price span:first-child {
   font-size: 14px;
   font-weight: 700;
   color: #2F2F2F;
 }
-.schedule__display--table .card-item__price span {
+.schedule__display--table .card-item__price span:last-child {
   display: none;
 }
 .schedule__display--table .card-item__cta, .schedule__display--table .booking-tabs [class$=form__submit-btn], .booking-tabs .schedule__display--table [class$=form__submit-btn] {

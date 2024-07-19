@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekskursii.by</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container header__container--primary">
+          <nav class="menu__primary">
+            <a class="header__logo" href="/ekskursii.by/" title="Ekskursii.by">
+              <img src="images/sprite.svg#logo" alt="logo">
+            </a>
+            <ul class="menu__primary-list">
+              <li class="menu__primary-list--item desktop-item">
+                <a href="#" class="menu__primary-list--link" title="Полная версия сайта"></a>
+              </li>
+              <li class="menu__primary-list--item phone-item modal-open">
+                <div class="menu__primary-list--link" id="phone-item">
+                  <img src="images/sprite.svg#icons--socials--messengers" alt="messengers">
+                  <span>+375 29-756-66-65</span>
+                </div>
+              </li>
+              <li class="menu__primary-list--item dropdown-item lang-item custom-select">
+                <select class="menu__primary-list--link" id="lang-item" name="lang-item">
+                  <option value="byn">рус</option>
+                  <option value="rub">бел</option>
+                  <option value="euro">en</option>
+                </select>
+              </li>
+              <li class="menu__primary-list--item dropdown-item currency-item custom-select">
+                <select class="menu__primary-list--link" id="currency-item" name="currency-item">
+                  <option value="byn">BYN</option>
+                  <option value="rub">₽</option>
+                  <option value="euro">€</option>
+                </select>
+              </li>
+            </ul>
+        
+            <div class="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
+        </div>
+        <div class="container header__container--mobile">
+          <nav class="menu__mobile">
+            <ul class="menu__mobile-list">
+        
+              <li class="menu__mobile-list--item divided-item">
+                <a class="btn cta-primary modal-open" href="#" title="Оставить заявку"></a>
+              </li>
+              
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="#">Личный кабинет</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">График экскурсий</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Групповые экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Индивидуальные экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule1.html">Корпоративные экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/schedule.html">Все экскурсии</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Как заказать?</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="#">Частые вопросы</a>
+              </li>
+              <li class="menu__mobile-list--item divided-item">
+                <a class="menu__mobile-list--link" href="#">Все об экскурсиях</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <a class="menu__mobile-list--link" href="/ekskursii.by/contacts.html">Контакты</a>
+              </li>
+              <li class="menu__mobile-list--item">
+                <ul>
+                  <li>
+                    <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                      <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                    </a>
+                    <a href="https://telegram.me/ekskursii" title="telegram">
+                      <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                    </a>
+                    <a href="viber://add?number=375297566665" title="viber">
+                      <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="booking-modal modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Быстрая заявка</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            
+            <form class="booking-form" id="booking-group">
+              <div class="booking-info booking-info__profile">
+                <div class="booking-form__form-field" data-error-title="Введите ваше ФИО">
+                  <label class="h6 hidden-label" for="name">ФИО</label>
+                  <span class="booking-form__form-field--input">
+                    <input class="no-icon" type="text" name="name" id="name" placeholder="Введите ваше ФИО" required>
+                  </span>
+                </div>
+                <div class="booking-form__form-field" data-error-title="Введите email или телефон">
+                  <label class="h6 hidden-label" for="phone">Email или телефон</label>
+                  <span class="booking-form__form-field--input">
+                    <input class="no-icon" type="text" name="phone" id="phone" placeholder="Email или телефон" required>
+                  </span>
+                </div>
+                <div class="booking-form__form-field" data-error-title="Напишите пожелания по маршруту, программе, питанию...">
+                  <label class="h6 hidden-label" for="question">Пожелания по маршруту, программе, питанию...</label>
+                  <textarea class="booking-form__form-field--input no-icon" id="question" rows="1" placeholder="Пожелания по экскурсии" required></textarea>
+                </div>
+              </div>
+            
+              <div class="booking-info booking-info__rules" data-error-title="Поле должно быть отмечено">
+                <div class="booking-form__form-field hint-text">
+                  <p>Нажимая кнопку «Отправить» Вы соглашаетесь с <a href="https://ekskursii.by/?Politika_konfidencialinosti" target="_blank">Политикой обработки персональных данных</a>.</p>
+                </div>
+              </div>
+            
+              <button class="btn booking-form__submit-btn" type="submit" value="Отправить"></button>
+          
+            </form>
+        
+          </div>
+        </div>
+        <div class="contacts-modal modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Телефоны</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            <div class="modal__main">
+              <a href="tel:+375173944913">+375 (17) 394-49-13</a>
+              <a href="tel:+375291903216">+375 (29) 190-32-16 (А1)</a>
+              <a href="tel:+375297566665">+375 (29) 756-66-65 (МТС)</a>
+            </div>
+            <div class="modal__footer">
+              <p>Мы в мессенджерах</p>
+              <div class="modal__footer--social-icons">
+                <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                  <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                </a>
+                <a href="https://telegram.me/ekskursii" title="telegram">
+                  <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                </a>
+                <a href="viber://add?number=375297566665" title="viber">
+                  <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="validation-modal validation-modal--error modal">
+          <div class="modal-content">
+            <div class="modal__header">
+              <h2 class="h2">Заголовок</h2>
+              <button class="btn modal-close">
+                <img src="images/sprite.svg#icons--cross" alt="close">
+              </button>
+            </div>
+            <div class="modal__main">
+              Сообщение
+            </div>
+          </div>
+        </div>
+        
+      </header>
+      <main class="main">
+        <section class="main-search search-header">
+          <div class="container">
+            <div class="main-search__inner">
+              <input class="main-search__dropdown-btn" id="main-search__dropdown-btn" type="checkbox" checked>
+              <h2 class="h2">Поиск</h2>
+              <span class="main-search__dropdown-arrow" data-open-text="раскрыть" data-close-text="свернуть"></span>
+              <form class="search-form" id="search-form">
+                <div class="search-form__form-field">
+                  <label class="hidden-label" for="header-search-place">Место</label>
+                  <span class="search-form__form-field--input">
+                    <input type="text" name="place" id="header-search-place" placeholder="Место">
+                  </span>
+                </div>
+                <div class="search-form__form-field">
+                  <div class="search-form__form-field--date">
+                    <label class="hidden-label" for="header-search-date">Выберите дату</label>
+                    <span class="search-form__form-field--input">
+                      <input type="text" name="date" id="header-search-date" placeholder="Выберите дату">
+                    </span>
+                  </div>
+                </div>
+                <div class="search-form__form-field">
+                  <label class="hidden-label" for="header-search-types">Виды экскурсий</label>
+                  <span class="custom-select search-form__form-field--input">
+                    <select name="types" id="header-search-types">
+                      <option value="0">Групповые</option>
+                      <option value="1">Индивидуальные</option>
+                    </select>
+                  </span>
+                </div>
+                <button class="btn search-form__submit-btn">Искать</button>
+              </form>
+            </div>
+          </div>
+        </section>
+        <div class="search-modal modal">
+          <div class="modal-content">
+        
+            <button class="btn modal-close">
+              <img src="images/sprite.svg#icons--cross" alt="close">
+            </button>
+        
+            <form class="search-form" id="search-form_modal">
+              <div class="search-form__form-field">
+                <label class="hidden-label" for="main-search-place_modal">Место</label>
+                <span class="search-form__form-field--input">
+                  <input type="text" name="place" id="main-search-place_modal" minlength="3" placeholder="Место" required>
+                </span>
+              </div>
+              <a class="btn simple-btn arrow-btn modal-close" href="#" title=""></a>
+              <button class="btn search-form__submit-btn" value="Искать"></button>
+            </form>
+        
+            <div class="search-results">
+              <ul>
+                <li class="h6 search-results__item--header">Групповые экскурсии</li>
+                
+                <li class="search-results__item--info">
+                  <a href="https://pda.ekskursii.by/?Brest_Belovezhskaya_puscha_Mir_Minsk_2_dnya">
+                    <p class="h5"><span>Минск</span> вечерний</p>
+                    <div class="hint-text">
+                      <p class="hint-gray">
+                        Ближайшая: 18:00 05-Марта-2024 <br>
+                        Цена за человека 50 BYN
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li class="search-results__item--info">
+                  <a href="https://pda.ekskursii.by/?Brest_Belovezhskaya_puscha_Mir_Minsk_2_dnya">
+                    <p class="h5">Обзорная экскурсия по <span>Минск</span>у</p>
+                    <div class="hint-text">
+                      <p class="hint-gray">
+                        Ближайшая: 18:00 05-Марта-2024 <br>
+                        Цена за человека 50 BYN
+                      </p>
+                    </div>
+                  </a>
+                </li>
+        
+                <li class="h6 search-results__item--header">Все экскурсии</li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+                <li class="search-results__item--route">
+                  <a href="">Брест - Беловежская пуща - Мир - <span>Минск</span> (3&nbsp;дня)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <section class="section">
+          <div class="container">
+            <div class="section__header">
+              <h1 class="h2">10 причин посетить Минск</h1>
+            </div>
+          </div>
+        </section>
+        
+        <section class="section">
+          <div class="container">
+            <div class="section__inner">
+            
+              <p>Минск – столица и крупнейший город Беларуси, который поражает своей красотой и уникальной атмосферой. Город раскинулся на берегах реки Свислочь, создавая живописные пейзажи и прекрасные виды. Минск сочетает в себе историческое наследие и современную архитектуру, что создает уникальный облик города. В столице находятся многочисленные музеи, театры, галереи и выставочные залы, где можно познакомиться с белорусской культурой и искусством.</p>
+              <p>Богатство культурного наследия, красота природы, дружелюбные люди и атмосфера спокойствия и безопасности делают Минск отличным местом для посещения и знакомства с белорусской культурой и историей. Мы представляем 10 причин, ради чего стоит посетить столицу Республики Беларусь – Минск:</p>
+              
+              <div class="schedule__display schedule__wrapper-cards">
+                <!-- CARD -->
+                <div class="schedule__card-item">
+                  <div class="card-item__image">
+                    <img src="https://ekskursii.by/images/articles/minsk/1.jpg" alt="Верхний город, город Минск">
+                  </div>
+                  <div class="schedule__card-item--header long-text-dropdown">
+                    <h4 class="h4">1.<br>Побывать в самом сердце столицы – Верхнем городе</h4>
+                    <a class="dropdown-text-btn">
+                      <input id="text__dropdown-btn" type="checkbox" data-open-text="читать далее" data-close-text="свернуть">
+                    </a>
+                    <div class="dropdown-text-content">
+                      Верхний город – это исторический центр города, который расположен на левом берегу реки Свислочь. Именно здесь зародился Минск и сохранил множество исторических и архитектурных памятников. При посещении Верхнего города вы сможете прогуляться по его извилистым улочкам, насладиться атмосферой прежних времен и увидеть множество исторических достопримечательностей. В ряду выдающихся памятников Верхнего города следует отметить Троицкое Предместье, которое представляет собой комплекс зданий XVIII века, среди которых костел и монастырь.
+                    </div>
+                  </div>
+                </div> <!-- CARD ENDS -->
+
+                <!-- CARD -->
+                <div class="schedule__card-item">
+                  <div class="card-item__image">
+                    <img src="https://ekskursii.by/images/articles/minsk/2.jpg" alt="Пищаловский замок">
+                  </div>
+                  <div class="schedule__card-item--header long-text-dropdown">
+                    <h4 class="h4">2.<br>Увидеть таинственный острог «Пищаловский замок»</h4>
+                    <a class="dropdown-text-btn">
+                      <input id="text__dropdown-btn" type="checkbox" data-open-text="читать далее" data-close-text="свернуть">
+                    </a>
+                    <div class="dropdown-text-content">
+                      <a href="https://pda.ekskursii.by/?Dostoprimechatelnosti_Belarusi=17833_Zamok_Pischaly" target="_blank" title="Пищаловский замок"><strong>Пищаловский замок</strong></a> или, как его еще называют <b>«Володарка»</b>, строился с целью замены ветхого деревянного острога. Так и получилось, строился как тюрьма и исполнял свою миссию более двух веков. В ней отбывали наказание сподвижники К. Калиновского, многие белорусские поэты, общественные и культурные деятели: Якуб Колас, Карусь Каганец и др. Сам замок построен в неоклассицизме и до сих пор сохраняет свой первостепенный вид – за всю историю <strong>Пищаловский замок</strong> лишь единожды пережил крупную реконструкцию.
+                    </div>
+                  </div>
+                </div> <!-- CARD ENDS -->
+
+                <!-- CARD -->
+                <div class="schedule__card-item">
+                  <div class="card-item__image">
+                    <img src="https://ekskursii.by/images/articles/minsk/3.jpg" alt="Национальный академический Большой театр оперы и балета в Минске">
+                  </div>
+                  <div class="schedule__card-item--header long-text-dropdown">
+                    <h4 class="h4">3.<br>Побывать на раскошных оперных представлениях</h4>
+                    <a class="dropdown-text-btn">
+                      <input id="text__dropdown-btn" type="checkbox" data-open-text="читать далее" data-close-text="свернуть">
+                    </a>
+                    <div class="dropdown-text-content">
+                      <a href="https://ekskursii.by/?Dostoprimechatelnosti_Belarusi=16167_Nacionalnyy_akademicheskiy_teatr_opery_i_baleta" target="_blank" title="Национальный академический Большой театр оперы и балета"><strong>Национальный академический Большой театр оперы и балета</strong></a> в Минске основан в 1933 году и с тех пор стал важным культурным и художественным центром Беларуси. Репертуар Большого театра оперы и балета включает в себя широкий спектр оперных произведений, от классики до современности. Также здесь представлены постановки балетов, музыкально-драматические произведения, оперетты и музыкальные спектакли. Само здание является образцом советского довоенного конструктивизма. <strong>Национальный академический Большой театр оперы и балета</strong> в Минске – это не только выдающийся культурный объект, но и настоящий шедевр архитектуры.
+                    </div>
+                  </div> 
+                </div> <!-- CARD ENDS -->
+
+                <!-- CARD -->
+                <div class="schedule__card-item">
+                  <div class="card-item__image">
+                    <img src="https://ekskursii.by/images/articles/minsk/4.jpg" alt="Проспект Независимости">
+                  </div>
+                  <div class="schedule__card-item--header long-text-dropdown">
+                    <h4 class="h4">4.<br>Прогуляться по самом длинному проспекту в Европе</h4>
+                    <a class="dropdown-text-btn">
+                      <input id="text__dropdown-btn" type="checkbox" data-open-text="читать далее" data-close-text="свернуть">
+                    </a>
+                    <div class="dropdown-text-content">
+                      <a href="https://ekskursii.by/?Dostoprimechatelnosti_Belarusi=16021_Prospekt_Nezavisimosti" target="_blank" title="Проспект Независимости"><strong>Проспект Независимости</strong></a> – это главная улица Минска, которая является символом независимости и свободы Беларуси. Проспект можно условно разделить на три части и самую большую ценность представляет центральная часть – от площади Победы до площади Калинина. Эта часть проспекта была построена в 1940–1960 гг. в стиле «сталинский ампир», все здания являются частями гармоничного архитектурного ансамбля. <strong>Проспект Независимости</strong> – это не только красивое и ухоженное место, но и исторический центр Минска. Он отражает дух и культуру Беларуси.
+                    </div>
+                  </div>
+                </div> <!-- CARD ENDS -->
+
+                <!-- CARD -->
+                <div class="schedule__card-item">
+                  <div class="card-item__image">
+                    <img src="https://ekskursii.by/images/articles/minsk/5.jpg" alt="Свято-Духовский собор">
+                  </div>
+                  <div class="schedule__card-item--header long-text-dropdown">
+                    <h4 class="h4">5.<br>Насладиться архитектурным сочетанием современных и исторических зданий</h4>
+                    <a class="dropdown-text-btn">
+                      <input id="text__dropdown-btn" type="checkbox" data-open-text="читать далее" data-close-text="свернуть">
+                    </a>
+                    <div class="dropdown-text-content">
+                      Архитектура Минска характеризуется разнообразием стилей и эпох, отражающих богатую историю и культуру Беларуси. Архитектурное достояние Минска богато и многообразно, включает в себя как исторические памятники, так и современные сооружения. Выдающимся образцом барокко XVIII века является <a href="https://ekskursii.by/?Dostoprimechatelnosti_Belarusi=16146_Svyato_Duhov_kafedralnyy_sobor" target="_blank" title="Свято-Духов кафедральный собор"><strong>Свято-Духовский собор</strong></a>, привлекая внимание причудливой фасадной архитектурой и украшениями. Известным памятником архитектуры 1882 года является <a href="https://ekskursii.by/?Dostoprimechatelnosti_Belarusi=16194_Dom_pechati" target="_blank" title="Дом печати"><strong>Дом печати</strong></a>, расположенный на площади Свободы. Он сочетает стили неоготики и модерна, со своими изысканными фасадами и оригинальным декором. Все эти и другие архитектурные достижения делают Минск уникальным и впечатляющим городом, сосредоточенным наследие разных эпох и стилей.
+                    </div>
+                  </div>
+                </div> <!-- CARD ENDS -->
+
+                <!-- CARD -->
+                <div class="schedule__card-item">
+                  <div class="card-item__image">
+                    <img src="https://ekskursii.by/images/articles/minsk/6.jpg" alt="Национальный художественный музей Республики Беларусь">
+                  </div>
+                  <div class="schedule__card-item--header long-text-dropdown">
+                    <h4 class="h4">6.<br>Оценить коллекции крупнейшего в Восточнрой Европе художественного музея</h4>
+                    <a class="dropdown-text-btn">
+                      <input id="text__dropdown-btn" type="checkbox" data-open-text="читать далее" data-close-text="свернуть">
+                    </a>
+                    <div class="dropdown-text-content">
+                      <a href="https://ekskursii.by/?Muzei_Belarusi=102137_Nacionalnyy_hudozhestvennyy_muzey_Respubliki_Belar" target="_blank" title="Национальный художественный музей Республики Беларусь"><strong>Национальный художественный музей Республики Беларусь</strong></a> – это крупнейший художественный музей в Беларуси и открыт в 1939 году. Музей расположен в здании, построенном в стиле советского неоклассицизма, которое само по себе является архитектурной достопримечательностью. В коллекции <b>Национального художественного музея</b> представлено более 30 000 произведений искусства, включая живопись, графику, скульптуру, декоративное искусство и другие виды художественного творчества. Здесь можно увидеть произведения белорусских художников разных эпох, начиная с средневековья и заканчивая современностью.
+                    </div>
+                  </div>
+                </div> <!-- CARD ENDS -->
+
+                <!-- CARD -->
+                <div class="schedule__card-item">
+                  <div class="card-item__image">
+                    <img src="https://ekskursii.by/images/articles/minsk/7.jpg" alt="Национальная библиотека Республики Беларусь">
+                  </div>
+                  <div class="schedule__card-item--header long-text-dropdown">
+                    <h4 class="h4">7.<br>Подняться на смотровую площадку самого авангардного здания Беларуси</h4>
+                    <a class="dropdown-text-btn">
+                      <input id="text__dropdown-btn" type="checkbox" data-open-text="читать далее" data-close-text="свернуть">
+                    </a>
+                    <div class="dropdown-text-content">
+                      <a href="https://ekskursii.by/?Dostoprimechatelnosti_Belarusi=16206_Nacionalnaya_Biblioteka_Belarusi" target="_blank" title="Национальная библиотека Республики Беларусь"><strong>Национальная библиотека Республики Беларусь</strong></a> – это одна из самых значимых и крупнейших библиотек в Беларуси. Здание <strong>Национальной библиотеки Беларуси</strong> имеет уникальную архитектуру и является одним из символов современного Минска. Оно было открыто в 2006 году и спроектировано в форме ромба или бриллианта, что делает его легко узнаваемым. Здание отражает смешение современных архитектурных стилей и включает в себя стеклянные панели, металлические элементы и различные интересные детали. В ее коллекции насчитывается более 10 миллионов печатных изданий, а также электронные ресурсы и другие формы информации. Здесь можно найти книги, периодические издания, манускрипты, карты, гравюры, фотографии и другие материалы. <strong>Национальная библиотека Беларуси</strong> служит символом национального единства и культурного наследия страны. Ее главное назначение – предоставить обществу доступ к информации, образованию и культуре.
+                    </div>
+                  </div>
+                </div> <!-- CARD ENDS -->
+
+                <!-- CARD -->
+                <div class="schedule__card-item">
+                  <div class="card-item__image">
+                    <img src="https://ekskursii.by/images/articles/minsk/8.jpg" alt="дом Ли Харви Освальда">
+                  </div>
+                  <div class="schedule__card-item--header long-text-dropdown">
+                    <h4 class="h4">8.<br>Посетить дом убийцы Кеннеди – Ли Харви Освальда</h4>
+                    <a class="dropdown-text-btn">
+                      <input id="text__dropdown-btn" type="checkbox" data-open-text="читать далее" data-close-text="свернуть">
+                    </a>
+                    <div class="dropdown-text-content">
+                      Не всем известно, но на Коммунистической улице в однокомнатной квартире на четвертом этаже с видом на Свислочь, в 1960–1962 гг. жил Ли Харви Освальд. Ли Харви Освальд – неразгаданная личность нашего времени, был предположительным убийцей президента США Джона Ф. Кеннеди. Сразу после покушения на Кеннеди двухлетнее проживание Освальда в белорусской столице дало американской прессе и отдельным политическим деятелям повод подозревать Советский Союз в причастности к убийству президента США.
+                    </div>
+                  </div>
+                </div> <!-- CARD ENDS -->
+
+                <!-- CARD -->
+                <div class="schedule__card-item">
+                  <div class="card-item__image">
+                    <img src="https://ekskursii.by/images/articles/minsk/9.jpg" alt="Песочница Минск">
+                  </div>
+                  <div class="schedule__card-item--header long-text-dropdown">
+                    <h4 class="h4">9.<br>Окунуться в ночную жизнь столицы и посетить самые тусовочные улицы</h4>
+                    <a class="dropdown-text-btn">
+                      <input id="text__dropdown-btn" type="checkbox" data-open-text="читать далее" data-close-text="свернуть">
+                    </a>
+                    <div class="dropdown-text-content">
+                      <strong>Ночной Минск</strong> предлагает множество вариантов для того, чтобы провести интересно время и насладиться развлечениями. Есть несколько улиц, которые известны своей активной ночной жизнью. <strong>Улица Зыбицкая</strong> – это улица на которой расположено множество баров, ресторанов, ночных клубови кафе с живой музыкой. Здесь можно насладиться разнообразными стилями музыки и провести время в уютной атмосфере. <strong>Улица Карла Маркса</strong> –  это центральная улица Минска, на которой есть много баров, клубов и кафе. Здесь можно найти различные заведения с музыкальными выступлениями и диджей-сетами. <strong>Улица Октябрьская</strong> – одна из оживленных улиц Минска и популярное место для встреч и развлечений как днем, так и ночью. В ночное время на улице Октябрьской можно обнаружить много ресторанов, кафе, баров и ночных клубов, которые предлагают различные виды развлечений и атмосферу для каждого вкуса.
+                    </div>
+                  </div>
+                </div> <!-- CARD ENDS -->
+
+                <!-- CARD -->
+                <div class="schedule__card-item">
+                  <div class="card-item__image">
+                    <img src="https://ekskursii.by/images/articles/minsk/10.jpg" alt="«Страна-мини» в Минске">
+                  </div>
+                  <div class="schedule__card-item--header long-text-dropdown">
+                    <h4 class="h4">10.<br>Познакомиться со всей необъятной Беларусью в миниатюрном варианте</h4>
+                    <a class="dropdown-text-btn">
+                      <input id="text__dropdown-btn" type="checkbox" data-open-text="читать далее" data-close-text="свернуть">
+                    </a>
+                    <div class="dropdown-text-content">
+                      В Минске есть музей, который называется <a href="https://ekskursii.by/?Muzei_Belarusi=102259_Muzej_miniatyur_Strana_Mini" target="_blank" title="Музей миниатюр «Страна-мини»"><strong>«Страна-мини»</strong></a>. Это уникальное место, которое представляет собой миниатюрную модель Беларуси, выполненную в масштабе 1:25. В музее представлены различные архитектурные и исторические достопримечательности Беларуси, включая здания, мосты, замки, храмы и другие объекты. Всего в коллекции музея насчитывается более 60 миниатюрных моделей, каждая из которых выполнена с большой точностью и детализацией. Музей Страна Мини предлагает уникальную возможность узнать о Беларуси и ее наследии, прогуляться по миниатюрным версиям популярных мест и насладиться красотой этой уникальной коллекции.
+                    </div>
+                  </div>
+                </div> <!-- CARD ENDS -->
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section__inner">
+              <p>Минск – это живописный и динамичный город с богатой историей и культурой. Он предлагает много интересных мест для посещения и много возможностей для отдыха и развлечений.</p>
+              <p>На портале <strong><a href="https://ekskursii.by/" target="_blank" title="Экскурсии по Беларуси">Еkskursii.by</a></strong> Вы можете посмотреть все экскурсии по Беларуси и записаться на понравившийся Вам маршрут в составе <a href="https://ekskursii.by/?Grafik_sbornyh_ekskursii" target="_blank" title="Все экскурсии по Беларуси">сборной группы</a>.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section__header">
+              <h6 class="h6">Также смотрите</h6>
+              <h2 class="h2">Топ 10 мест, обязательных для посещения</h2>
+            </div>
+            <div class="section__inner">
+              <p><a class="simple-btn arrow-btn" title="10 причин посетить Минскую область" href="?10_prichin_posetiti_Minskuyu_oblasti" target="_blank">Топ 10 мест: Минская область</a></p>
+              <p><a class="simple-btn arrow-btn" title="10 причин посетить Витебскую область" href="?10_prichin_posetiti_Vitebskuyu_oblasti" target="_blank">Топ 10 мест: Витебская область</a></p>
+              <p><a class="simple-btn arrow-btn" title="10 причин посетить Гомельскую область" href="?10_prichin_posetiti_Gomeliskuyu_oblasti" target="_blank">Топ 10 мест: Гомельская область</a></p>
+              <p><a class="simple-btn arrow-btn" title="10 причин посетить Гродненскую область" href="?10_prichin_posetiti_Grodnenskuyu_oblasti" target="_blank">Топ 10 мест: Гродненская область</a></p>
+              <p><a class="simple-btn arrow-btn" title="10 причин посетить Могилевскую область" href="?10_prichin_posetiti_Mogilevskuyu_oblasti" target="_blank">Топ 10 мест: Могилевская область</a></p>
+              <p><a class="simple-btn arrow-btn" title="10 причин посетить Минск" href="?10_prichin_posetiti_Brestskuyu_oblast" target="_blank">Топ 10 мест: Брестская область</a></p>
+            </div>
+          </div>
+        </section>
+        
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__inner">
+            <div class="footer__main-nav">
+              <ul class="footer__nav-col">
+                <li class="footer__nav-item">
+                  <a href="#" title="Все экскурсии">Все экскурсии</a>
+                  <ul class="footer__subnav-col">
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Новогодние каникулы">Новогодние каникулы</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Групповые экскурсии">Групповые</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Индивидуальные экскурсии">Индивидуальные</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Корпоративные экскурсии">Корпоративные</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Школьные экскурсии">Школьные</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Бонусы и скидки">Бонусы и скидки</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Все об экскурсиях">Все об экскурсиях</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Города">Города</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Музеи">Музеи</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Знаковые места">Знаковые места</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Туризм в Беларуси">Туризм в Беларуси</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="О Беларуси">О Беларуси</a>
+                </li>
+              </ul>
+              <ul class="footer__nav-col">
+                <li class="footer__nav-item">
+                  <a href="#" title="Поиск">Поиск</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="График экскурсий">График экскурсий</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Личный кабинет">Личный кабинет</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Новости">Новости</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Частые вопросы">Частые вопросы</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Отзывы">Отзывы</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="О нас">О нас</a>
+                  <ul class="footer__subnav-col">
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Новогодние каникулы">Общая информация</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Награды">Награды</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Наши преимущества">Наши преимущества</a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="#" title="Сотрудники">Сотрудники</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#" title="Контакты">Контакты</a>
+                </li>
+                <li class="footer__nav-item">
+                  <ul class="footer__subnav-socials">
+                    <li class="footer__subnav-item">
+                      <a href="whatsapp://send/?phone=+375297566665&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!" title="whatsapp">
+                        <img src="images/sprite.svg#icons--socials--whatsapp" alt="whatsapp">
+                      </a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="https://telegram.me/ekskursii" title="telegram">
+                        <img src="images/sprite.svg#icons--socials--telegram" alt="telegram">
+                      </a>
+                    </li>
+                    <li class="footer__subnav-item">
+                      <a href="viber://add?number=375297566665" title="viber">
+                        <img src="images/sprite.svg#icons--socials--viber" alt="viber">
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__disclaimer">
+              <p class="footer__disclaimer--text">
+                Информация, размещенная на интернет-портале <a href="https://ekskursii.by/" title="ekskursii.by">Ekskursii.by</a>, не является предложением публичной оферты.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <a class="footer__logo" href="#">
+                <img src="images/sprite.svg#logo" alt="logo">
+              </a>
+              <div class="footer__secondary-nav">
+                <div class="footer__secondary-nav-col">
+                  <a class="footer__secondary-nav-btn" href="#">Вход для гидов</a>
+                  <a class="footer__secondary-nav-btn" href="#">Вход для партнеров</a>
+                  <a class="footer__secondary-nav-btn--alt" href="#">Регистрация нового Агента</a>
+                </div>
+                <div class="footer__secondary-nav-col">
+                  <a class="footer__secondary-nav-link" href="https://sanatorii.by/" title="sanatorii.by" target="_blank">Санатории</a>
+                  <a class="footer__secondary-nav-link" href="https://beltur.by/" title="beltur.by" target="_blank">Базы отдыха</a>
+                  <a class="footer__secondary-nav-link" href="https://belhotel.by/" title="belhotel.by" target="_blank">Гостиницы</a>
+                  <a class="footer__secondary-nav-link" href="https://beltransfer.by/" title="beltransfer.by" target="_blank">Трансфер</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <div class="footer__payment">
+                <img src="images/sprite.svg#icons--payment--master-card-secure-code" alt="master card secure code">
+                <img src="images/sprite.svg#icons--payment--mastercard" alt="mastercard">
+                <img src="images/sprite.svg#icons--payment--verified-visa" alt="verified by visa">
+                <img src="images/sprite.svg#icons--payment--visa" alt="visa">
+                <img src="images/sprite.svg#icons--payment--bepaid" alt="bepaid">
+                <img src="images/sprite.svg#icons--payment--erip" alt="система ЕРИП">
+              </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer__inner">
+              <div class="footer__copyright">
+                <p>© Частное научно-производственное унитарное предприятие "Автоматизированные технологии туризма"</p>
+              </div>
+            </div>
+        </div>
+      </footer>
+      <a class="btn btn-up" href="#"></a>
+    </div>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
